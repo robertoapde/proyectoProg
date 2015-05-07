@@ -7,8 +7,8 @@ import java.sql.Statement;
 
 public class CargaUsuario {
  
-    static Statement stmt;
-    static ResultSet rs;
+    static Statement stmt;//modifica sobre la base de dato
+    static ResultSet rs;//muestra los resultados
     
     public CargaUsuario(Connection con){
         try {

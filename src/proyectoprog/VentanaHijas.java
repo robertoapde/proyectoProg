@@ -7,6 +7,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
     public VentanaHijas() {
         initComponents();
+        //prohibe cerrar con la X
         dialogTaberna.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTienda.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogHuir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -16,6 +17,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTiendaComprar.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTiendaVender.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTabernaAlojamiento.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogMochila.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         
     }
 
@@ -728,6 +730,10 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addGap(6, 6, 6))
         );
 
+        dialogMochila.setAlwaysOnTop(true);
+        dialogMochila.setModal(true);
+        dialogMochila.setResizable(false);
+
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -764,6 +770,11 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnEquipar.setText("Equipar");
 
         SalirM.setText("Salir");
+        SalirM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirMActionPerformed(evt);
+            }
+        });
 
         btnSoltar.setText("Soltar");
 
@@ -773,20 +784,20 @@ public class VentanaHijas extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel33)
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnUsar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEquipar, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                        .addGap(77, 77, 77)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SalirM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnEquipar, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(btnUsar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SalirM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -798,11 +809,11 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUsar)
-                    .addComponent(SalirM))
+                    .addComponent(btnSoltar))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEquipar)
-                    .addComponent(btnSoltar))
+                    .addComponent(SalirM))
                 .addGap(45, 45, 45))
         );
 
@@ -1090,13 +1101,13 @@ public class VentanaHijas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTabernaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTabernaActionPerformed
-        dialogTaberna.setSize(540,400);
+        dialogTaberna.setSize(540,400);//anchura , altura
         dialogTaberna.setLocation(150,150);
         dialogTaberna.setVisible(true);
     }//GEN-LAST:event_btnTabernaActionPerformed
 
     private void btnCancelarComTaberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarComTaberActionPerformed
-        dialogTabernaCompra.dispose();
+        dialogTabernaCompra.dispose();//cierra el dialog 
     }//GEN-LAST:event_btnCancelarComTaberActionPerformed
 
     private void btnCancelarAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAlojamientoActionPerformed
@@ -1201,8 +1212,14 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirTActionPerformed
 
     private void btnMochilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMochilaActionPerformed
-       
+         dialogMochila.setSize(725,625);//ancho , largo
+       dialogMochila.setLocation(100,100);
+        dialogMochila.setVisible(true);
     }//GEN-LAST:event_btnMochilaActionPerformed
+
+    private void SalirMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMActionPerformed
+        dialogMochila.dispose();
+    }//GEN-LAST:event_SalirMActionPerformed
 
     /**
      * @param args the command line arguments
