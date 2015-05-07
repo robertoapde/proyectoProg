@@ -10,7 +10,13 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTaberna.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTienda.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogHuir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        dialogCombatir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);        
+        dialogCombatir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);  
+        dialogSoltar.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogTabernaCompra.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogTiendaComprar.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogTiendaVender.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogTabernaAlojamiento.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -42,12 +48,18 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnComprar = new javax.swing.JButton();
         btnVender = new javax.swing.JButton();
         btnSalirTienda = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
         dialogTiendaComprar = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         btnAceptarCompraTienda = new javax.swing.JButton();
         btnCancelarCompraTienda = new javax.swing.JButton();
         dialogTiendaVender = new javax.swing.JDialog();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tablaVenderT = new javax.swing.JTable();
+        btnVenderT = new javax.swing.JButton();
+        btnSalirT = new javax.swing.JButton();
         dialogCombatir = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
@@ -73,6 +85,25 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogHuir = new javax.swing.JDialog();
         jButton2 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        dialogMochila = new javax.swing.JDialog();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel33 = new javax.swing.JLabel();
+        btnUsar = new javax.swing.JButton();
+        btnEquipar = new javax.swing.JButton();
+        SalirM = new javax.swing.JButton();
+        btnSoltar = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        dialogSoltar = new javax.swing.JDialog();
+        jPanel8 = new javax.swing.JPanel();
+        btnAceptar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        jLabel34 = new javax.swing.JLabel();
+        dialogTiendaVenderVender = new javax.swing.JDialog();
+        jLabel35 = new javax.swing.JLabel();
+        btnAceptarVenderVender = new javax.swing.JButton();
+        btnCancelarVenderVender = new javax.swing.JButton();
         btnMochila = new javax.swing.JButton();
         btnTienda = new javax.swing.JButton();
         btnTaberna = new javax.swing.JButton();
@@ -110,7 +141,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rob\\Documents\\NetBeansProjects\\ProyectoProg\\src\\proyectoprog\\taberna3.jpg")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/taberna3.jpg"))); // NOI18N
 
         btnComprarT.setText("Comprar");
         btnComprarT.addActionListener(new java.awt.event.ActionListener() {
@@ -349,40 +380,48 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
 
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/Market.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(btnComprar)
-                .addGap(31, 31, 31)
-                .addComponent(btnVender)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalirTienda)
-                .addGap(59, 59, 59))
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnComprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVender, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalirTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnComprar)
                     .addComponent(btnVender)
                     .addComponent(btnSalirTienda))
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout dialogTiendaLayout = new javax.swing.GroupLayout(dialogTienda.getContentPane());
         dialogTienda.getContentPane().setLayout(dialogTiendaLayout);
         dialogTiendaLayout.setHorizontalGroup(
             dialogTiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         dialogTiendaLayout.setVerticalGroup(
             dialogTiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,17 +480,49 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogTiendaVender.setResizable(false);
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaVenderT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(tablaVenderT);
+
+        jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 230));
+
+        btnVenderT.setText("Vender");
+        jPanel6.add(btnVenderT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+
+        btnSalirT.setText("Salir");
+        btnSalirT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirTActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnSalirT, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
 
         javax.swing.GroupLayout dialogTiendaVenderLayout = new javax.swing.GroupLayout(dialogTiendaVender.getContentPane());
         dialogTiendaVender.getContentPane().setLayout(dialogTiendaVenderLayout);
         dialogTiendaVenderLayout.setHorizontalGroup(
             dialogTiendaVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         dialogTiendaVenderLayout.setVerticalGroup(
             dialogTiendaVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         dialogCombatir.setAlwaysOnTop(true);
@@ -632,7 +703,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rob\\Documents\\NetBeansProjects\\ProyectoProg\\src\\proyectoprog\\Little Thanos.jpg")); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/Little Thanos.jpg"))); // NOI18N
 
         javax.swing.GroupLayout dialogHuirLayout = new javax.swing.GroupLayout(dialogHuir.getContentPane());
         dialogHuir.getContentPane().setLayout(dialogHuirLayout);
@@ -657,10 +728,189 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addGap(6, 6, 6))
         );
 
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable3);
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/tio pajo.jpg"))); // NOI18N
+
+        btnUsar.setText("Usar");
+
+        btnEquipar.setText("Equipar");
+
+        SalirM.setText("Salir");
+
+        btnSoltar.setText("Soltar");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnUsar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEquipar, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SalirM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUsar)
+                    .addComponent(SalirM))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEquipar)
+                    .addComponent(btnSoltar))
+                .addGap(45, 45, 45))
+        );
+
+        javax.swing.GroupLayout dialogMochilaLayout = new javax.swing.GroupLayout(dialogMochila.getContentPane());
+        dialogMochila.getContentPane().setLayout(dialogMochilaLayout);
+        dialogMochilaLayout.setHorizontalGroup(
+            dialogMochilaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        dialogMochilaLayout.setVerticalGroup(
+            dialogMochilaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        dialogSoltar.setAlwaysOnTop(true);
+        dialogSoltar.setModal(true);
+        dialogSoltar.setResizable(false);
+
+        btnAceptar.setText("Aceptar");
+
+        btnCancelar.setText("Cancelar");
+
+        jLabel34.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel34.setText("¿Desea eliminar el objeto?");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(btnAceptar)
+                        .addGap(87, 87, 87)
+                        .addComponent(btnCancelar)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAceptar)
+                    .addComponent(btnCancelar))
+                .addGap(58, 58, 58))
+        );
+
+        javax.swing.GroupLayout dialogSoltarLayout = new javax.swing.GroupLayout(dialogSoltar.getContentPane());
+        dialogSoltar.getContentPane().setLayout(dialogSoltarLayout);
+        dialogSoltarLayout.setHorizontalGroup(
+            dialogSoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dialogSoltarLayout.setVerticalGroup(
+            dialogSoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        dialogTiendaVenderVender.setAlwaysOnTop(true);
+        dialogTiendaVenderVender.setModal(true);
+
+        jLabel35.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel35.setText("¿Quieres venderlo?");
+
+        btnAceptarVenderVender.setText("Aceptar");
+
+        btnCancelarVenderVender.setText("Cancelar");
+
+        javax.swing.GroupLayout dialogTiendaVenderVenderLayout = new javax.swing.GroupLayout(dialogTiendaVenderVender.getContentPane());
+        dialogTiendaVenderVender.getContentPane().setLayout(dialogTiendaVenderVenderLayout);
+        dialogTiendaVenderVenderLayout.setHorizontalGroup(
+            dialogTiendaVenderVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogTiendaVenderVenderLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jLabel35)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(dialogTiendaVenderVenderLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(btnAceptarVenderVender)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(btnCancelarVenderVender)
+                .addGap(80, 80, 80))
+        );
+        dialogTiendaVenderVenderLayout.setVerticalGroup(
+            dialogTiendaVenderVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogTiendaVenderVenderLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addGroup(dialogTiendaVenderVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAceptarVenderVender)
+                    .addComponent(btnCancelarVenderVender))
+                .addGap(56, 56, 56))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         btnMochila.setText("Mochila");
+        btnMochila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMochilaActionPerformed(evt);
+            }
+        });
 
         btnTienda.setText("Tienda");
         btnTienda.addActionListener(new java.awt.event.ActionListener() {
@@ -713,9 +963,10 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jLabel14.setText("10.000");
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rob\\Documents\\NetBeansProjects\\ProyectoProg\\src\\proyectoprog\\picaro.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/picaro.png"))); // NOI18N
         jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        historial.setEditable(false);
         jScrollPane4.setViewportView(historial);
 
         jMenu1.setText("Opciones");
@@ -860,7 +1111,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
     private void btnComprarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarTActionPerformed
 
-        dialogTabernaCompra.setSize(400,475);
+        dialogTabernaCompra.setSize(400,400);
         dialogTabernaCompra.setLocation(150,150);
         dialogTabernaCompra.setVisible(true);
     }//GEN-LAST:event_btnComprarTActionPerformed
@@ -870,7 +1121,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_dialogTabernaWindowClosed
 
     private void btnTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiendaActionPerformed
-        dialogTienda.setSize(400,350);
+        dialogTienda.setSize(625,700);
         dialogTienda.setLocation(100,100);
         dialogTienda.setVisible(true);
         
@@ -883,7 +1134,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
-        dialogTiendaVender.setSize(400,350);
+        dialogTiendaVender.setSize(420,350);
         dialogTiendaVender.setLocation(100,100);
         dialogTiendaVender.setVisible(true);
     }//GEN-LAST:event_btnVenderActionPerformed
@@ -945,6 +1196,14 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogHuir.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btnSalirTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirTActionPerformed
+        dialogTiendaVender.dispose();
+    }//GEN-LAST:event_btnSalirTActionPerformed
+
+    private void btnMochilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMochilaActionPerformed
+       
+    }//GEN-LAST:event_btnMochilaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -983,37 +1242,51 @@ public class VentanaHijas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar BarraEp;
     private javax.swing.JProgressBar Barrahp;
+    private javax.swing.JButton SalirM;
     private javax.swing.JProgressBar barraEP;
     private javax.swing.JProgressBar barraHP;
     private javax.swing.JProgressBar barraHPEn;
+    private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnAceptarAlojamiento;
     private javax.swing.JButton btnAceptarComTabern;
     private javax.swing.JButton btnAceptarCompraTienda;
+    private javax.swing.JButton btnAceptarVenderVender;
     private javax.swing.JButton btnAlojamientoT;
     private javax.swing.JButton btnAtacar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCancelarAlojamiento;
     private javax.swing.JButton btnCancelarComTaber;
     private javax.swing.JButton btnCancelarCompraTienda;
+    private javax.swing.JButton btnCancelarVenderVender;
     private javax.swing.JButton btnCombatir;
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnComprarT;
     private javax.swing.JButton btnDefender;
+    private javax.swing.JButton btnEquipar;
     private javax.swing.JButton btnEspecial;
     private javax.swing.JButton btnHuir;
     private javax.swing.JButton btnMochila;
     private javax.swing.JButton btnMochilaCombate;
+    private javax.swing.JButton btnSalirT;
     private javax.swing.JButton btnSalirTienda;
+    private javax.swing.JButton btnSoltar;
     private javax.swing.JButton btnTaberna;
     private javax.swing.JButton btnTienda;
+    private javax.swing.JButton btnUsar;
     private javax.swing.JButton btnVender;
+    private javax.swing.JButton btnVenderT;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDialog dialogCombatir;
     private javax.swing.JDialog dialogHuir;
+    private javax.swing.JDialog dialogMochila;
+    private javax.swing.JDialog dialogSoltar;
     private javax.swing.JDialog dialogTaberna;
     private javax.swing.JDialog dialogTabernaAlojamiento;
     private javax.swing.JDialog dialogTabernaCompra;
     private javax.swing.JDialog dialogTienda;
     private javax.swing.JDialog dialogTiendaComprar;
     private javax.swing.JDialog dialogTiendaVender;
+    private javax.swing.JDialog dialogTiendaVenderVender;
     private javax.swing.JTextPane historial;
     private javax.swing.JTextPane historialCombate;
     private javax.swing.JButton jButton1;
@@ -1043,6 +1316,10 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1058,11 +1335,18 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable tablaVenderT;
     // End of variables declaration//GEN-END:variables
 }
