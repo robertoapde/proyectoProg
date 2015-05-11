@@ -9,21 +9,23 @@ public class Picaro {
     private int ataque;
     
   public Picaro (){
-      this.PV = 6;
+      this.PV = 10;
       this.PE= 4;
       this.Armadura = 12;
       this.daño=8;
       this.ataque=0;
   }
    public void subirNivel(){
-     int  armadura = this.Armadura + 5;
-     int pv = this.PV +5;
-     int pe = this.PE +5;
-     int daño = this.daño +5;
+     int  armadura = this.Armadura + 1;
+     int pv = this.PV +6;
+     int pe = this.PE +2;
+     int daño = this.daño +2;
+     int ataque = this.ataque +1;
       setArmadura(armadura);
       setPV(pv);
       setPE(pe);
       setDaño(daño);
+       setAtaque(ataque);
   }
    public void setPV( int pv){
       this.PV = pv;
@@ -36,5 +38,8 @@ public class Picaro {
   }
      public void setDaño( int daño){
       this.daño = daño;
+  }
+        public void setAtaque( int ataque){
+      this.daño = ataque;
   }
 }

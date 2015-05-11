@@ -24,14 +24,16 @@ public class Mago {
       this.ataque=0;
   }
    public void subirNivel(){
-     int  armadura = this.Armadura + 5;
-     int pv = this.PV +5;
-     int pe = this.PE +5;
-     int daño = this.daño +5;
+     int  armadura = this.Armadura + 1;
+     int pv = this.PV +4;
+     int pe = this.PE +3;
+     int daño = this.daño +1;
+     int ataque = this.ataque+3;
       setArmadura(armadura);
       setPV(pv);
       setPE(pe);
       setDaño(daño);
+       setAtaque(ataque);
   }
    public void setPV( int pv){
       this.PV = pv;
@@ -44,5 +46,8 @@ public class Mago {
   }
      public void setDaño( int daño){
       this.daño = daño;
+  }
+       public void setAtaque( int ataque){
+      this.daño = ataque;
   }
 }
