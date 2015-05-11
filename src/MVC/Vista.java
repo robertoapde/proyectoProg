@@ -16,6 +16,7 @@ public class Vista extends javax.swing.JFrame {
      */
     public Vista() {
         initComponents();
+        this.setTitle("Pocket Adventure");
     }
 
     /**

@@ -1234,7 +1234,7 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Historial"/>
+                <Property name="text" type="java.lang.String" value="Cerrar Secci&#xf3;n  "/>
               </Properties>
             </Menu>
           </SubComponents>

@@ -985,7 +985,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         jMenu4.setText("Cambiar Contraseña");
         jMenu1.add(jMenu4);
 
-        jMenu2.setText("Historial");
+        jMenu2.setText("Cerrar Sección  ");
         jMenu1.add(jMenu2);
 
         jMenuBar1.add(jMenu1);
