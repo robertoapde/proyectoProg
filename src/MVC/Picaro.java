@@ -1,0 +1,40 @@
+package MVC;
+
+
+public class Picaro {
+    private int PV;
+    private int PE;
+    private int Armadura;
+    private int daño;
+    private int ataque;
+    
+  public Picaro (){
+      this.PV = 6;
+      this.PE= 4;
+      this.Armadura = 12;
+      this.daño=8;
+      this.ataque=0;
+  }
+   public void subirNivel(){
+     int  armadura = this.Armadura + 5;
+     int pv = this.PV +5;
+     int pe = this.PE +5;
+     int daño = this.daño +5;
+      setArmadura(armadura);
+      setPV(pv);
+      setPE(pe);
+      setDaño(daño);
+  }
+   public void setPV( int pv){
+      this.PV = pv;
+  }
+   public void setPE( int pe){
+      this.PE = pe;
+  }
+    public void setArmadura( int armadura){
+      this.Armadura = Armadura;
+  }
+     public void setDaño( int daño){
+      this.daño = daño;
+  }
+}
