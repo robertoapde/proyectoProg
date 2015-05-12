@@ -54,11 +54,11 @@ public class VentanaCarga extends javax.swing.JFrame {
 
         txtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(txtUsuario);
-        txtUsuario.setBounds(180, 90, 280, 16);
+        txtUsuario.setBounds(180, 90, 280, 20);
 
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(txtPassword);
-        txtPassword.setBounds(180, 150, 280, 16);
+        txtPassword.setBounds(180, 150, 280, 20);
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
