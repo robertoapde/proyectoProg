@@ -42,6 +42,7 @@ public class CPersonajes extends javax.swing.JFrame {
         jTextContraseña = new javax.swing.JTextField();
         jTextConfiContraseña = new javax.swing.JTextField();
         jTextEmail = new javax.swing.JTextField();
+        jsalirReg = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +78,13 @@ public class CPersonajes extends javax.swing.JFrame {
         jLabel6.setText("Confirmar Contraseña :");
 
         jLabel7.setText("Email :");
+
+        jsalirReg.setText("Salir");
+        jsalirReg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jsalirRegActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,11 +130,11 @@ public class CPersonajes extends javax.swing.JFrame {
                         .addGap(83, 83, 83)
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)))))
+                        .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jsalirReg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -159,7 +167,9 @@ public class CPersonajes extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jsalirReg))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -173,6 +183,12 @@ public class CPersonajes extends javax.swing.JFrame {
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jsalirRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jsalirRegActionPerformed
+        VentanaCarga vc = new VentanaCarga();
+        vc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jsalirRegActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,5 +241,6 @@ public class CPersonajes extends javax.swing.JFrame {
     private javax.swing.JTextField jTextContraseña;
     private javax.swing.JTextField jTextEmail;
     private javax.swing.JTextField jTextUsuario;
+    private javax.swing.JButton jsalirReg;
     // End of variables declaration//GEN-END:variables
 }

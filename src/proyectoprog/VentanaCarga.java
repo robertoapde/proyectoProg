@@ -148,7 +148,9 @@ public class VentanaCarga extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
-        
+       CPersonajes per = new CPersonajes();
+       per.setVisible(true);
+       dispose();
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     public static void main(String args[]) {
