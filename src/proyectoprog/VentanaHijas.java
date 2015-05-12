@@ -1,5 +1,9 @@
 package proyectoprog;
 
+import java.awt.Image;
+import java.net.URL;
+import javax.swing.ImageIcon;
+
 public class VentanaHijas extends javax.swing.JFrame {
     
     String historialString = "Historial de partida:";
@@ -18,7 +22,11 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTiendaVender.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTabernaAlojamiento.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogMochila.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        
+        setLocationRelativeTo(null);
+       URL url = getClass().getResource("/icon/Icono_Espada.png");
+       ImageIcon img = new ImageIcon(url);
+        setIconImage(img.getImage());
+              
     }
 
     @SuppressWarnings("unchecked")
