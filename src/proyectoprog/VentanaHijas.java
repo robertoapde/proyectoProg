@@ -148,10 +148,8 @@ public class VentanaHijas extends javax.swing.JFrame {
                 dialogTabernaWindowClosed(evt);
             }
         });
-        dialogTaberna.getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setLayout(null);
 
         btnComprarT.setText("Comprar");
         btnComprarT.addActionListener(new java.awt.event.ActionListener() {
@@ -159,8 +157,6 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnComprarTActionPerformed(evt);
             }
         });
-        jPanel1.add(btnComprarT);
-        btnComprarT.setBounds(90, 60, 320, 23);
 
         btnAlojamientoT.setText("Alojamiento");
         btnAlojamientoT.addActionListener(new java.awt.event.ActionListener() {
@@ -168,8 +164,6 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnAlojamientoTActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAlojamientoT);
-        btnAlojamientoT.setBounds(90, 150, 320, 23);
 
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -177,15 +171,44 @@ public class VentanaHijas extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(90, 230, 320, 23);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/taberna3.jpg"))); // NOI18N
-        jPanel1.add(jLabel17);
-        jLabel17.setBounds(0, -30, 527, 390);
 
-        dialogTaberna.getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 529, 370);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnComprarT, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlojamientoT, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(btnComprarT)
+                .addGap(67, 67, 67)
+                .addComponent(btnAlojamientoT))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(jButton1))
+            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        javax.swing.GroupLayout dialogTabernaLayout = new javax.swing.GroupLayout(dialogTaberna.getContentPane());
+        dialogTaberna.getContentPane().setLayout(dialogTabernaLayout);
+        dialogTabernaLayout.setHorizontalGroup(
+            dialogTabernaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        dialogTabernaLayout.setVerticalGroup(
+            dialogTabernaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         dialogTabernaCompra.setResizable(false);
 
