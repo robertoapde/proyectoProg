@@ -1223,7 +1223,7 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cerrar Secci&#xf3;n  "/>
+                <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n  "/>
               </Properties>
             </Menu>
           </SubComponents>
