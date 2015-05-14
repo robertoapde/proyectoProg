@@ -5,6 +5,10 @@
  */
 package proyectoprog;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Rob
@@ -45,6 +49,7 @@ public class CPersonajes extends javax.swing.JFrame {
         jsalirReg = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(new ImageIcon(getClass().getResource("resources/icono.png")).getImage());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/picaro.png"))); // NOI18N
 
@@ -224,6 +229,10 @@ public class CPersonajes extends javax.swing.JFrame {
             }
         });
     }
+      
+    
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
