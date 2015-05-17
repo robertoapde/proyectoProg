@@ -93,9 +93,9 @@ public class VentanaCarga extends javax.swing.JFrame {
         btnRegistrarse.setBounds(250, 230, 220, 30);
 
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/entrada.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/entrada.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 485, 303);
+        jLabel1.setBounds(0, 0, 480, 300);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

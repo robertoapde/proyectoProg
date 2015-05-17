@@ -51,6 +51,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         btnAceptarAlojamiento = new javax.swing.JButton();
         btnCancelarAlojamiento = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
         dialogTienda = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -64,6 +65,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         btnAceptarCompraTienda = new javax.swing.JButton();
         btnCancelarCompraTienda = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
         dialogTiendaVender = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -92,6 +94,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnEspecial = new javax.swing.JButton();
         btnMochilaCombate = new javax.swing.JButton();
         btnHuir = new javax.swing.JButton();
+        jLabel38 = new javax.swing.JLabel();
         dialogHuir = new javax.swing.JDialog();
         jButton2 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
@@ -150,55 +153,47 @@ public class VentanaHijas extends javax.swing.JFrame {
         });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(null);
 
+        btnComprarT.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        btnComprarT.setForeground(new java.awt.Color(0, 153, 153));
         btnComprarT.setText("Comprar");
+        btnComprarT.setBorder(new javax.swing.border.MatteBorder(null));
         btnComprarT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarTActionPerformed(evt);
             }
         });
+        jPanel1.add(btnComprarT);
+        btnComprarT.setBounds(91, 91, 375, 21);
 
+        btnAlojamientoT.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        btnAlojamientoT.setForeground(new java.awt.Color(0, 153, 153));
         btnAlojamientoT.setText("Alojamiento");
+        btnAlojamientoT.setBorder(new javax.swing.border.MatteBorder(null));
         btnAlojamientoT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAlojamientoTActionPerformed(evt);
             }
         });
+        jPanel1.add(btnAlojamientoT);
+        btnAlojamientoT.setBounds(91, 181, 376, 21);
 
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 153));
         jButton1.setText("Salir");
+        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(91, 261, 373, 21);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/taberna3.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAlojamientoT, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnComprarT, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(btnAlojamientoT))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(btnComprarT))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(jButton1))
-            .addComponent(jLabel17)
-        );
+        jPanel1.add(jLabel17);
+        jLabel17.setBounds(1, 1, 527, 353);
 
         javax.swing.GroupLayout dialogTabernaLayout = new javax.swing.GroupLayout(dialogTaberna.getContentPane());
         dialogTaberna.getContentPane().setLayout(dialogTabernaLayout);
@@ -264,7 +259,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(btnAceptarComTabern, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(btnCancelarComTaber, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
@@ -276,7 +271,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarComTabern)
                     .addComponent(btnCancelarComTaber))
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dialogTabernaCompraLayout = new javax.swing.GroupLayout(dialogTabernaCompra.getContentPane());
@@ -291,58 +286,48 @@ public class VentanaHijas extends javax.swing.JFrame {
         );
 
         dialogTabernaAlojamiento.setResizable(false);
+        dialogTabernaAlojamiento.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel18.setText("El alojamiento en la taberna ");
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel18.setText("     El alojamiento en la taberna ");
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel18.setOpaque(true);
+        dialogTabernaAlojamiento.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 300, 30));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel19.setText("cuesta 30 monedas de oro ");
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel19.setText("       cuesta 30 monedas de oro ");
+        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel19.setOpaque(true);
+        dialogTabernaAlojamiento.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 290, -1));
 
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 153, 153));
         jLabel20.setText("(Tu  vida y energia se regeraran al 100%)");
+        jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel20.setOpaque(true);
+        dialogTabernaAlojamiento.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
 
+        btnAceptarAlojamiento.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        btnAceptarAlojamiento.setForeground(new java.awt.Color(51, 51, 255));
         btnAceptarAlojamiento.setText("Aceptar");
+        btnAceptarAlojamiento.setBorder(new javax.swing.border.MatteBorder(null));
+        dialogTabernaAlojamiento.getContentPane().add(btnAceptarAlojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 180, -1));
 
+        btnCancelarAlojamiento.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        btnCancelarAlojamiento.setForeground(new java.awt.Color(255, 0, 51));
         btnCancelarAlojamiento.setText("Cancelar");
+        btnCancelarAlojamiento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnCancelarAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarAlojamientoActionPerformed(evt);
             }
         });
+        dialogTabernaAlojamiento.getContentPane().add(btnCancelarAlojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 180, -1));
 
-        javax.swing.GroupLayout dialogTabernaAlojamientoLayout = new javax.swing.GroupLayout(dialogTabernaAlojamiento.getContentPane());
-        dialogTabernaAlojamiento.getContentPane().setLayout(dialogTabernaAlojamientoLayout);
-        dialogTabernaAlojamientoLayout.setHorizontalGroup(
-            dialogTabernaAlojamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogTabernaAlojamientoLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(dialogTabernaAlojamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dialogTabernaAlojamientoLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel20))
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(dialogTabernaAlojamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(dialogTabernaAlojamientoLayout.createSequentialGroup()
-                            .addComponent(btnAceptarAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(26, 26, 26)
-                            .addComponent(btnCancelarAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        dialogTabernaAlojamientoLayout.setVerticalGroup(
-            dialogTabernaAlojamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogTabernaAlojamientoLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel20)
-                .addGap(60, 60, 60)
-                .addGroup(dialogTabernaAlojamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAceptarAlojamiento)
-                    .addComponent(btnCancelarAlojamiento))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
+        dialogTabernaAlojamiento.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 240));
 
         dialogTienda.setResizable(false);
 
@@ -440,54 +425,47 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         dialogTiendaComprar.setResizable(false);
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel21.setText("¿Desea comprar \"articulo\"?");
+        jPanel4.setLayout(null);
 
+        jLabel21.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel21.setText("¿Desea comprar el \"articulo\"?");
+        jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel21.setOpaque(true);
+        jPanel4.add(jLabel21);
+        jLabel21.setBounds(60, 0, 330, 31);
+
+        btnAceptarCompraTienda.setForeground(new java.awt.Color(51, 51, 255));
         btnAceptarCompraTienda.setText("Aceptar");
+        btnAceptarCompraTienda.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel4.add(btnAceptarCompraTienda);
+        btnAceptarCompraTienda.setBounds(60, 220, 170, 20);
 
+        btnCancelarCompraTienda.setForeground(new java.awt.Color(255, 0, 51));
         btnCancelarCompraTienda.setText("Cancelar");
+        btnCancelarCompraTienda.setBorder(new javax.swing.border.MatteBorder(null));
         btnCancelarCompraTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarCompraTiendaActionPerformed(evt);
             }
         });
+        jPanel4.add(btnCancelarCompraTienda);
+        btnCancelarCompraTienda.setBounds(250, 220, 170, 20);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jLabel21)
-                .addContainerGap(104, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(btnAceptarCompraTienda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelarCompraTienda)
-                .addGap(88, 88, 88))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAceptarCompraTienda)
-                    .addComponent(btnCancelarCompraTienda))
-                .addGap(57, 57, 57))
-        );
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
+        jPanel4.add(jLabel36);
+        jLabel36.setBounds(-40, -10, 510, 310);
 
         javax.swing.GroupLayout dialogTiendaComprarLayout = new javax.swing.GroupLayout(dialogTiendaComprar.getContentPane());
         dialogTiendaComprar.getContentPane().setLayout(dialogTiendaComprarLayout);
         dialogTiendaComprarLayout.setHorizontalGroup(
             dialogTiendaComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
         );
         dialogTiendaComprarLayout.setVerticalGroup(
             dialogTiendaComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
         );
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -539,157 +517,145 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogCombatir.setModal(true);
         dialogCombatir.setResizable(false);
 
+        jPanel5.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel5.setLayout(null);
+
+        jLabel22.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 153, 153));
         jLabel22.setText("EP:");
+        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel22.setOpaque(true);
+        jPanel5.add(jLabel22);
+        jLabel22.setBounds(10, 33, 20, 15);
 
         barraHP.setFocusTraversalPolicyProvider(true);
+        jPanel5.add(barraHP);
+        barraHP.setBounds(43, 10, 300, 16);
+        jPanel5.add(barraEP);
+        barraEP.setBounds(44, 33, 300, 16);
 
+        jLabel23.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 153, 153));
         jLabel23.setText("0%");
+        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel23.setOpaque(true);
+        jPanel5.add(jLabel23);
+        jLabel23.setBounds(348, 11, 20, 15);
 
+        jLabel24.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 153, 153));
         jLabel24.setText("0%");
+        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel24.setOpaque(true);
+        jPanel5.add(jLabel24);
+        jLabel24.setBounds(348, 33, 20, 15);
 
+        jLabel25.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 153, 153));
         jLabel25.setText("HP:");
+        jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel25.setOpaque(true);
+        jPanel5.add(jLabel25);
+        jLabel25.setBounds(10, 10, 20, 15);
 
         historialCombate.setEditable(false);
         jScrollPane3.setViewportView(historialCombate);
 
+        jPanel5.add(jScrollPane3);
+        jScrollPane3.setBounds(10, 55, 356, 195);
+
         jLabel26.setText("Enemigo:");
+        jPanel5.add(jLabel26);
+        jLabel26.setBounds(10, 256, 44, 14);
 
         jLabel27.setText("Olonam");
+        jPanel5.add(jLabel27);
+        jLabel27.setBounds(64, 256, 36, 14);
 
         jLabel28.setText("Nv:");
+        jPanel5.add(jLabel28);
+        jLabel28.setBounds(110, 256, 17, 14);
 
         jLabel29.setText("99");
+        jPanel5.add(jLabel29);
+        jLabel29.setBounds(137, 256, 12, 14);
 
         jLabel30.setText("HP:");
+        jPanel5.add(jLabel30);
+        jLabel30.setBounds(8, 276, 17, 14);
 
         barraHPEn.setFocusTraversalPolicyProvider(true);
+        jPanel5.add(barraHPEn);
+        barraHPEn.setBounds(35, 276, 302, 16);
 
         jLabel31.setText("0%");
+        jPanel5.add(jLabel31);
+        jLabel31.setBounds(341, 276, 18, 14);
 
+        btnAtacar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnAtacar.setForeground(new java.awt.Color(0, 0, 255));
         btnAtacar.setText("Atacar");
+        btnAtacar.setBorder(new javax.swing.border.MatteBorder(null));
         btnAtacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtacarActionPerformed(evt);
             }
         });
+        jPanel5.add(btnAtacar);
+        btnAtacar.setBounds(10, 303, 43, 19);
 
+        btnDefender.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnDefender.setForeground(new java.awt.Color(0, 0, 255));
         btnDefender.setText("Defender");
+        btnDefender.setBorder(new javax.swing.border.MatteBorder(null));
+        btnDefender.setVerifyInputWhenFocusTarget(false);
         btnDefender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDefenderActionPerformed(evt);
             }
         });
+        jPanel5.add(btnDefender);
+        btnDefender.setBounds(95, 303, 55, 19);
 
+        btnEspecial.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnEspecial.setForeground(new java.awt.Color(255, 51, 0));
         btnEspecial.setText("At.Especial");
+        btnEspecial.setBorder(new javax.swing.border.MatteBorder(null));
         btnEspecial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEspecialActionPerformed(evt);
             }
         });
+        jPanel5.add(btnEspecial);
+        btnEspecial.setBounds(192, 303, 71, 19);
 
+        btnMochilaCombate.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnMochilaCombate.setForeground(new java.awt.Color(0, 0, 255));
         btnMochilaCombate.setText("Mochila");
+        btnMochilaCombate.setBorder(new javax.swing.border.MatteBorder(null));
         btnMochilaCombate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMochilaCombateActionPerformed(evt);
             }
         });
+        jPanel5.add(btnMochilaCombate);
+        btnMochilaCombate.setBounds(297, 303, 49, 19);
 
         btnHuir.setBackground(new java.awt.Color(255, 51, 51));
+        btnHuir.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnHuir.setText("Huir");
+        btnHuir.setBorder(new javax.swing.border.MatteBorder(null));
         btnHuir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHuirActionPerformed(evt);
             }
         });
+        jPanel5.add(btnHuir);
+        btnHuir.setBounds(20, 332, 323, 19);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(barraHPEn, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel22))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(barraHP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(barraEP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jScrollPane3)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel29))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btnAtacar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDefender)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEspecial)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMochilaCombate)))
-                .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnHuir, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel23)
-                    .addComponent(barraHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel24)
-                    .addComponent(barraEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel29))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel30)
-                    .addComponent(jLabel31)
-                    .addComponent(barraHPEn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAtacar)
-                    .addComponent(btnDefender)
-                    .addComponent(btnEspecial)
-                    .addComponent(btnMochilaCombate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnHuir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
+        jPanel5.add(jLabel38);
+        jLabel38.setBounds(-140, 0, 560, 370);
 
         javax.swing.GroupLayout dialogCombatirLayout = new javax.swing.GroupLayout(dialogCombatir.getContentPane());
         dialogCombatir.getContentPane().setLayout(dialogCombatirLayout);
@@ -1345,6 +1311,9 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
