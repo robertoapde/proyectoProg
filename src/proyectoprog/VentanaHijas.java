@@ -172,7 +172,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/taberna3.jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/taberna3.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -204,11 +204,11 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTaberna.getContentPane().setLayout(dialogTabernaLayout);
         dialogTabernaLayout.setHorizontalGroup(
             dialogTabernaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         dialogTabernaLayout.setVerticalGroup(
             dialogTabernaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         dialogTabernaCompra.setResizable(false);
@@ -326,7 +326,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                             .addComponent(btnAceptarAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(26, 26, 26)
                             .addComponent(btnCancelarAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         dialogTabernaAlojamientoLayout.setVerticalGroup(
             dialogTabernaAlojamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,7 +341,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addGroup(dialogTabernaAlojamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarAlojamiento)
                     .addComponent(btnCancelarAlojamiento))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         dialogTienda.setResizable(false);
@@ -390,7 +390,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/Market.jpg"))); // NOI18N
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Market.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -713,7 +713,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/Little Thanos.jpg"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Little Thanos.jpg"))); // NOI18N
 
         javax.swing.GroupLayout dialogHuirLayout = new javax.swing.GroupLayout(dialogHuir.getContentPane());
         dialogHuir.getContentPane().setLayout(dialogHuirLayout);
@@ -771,7 +771,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jTable3);
 
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/tio pajo.jpg"))); // NOI18N
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tio pajo.jpg"))); // NOI18N
 
         btnUsar.setText("Usar");
 
@@ -805,7 +805,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SalirM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -905,7 +905,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addGroup(dialogTiendaVenderVenderLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(btnAceptarVenderVender)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(btnCancelarVenderVender)
                 .addGap(80, 80, 80))
         );
@@ -914,7 +914,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addGroup(dialogTiendaVenderVenderLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(jLabel35)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addGroup(dialogTiendaVenderVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarVenderVender)
                     .addComponent(btnCancelarVenderVender))
@@ -982,7 +982,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jLabel14.setText("10.000");
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/picaro.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
         jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         historial.setEditable(false);

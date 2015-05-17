@@ -51,7 +51,7 @@ public class CPersonajes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(new ImageIcon(getClass().getResource("resources/icono.png")).getImage());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectoprog/picaro.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
 
         jRadioButton1.setText("Picaro");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
