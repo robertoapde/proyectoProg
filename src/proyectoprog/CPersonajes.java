@@ -54,6 +54,7 @@ public class CPersonajes extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
+        jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 106, 102));
 
         jRadioButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
@@ -69,9 +70,11 @@ public class CPersonajes extends javax.swing.JFrame {
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 80, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mago.jpg"))); // NOI18N
+        jLabel2.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 105, 102));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guerrero.png"))); // NOI18N
+        jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 105, 102));
 
         jRadioButton2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
@@ -132,9 +135,17 @@ public class CPersonajes extends javax.swing.JFrame {
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel7.setOpaque(true);
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 50, -1));
+
+        jTextUsuario.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jTextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 171, 330, -1));
+
+        jTextContraseña.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jTextContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 209, 330, -1));
+
+        jTextConfiContraseña.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jTextConfiContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 247, 330, -1));
+
+        jTextEmail.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 285, 330, -1));
 
         jsalirReg.setBackground(new java.awt.Color(204, 204, 204));
