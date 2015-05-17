@@ -13,14 +13,14 @@ public class Picaro {
       this.PE= 4;
       this.Armadura = 12;
       this.daño=8;
-      this.ataque=0;
+      this.ataque=1;
   }
    public void subirNivel(){
      int  armadura = this.Armadura + 1;
      int pv = this.PV +6;
      int pe = this.PE +2;
      int daño = this.daño +2;
-     int ataque = this.ataque +1;
+     int ataque = this.ataque +2;
       setArmadura(armadura);
       setPV(pv);
       setPE(pe);
