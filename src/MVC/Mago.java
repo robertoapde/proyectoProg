@@ -19,14 +19,14 @@ public class Mago {
   public Mago (){
       this.PV = 4;
       this.PE= 6;
-      this.Armadura = 8;
+      this.Armadura = 10;
       this.daño=10;
       this.ataque=0;
   }
    public void subirNivel(){
      int  armadura = this.Armadura + 1;
      int pv = this.PV +4;
-     int pe = this.PE +3;
+     int pe = this.PE +4;
      int daño = this.daño +1;
      int ataque = this.ataque+3;
       setArmadura(armadura);
