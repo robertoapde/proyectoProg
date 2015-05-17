@@ -10,7 +10,7 @@ public class Guerrero {
   public Guerrero (){
       this.PV = 10;
       this.PE= 2;
-      this.Armadura = 14;
+      this.Armadura = 10;
       this.daño=5;
       this.ataque=1;
   }

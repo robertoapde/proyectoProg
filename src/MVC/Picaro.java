@@ -11,7 +11,7 @@ public class Picaro {
   public Picaro (){
       this.PV = 10;
       this.PE= 4;
-      this.Armadura = 12;
+      this.Armadura = 10;
       this.daño=8;
       this.ataque=1;
   }
