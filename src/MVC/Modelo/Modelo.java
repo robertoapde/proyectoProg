@@ -101,9 +101,13 @@ public class Modelo extends Database{
         }else{
             try{
                 String pass = "SELECT Contraseña FROM Usuario WHERE Nombre = "+u;
+                PreparedStatement pstm = this.getConexion().prepareStatement(pass);
+                pstm.execute();
+                pstm.close();
                 if(pass.equals(p)){
                     res = true;
                 }
+                return true;
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Error de inicio de sesión");
             }
