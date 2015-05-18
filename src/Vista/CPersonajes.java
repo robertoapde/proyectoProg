@@ -33,12 +33,12 @@ public class CPersonajes extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        radioPicaro = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        radioMago = new javax.swing.JRadioButton();
+        radioGuerrero = new javax.swing.JRadioButton();
+        btnRegistrarseComenzar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -47,7 +47,7 @@ public class CPersonajes extends javax.swing.JFrame {
         jTextContraseña = new javax.swing.JTextField();
         jTextConfiContraseña = new javax.swing.JTextField();
         jTextEmail = new javax.swing.JTextField();
-        jsalirReg = new javax.swing.JButton();
+        btnRegistrarseSalir = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,17 +58,17 @@ public class CPersonajes extends javax.swing.JFrame {
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 106, 102));
 
-        jRadioButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(0, 153, 153));
-        jRadioButton1.setText("Picaro");
-        jRadioButton1.setBorder(new javax.swing.border.MatteBorder(null));
-        jRadioButton1.setBorderPainted(true);
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        radioPicaro.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        radioPicaro.setForeground(new java.awt.Color(0, 153, 153));
+        radioPicaro.setText("Picaro");
+        radioPicaro.setBorder(new javax.swing.border.MatteBorder(null));
+        radioPicaro.setBorderPainted(true);
+        radioPicaro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                radioPicaroActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 80, 20));
+        getContentPane().add(radioPicaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 80, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mago.jpg"))); // NOI18N
         jLabel2.setBorder(new javax.swing.border.MatteBorder(null));
@@ -78,36 +78,36 @@ public class CPersonajes extends javax.swing.JFrame {
         jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 105, 102));
 
-        jRadioButton2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(0, 153, 153));
-        jRadioButton2.setText("Mago");
-        jRadioButton2.setBorder(new javax.swing.border.MatteBorder(null));
-        jRadioButton2.setBorderPainted(true);
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        radioMago.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        radioMago.setForeground(new java.awt.Color(0, 153, 153));
+        radioMago.setText("Mago");
+        radioMago.setBorder(new javax.swing.border.MatteBorder(null));
+        radioMago.setBorderPainted(true);
+        radioMago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                radioMagoActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 70, 20));
+        getContentPane().add(radioMago, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 70, 20));
 
-        jRadioButton3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(0, 153, 153));
-        jRadioButton3.setText("Guerrero");
-        jRadioButton3.setBorder(new javax.swing.border.MatteBorder(null));
-        jRadioButton3.setBorderPainted(true);
-        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 90, -1));
+        radioGuerrero.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        radioGuerrero.setForeground(new java.awt.Color(0, 153, 153));
+        radioGuerrero.setText("Guerrero");
+        radioGuerrero.setBorder(new javax.swing.border.MatteBorder(null));
+        radioGuerrero.setBorderPainted(true);
+        getContentPane().add(radioGuerrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 90, -1));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 255));
-        jButton1.setText("Comienza la aventura");
-        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarseComenzar.setBackground(new java.awt.Color(204, 204, 204));
+        btnRegistrarseComenzar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        btnRegistrarseComenzar.setForeground(new java.awt.Color(51, 51, 255));
+        btnRegistrarseComenzar.setText("Comienza la aventura");
+        btnRegistrarseComenzar.setBorder(new javax.swing.border.MatteBorder(null));
+        btnRegistrarseComenzar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistrarseComenzarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 323, 227, -1));
+        getContentPane().add(btnRegistrarseComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 323, 227, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
@@ -149,17 +149,17 @@ public class CPersonajes extends javax.swing.JFrame {
         jTextEmail.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 285, 330, -1));
 
-        jsalirReg.setBackground(new java.awt.Color(204, 204, 204));
-        jsalirReg.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jsalirReg.setForeground(new java.awt.Color(255, 0, 0));
-        jsalirReg.setText("Salir");
-        jsalirReg.setBorder(new javax.swing.border.MatteBorder(null));
-        jsalirReg.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarseSalir.setBackground(new java.awt.Color(204, 204, 204));
+        btnRegistrarseSalir.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        btnRegistrarseSalir.setForeground(new java.awt.Color(255, 0, 0));
+        btnRegistrarseSalir.setText("Salir");
+        btnRegistrarseSalir.setBorder(new javax.swing.border.MatteBorder(null));
+        btnRegistrarseSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jsalirRegActionPerformed(evt);
+                btnRegistrarseSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jsalirReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 323, 250, -1));
+        getContentPane().add(btnRegistrarseSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 323, 250, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, 0, 750, 390));
@@ -167,23 +167,23 @@ public class CPersonajes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void radioPicaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPicaroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_radioPicaroActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void radioMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMagoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_radioMagoActionPerformed
 
-    private void jsalirRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jsalirRegActionPerformed
+    private void btnRegistrarseSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseSalirActionPerformed
         VentanaCarga vc = new VentanaCarga();
         vc.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jsalirRegActionPerformed
+    }//GEN-LAST:event_btnRegistrarseSalirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegistrarseComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseComenzarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegistrarseComenzarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,7 +225,8 @@ public class CPersonajes extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRegistrarseComenzar;
+    private javax.swing.JButton btnRegistrarseSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -234,13 +235,12 @@ public class CPersonajes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JTextField jTextConfiContraseña;
     private javax.swing.JTextField jTextContraseña;
     private javax.swing.JTextField jTextEmail;
     private javax.swing.JTextField jTextUsuario;
-    private javax.swing.JButton jsalirReg;
+    private javax.swing.JRadioButton radioGuerrero;
+    private javax.swing.JRadioButton radioMago;
+    private javax.swing.JRadioButton radioPicaro;
     // End of variables declaration//GEN-END:variables
 }
