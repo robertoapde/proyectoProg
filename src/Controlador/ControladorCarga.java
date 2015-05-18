@@ -35,14 +35,7 @@ public class ControladorCarga implements ActionListener, MouseListener{
     }
     
     public void iniciar(){
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            SwingUtilities.updateComponentTreeUI(vista1);
-            vista1.setVisible(true);
-        }catch (UnsupportedLookAndFeelException ex){}
-            catch(ClassNotFoundException ex){}
-            catch(InstantiationException ex){}
-            catch(IllegalAccessException ex){}
+        this.vista1.setVisible(true);
         
         this.vista1.btnLogin.setActionCommand("btnLogin");
         this.vista1.btnLogin.addActionListener(this);
@@ -57,17 +50,24 @@ public class ControladorCarga implements ActionListener, MouseListener{
     public void actionPerformed(ActionEvent e) {
         switch (AccionMVC.valueOf(e.getActionCommand())){
             case btnLogin:
-                String u = this.vista1.txtUsuario.getText();
-                String p = this.vista1.txtPassword.getText();
-                if(this.modelo.login(u, p) == true){
-                    vista3.setSize(1599, 782);
-                    vista3.setLocation(150,150);
-                    vista3.setVisible(true);
-                }else{
-                    JOptionPane.showMessageDialog(null, "No ha sido posible conectar");
+                try{
+                    String u = this.vista1.txtUsuario.getText();
+                    String p = this.vista1.txtPassword.getText();
+                    if(this.modelo.login(u, p) == true){
+                        vista3.setSize(480, 300);
+                        vista3.setLocation(150,150);
+                        vista3.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
+                    }
+                }catch(Exception ex){
+                    JOptionPane.showMessageDialog(null, "Error al conectar");
                 }
                 break;
             case btnRegistrarse:
+                vista2.setSize(580, 390);
+                vista2.setLocation(150,150);
+                vista2.setVisible(true);
                 break;
             case btnRegistrarseComenzar:
                 break;

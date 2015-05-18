@@ -14,7 +14,7 @@ public class ModeloCarga extends Database{
     }
     
     public boolean login(String u, String p){
-        boolean res = false;
+        boolean resu = false;
         if(u == ""){
             JOptionPane.showMessageDialog(null, "Introduzca un usuario");
         }else if(p == ""){
@@ -23,18 +23,20 @@ public class ModeloCarga extends Database{
             JOptionPane.showMessageDialog(null, "Introduzca su usuario y contraseña");
         }else{
             try{
-                String pass = "SELECT Contraseña FROM Usuario WHERE Nombre = "+u;
-                PreparedStatement pstm = this.getConexion().prepareStatement(pass);
-                pstm.execute();
+                String q = "SELECT Nombre, Contraseña FROM Usuario WHERE Nombre = "+u;
+                PreparedStatement pstm = this.getConexion().prepareStatement(q);
+                ResultSet res = pstm.executeQuery();
+                String usu = res.getString("Nombre");
+                String pass = res.getString("Contraseña");
                 pstm.close();
-                if(pass.equals(p)){
-                    res = true;
+                if(pass.equals(p) && usu.equals(u)){
+                    resu = true;
                 }
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Error de inicio de sesión");
             }
         }
-        return res;
+        return resu;
     }
     
     public boolean registrar(String u, String p){

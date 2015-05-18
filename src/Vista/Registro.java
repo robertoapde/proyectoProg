@@ -155,7 +155,7 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().add(btnRegistrarseSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 323, 250, 30));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, 0, 750, 390));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, 0, 730, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,8 +192,8 @@ public class Registro extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistrarseComenzar;
-    private javax.swing.JButton btnRegistrarseSalir;
+    public javax.swing.JButton btnRegistrarseComenzar;
+    public javax.swing.JButton btnRegistrarseSalir;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
