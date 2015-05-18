@@ -9,6 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class ControladorCarga implements ActionListener, MouseListener{
     
@@ -32,6 +35,15 @@ public class ControladorCarga implements ActionListener, MouseListener{
     }
     
     public void iniciar(){
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(vista1);
+            vista1.setVisible(true);
+        }catch (UnsupportedLookAndFeelException ex){}
+            catch(ClassNotFoundException ex){}
+            catch(InstantiationException ex){}
+            catch(IllegalAccessException ex){}
+        
         this.vista1.btnLogin.setActionCommand("btnLogin");
         this.vista1.btnLogin.addActionListener(this);
         this.vista1.btnRegistrarse.setActionCommand("btnRegistrarse");
