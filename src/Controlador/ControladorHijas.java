@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import Vista.VentanaHijas;
 
 import Modelo.ModeloHijas;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class ControladorHijas implements ActionListener, MouseListener{
 
@@ -57,13 +60,88 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista = vista;
     }
     
-    public void iniciar(){
-        
+   public void iniciar(){
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(vista);
+            vista.setVisible(true);
+        } catch (UnsupportedLookAndFeelException ex) {}
+          catch (ClassNotFoundException ex) {}
+          catch (InstantiationException ex) {}
+          catch (IllegalAccessException ex) {}
     }
     
     public void actionPerformed(ActionEvent e) {
-        
+        switch ( AccionMVC.valueOf( e.getActionCommand() ) )
+        {
+            case btnCombatir:
+                break;
+            case  btnMochila:
+                break;
+            case btnTienda:
+                break;
+            case btnTaberna:
+                break;
+            case btnComprarTaberna:
+                break;
+            case btnAlojamientoTaberna:
+                break;
+            case btnSalirTaberna:
+                break;
+            case btnAceptarComprarTaberna:
+                break;
+            case btnCancelarComprarTaberna:
+                break;
+            case btnAceptarAlojamiento:
+                break;
+            case btnCancelarAlojamiento:
+                break;
+            case btnComprarTienda:
+                break;
+            case btnVenderTienda:
+                break;   
+            case btnSalirTienda:
+                break;
+            case btnAceptarCompraTienda:
+                break;
+            case btnCancelarCompraTienda:
+                break;    
+            case btnVenderVenderTienda:
+                break;
+            case btnSalirVenderTienda:
+                break;
+            case btnCombatirAtacar:
+                break;    
+            case btnCombatirDefender:
+                break;
+            case btnCombatirEspecial:
+                break;
+            case btnCombatirMochila:
+                break;
+            case btnCombatirHuir:
+                break;
+            case btnHuirPerder:
+                break; 
+            case btnMochilaUsar:
+                break;
+            case btnMochilaSoltar:
+                break;
+            case btnMochilaEquipar:
+                break;
+            case btnMochilaSalir:
+                break;
+            case btnSoltarAceptar:
+                break;
+            case btnSoltarCancelar:
+                break;    
+            case btnAceptarVenderVenderTienda:
+                break;  
+            case btnCancelarVenderVenderTienda:
+                break;    
+        }
     }
+    
+  
     
     public void mouseClicked(MouseEvent e) {}
     
