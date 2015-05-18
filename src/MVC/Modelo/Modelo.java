@@ -107,7 +107,6 @@ public class Modelo extends Database{
                 if(pass.equals(p)){
                     res = true;
                 }
-                return true;
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Error de inicio de sesión");
             }
