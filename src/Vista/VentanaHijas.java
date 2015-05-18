@@ -163,11 +163,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnComprarTabernaActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel1.add(btnComprarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 380, 30));
-=======
         jPanel1.add(btnComprarTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 91, 375, -1));
->>>>>>> origin/master
 
         btnAlojamientoTaberna.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnAlojamientoTaberna.setForeground(new java.awt.Color(0, 153, 153));
@@ -178,11 +174,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnAlojamientoTabernaActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel1.add(btnAlojamientoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 380, 30));
-=======
         jPanel1.add(btnAlojamientoTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 181, 376, -1));
->>>>>>> origin/master
 
         btnSalirTaberna.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnSalirTaberna.setForeground(new java.awt.Color(0, 153, 153));
@@ -193,11 +185,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnSalirTabernaActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 380, 30));
-=======
         jPanel1.add(btnSalirTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 261, 373, -1));
->>>>>>> origin/master
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/taberna3.jpg"))); // NOI18N
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, -1, -1));
@@ -276,15 +264,9 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< HEAD
-                    .addComponent(btnAceptarComTabern)
-                    .addComponent(btnCancelarComTaber))
-                .addGap(0, 0, Short.MAX_VALUE))
-=======
                     .addComponent(btnAceptarComprarTaberna)
                     .addComponent(btnCancelarComprarTaberna))
                 .addGap(0, 22, Short.MAX_VALUE))
->>>>>>> origin/master
         );
 
         javax.swing.GroupLayout dialogTabernaCompraLayout = new javax.swing.GroupLayout(dialogTabernaCompra.getContentPane());
@@ -295,9 +277,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         );
         dialogTabernaCompraLayout.setVerticalGroup(
             dialogTabernaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogTabernaCompraLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         dialogTabernaAlojamiento.setResizable(false);
@@ -342,7 +322,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTabernaAlojamiento.getContentPane().add(btnCancelarAlojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 420, -1));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
-        dialogTabernaAlojamiento.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 240));
+        dialogTabernaAlojamiento.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 240));
 
         dialogTienda.setResizable(false);
 
@@ -450,13 +430,11 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel21.setOpaque(true);
         jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 330, -1));
 
-        btnAceptarCompraTienda.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnAceptarCompraTienda.setForeground(new java.awt.Color(51, 51, 255));
         btnAceptarCompraTienda.setText("Aceptar");
         btnAceptarCompraTienda.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel4.add(btnAceptarCompraTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 370, 30));
+        jPanel4.add(btnAceptarCompraTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 370, 20));
 
-        btnCancelarCompraTienda.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCancelarCompraTienda.setForeground(new java.awt.Color(255, 0, 51));
         btnCancelarCompraTienda.setText("Cancelar");
         btnCancelarCompraTienda.setBorder(new javax.swing.border.MatteBorder(null));
@@ -465,10 +443,10 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCancelarCompraTiendaActionPerformed(evt);
             }
         });
-        jPanel4.add(btnCancelarCompraTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 370, 30));
+        jPanel4.add(btnCancelarCompraTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 370, 20));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
-        jPanel4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 300));
+        jPanel4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -10, 510, 310));
 
         javax.swing.GroupLayout dialogTiendaComprarLayout = new javax.swing.GroupLayout(dialogTiendaComprar.getContentPane());
         dialogTiendaComprar.getContentPane().setLayout(dialogTiendaComprarLayout);
@@ -541,22 +519,22 @@ public class VentanaHijas extends javax.swing.JFrame {
         jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 33, 20, -1));
 
         barraHP.setFocusTraversalPolicyProvider(true);
-        jPanel5.add(barraHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 10, 350, -1));
-        jPanel5.add(barraEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 33, 350, -1));
+        jPanel5.add(barraHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 10, 330, -1));
+        jPanel5.add(barraEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 33, 330, -1));
 
         jLabel23.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 153, 153));
         jLabel23.setText("0%");
         jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel23.setOpaque(true);
-        jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 20, -1));
+        jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 20, -1));
 
         jLabel24.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 153, 153));
         jLabel24.setText("0%");
         jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel24.setOpaque(true);
-        jPanel5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 20, -1));
+        jPanel5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 20, -1));
 
         jLabel25.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 153, 153));
@@ -568,31 +546,19 @@ public class VentanaHijas extends javax.swing.JFrame {
         historialCombate.setEditable(false);
         jScrollPane3.setViewportView(historialCombate);
 
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 356, 160));
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 356, 160));
 
-        jLabel26.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(51, 51, 255));
         jLabel26.setText("Enemigo:");
-        jLabel26.setOpaque(true);
-        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        jLabel27.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 0, 0));
         jLabel27.setText("Olonam");
-        jLabel27.setOpaque(true);
-        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
+        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
-        jLabel28.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(0, 0, 255));
         jLabel28.setText("Nv:");
-        jLabel28.setOpaque(true);
-        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, -1, -1));
+        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
 
-        jLabel29.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(255, 0, 0));
         jLabel29.setText("99");
-        jLabel29.setOpaque(true);
-        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
+        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
         jLabel30.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 153, 153));
@@ -602,14 +568,14 @@ public class VentanaHijas extends javax.swing.JFrame {
         jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         barraHPEn.setFocusTraversalPolicyProvider(true);
-        jPanel5.add(barraHPEn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 350, -1));
+        jPanel5.add(barraHPEn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 340, -1));
 
         jLabel31.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 153, 153));
         jLabel31.setText("0%");
         jLabel31.setBorder(new javax.swing.border.MatteBorder(null));
         jLabel31.setOpaque(true);
-        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 20, 20));
+        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 20, 20));
 
         btnCombatirAtacar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirAtacar.setForeground(new java.awt.Color(0, 0, 255));
@@ -620,11 +586,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirAtacarActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel5.add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 210, -1));
-=======
         jPanel5.add(btnCombatirAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, -1));
->>>>>>> origin/master
 
         btnCombatirDefender.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirDefender.setForeground(new java.awt.Color(0, 0, 255));
@@ -636,11 +598,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirDefenderActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel5.add(btnDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 210, -1));
-=======
         jPanel5.add(btnCombatirDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 190, -1));
->>>>>>> origin/master
 
         btnCombatirEspecial.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirEspecial.setForeground(new java.awt.Color(255, 51, 0));
@@ -651,11 +609,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirEspecialActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel5.add(btnEspecial, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 200, -1));
-=======
         jPanel5.add(btnCombatirEspecial, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 180, -1));
->>>>>>> origin/master
 
         btnCombatirMochila.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirMochila.setForeground(new java.awt.Color(0, 0, 255));
@@ -666,11 +620,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirMochilaActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel5.add(btnMochilaCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 200, -1));
-=======
         jPanel5.add(btnCombatirMochila, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 180, -1));
->>>>>>> origin/master
 
         btnCombatirHuir.setBackground(new java.awt.Color(255, 51, 51));
         btnCombatirHuir.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -681,22 +631,16 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirHuirActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel5.add(btnHuir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 410, 20));
-=======
         jPanel5.add(btnCombatirHuir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 370, 20));
->>>>>>> origin/master
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
-        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 370));
+        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, 0, 560, 370));
 
         javax.swing.GroupLayout dialogCombatirLayout = new javax.swing.GroupLayout(dialogCombatir.getContentPane());
         dialogCombatir.getContentPane().setLayout(dialogCombatirLayout);
         dialogCombatirLayout.setHorizontalGroup(
             dialogCombatirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogCombatirLayout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         dialogCombatirLayout.setVerticalGroup(
             dialogCombatirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -716,14 +660,10 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnHuirPerderActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        dialogHuir.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, -1, -1));
-=======
         dialogHuir.getContentPane().add(btnHuirPerder, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, -1, -1));
->>>>>>> origin/master
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Little Thanos.jpg"))); // NOI18N
-        dialogHuir.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 540));
+        dialogHuir.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 440, 580));
 
         dialogMochila.setAlwaysOnTop(true);
         dialogMochila.setModal(true);
@@ -766,33 +706,17 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel33.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 11, -1, -1));
 
-<<<<<<< HEAD
-        btnUsar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        btnUsar.setForeground(new java.awt.Color(0, 51, 255));
-        btnUsar.setText("Usar");
-        btnUsar.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel7.add(btnUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 458, 300, 30));
-=======
         btnMochilaUsar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnMochilaUsar.setForeground(new java.awt.Color(0, 51, 255));
         btnMochilaUsar.setText("Usar");
         btnMochilaUsar.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.add(btnMochilaUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 469, 300, -1));
->>>>>>> origin/master
 
-<<<<<<< HEAD
-        btnEquipar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        btnEquipar.setForeground(new java.awt.Color(0, 51, 255));
-        btnEquipar.setText("Equipar");
-        btnEquipar.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel7.add(btnEquipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 495, 300, 30));
-=======
         btnMochilaEquipar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnMochilaEquipar.setForeground(new java.awt.Color(0, 51, 255));
         btnMochilaEquipar.setText("Equipar");
         btnMochilaEquipar.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.add(btnMochilaEquipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 506, 300, -1));
->>>>>>> origin/master
 
         btnMochilaSalir.setBackground(new java.awt.Color(255, 0, 0));
         btnMochilaSalir.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -803,28 +727,16 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnMochilaSalirActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel7.add(SalirM, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 495, 300, 30));
-=======
         jPanel7.add(btnMochilaSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 506, 300, -1));
->>>>>>> origin/master
 
-<<<<<<< HEAD
-        btnSoltar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        btnSoltar.setForeground(new java.awt.Color(0, 51, 255));
-        btnSoltar.setText("Soltar");
-        btnSoltar.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel7.add(btnSoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 458, 300, 30));
-=======
         btnMochilaSoltar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnMochilaSoltar.setForeground(new java.awt.Color(0, 51, 255));
         btnMochilaSoltar.setText("Soltar");
         btnMochilaSoltar.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.add(btnMochilaSoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 469, 300, -1));
->>>>>>> origin/master
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
-        jPanel7.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 550));
+        jPanel7.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -10, 1170, 560));
 
         javax.swing.GroupLayout dialogMochilaLayout = new javax.swing.GroupLayout(dialogMochila.getContentPane());
         dialogMochila.getContentPane().setLayout(dialogMochilaLayout);
@@ -907,7 +819,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnTiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 250, 30));
+        getContentPane().add(btnTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 250, -1));
 
         btnMochila.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnMochila.setForeground(new java.awt.Color(51, 51, 255));
@@ -918,7 +830,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnMochilaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMochila, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 250, 30));
+        getContentPane().add(btnMochila, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 250, -1));
 
         btnTaberna.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnTaberna.setForeground(new java.awt.Color(51, 51, 255));
@@ -929,7 +841,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnTabernaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 250, 30));
+        getContentPane().add(btnTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 250, -1));
 
         btnCombatir.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnCombatir.setForeground(new java.awt.Color(255, 0, 0));
@@ -940,7 +852,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCombatir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, 90));
+        getContentPane().add(btnCombatir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, 80));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
@@ -1191,34 +1103,8 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogMochila.dispose();
     }//GEN-LAST:event_btnMochilaSalirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaHijas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaHijas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaHijas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaHijas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VentanaHijas().setVisible(true);
@@ -1229,43 +1115,15 @@ public class VentanaHijas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar BarraEp;
     private javax.swing.JProgressBar Barrahp;
-<<<<<<< HEAD
-    public javax.swing.JButton SalirM;
-=======
->>>>>>> origin/master
     private javax.swing.JProgressBar barraEP;
     private javax.swing.JProgressBar barraHP;
     private javax.swing.JProgressBar barraHPEn;
     private javax.swing.JButton btnAceptarAlojamiento;
-<<<<<<< HEAD
-    public javax.swing.JButton btnAceptarComTabern;
-    public javax.swing.JButton btnAceptarCompraTienda;
-    private javax.swing.JButton btnAceptarVenderVender;
-    public javax.swing.JButton btnAlojamientoT;
-    public javax.swing.JButton btnAtacar;
-    private javax.swing.JButton btnCancelar;
-=======
     private javax.swing.JButton btnAceptarCompraTienda;
     private javax.swing.JButton btnAceptarComprarTaberna;
     private javax.swing.JButton btnAceptarVenderVenderTienda;
     private javax.swing.JButton btnAlojamientoTaberna;
->>>>>>> origin/master
     private javax.swing.JButton btnCancelarAlojamiento;
-<<<<<<< HEAD
-    public javax.swing.JButton btnCancelarComTaber;
-    public javax.swing.JButton btnCancelarCompraTienda;
-    private javax.swing.JButton btnCancelarVenderVender;
-    public javax.swing.JButton btnCombatir;
-    private javax.swing.JButton btnComprar;
-    public javax.swing.JButton btnComprarT;
-    public javax.swing.JButton btnDefender;
-    public javax.swing.JButton btnEquipar;
-    public javax.swing.JButton btnEspecial;
-    public javax.swing.JButton btnHuir;
-    public javax.swing.JButton btnMochila;
-    public javax.swing.JButton btnMochilaCombate;
-    private javax.swing.JButton btnSalirT;
-=======
     private javax.swing.JButton btnCancelarCompraTienda;
     private javax.swing.JButton btnCancelarComprarTaberna;
     private javax.swing.JButton btnCancelarVenderVenderTienda;
@@ -1284,16 +1142,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JButton btnMochilaSoltar;
     private javax.swing.JButton btnMochilaUsar;
     private javax.swing.JButton btnSalirTaberna;
->>>>>>> origin/master
     private javax.swing.JButton btnSalirTienda;
-<<<<<<< HEAD
-    public javax.swing.JButton btnSoltar;
-    public javax.swing.JButton btnTaberna;
-    public javax.swing.JButton btnTienda;
-    public javax.swing.JButton btnUsar;
-    private javax.swing.JButton btnVender;
-    private javax.swing.JButton btnVenderT;
-=======
     private javax.swing.JButton btnSalirVenderTienda;
     private javax.swing.JButton btnSoltarAceptar;
     private javax.swing.JButton btnSoltarCancelar;
@@ -1301,7 +1150,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JButton btnTienda;
     private javax.swing.JButton btnVenderTienda;
     private javax.swing.JButton btnVenderVenderTienda;
->>>>>>> origin/master
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDialog dialogCombatir;
     private javax.swing.JDialog dialogHuir;
@@ -1316,11 +1164,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JDialog dialogTiendaVenderVender;
     private javax.swing.JTextPane historial;
     private javax.swing.JTextPane historialCombate;
-<<<<<<< HEAD
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
-=======
->>>>>>> origin/master
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
