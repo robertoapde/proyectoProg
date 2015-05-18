@@ -433,7 +433,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel21.setText("¿Desea comprar el \"articulo\"?");
         jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel21.setOpaque(true);
-        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 330, -1));
+        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 330, -1));
 
         btnAceptarCompraTienda.setForeground(new java.awt.Color(51, 51, 255));
         btnAceptarCompraTienda.setText("Aceptar");
@@ -551,36 +551,36 @@ public class VentanaHijas extends javax.swing.JFrame {
         historialCombate.setEditable(false);
         jScrollPane3.setViewportView(historialCombate);
 
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 356, 195));
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 356, 160));
 
         jLabel26.setText("Enemigo:");
-        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 256, -1, -1));
+        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         jLabel27.setText("Olonam");
-        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 256, -1, -1));
+        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         jLabel28.setText("Nv:");
-        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 256, -1, -1));
+        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
 
         jLabel29.setText("99");
-        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 256, -1, -1));
+        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
         jLabel30.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 153, 153));
         jLabel30.setText("HP:");
         jLabel30.setBorder(new javax.swing.border.MatteBorder(null));
         jLabel30.setOpaque(true);
-        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 276, -1, -1));
+        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         barraHPEn.setFocusTraversalPolicyProvider(true);
-        jPanel5.add(barraHPEn, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 276, 340, -1));
+        jPanel5.add(barraHPEn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 340, -1));
 
         jLabel31.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 153, 153));
         jLabel31.setText("0%");
         jLabel31.setBorder(new javax.swing.border.MatteBorder(null));
         jLabel31.setOpaque(true);
-        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 20, 20));
+        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 20, 20));
 
         btnAtacar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnAtacar.setForeground(new java.awt.Color(0, 0, 255));
@@ -591,7 +591,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnAtacarActionPerformed(evt);
             }
         });
-        jPanel5.add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+        jPanel5.add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, -1));
 
         btnDefender.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnDefender.setForeground(new java.awt.Color(0, 0, 255));
@@ -603,7 +603,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnDefenderActionPerformed(evt);
             }
         });
-        jPanel5.add(btnDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
+        jPanel5.add(btnDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 190, -1));
 
         btnEspecial.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnEspecial.setForeground(new java.awt.Color(255, 51, 0));
@@ -614,7 +614,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnEspecialActionPerformed(evt);
             }
         });
-        jPanel5.add(btnEspecial, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, -1));
+        jPanel5.add(btnEspecial, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 180, -1));
 
         btnMochilaCombate.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnMochilaCombate.setForeground(new java.awt.Color(0, 0, 255));
@@ -625,7 +625,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnMochilaCombateActionPerformed(evt);
             }
         });
-        jPanel5.add(btnMochilaCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 50, -1));
+        jPanel5.add(btnMochilaCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 180, -1));
 
         btnHuir.setBackground(new java.awt.Color(255, 51, 51));
         btnHuir.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -636,10 +636,10 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnHuirActionPerformed(evt);
             }
         });
-        jPanel5.add(btnHuir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 323, -1));
+        jPanel5.add(btnHuir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 370, 20));
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
-        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 0, 560, 370));
+        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, 0, 560, 370));
 
         javax.swing.GroupLayout dialogCombatirLayout = new javax.swing.GroupLayout(dialogCombatir.getContentPane());
         dialogCombatir.getContentPane().setLayout(dialogCombatirLayout);
