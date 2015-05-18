@@ -1,4 +1,4 @@
-package MVC;
+package MVC.controlador;
 
 public class Controlador {
     

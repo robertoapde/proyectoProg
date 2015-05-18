@@ -1,4 +1,4 @@
-package MVC;
+package MVC.Modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

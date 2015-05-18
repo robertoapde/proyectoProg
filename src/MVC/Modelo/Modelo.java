@@ -1,4 +1,4 @@
-package MVC;
+package MVC.Modelo;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

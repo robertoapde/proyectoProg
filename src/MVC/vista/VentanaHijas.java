@@ -1,4 +1,4 @@
-package proyectoprog;
+package MVC.vista;
 
 import java.awt.Image;
 import java.net.URL;

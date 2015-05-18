@@ -5,6 +5,7 @@
  */
 package proyectoprog;
 
+import MVC.vista.VentanaCarga;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
