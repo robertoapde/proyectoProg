@@ -42,6 +42,7 @@ public class VentanaCarga extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -69,22 +70,12 @@ public class VentanaCarga extends javax.swing.JFrame {
         btnLogin.setForeground(new java.awt.Color(51, 51, 255));
         btnLogin.setText("Inicio");
         btnLogin.setBorder(new javax.swing.border.MatteBorder(null));
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 210, 30));
 
         btnRegistrarse.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         btnRegistrarse.setForeground(java.awt.Color.red);
         btnRegistrarse.setText("Registrarse");
         btnRegistrarse.setBorder(new javax.swing.border.MatteBorder(null));
-        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarseActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 220, 30));
 
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
@@ -107,16 +98,6 @@ public class VentanaCarga extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
-    }//GEN-LAST:event_btnLoginActionPerformed
-
-    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
-       Registro per = new Registro();
-       per.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_btnRegistrarseActionPerformed
-
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -127,8 +108,8 @@ public class VentanaCarga extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnRegistrarse;
+    public javax.swing.JButton btnLogin;
+    public javax.swing.JButton btnRegistrarse;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -136,7 +117,7 @@ public class VentanaCarga extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
