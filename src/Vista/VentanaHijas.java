@@ -308,7 +308,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnAceptarAlojamiento.setForeground(new java.awt.Color(51, 51, 255));
         btnAceptarAlojamiento.setText("Aceptar");
         btnAceptarAlojamiento.setBorder(new javax.swing.border.MatteBorder(null));
-        dialogTabernaAlojamiento.getContentPane().add(btnAceptarAlojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 420, -1));
+        dialogTabernaAlojamiento.getContentPane().add(btnAceptarAlojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 141, 420, 30));
 
         btnCancelarAlojamiento.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnCancelarAlojamiento.setForeground(new java.awt.Color(255, 0, 51));
@@ -319,7 +319,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCancelarAlojamientoActionPerformed(evt);
             }
         });
-        dialogTabernaAlojamiento.getContentPane().add(btnCancelarAlojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 420, -1));
+        dialogTabernaAlojamiento.getContentPane().add(btnCancelarAlojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 420, 30));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
         dialogTabernaAlojamiento.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 240));
@@ -1132,38 +1132,38 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JProgressBar barraEP;
     private javax.swing.JProgressBar barraHP;
     private javax.swing.JProgressBar barraHPEn;
-    private javax.swing.JButton btnAceptarAlojamiento;
-    private javax.swing.JButton btnAceptarCompraTienda;
-    private javax.swing.JButton btnAceptarComprarTaberna;
-    private javax.swing.JButton btnAceptarVenderVenderTienda;
-    private javax.swing.JButton btnAlojamientoTaberna;
-    private javax.swing.JButton btnCancelarAlojamiento;
-    private javax.swing.JButton btnCancelarCompraTienda;
-    private javax.swing.JButton btnCancelarComprarTaberna;
-    private javax.swing.JButton btnCancelarVenderVenderTienda;
-    private javax.swing.JButton btnCombatir;
-    private javax.swing.JButton btnCombatirAtacar;
-    private javax.swing.JButton btnCombatirDefender;
-    private javax.swing.JButton btnCombatirEspecial;
-    private javax.swing.JButton btnCombatirHuir;
-    private javax.swing.JButton btnCombatirMochila;
-    private javax.swing.JButton btnComprarTaberna;
-    private javax.swing.JButton btnComprarTienda;
-    private javax.swing.JButton btnHuirPerder;
-    private javax.swing.JButton btnMochila;
-    private javax.swing.JButton btnMochilaEquipar;
-    private javax.swing.JButton btnMochilaSalir;
-    private javax.swing.JButton btnMochilaSoltar;
-    private javax.swing.JButton btnMochilaUsar;
-    private javax.swing.JButton btnSalirTaberna;
-    private javax.swing.JButton btnSalirTienda;
-    private javax.swing.JButton btnSalirVenderTienda;
-    private javax.swing.JButton btnSoltarAceptar;
-    private javax.swing.JButton btnSoltarCancelar;
-    private javax.swing.JButton btnTaberna;
-    private javax.swing.JButton btnTienda;
-    private javax.swing.JButton btnVenderTienda;
-    private javax.swing.JButton btnVenderVenderTienda;
+    public javax.swing.JButton btnAceptarAlojamiento;
+    public javax.swing.JButton btnAceptarCompraTienda;
+    public javax.swing.JButton btnAceptarComprarTaberna;
+    public javax.swing.JButton btnAceptarVenderVenderTienda;
+    public javax.swing.JButton btnAlojamientoTaberna;
+    public javax.swing.JButton btnCancelarAlojamiento;
+    public javax.swing.JButton btnCancelarCompraTienda;
+    public javax.swing.JButton btnCancelarComprarTaberna;
+    public javax.swing.JButton btnCancelarVenderVenderTienda;
+    public javax.swing.JButton btnCombatir;
+    public javax.swing.JButton btnCombatirAtacar;
+    public javax.swing.JButton btnCombatirDefender;
+    public javax.swing.JButton btnCombatirEspecial;
+    public javax.swing.JButton btnCombatirHuir;
+    public javax.swing.JButton btnCombatirMochila;
+    public javax.swing.JButton btnComprarTaberna;
+    public javax.swing.JButton btnComprarTienda;
+    public javax.swing.JButton btnHuirPerder;
+    public javax.swing.JButton btnMochila;
+    public javax.swing.JButton btnMochilaEquipar;
+    public javax.swing.JButton btnMochilaSalir;
+    public javax.swing.JButton btnMochilaSoltar;
+    public javax.swing.JButton btnMochilaUsar;
+    public javax.swing.JButton btnSalirTaberna;
+    public javax.swing.JButton btnSalirTienda;
+    public javax.swing.JButton btnSalirVenderTienda;
+    public javax.swing.JButton btnSoltarAceptar;
+    public javax.swing.JButton btnSoltarCancelar;
+    public javax.swing.JButton btnTaberna;
+    public javax.swing.JButton btnTienda;
+    public javax.swing.JButton btnVenderTienda;
+    public javax.swing.JButton btnVenderVenderTienda;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDialog dialogCombatir;
     private javax.swing.JDialog dialogHuir;
