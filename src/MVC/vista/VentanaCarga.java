@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import proyectoprog.CPersonajes;
-import proyectoprog.CargaUsuario;
 
 public class VentanaCarga extends javax.swing.JFrame {
     
@@ -110,26 +108,7 @@ public class VentanaCarga extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        if(txtUsuario.getText() == ""){
-            JOptionPane.showMessageDialog(null, "Introduzca un usuario");
-        }else if(txtPassword.getText() == ""){
-            JOptionPane.showMessageDialog(null, "Introduzca una contraseña");        
-        }else if(txtUsuario.getText() == "" && txtPassword.getText() == ""){
-            JOptionPane.showMessageDialog(null, "Introduzca su usuario y contraseña");
-        }else{
-            try{
-                CargaUsuario cU = new CargaUsuario(con);
-                datos = CargaUsuario.cargaDatos();
-            
-                if(txtUsuario.getText().equals(datos[0]) && txtPassword.getText().equals(datos[1])){
-                    JOptionPane.showMessageDialog(null, "Usuario y contraseña correctos");
-                }else{
-                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
-                }
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
