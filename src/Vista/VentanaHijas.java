@@ -11,7 +11,6 @@ public class VentanaHijas extends javax.swing.JFrame {
 
     public VentanaHijas() {
         initComponents();
-        //prohibe cerrar con la X
         dialogTaberna.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTienda.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogHuir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -22,11 +21,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTiendaVender.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTabernaAlojamiento.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogMochila.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        setLocationRelativeTo(null);
-       URL url = getClass().getResource("/icon/Icono_Espada.png");
-       ImageIcon img = new ImageIcon(url);
-        setIconImage(img.getImage());
-              
+        setLocationRelativeTo(null);             
     }
 
     @SuppressWarnings("unchecked")
