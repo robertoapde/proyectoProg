@@ -115,6 +115,22 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnAceptarVenderVenderTienda = new javax.swing.JButton();
         btnCancelarVenderVenderTienda = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
+        dialogCambiarContraseña = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel46 = new javax.swing.JLabel();
+        dialogMochilaCombate = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         btnTienda = new javax.swing.JButton();
         btnMochila = new javax.swing.JButton();
         btnTaberna = new javax.swing.JButton();
@@ -724,13 +740,13 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnMochilaUsar.setForeground(new java.awt.Color(0, 51, 255));
         btnMochilaUsar.setText("Usar");
         btnMochilaUsar.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel7.add(btnMochilaUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 469, 300, -1));
+        jPanel7.add(btnMochilaUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 458, 300, 30));
 
         btnMochilaEquipar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnMochilaEquipar.setForeground(new java.awt.Color(0, 51, 255));
         btnMochilaEquipar.setText("Equipar");
         btnMochilaEquipar.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel7.add(btnMochilaEquipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 506, 300, -1));
+        jPanel7.add(btnMochilaEquipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 506, 300, 30));
 
         btnMochilaSalir.setBackground(new java.awt.Color(255, 0, 0));
         btnMochilaSalir.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -741,13 +757,13 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnMochilaSalirActionPerformed(evt);
             }
         });
-        jPanel7.add(btnMochilaSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 506, 300, -1));
+        jPanel7.add(btnMochilaSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 506, 300, 30));
 
         btnMochilaSoltar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnMochilaSoltar.setForeground(new java.awt.Color(0, 51, 255));
         btnMochilaSoltar.setText("Soltar");
         btnMochilaSoltar.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel7.add(btnMochilaSoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 469, 300, -1));
+        jPanel7.add(btnMochilaSoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 458, 300, 30));
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
         jPanel7.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -10, 1170, 560));
@@ -819,6 +835,130 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
         dialogTiendaVenderVender.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -10, 460, 250));
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel44.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel44.setText("¿Seguro que quieres cambiar de contraseña?");
+        jLabel44.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel44.setOpaque(true);
+        jPanel9.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 40));
+
+        jLabel43.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel43.setText("Contraseña Nueva :");
+        jLabel43.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel43.setOpaque(true);
+        jPanel9.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 130, 20));
+
+        jLabel45.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel45.setText("Contraseña Antigua :");
+        jLabel45.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel45.setOpaque(true);
+        jPanel9.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 130, 20));
+
+        jTextField1.setBorder(new javax.swing.border.MatteBorder(null));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 320, 20));
+
+        jTextField2.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel9.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 320, 20));
+
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 204));
+        jButton1.setText("Aceptar");
+        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 200, 30));
+
+        jButton2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 0, 0));
+        jButton2.setText("Cancelar");
+        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel9.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 220, 30));
+
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.JPG"))); // NOI18N
+        jPanel9.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, -1, -1));
+
+        javax.swing.GroupLayout dialogCambiarContraseñaLayout = new javax.swing.GroupLayout(dialogCambiarContraseña.getContentPane());
+        dialogCambiarContraseña.getContentPane().setLayout(dialogCambiarContraseñaLayout);
+        dialogCambiarContraseñaLayout.setHorizontalGroup(
+            dialogCambiarContraseñaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogCambiarContraseñaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        dialogCambiarContraseñaLayout.setVerticalGroup(
+            dialogCambiarContraseñaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(jTable4);
+
+        jButton3.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 255));
+        jButton3.setText("Usar");
+        jButton3.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 0, 0));
+        jButton4.setText("Salir");
+        jButton4.setBorder(new javax.swing.border.MatteBorder(null));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout dialogMochilaCombateLayout = new javax.swing.GroupLayout(dialogMochilaCombate.getContentPane());
+        dialogMochilaCombate.getContentPane().setLayout(dialogMochilaCombateLayout);
+        dialogMochilaCombateLayout.setHorizontalGroup(
+            dialogMochilaCombateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dialogMochilaCombateLayout.setVerticalGroup(
+            dialogMochilaCombateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -1117,6 +1257,14 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogMochila.dispose();
     }//GEN-LAST:event_btnMochilaSalirActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1165,9 +1313,11 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JButton btnVenderTienda;
     public javax.swing.JButton btnVenderVenderTienda;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JDialog dialogCambiarContraseña;
     private javax.swing.JDialog dialogCombatir;
     private javax.swing.JDialog dialogHuir;
     private javax.swing.JDialog dialogMochila;
+    private javax.swing.JDialog dialogMochilaCombate;
     private javax.swing.JDialog dialogSoltar;
     private javax.swing.JDialog dialogTaberna;
     private javax.swing.JDialog dialogTabernaAlojamiento;
@@ -1178,6 +1328,10 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JDialog dialogTiendaVenderVender;
     private javax.swing.JTextPane historial;
     private javax.swing.JTextPane historialCombate;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1215,6 +1369,10 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1225,6 +1383,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1232,15 +1391,20 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTable tablaVenderT;
     // End of variables declaration//GEN-END:variables
 }
