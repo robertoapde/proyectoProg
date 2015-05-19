@@ -1,20 +1,27 @@
 package Vista;
 
-import Vista.VentanaCarga;
-import java.awt.Image;
-import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class Registro extends javax.swing.JFrame {
 
     public Registro() {
         initComponents();
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         radioPicaro = new javax.swing.JRadioButton();
         radioMago =  new javax.swing.JRadioButton();
         radioGuerrero =  new javax.swing.JRadioButton();
         radioPicaro.setText("Picaro");
         radioMago.setText("Picaro");
         radioGuerrero.setText("Picaro");
+    }
+    
+    public static void main(String args[]) {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Registro().setVisible(true);
+            }
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -41,7 +48,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setIconImage(new ImageIcon(getClass().getResource("resources/icono.png")).getImage());
+        setAlwaysOnTop(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
@@ -54,11 +61,6 @@ public class Registro extends javax.swing.JFrame {
         radioPicaro.setText("Picaro");
         radioPicaro.setBorder(new javax.swing.border.MatteBorder(null));
         radioPicaro.setBorderPainted(true);
-        radioPicaro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioPicaroActionPerformed(evt);
-            }
-        });
         getContentPane().add(radioPicaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 80, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mago.jpg"))); // NOI18N
@@ -75,11 +77,6 @@ public class Registro extends javax.swing.JFrame {
         radioMago.setText("Mago");
         radioMago.setBorder(new javax.swing.border.MatteBorder(null));
         radioMago.setBorderPainted(true);
-        radioMago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioMagoActionPerformed(evt);
-            }
-        });
         getContentPane().add(radioMago, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 70, 20));
 
         buttonGroup1.add(radioGuerrero);
@@ -95,11 +92,6 @@ public class Registro extends javax.swing.JFrame {
         btnRegistrarseComenzar.setForeground(new java.awt.Color(51, 51, 255));
         btnRegistrarseComenzar.setText("Comienza la aventura");
         btnRegistrarseComenzar.setBorder(new javax.swing.border.MatteBorder(null));
-        btnRegistrarseComenzar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarseComenzarActionPerformed(evt);
-            }
-        });
         getContentPane().add(btnRegistrarseComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 323, 227, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
@@ -147,11 +139,6 @@ public class Registro extends javax.swing.JFrame {
         btnRegistrarseSalir.setForeground(new java.awt.Color(255, 0, 0));
         btnRegistrarseSalir.setText("Salir");
         btnRegistrarseSalir.setBorder(new javax.swing.border.MatteBorder(null));
-        btnRegistrarseSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarseSalirActionPerformed(evt);
-            }
-        });
         getContentPane().add(btnRegistrarseSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 323, 250, 30));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
@@ -159,38 +146,6 @@ public class Registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void radioPicaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPicaroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioPicaroActionPerformed
-
-    private void radioMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMagoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioMagoActionPerformed
-
-    private void btnRegistrarseSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseSalirActionPerformed
-        VentanaCarga vc = new VentanaCarga();
-        vc.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btnRegistrarseSalirActionPerformed
-
-    private void btnRegistrarseComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseComenzarActionPerformed
-        
-    }//GEN-LAST:event_btnRegistrarseComenzarActionPerformed
-
-    public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registro().setVisible(true);
-            }
-        });
-    }
-      
-    
-    
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistrarseComenzar;
     public javax.swing.JButton btnRegistrarseSalir;

@@ -11,6 +11,8 @@ public class VentanaHijas extends javax.swing.JFrame {
 
     public VentanaHijas() {
         initComponents();
+        this.setTitle("Inicio de sesión");
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTaberna.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTienda.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogHuir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -21,7 +23,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTiendaVender.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTabernaAlojamiento.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogMochila.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        setLocationRelativeTo(null);             
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -152,7 +154,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        historialScroll = new javax.swing.JScrollPane();
         historial = new javax.swing.JTextPane();
         jLabel39 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -1114,9 +1116,9 @@ public class VentanaHijas extends javax.swing.JFrame {
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 100, 100));
 
         historial.setEditable(false);
-        jScrollPane4.setViewportView(historial);
+        historialScroll.setViewportView(historial);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 160, 180));
+        getContentPane().add(historialScroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 160, 180));
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
         getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 290));
@@ -1254,15 +1256,15 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMochilaActionPerformed
 
     private void btnMochilaSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMochilaSalirActionPerformed
-        dialogMochila.dispose();
+
     }//GEN-LAST:event_btnMochilaSalirActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
@@ -1328,6 +1330,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JDialog dialogTiendaVenderVender;
     private javax.swing.JTextPane historial;
     private javax.swing.JTextPane historialCombate;
+    private javax.swing.JScrollPane historialScroll;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1395,7 +1398,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;

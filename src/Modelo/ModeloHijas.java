@@ -4,9 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import Vista.VentanaCarga;
-import Vista.VentanaHijas;
-import javax.swing.JOptionPane;
 
 public class ModeloHijas extends Database{
     

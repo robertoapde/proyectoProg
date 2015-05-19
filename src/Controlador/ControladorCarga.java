@@ -10,9 +10,9 @@ import javax.swing.JOptionPane;
 
 public class ControladorCarga implements ActionListener{
     
-    VentanaCarga vista1;
-    Registro vista2;
-    VentanaHijas vista3;
+    VentanaCarga vista1 = new VentanaCarga();
+    Registro vista2 = new Registro();
+    VentanaHijas vista3 = new VentanaHijas();
     String usuario;
     
     ModeloCarga modelo = new ModeloCarga();
@@ -78,6 +78,8 @@ public class ControladorCarga implements ActionListener{
             case btnRegistrarseComenzar:
                 break;
             case btnRegistrarseSalir:
+                vista1.setVisible(true);
+                vista2.dispose();
                 break;
         }
     }

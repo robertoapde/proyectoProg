@@ -1,7 +1,5 @@
 package Controlador;
 
-import Modelo.ModeloHijas;
-import Vista.VentanaHijas;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -15,7 +13,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class ControladorHijas implements ActionListener, MouseListener{
-
+    
     VentanaHijas vista ;
     
     ModeloHijas modelo = new ModeloHijas();
