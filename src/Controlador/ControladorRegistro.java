@@ -22,8 +22,9 @@ public class ControladorRegistro implements ActionListener{
         this.vista2 = vista2;
     }
     
-    public void inicio (){
+    public void iniciar(){
         this.vista2.setVisible(true);
+        
         this.vista2.btnRegistrarseComenzar.setActionCommand("btnRegistrarseComenzar");
         this.vista2.btnRegistrarseComenzar.addActionListener(this);
         this.vista2.btnRegistrarseSalir.setActionCommand("btnRegistrarseSalir");
@@ -44,15 +45,35 @@ public class ControladorRegistro implements ActionListener{
                     }else{
                         if(contraseña.equals(confContraseña)){
                             if(this.vista2.radioPicaro.isSelected()){
-                                if(modeloR.nuevoPicaro(user, contraseña, email) == true){
+                                boolean creado;
+                                creado = modeloR.nuevoPicaro(user, contraseña, email);
+                                if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
                                     vista1.setVisible(true);
                                     vista2.dispose();
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Error al crear picaro");
                                 }
                             }else if(this.vista2.radioMago.isSelected()){
-                                
+                                boolean creado;
+                                creado = modeloR.nuevoMago(user, contraseña, email);
+                                if(creado == true){
+                                    JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
+                                    vista1.setVisible(true);
+                                    vista2.dispose();
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Error al crear mago");
+                                }
                             }else if(this.vista2.radioGuerrero.isSelected()){
-                                
+                                boolean creado;
+                                creado = modeloR.nuevoGuerrero(user, contraseña, email);
+                                if(creado == true){
+                                    JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
+                                    vista1.setVisible(true);
+                                    vista2.dispose();
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Error al crear guerrero");
+                                }
                             }else{
                                 JOptionPane.showMessageDialog(null,"Seleccione una de las clases disponibles");
                             }
@@ -62,10 +83,12 @@ public class ControladorRegistro implements ActionListener{
                     }
                     
                 }catch(Exception ex){
-                    JOptionPane.showMessageDialog(null, "Error al conectar");
+                    JOptionPane.showMessageDialog(null, "Error al crear");
                 }
                  break;
             case btnRegistrarseSalir:
+                this.vista1.setSize(580, 390);
+                this.vista1.setLocation(150,150);
                 vista1.setVisible(true);
                 vista2.dispose();
                 break;
