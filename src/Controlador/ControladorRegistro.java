@@ -47,30 +47,8 @@ public class ControladorRegistro implements ActionListener{
                     String ConfContraseña=this.vista2.jTextConfiContraseña.getText();
                     String Email = this.vista2.jTextEmail.getText();
                     
-                    if(User.equals("")){
-                        JOptionPane.showMessageDialog(null,"rellene el campo usuario");
-                    }else if(Contraseña.equals("")){
-                        JOptionPane.showMessageDialog(null,"rellene el campo contraseña");
-                    }else if(ConfContraseña.equals("")){
-                        JOptionPane.showMessageDialog(null,"Tiene que confirmar la contraseña");
-                    }else if(Contraseña != ConfContraseña){
-                        JOptionPane.showMessageDialog(null,"La contraseñas no coinciden");
-                    }else if (Email.equals("")){
-                        JOptionPane.showMessageDialog(null,"rellene el campo email");
-                    }else if(User.equals("") && Contraseña.equals("")){
-                         JOptionPane.showMessageDialog(null,"rellene los campos en blanco");
-                    }else if(User.equals("") && ConfContraseña.equals("")){
-                         JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
-                     }else if(User.equals("") && Email.equals("")){
-                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
-                    }else if(Contraseña.equals("") && ConfContraseña.equals("")){
-                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
-                    }else if(Contraseña.equals("") && Email.equals("")){
-                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
-                    }else if(ConfContraseña.equals("") && Email.equals("")){
-                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
-                    }else if(User.equals("") && Contraseña.equals("") && ConfContraseña.equals("") && Email.equals("")){
-                         JOptionPane.showMessageDialog(null,"rellene los campos en blanco");
+                    if(User.equals("") || Contraseña.equals("") || ConfContraseña.equals("") || Email.equals("")){
+                        JOptionPane.showMessageDialog(null,"rellene los campos en blanco");
                     }
                     
                 }catch(Exception ex){

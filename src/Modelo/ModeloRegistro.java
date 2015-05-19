@@ -5,10 +5,16 @@
  */
 package Modelo;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Rob
  */
 public class ModeloRegistro {
+    public ModeloRegistro(){
+        
+    }
+    DefaultTableModel
     
 }
