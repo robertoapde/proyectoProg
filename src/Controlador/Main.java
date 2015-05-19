@@ -1,6 +1,5 @@
 package Controlador;
 import Vista.VentanaCarga;
-import javax.swing.JOptionPane;
 
 public class Main {
     

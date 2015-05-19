@@ -6,14 +6,9 @@ import Vista.VentanaCarga;
 import Vista.VentanaHijas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
-public class ControladorCarga implements ActionListener, MouseListener{
+public class ControladorCarga implements ActionListener{
     
     VentanaCarga vista1;
     Registro vista2;
@@ -47,6 +42,7 @@ public class ControladorCarga implements ActionListener, MouseListener{
         this.vista2.btnRegistrarseSalir.addActionListener(this);
     }
     
+    @Override
     public void actionPerformed(ActionEvent e) {
         switch (AccionMVC.valueOf(e.getActionCommand())){
             case btnLogin:
@@ -54,14 +50,14 @@ public class ControladorCarga implements ActionListener, MouseListener{
                     String u = this.vista1.txtUsuario.getText();
                     String p = this.vista1.txtPassword.getText();
                     
-                    if(u == ""){
+                    if(u.equals("")){
                         JOptionPane.showMessageDialog(null, "Introduzca un usuario");
-                    }else if(p == ""){
+                    }else if(p.equals("")){
                         JOptionPane.showMessageDialog(null, "Introduzca una contraseña");        
-                    }else if(u == "" && p == ""){
+                    }else if(u.equals("") && p.equals("")){
                         JOptionPane.showMessageDialog(null, "Introduzca su usuario y contraseña");
                     }else{
-                        if(this.modelo.login(u, p) == true){
+                        if(this.modelo.login(u, p) == 1){
                             vista3.setSize(480, 300);
                             vista3.setLocation(150,150);
                             vista3.setVisible(true);
@@ -85,14 +81,4 @@ public class ControladorCarga implements ActionListener, MouseListener{
                 break;
         }
     }
-    
-    public void mouseClicked(MouseEvent e) {}
-    
-    public void mousePressed(MouseEvent e) {}
-
-    public void mouseReleased(MouseEvent e) {}
-
-    public void mouseEntered(MouseEvent e) {}
-
-    public void mouseExited(MouseEvent e) {}
 }
