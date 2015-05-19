@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    private  String db = "dam26_dbtest";
+    private  String db = "dam26_proyectoPrueba";
     private String user = "dam26";
     private String password = "Mazuecos14";
     private String url = "jdbc:mysql://88.26.202.99:3306"+db;
@@ -19,10 +19,10 @@ public Database(){
             conn = DriverManager.getConnection( this.url, this.user , this.password );    
             System.out.println("Conexion realizada con exito.");
         }catch(SQLException e){
-            System.out.println("Conexion NO realizada con exito.");
+            System.out.println("Conexion NO realizada con exito por error de SQL.");
             System.err.println( e.getMessage() );
         }catch(ClassNotFoundException e){
-            System.out.println("Conexion NO realizada con exito.");
+            System.out.println("Conexion NO realizada con exito por error de Class.");
             System.err.println( e.getMessage() );
         } 
     }
