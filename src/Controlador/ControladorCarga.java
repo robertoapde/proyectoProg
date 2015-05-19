@@ -18,6 +18,7 @@ public class ControladorCarga implements ActionListener, MouseListener{
     VentanaCarga vista1;
     Registro vista2;
     VentanaHijas vista3;
+    String usuario;
     
     ModeloCarga modelo = new ModeloCarga();
     
@@ -28,10 +29,9 @@ public class ControladorCarga implements ActionListener, MouseListener{
         btnRegistrarseSalir
     }
     
-    public ControladorCarga(VentanaCarga vista1, Registro vista2)
+    public ControladorCarga(VentanaCarga vista1)
     {
         this.vista1 = vista1;
-        this.vista2 = vista2;
     }
     
     public void iniciar(){
@@ -53,12 +53,22 @@ public class ControladorCarga implements ActionListener, MouseListener{
                 try{
                     String u = this.vista1.txtUsuario.getText();
                     String p = this.vista1.txtPassword.getText();
-                    if(this.modelo.login(u, p) == true){
-                        vista3.setSize(480, 300);
-                        vista3.setLocation(150,150);
-                        vista3.setVisible(true);
+                    
+                    if(u == ""){
+                        JOptionPane.showMessageDialog(null, "Introduzca un usuario");
+                    }else if(p == ""){
+                        JOptionPane.showMessageDialog(null, "Introduzca una contraseña");        
+                    }else if(u == "" && p == ""){
+                        JOptionPane.showMessageDialog(null, "Introduzca su usuario y contraseña");
                     }else{
-                        JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
+                        if(this.modelo.login(u, p) == true){
+                            vista3.setSize(480, 300);
+                            vista3.setLocation(150,150);
+                            vista3.setVisible(true);
+                            usuario = u;
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
+                        }
                     }
                 }catch(Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al conectar");

@@ -1,20 +1,10 @@
 package Vista;
 
-import Modelo.Database;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
-
 public class VentanaCarga extends javax.swing.JFrame {
-    
-    Database conexion = new Database();
-    Connection con = conexion.getConexion();
-    String[] datos = new String[2];
 
     public VentanaCarga() {
         initComponents();
+        this.setTitle("Inicio de sesión");
     }
 
     @SuppressWarnings("unchecked")

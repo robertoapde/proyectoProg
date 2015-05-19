@@ -15,13 +15,6 @@ public class ModeloCarga extends Database{
     
     public boolean login(String u, String p){
         boolean resu = false;
-        if(u == ""){
-            JOptionPane.showMessageDialog(null, "Introduzca un usuario");
-        }else if(p == ""){
-            JOptionPane.showMessageDialog(null, "Introduzca una contraseña");        
-        }else if(u == "" && p == ""){
-            JOptionPane.showMessageDialog(null, "Introduzca su usuario y contraseña");
-        }else{
             try{
                 String q = "SELECT Nombre, Contraseña FROM Usuario WHERE Nombre = "+u;
                 PreparedStatement pstm = this.getConexion().prepareStatement(q);
@@ -35,7 +28,6 @@ public class ModeloCarga extends Database{
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Error de inicio de sesión");
             }
-        }
         return resu;
     }
     
