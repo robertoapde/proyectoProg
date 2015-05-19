@@ -139,6 +139,11 @@ public class Registro extends javax.swing.JFrame {
         btnRegistrarseSalir.setForeground(new java.awt.Color(255, 0, 0));
         btnRegistrarseSalir.setText("Salir");
         btnRegistrarseSalir.setBorder(new javax.swing.border.MatteBorder(null));
+        btnRegistrarseSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseSalirActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnRegistrarseSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 323, 250, 30));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
@@ -146,6 +151,12 @@ public class Registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarseSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseSalirActionPerformed
+          
+            
+    }//GEN-LAST:event_btnRegistrarseSalirActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistrarseComenzar;
     public javax.swing.JButton btnRegistrarseSalir;
@@ -158,9 +169,9 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextConfiContraseña;
-    private javax.swing.JTextField jTextContraseña;
-    private javax.swing.JTextField jTextEmail;
+    public javax.swing.JTextField jTextConfiContraseña;
+    public javax.swing.JTextField jTextContraseña;
+    public javax.swing.JTextField jTextEmail;
     public javax.swing.JTextField jTextUsuario;
     private javax.swing.JRadioButton radioGuerrero;
     private javax.swing.JRadioButton radioMago;

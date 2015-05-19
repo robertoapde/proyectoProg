@@ -1,7 +1,7 @@
 package Vista;
 
 public class VentanaCarga extends javax.swing.JFrame {
-
+   
     public VentanaCarga() {
         initComponents();
         this.setTitle("Inicio de sesión");
@@ -67,6 +67,11 @@ public class VentanaCarga extends javax.swing.JFrame {
         btnRegistrarse.setForeground(java.awt.Color.red);
         btnRegistrarse.setText("Registrarse");
         btnRegistrarse.setBorder(new javax.swing.border.MatteBorder(null));
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 220, 30));
 
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
@@ -88,6 +93,10 @@ public class VentanaCarga extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+            
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     public static void main(String args[]) {
 

@@ -7,12 +7,14 @@ package Controlador;
 
 import Modelo.ModeloRegistro;
 import Vista.Registro;
+import Vista.VentanaCarga;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 
 public class ControladorRegistro implements ActionListener{
-    
+    VentanaCarga vista1 = new VentanaCarga();
     Registro vista2 = new Registro();
     ModeloRegistro modeloR = new ModeloRegistro();
 
@@ -40,9 +42,45 @@ public class ControladorRegistro implements ActionListener{
         switch(AccionMVC.valueOf(e.getActionCommand())){
             case btnRegistrarseComenzar:
                 try{
-                    String user = this.vista2.jTextUsuario.getText();
+                    String User = this.vista2.jTextUsuario.getText();
+                    String Contraseña = this.vista2.jTextContraseña.getText();
+                    String ConfContraseña=this.vista2.jTextConfiContraseña.getText();
+                    String Email = this.vista2.jTextEmail.getText();
                     
+                    if(User.equals("")){
+                        JOptionPane.showMessageDialog(null,"rellene el campo usuario");
+                    }else if(Contraseña.equals("")){
+                        JOptionPane.showMessageDialog(null,"rellene el campo contraseña");
+                    }else if(ConfContraseña.equals("")){
+                        JOptionPane.showMessageDialog(null,"Tiene que confirmar la contraseña");
+                    }else if(Contraseña != ConfContraseña){
+                        JOptionPane.showMessageDialog(null,"La contraseñas no coinciden");
+                    }else if (Email.equals("")){
+                        JOptionPane.showMessageDialog(null,"rellene el campo email");
+                    }else if(User.equals("") && Contraseña.equals("")){
+                         JOptionPane.showMessageDialog(null,"rellene los campos en blanco");
+                    }else if(User.equals("") && ConfContraseña.equals("")){
+                         JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
+                     }else if(User.equals("") && Email.equals("")){
+                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
+                    }else if(Contraseña.equals("") && ConfContraseña.equals("")){
+                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
+                    }else if(Contraseña.equals("") && Email.equals("")){
+                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
+                    }else if(ConfContraseña.equals("") && Email.equals("")){
+                        JOptionPane.showMessageDialog(null, "rellene los campos en blanco");
+                    }else if(User.equals("") && Contraseña.equals("") && ConfContraseña.equals("") && Email.equals("")){
+                         JOptionPane.showMessageDialog(null,"rellene los campos en blanco");
+                    }
+                    
+                }catch(Exception ex){
+                    JOptionPane.showMessageDialog(null, "Error al conectar");
                 }
+                 break;
+            case btnRegistrarseSalir:
+                vista1.setVisible(true);
+                vista2.dispose();
+                break;
         }
     }
 }

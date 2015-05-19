@@ -26,6 +26,7 @@ public class ControladorCarga implements ActionListener{
     public ControladorCarga(VentanaCarga vista1)
     {
         this.vista1 = vista1;
+        
     }
     
     public void iniciar(){
@@ -54,9 +55,9 @@ public class ControladorCarga implements ActionListener{
                         JOptionPane.showMessageDialog(null, "Introduzca su usuario y contraseña");
                     }else{
                         if(this.modelo.login(u, p) == 1){
-                            vista3.setSize(480, 300);
-                            vista3.setLocation(150,150);
-                            vista3.setVisible(true);
+                            this.vista3.setSize(480, 300);
+                            this.vista3.setLocation(150,150);
+                            this.vista3.setVisible(true);
                             usuario = u;
                         }else{
                             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
@@ -67,16 +68,16 @@ public class ControladorCarga implements ActionListener{
                 }
                 break;
             case btnRegistrarse:
-                vista2.setSize(580, 390);
-                vista2.setLocation(150,150);
-                vista2.setVisible(true);
+            
+                this.vista2.setSize(580, 390);
+                this.vista2.setLocation(150,150);
+                this.vista2.setVisible(true);
+                this.vista1.dispose();
                 break;
-            case btnRegistrarseComenzar:
-                break;
-            case btnRegistrarseSalir:
-                vista1.setVisible(true);
-                vista2.dispose();
-                break;
+            
         }
+                                              
+    
+  
     }
 }
