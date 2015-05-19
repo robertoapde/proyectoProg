@@ -161,7 +161,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField jTextConfiContraseña;
     private javax.swing.JTextField jTextContraseña;
     private javax.swing.JTextField jTextEmail;
-    private javax.swing.JTextField jTextUsuario;
+    public javax.swing.JTextField jTextUsuario;
     private javax.swing.JRadioButton radioGuerrero;
     private javax.swing.JRadioButton radioMago;
     private javax.swing.JRadioButton radioPicaro;
