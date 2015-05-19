@@ -1,9 +1,5 @@
 package Controlador;
 
-
-
-import Modelo.ModeloHijas;
-import Vista.VentanaHijas;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -13,9 +9,7 @@ import Vista.VentanaHijas;
 
 import Modelo.ModeloHijas;
 import Vista.VentanaCarga;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.table.DefaultTableModel;
 
 public class ControladorHijas implements ActionListener, MouseListener{
 
@@ -137,6 +131,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnCancelarVenderVenderTienda.setActionCommand("btnCancelarVenderVenderTienda");
         this.vista.btnCancelarVenderVenderTienda.addActionListener(this);
         
+        this.vista.tablaTienda.addMouseListener(this);
+        this.vista.tablaTienda.setModel(modelo.getTablaTienda());
+        
+        this.vista.tablaTaberna.addMouseListener(this);
+        this.vista.tablaTaberna.setModel(modelo.getTablaTaberna());
     }
     
     public void actionPerformed(ActionEvent e) {
