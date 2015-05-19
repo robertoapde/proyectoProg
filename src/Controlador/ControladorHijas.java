@@ -80,7 +80,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnTienda.addActionListener(this);
         this.vista.btnTaberna.setActionCommand("btnTaberna");
         this.vista.btnTaberna.addActionListener(this);
-        this.vista.btnComprarTaberna.setActionCommand("dialogComprarTaberna");
+        this.vista.btnComprarTaberna.setActionCommand("btnComprarTaberna");
         this.vista.btnComprarTaberna.addActionListener(this);
         this.vista.btnAlojamientoTaberna.setActionCommand("btnAlojamientoTaberna");
         this.vista.btnAlojamientoTaberna.addActionListener(this);
