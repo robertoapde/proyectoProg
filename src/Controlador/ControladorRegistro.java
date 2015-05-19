@@ -44,7 +44,7 @@ public class ControladorRegistro implements ActionListener{
                         JOptionPane.showMessageDialog(null,"Rellene todos los campos necesarios");
                     }else{
                         if(contraseña.equals(confContraseña)){
-                            if(this.vista2.radioPicaro.isSelected()){
+                            if(this.vista2.radioPicaro.isSelected() == true){
                                 boolean creado;
                                 creado = modeloR.nuevoPicaro(user, contraseña, email);
                                 if(creado == true){
@@ -54,7 +54,7 @@ public class ControladorRegistro implements ActionListener{
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear picaro");
                                 }
-                            }else if(this.vista2.radioMago.isSelected()){
+                            }else if(this.vista2.radioMago.isSelected() == true){
                                 boolean creado;
                                 creado = modeloR.nuevoMago(user, contraseña, email);
                                 if(creado == true){
@@ -64,7 +64,7 @@ public class ControladorRegistro implements ActionListener{
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear mago");
                                 }
-                            }else if(this.vista2.radioGuerrero.isSelected()){
+                            }else if(this.vista2.radioGuerrero.isSelected() == true){
                                 boolean creado;
                                 creado = modeloR.nuevoGuerrero(user, contraseña, email);
                                 if(creado == true){

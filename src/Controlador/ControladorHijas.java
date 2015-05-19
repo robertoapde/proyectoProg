@@ -12,13 +12,15 @@ import java.awt.event.ActionEvent;
 import Vista.VentanaHijas;
 
 import Modelo.ModeloHijas;
+import Vista.VentanaCarga;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class ControladorHijas implements ActionListener, MouseListener{
 
-    VentanaHijas vista ;
+    VentanaHijas vista;
+    VentanaCarga vista2;
     ModeloHijas modelo = new ModeloHijas();
     
     
@@ -68,15 +70,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
     }
     
    public void iniciar(){
-        try{
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            SwingUtilities.updateComponentTreeUI(vista);
-            vista.setVisible(true);
-        }catch (UnsupportedLookAndFeelException ex){}
-        catch (ClassNotFoundException ex){}
-        catch (InstantiationException ex){}
-        catch (IllegalAccessException ex){}
-        
+        this.vista.setVisible(true);
+       
         this.vista.btnCombatir.setActionCommand("btnCombatir");
         this.vista.btnCombatir.addActionListener(this);
         this.vista.btnMochila.setActionCommand("btnMochila");
