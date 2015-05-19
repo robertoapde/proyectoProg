@@ -35,7 +35,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTabernaCompra = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaTaberna = new javax.swing.JTable();
         btnAceptarComprarTaberna = new javax.swing.JButton();
         btnCancelarComprarTaberna = new javax.swing.JButton();
         dialogTabernaAlojamiento = new javax.swing.JDialog();
@@ -48,7 +48,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTienda = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaTienda = new javax.swing.JTable();
         btnComprarTienda = new javax.swing.JButton();
         btnVenderTienda = new javax.swing.JButton();
         btnSalirTienda = new javax.swing.JButton();
@@ -217,7 +217,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         dialogTabernaCompra.setResizable(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTaberna.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -249,7 +249,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaTaberna);
 
         btnAceptarComprarTaberna.setText("Aceptar");
 
@@ -340,7 +340,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         dialogTienda.setResizable(false);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTienda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -361,7 +361,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tablaTienda);
 
         btnComprarTienda.setText("Comprar");
         btnComprarTienda.addActionListener(new java.awt.event.ActionListener() {
@@ -1382,12 +1382,12 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    public javax.swing.JTable tablaTaberna;
+    public javax.swing.JTable tablaTienda;
     private javax.swing.JTable tablaVenderT;
     // End of variables declaration//GEN-END:variables
 }

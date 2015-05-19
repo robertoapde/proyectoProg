@@ -6,6 +6,7 @@ import Vista.VentanaCarga;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import org.w3c.dom.events.MouseEvent;
 
 
 public class ControladorRegistro implements ActionListener{
@@ -58,7 +59,7 @@ public class ControladorRegistro implements ActionListener{
                                 boolean creado;
                                 creado = modeloR.nuevoMago(user, contraseña, email);
                                 if(creado == true){
-                                    JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
+                                    JOptionPane.showMessageDialog(null, "Mago "+user+" creado");
                                     vista1.setVisible(true);
                                     vista2.dispose();
                                 }else{
@@ -68,7 +69,7 @@ public class ControladorRegistro implements ActionListener{
                                 boolean creado;
                                 creado = modeloR.nuevoGuerrero(user, contraseña, email);
                                 if(creado == true){
-                                    JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
+                                    JOptionPane.showMessageDialog(null, "Guerrero "+user+" creado");
                                     vista1.setVisible(true);
                                     vista2.dispose();
                                 }else{
