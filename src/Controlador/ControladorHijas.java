@@ -1,5 +1,9 @@
 package Controlador;
 
+
+
+import Modelo.ModeloHijas;
+import Vista.VentanaHijas;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -13,11 +17,11 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class ControladorHijas implements ActionListener, MouseListener{
-    
-    VentanaHijas vista ;
-    
-    ModeloHijas modelo = new ModeloHijas();
 
+    VentanaHijas vista ;
+    ModeloHijas modelo = new ModeloHijas();
+    
+    
     public enum AccionMVC{
     btnCombatir,
     btnMochila,
@@ -50,12 +54,17 @@ public class ControladorHijas implements ActionListener, MouseListener{
     btnSoltarAceptar,
     btnSoltarCancelar,
     btnAceptarVenderVenderTienda,
-    btnCancelarVenderVenderTienda
+    btnCancelarVenderVenderTienda,
+    
+    btnSalirMochilaCombate,
+    btnUsarMochilaCombate,
+    btnAceptarCambiarContraseña,
+    btnCancelarCambiarContraseña
     }
     
-    public ControladorHijas(VentanaHijas vista)
-    {
+    public ControladorHijas(VentanaHijas vista){
         this.vista = vista;
+        
     }
     
    public void iniciar(){
@@ -139,40 +148,68 @@ public class ControladorHijas implements ActionListener, MouseListener{
         switch ( AccionMVC.valueOf( e.getActionCommand() ) )
         {
             case btnCombatir:
+
                 break;
             case  btnMochila:
+                this.vista.dialogMochila.setSize(725,625);//ancho , largo
+                this.vista.dialogMochila.setLocation(100,100);
+                this.vista.dialogMochila.setVisible(true);
                 break;
             case btnTienda:
+                this.vista.dialogTienda.setSize(625,700);
+                this.vista.dialogTienda.setLocation(100,100);
+                this.vista.dialogTienda.setVisible(true);
                 break;
             case btnTaberna:
+                this.vista.dialogTaberna.setSize(540,400);
+                this.vista.dialogTaberna.setLocation(150,150);
+                this.vista.dialogTaberna.setVisible(true);
                 break;
             case btnComprarTaberna:
+                this.vista.dialogTabernaCompra.setSize(400,400);
+                this.vista.dialogTabernaCompra.setLocation(150,150);
+                this.vista.dialogTabernaCompra.setVisible(true);
                 break;
             case btnAlojamientoTaberna:
+                this.vista.dialogTabernaAlojamiento.setSize(300,250);
+                this.vista.dialogTabernaAlojamiento.setLocation(150,150);
+                this.vista.dialogTabernaAlojamiento.setVisible(true);
                 break;
             case btnSalirTaberna:
+                this.vista.dialogTaberna.dispose();
                 break;
             case btnAceptarComprarTaberna:
                 break;
             case btnCancelarComprarTaberna:
+                this.vista.dialogTabernaCompra.dispose();
                 break;
             case btnAceptarAlojamiento:
                 break;
             case btnCancelarAlojamiento:
+                this.vista.dialogTabernaAlojamiento.dispose();
                 break;
             case btnComprarTienda:
+                this.vista.dialogTiendaComprar.setSize(400,350);
+                this.vista.dialogTiendaComprar.setLocation(100,100);
+                this.vista.dialogTiendaComprar.setVisible(true);
                 break;
             case btnVenderTienda:
+                this.vista.dialogTiendaVender.setSize(420,350);
+                this.vista.dialogTiendaVender.setLocation(100,100);
+                this.vista.dialogTiendaVender.setVisible(true);
                 break;   
             case btnSalirTienda:
+                this.vista.dialogTienda.dispose();
                 break;
             case btnAceptarCompraTienda:
                 break;
             case btnCancelarCompraTienda:
+                this.vista.dialogTiendaComprar.dispose();
                 break;    
             case btnVenderVenderTienda:
                 break;
             case btnSalirVenderTienda:
+                this.vista.dialogTiendaVender.dispose();
                 break;
             case btnCombatirAtacar:
                 break;    
@@ -185,6 +222,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnCombatirHuir:
                 break;
             case btnHuirPerder:
+                this.vista.dialogHuir.dispose();
                 break; 
             case btnMochilaUsar:
                 break;
@@ -193,15 +231,30 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnMochilaEquipar:
                 break;
             case btnMochilaSalir:
+                this.vista.dialogMochila.dispose();
                 break;
             case btnSoltarAceptar:
                 break;
             case btnSoltarCancelar:
+                this.vista.dialogSoltar.dispose();
                 break;    
             case btnAceptarVenderVenderTienda:
                 break;  
             case btnCancelarVenderVenderTienda:
-                break;    
+                this.vista.dialogTiendaVenderVender.dispose();
+                break;
+            case btnSalirMochilaCombate:
+                this.vista.dialogMochilaCombate.dispose();
+                break;
+            case btnUsarMochilaCombate:
+                
+                break;
+            case btnAceptarCambiarContraseña:
+                
+                break;
+            case btnCancelarCambiarContraseña:
+                this.vista.dialogCambiarContraseña.dispose();
+                break;
         }
     }
     
