@@ -964,7 +964,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         btnTienda.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnTienda.setForeground(new java.awt.Color(51, 51, 255));
-        btnTienda.setText("Tienda");
+        btnTienda.setText("Mercado");
         btnTienda.setBorder(new javax.swing.border.MatteBorder(null));
         btnTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1184,44 +1184,27 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirTabernaActionPerformed
 
     private void btnCombatirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCombatirActionPerformed
-        historialString = historialString + "\n¡Combate iniciado!";
-        historial.setText(historialString);
-        historialCombateString = historialCombateString + "\n¡Olonam salvaje ha aparecido!";
-        historialCombate.setText(historialCombateString);
-        dialogCombatir.setSize(382, 410);
-        dialogCombatir.setLocation(450, 325);
-        dialogCombatir.setVisible(true);
+        
     }//GEN-LAST:event_btnCombatirActionPerformed
 
     private void btnCombatirAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCombatirAtacarActionPerformed
-        historialCombateString = historialCombateString + "\nHa intentado atacar a Olonam, pero como es muy fuerte, esquiva fácilmente tus ataques.";
-        historialCombate.setText(historialCombateString);
+        
     }//GEN-LAST:event_btnCombatirAtacarActionPerformed
 
     private void btnCombatirDefenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCombatirDefenderActionPerformed
-        historialCombateString = historialCombateString + "\nNo puedes defenderte porque no quiero.";
-        historialCombate.setText(historialCombateString);
+        
     }//GEN-LAST:event_btnCombatirDefenderActionPerformed
 
     private void btnCombatirEspecialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCombatirEspecialActionPerformed
-        historialCombateString = historialCombateString + "\nNo, lo siento, no tienes nada de especial.";
-        historialCombate.setText(historialCombateString);
+        
     }//GEN-LAST:event_btnCombatirEspecialActionPerformed
 
     private void btnCombatirMochilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCombatirMochilaActionPerformed
-        historialCombateString = historialCombateString + "\nNo tienes mochila, porque eres pobre y ni siquiera llevas ropa puesta.";
-        historialCombate.setText(historialCombateString);
+        
     }//GEN-LAST:event_btnCombatirMochilaActionPerformed
 
     private void btnCombatirHuirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCombatirHuirActionPerformed
-        historialCombateString = "Historial de combate:";
-        historialCombate.setText(historialCombateString);
-        dialogCombatir.dispose();
-        dialogHuir.setSize(470,640);
-        dialogHuir.setLocation(100,100);
-        dialogHuir.setVisible(true);
-        historialString = historialString + "\nCombate finalizado.";
-        historial.setText(historialString);
+        
     }//GEN-LAST:event_btnCombatirHuirActionPerformed
 
     private void btnHuirPerderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuirPerderActionPerformed
@@ -1309,8 +1292,8 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JDialog dialogTiendaComprar;
     public javax.swing.JDialog dialogTiendaVender;
     public javax.swing.JDialog dialogTiendaVenderVender;
-    private javax.swing.JTextPane historial;
-    private javax.swing.JTextPane historialCombate;
+    public javax.swing.JTextPane historial;
+    public javax.swing.JTextPane historialCombate;
     private javax.swing.JScrollPane historialScroll;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

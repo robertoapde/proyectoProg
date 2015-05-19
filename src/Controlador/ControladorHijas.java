@@ -17,6 +17,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
     VentanaCarga vista2;
     ModeloHijas modelo = new ModeloHijas();
     
+    String historialString = "Historial de partida:";
+    String historialCombateString = "Historial de combate: "; 
+    
     
     public enum AccionMVC{
     btnCombatir,
@@ -142,19 +145,31 @@ public class ControladorHijas implements ActionListener, MouseListener{
         switch ( AccionMVC.valueOf( e.getActionCommand() ) )
         {
             case btnCombatir:
-
+                historialString = historialString + "\n¡Combate iniciado!";
+                vista.historial.setText(historialString);
+                historialCombateString = historialCombateString + "\n¡Olonam salvaje ha aparecido!";
+                vista.historialCombate.setText(historialCombateString);
+                vista.dialogCombatir.setSize(382, 410);
+                vista.dialogCombatir.setLocation(450, 325);
+                vista.dialogCombatir.setVisible(true);
                 break;
             case  btnMochila:
+                historialString = historialString + "\nMochila abierta.";
+                vista.historial.setText(historialString);
                 this.vista.dialogMochila.setSize(725,625);//ancho , largo
                 this.vista.dialogMochila.setLocation(100,100);
                 this.vista.dialogMochila.setVisible(true);
                 break;
             case btnTienda:
+                historialString = historialString + "\nPaseas por el mercado.";
+                vista.historial.setText(historialString);
                 this.vista.dialogTienda.setSize(625,700);
                 this.vista.dialogTienda.setLocation(100,100);
                 this.vista.dialogTienda.setVisible(true);
                 break;
             case btnTaberna:
+                historialString = historialString + "\nHas entrado en la taberna.";
+                vista.historial.setText(historialString);
                 this.vista.dialogTaberna.setSize(540,400);
                 this.vista.dialogTaberna.setLocation(150,150);
                 this.vista.dialogTaberna.setVisible(true);
@@ -171,6 +186,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
             case btnSalirTaberna:
                 this.vista.dialogTaberna.dispose();
+                historialString = historialString + "\nHas salido de la taberna.";
+                vista.historial.setText(historialString);
                 break;
             case btnAceptarComprarTaberna:
                 break;
@@ -194,6 +211,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;   
             case btnSalirTienda:
                 this.vista.dialogTienda.dispose();
+                historialString = historialString + "\nHas vuelto del mercado.";
+                vista.historial.setText(historialString);
                 break;
             case btnAceptarCompraTienda:
                 break;
@@ -206,14 +225,30 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.dialogTiendaVender.dispose();
                 break;
             case btnCombatirAtacar:
+                historialCombateString = historialCombateString + "\nHa intentado atacar a Olonam, pero como es muy fuerte, esquiva fácilmente tus ataques.";
+                vista.historialCombate.setText(historialCombateString);
                 break;    
             case btnCombatirDefender:
+                historialCombateString = historialCombateString + "\nNo puedes defenderte porque no quiero.";
+                vista.historialCombate.setText(historialCombateString);
                 break;
             case btnCombatirEspecial:
+                historialCombateString = historialCombateString + "\nNo, lo siento, no tienes nada de especial.";
+                vista.historialCombate.setText(historialCombateString);
                 break;
             case btnCombatirMochila:
+                historialCombateString = historialCombateString + "\nNo tienes mochila, porque eres pobre y ni siquiera llevas ropa puesta.";
+                vista.historialCombate.setText(historialCombateString);
                 break;
             case btnCombatirHuir:
+                historialCombateString = "Historial de combate:";
+                vista.historialCombate.setText(historialCombateString);
+                vista.dialogCombatir.dispose();
+                vista.dialogHuir.setSize(470,640);
+                vista.dialogHuir.setLocation(100,100);
+                vista.dialogHuir.setVisible(true);
+                historialString = historialString + "\nCombate finalizado.";
+                vista.historial.setText(historialString);
                 break;
             case btnHuirPerder:
                 this.vista.dialogHuir.dispose();
@@ -226,6 +261,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
             case btnMochilaSalir:
                 this.vista.dialogMochila.dispose();
+                historialString = historialString + "\nHas cerrado la mochila.";
+                vista.historial.setText(historialString);
                 break;
             case btnSoltarAceptar:
                 break;
