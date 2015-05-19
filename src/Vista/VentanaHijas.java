@@ -1135,30 +1135,24 @@ public class VentanaHijas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTabernaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTabernaActionPerformed
-        dialogTaberna.setSize(540,400);//anchura , altura
-        dialogTaberna.setLocation(150,150);
-        dialogTaberna.setVisible(true);
+      
     }//GEN-LAST:event_btnTabernaActionPerformed
 
     private void btnCancelarComprarTabernaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarComprarTabernaActionPerformed
-        dialogTabernaCompra.dispose();//cierra el dialog 
+       
     }//GEN-LAST:event_btnCancelarComprarTabernaActionPerformed
 
     private void btnCancelarAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAlojamientoActionPerformed
-        dialogTabernaAlojamiento.dispose();
+        
     }//GEN-LAST:event_btnCancelarAlojamientoActionPerformed
 
     private void btnAlojamientoTabernaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlojamientoTabernaActionPerformed
-        dialogTabernaAlojamiento.setSize(300,250);
-        dialogTabernaAlojamiento.setLocation(150,150);
-        dialogTabernaAlojamiento.setVisible(true);
+        
     }//GEN-LAST:event_btnAlojamientoTabernaActionPerformed
 
     private void btnComprarTabernaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarTabernaActionPerformed
 
-        dialogTabernaCompra.setSize(400,400);
-        dialogTabernaCompra.setLocation(150,150);
-        dialogTabernaCompra.setVisible(true);
+       
     }//GEN-LAST:event_btnComprarTabernaActionPerformed
 
     private void dialogTabernaWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_dialogTabernaWindowClosed
@@ -1166,34 +1160,27 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_dialogTabernaWindowClosed
 
     private void btnTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiendaActionPerformed
-        dialogTienda.setSize(625,700);
-        dialogTienda.setLocation(100,100);
-        dialogTienda.setVisible(true);
         
     }//GEN-LAST:event_btnTiendaActionPerformed
 
     private void btnComprarTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarTiendaActionPerformed
-        dialogTiendaComprar.setSize(400,350);
-        dialogTiendaComprar.setLocation(100,100);
-        dialogTiendaComprar.setVisible(true);
+        
     }//GEN-LAST:event_btnComprarTiendaActionPerformed
 
     private void btnVenderTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderTiendaActionPerformed
-        dialogTiendaVender.setSize(420,350);
-        dialogTiendaVender.setLocation(100,100);
-        dialogTiendaVender.setVisible(true);
+        
     }//GEN-LAST:event_btnVenderTiendaActionPerformed
 
     private void btnCancelarCompraTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCompraTiendaActionPerformed
-        dialogTiendaComprar.dispose();
+       
     }//GEN-LAST:event_btnCancelarCompraTiendaActionPerformed
 
     private void btnSalirTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirTiendaActionPerformed
-         dialogTienda.dispose();
+         
     }//GEN-LAST:event_btnSalirTiendaActionPerformed
 
     private void btnSalirTabernaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirTabernaActionPerformed
-         dialogTaberna.dispose();
+         
     }//GEN-LAST:event_btnSalirTabernaActionPerformed
 
     private void btnCombatirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCombatirActionPerformed
@@ -1238,21 +1225,19 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCombatirHuirActionPerformed
 
     private void btnHuirPerderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuirPerderActionPerformed
-        dialogHuir.dispose();
+        
     }//GEN-LAST:event_btnHuirPerderActionPerformed
 
     private void btnSalirVenderTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirVenderTiendaActionPerformed
-        dialogTiendaVender.dispose();
+        
     }//GEN-LAST:event_btnSalirVenderTiendaActionPerformed
 
     private void btnMochilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMochilaActionPerformed
-        dialogMochila.setSize(725,625);//ancho , largo
-        dialogMochila.setLocation(100,100);
-        dialogMochila.setVisible(true);
+       
     }//GEN-LAST:event_btnMochilaActionPerformed
 
     private void btnMochilaSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMochilaSalirActionPerformed
-        dialogMochila.dispose();
+       
     }//GEN-LAST:event_btnMochilaSalirActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
