@@ -1,13 +1,10 @@
 package Modelo;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import javax.swing.JOptionPane;
 
 public class ModeloCarga extends Database{
     
-    public ModeloCarga(){
-    }
+    public ModeloCarga(){}
     
     public int login(String u, String p){
         int resu = 0;

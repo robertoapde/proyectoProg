@@ -1,9 +1,5 @@
 package Vista;
 
-import java.awt.Image;
-import java.net.URL;
-import javax.swing.ImageIcon;
-
 public class VentanaHijas extends javax.swing.JFrame {
     
     String historialString = "Historial de partida:";
@@ -1250,13 +1246,13 @@ public class VentanaHijas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirVenderTiendaActionPerformed
 
     private void btnMochilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMochilaActionPerformed
-         dialogMochila.setSize(725,625);//ancho , largo
-       dialogMochila.setLocation(100,100);
+        dialogMochila.setSize(725,625);//ancho , largo
+        dialogMochila.setLocation(100,100);
         dialogMochila.setVisible(true);
     }//GEN-LAST:event_btnMochilaActionPerformed
 
     private void btnMochilaSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMochilaSalirActionPerformed
-
+        dialogMochila.dispose();
     }//GEN-LAST:event_btnMochilaSalirActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

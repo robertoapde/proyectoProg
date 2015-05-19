@@ -15,6 +15,4 @@ public class ModeloRegistro {
     public ModeloRegistro(){
         
     }
-    DefaultTableModel
-    
 }
