@@ -19,14 +19,12 @@ public class ControladorCarga implements ActionListener{
     
     public enum AccionMVC{
         btnLogin,
-        btnRegistrarse,
-       
+        btnRegistrarse, 
     }
     
     public ControladorCarga(VentanaCarga vista1)
     {
-        this.vista1 = vista1;
-        
+        this.vista1 = vista1;      
     }
     
     public void iniciar(){
@@ -35,8 +33,7 @@ public class ControladorCarga implements ActionListener{
         this.vista1.btnLogin.setActionCommand("btnLogin");
         this.vista1.btnLogin.addActionListener(this);
         this.vista1.btnRegistrarse.setActionCommand("btnRegistrarse");
-        this.vista1.btnRegistrarse.addActionListener(this);
-       
+        this.vista1.btnRegistrarse.addActionListener(this);   
     }
     
     @Override
@@ -68,16 +65,11 @@ public class ControladorCarga implements ActionListener{
                 }
                 break;
             case btnRegistrarse:
-            
                 this.vista2.setSize(580, 390);
                 this.vista2.setLocation(150,150);
                 this.vista2.setVisible(true);
                 this.vista1.dispose();
                 break;
-            
         }
-                                              
-    
-  
     }
 }

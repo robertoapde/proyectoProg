@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import Modelo.ModeloRegistro;
@@ -17,9 +12,6 @@ public class ControladorRegistro implements ActionListener{
     VentanaCarga vista1 = new VentanaCarga();
     Registro vista2 = new Registro();
     ModeloRegistro modeloR = new ModeloRegistro();
-
-   
-
 
     public enum AccionMVC{
         btnRegistrarseComenzar,
@@ -42,13 +34,31 @@ public class ControladorRegistro implements ActionListener{
         switch(AccionMVC.valueOf(e.getActionCommand())){
             case btnRegistrarseComenzar:
                 try{
-                    String User = this.vista2.jTextUsuario.getText();
-                    String Contraseña = this.vista2.jTextContraseña.getText();
-                    String ConfContraseña=this.vista2.jTextConfiContraseña.getText();
-                    String Email = this.vista2.jTextEmail.getText();
+                    String user = this.vista2.jTextUsuario.getText();
+                    String contraseña = this.vista2.jTextContraseña.getText();
+                    String confContraseña=this.vista2.jTextConfiContraseña.getText();
+                    String email = this.vista2.jTextEmail.getText();
                     
-                    if(User.equals("") || Contraseña.equals("") || ConfContraseña.equals("") || Email.equals("")){
-                        JOptionPane.showMessageDialog(null,"rellene los campos en blanco");
+                    if(user.equals("") || contraseña.equals("") || confContraseña.equals("") || email.equals("")){
+                        JOptionPane.showMessageDialog(null,"Rellene todos los campos necesarios");
+                    }else{
+                        if(contraseña.equals(confContraseña)){
+                            if(this.vista2.radioPicaro.isSelected()){
+                                if(modeloR.nuevoPicaro(user, contraseña, email) == true){
+                                    JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
+                                    vista1.setVisible(true);
+                                    vista2.dispose();
+                                }
+                            }else if(this.vista2.radioMago.isSelected()){
+                                
+                            }else if(this.vista2.radioGuerrero.isSelected()){
+                                
+                            }else{
+                                JOptionPane.showMessageDialog(null,"Seleccione una de las clases disponibles");
+                            }
+                        }else{
+                            JOptionPane.showMessageDialog(null,"Las contraseñas no coinciden");
+                        }
                     }
                     
                 }catch(Exception ex){
