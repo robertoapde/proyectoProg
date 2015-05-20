@@ -9,17 +9,17 @@ import Vista.VentanaHijas;
 
 import Modelo.ModeloHijas;
 import Vista.VentanaCarga;
-import javax.swing.table.DefaultTableModel;
 
 public class ControladorHijas implements ActionListener, MouseListener{
 
     VentanaHijas vista;
     VentanaCarga vista2;
     ModeloHijas modelo = new ModeloHijas();
+    ControladorCarga controlC = new ControladorCarga(vista2);
     
     String historialString = "Historial de partida:";
     String historialCombateString = "Historial de combate: "; 
-    
+    String usuario;    
     
     public enum AccionMVC{
     btnCombatir,
@@ -68,6 +68,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
     
    public void iniciar(){
         this.vista.setVisible(true);
+        usuario = this.controlC.usuario;
+        this.modelo.getInfoInterfaz(usuario);
        
         this.vista.btnCombatir.setActionCommand("btnCombatir");
         this.vista.btnCombatir.addActionListener(this);
@@ -289,7 +291,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
         }
     }
     
-  
+    public void setInfoInterfaz(String[] s){
+        
+    }
     
     public void mouseClicked(MouseEvent e) {}
     

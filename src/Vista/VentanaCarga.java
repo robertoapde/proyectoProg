@@ -4,7 +4,7 @@ public class VentanaCarga extends javax.swing.JFrame {
    
     public VentanaCarga() {
         initComponents();
-        this.setTitle("Inicio de sesión");
+        this.setTitle("Aventura de Bolsillo");
     }
 
     @SuppressWarnings("unchecked")
