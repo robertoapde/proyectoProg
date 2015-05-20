@@ -9,13 +9,19 @@ public class ModeloCarga extends Database{
     public int login(String u, String p){
         int resu = 0;
             try{
-                String q = "SELECT Nombre, Contraseña FROM Usuario WHERE Nombre = "+u;
-                String usu;
-                String pass;
-                try (PreparedStatement pstm = this.getConexion().prepareStatement(q)) {
-                    ResultSet res = pstm.executeQuery();
+                String q1 = "SELECT Nombre, Contraseña FROM Usuario WHERE Nombre = '"+u+"'";
+                String usu = "";
+                String pass = "";
+                try{
+                    PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+                    ResultSet res = pstm1.executeQuery();
+                    res.next();
                     usu = res.getString("Nombre");
                     pass = res.getString("Contraseña");
+                    res.close();
+                    pstm1.close();
+                }catch(SQLException e){
+                    JOptionPane.showMessageDialog(null, "Error de SQL");
                 }
                 if(pass.equals(p) && usu.equals(u)){
                     resu = 1;

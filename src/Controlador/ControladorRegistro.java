@@ -6,7 +6,6 @@ import Vista.VentanaCarga;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import org.w3c.dom.events.MouseEvent;
 
 
 public class ControladorRegistro implements ActionListener{
@@ -16,7 +15,10 @@ public class ControladorRegistro implements ActionListener{
 
     public enum AccionMVC{
         btnRegistrarseComenzar,
-        btnRegistrarseSalir
+        btnRegistrarseSalir,
+        Picaro,
+        Mago,
+        Guerrero
     }
       public ControladorRegistro(Registro vista2)
     {
@@ -30,6 +32,13 @@ public class ControladorRegistro implements ActionListener{
         this.vista2.btnRegistrarseComenzar.addActionListener(this);
         this.vista2.btnRegistrarseSalir.setActionCommand("btnRegistrarseSalir");
         this.vista2.btnRegistrarseSalir.addActionListener(this);
+        this.vista2.radioPicaro.setActionCommand("Picaro");
+        this.vista2.radioPicaro.addActionListener(this);
+        this.vista2.radioPicaro.setSelected(true);
+        this.vista2.radioMago.setActionCommand("Mago");
+        this.vista2.radioMago.addActionListener(this);
+        this.vista2.radioGuerrero.setActionCommand("Guerrero");
+        this.vista2.radioGuerrero.addActionListener(this);
     }
      @Override
     public void actionPerformed(ActionEvent e) {
@@ -50,7 +59,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoPicaro(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
-                                    vista1.setVisible(true);
+                                    new ControladorCarga(new VentanaCarga()).iniciar();
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear picaro");
@@ -60,7 +69,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoMago(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Mago "+user+" creado");
-                                    vista1.setVisible(true);
+                                    new ControladorCarga(new VentanaCarga()).iniciar();
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear mago");
@@ -70,7 +79,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoGuerrero(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Guerrero "+user+" creado");
-                                    vista1.setVisible(true);
+                                    new ControladorCarga(new VentanaCarga()).iniciar();
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear guerrero");
@@ -81,17 +90,23 @@ public class ControladorRegistro implements ActionListener{
                         }else{
                             JOptionPane.showMessageDialog(null,"Las contraseñas no coinciden");
                         }
-                    }
-                    
+                    } 
                 }catch(Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al crear");
                 }
                  break;
             case btnRegistrarseSalir:
-                this.vista1.setSize(580, 390);
-                this.vista1.setLocation(150,150);
-                vista1.setVisible(true);
+                new ControladorCarga(new VentanaCarga()).iniciar();
                 vista2.dispose();
+                break;
+            case Picaro:
+                vista2.radioPicaro.setSelected(true);
+                break;
+            case Mago:
+                vista2.radioMago.setSelected(true);
+                break;
+            case Guerrero:
+                vista2.radioGuerrero.setSelected(true);
                 break;
         }
     }

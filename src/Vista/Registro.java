@@ -7,15 +7,9 @@ public class Registro extends javax.swing.JFrame {
     public Registro() {
         initComponents();
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        radioPicaro = new javax.swing.JRadioButton();
-        radioMago =  new javax.swing.JRadioButton();
-        radioGuerrero =  new javax.swing.JRadioButton();
-        radioPicaro.setText("Picaro");
-        radioMago.setText("Picaro");
-        radioGuerrero.setText("Picaro");
-        buttonGroup1.add(radioPicaro);
-        buttonGroup1.add(radioMago);
-        buttonGroup1.add(radioGuerrero);
+        grupoRadiosClases.add(radioPicaro);
+        grupoRadiosClases.add(radioMago);
+        grupoRadiosClases.add(radioGuerrero);
     }
     
     public static void main(String args[]) {
@@ -31,7 +25,7 @@ public class Registro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        grupoRadiosClases = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         radioPicaro = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
@@ -51,14 +45,13 @@ public class Registro extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 106, 102));
 
-        buttonGroup1.add(radioPicaro);
+        grupoRadiosClases.add(radioPicaro);
         radioPicaro.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         radioPicaro.setForeground(new java.awt.Color(0, 153, 153));
         radioPicaro.setText("Picaro");
@@ -74,7 +67,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 105, 102));
 
-        buttonGroup1.add(radioMago);
+        grupoRadiosClases.add(radioMago);
         radioMago.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         radioMago.setForeground(new java.awt.Color(0, 153, 153));
         radioMago.setText("Mago");
@@ -82,7 +75,7 @@ public class Registro extends javax.swing.JFrame {
         radioMago.setBorderPainted(true);
         getContentPane().add(radioMago, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 70, 20));
 
-        buttonGroup1.add(radioGuerrero);
+        grupoRadiosClases.add(radioGuerrero);
         radioGuerrero.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         radioGuerrero.setForeground(new java.awt.Color(0, 153, 153));
         radioGuerrero.setText("Guerrero");
@@ -153,7 +146,7 @@ public class Registro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistrarseComenzar;
     public javax.swing.JButton btnRegistrarseSalir;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup grupoRadiosClases;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

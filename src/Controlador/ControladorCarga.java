@@ -51,11 +51,12 @@ public class ControladorCarga implements ActionListener{
                     }else if(u.equals("") && p.equals("")){
                         JOptionPane.showMessageDialog(null, "Introduzca su usuario y contraseña");
                     }else{
-                        if(this.modelo.login(u, p) == 1){
-                            this.vista3.setSize(480, 300);
-                            this.vista3.setLocation(150,150);
-                            this.vista3.setVisible(true);
+                        int logeado;
+                        logeado = modelo.login(u, p);
+                        if(logeado == 1){
+                            new ControladorHijas(new VentanaHijas()).iniciar();
                             usuario = u;
+                            vista1.dispose();
                         }else{
                             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
                         }
@@ -65,10 +66,8 @@ public class ControladorCarga implements ActionListener{
                 }
                 break;
             case btnRegistrarse:
-                this.vista2.setSize(580, 390);
-                this.vista2.setLocation(150,150);
-                this.vista2.setVisible(true);
-                this.vista1.dispose();
+                new ControladorRegistro(new Registro()).iniciar();
+                vista1.dispose();
                 break;
         }
     }
