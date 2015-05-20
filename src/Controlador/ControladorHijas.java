@@ -154,6 +154,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnAceptarCambiarContraseña.addActionListener(this);
         this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
         this.vista.btnCancelarCambiarContraseña.addActionListener(this);
+        
                  
          }
     
@@ -307,7 +308,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                       
             case btnAceptarCambiarContraseña:
-                
+              
+                modelo.CambiarContraseña("Robrj",this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText() );
                 break;
             case btnCancelarCambiarContraseña:
                 this.vista.dialogCambiarContraseña.dispose();

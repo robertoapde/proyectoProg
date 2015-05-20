@@ -144,7 +144,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         BarraEp = new javax.swing.JProgressBar();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jNombreUsu = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -1077,11 +1077,11 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel9.setOpaque(true);
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 20, -1));
 
-        jLabel10.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel10.setText("       Robrj");
-        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel10.setOpaque(true);
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 70, 20));
+        jNombreUsu.setForeground(new java.awt.Color(0, 153, 153));
+        jNombreUsu.setText("       Robrj");
+        jNombreUsu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jNombreUsu.setOpaque(true);
+        getContentPane().add(jNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 70, 20));
 
         jLabel11.setForeground(new java.awt.Color(0, 153, 153));
         jLabel11.setText("         99");
@@ -1313,7 +1313,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1360,6 +1359,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JLabel jNombreUsu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -1378,8 +1378,8 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextContraseñaA;
-    private javax.swing.JTextField jTextContraseñaN;
+    public javax.swing.JTextField jTextContraseñaA;
+    public javax.swing.JTextField jTextContraseñaN;
     public javax.swing.JTable tablaTaberna;
     public javax.swing.JTable tablaTienda;
     private javax.swing.JTable tablaVenderT;

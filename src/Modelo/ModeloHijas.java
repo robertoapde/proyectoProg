@@ -1,5 +1,6 @@
 package Modelo;
 
+import Controlador.ControladorCarga;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ModeloHijas extends Database{
+   
     
     public ModeloHijas(){
     }
@@ -117,5 +119,45 @@ public class ModeloHijas extends Database{
         }
         return info;
     }
-   
+     public boolean CambiarContraseña(String u,String ca, String cn){
+        boolean res = false;
+        int conf = 0;
+        String c = "SELECT Contraseña FROM Usuario WHERE Nombre = '"+u+"'";
+        
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(c);
+            ResultSet res1 = pstm1.executeQuery();
+            res1.next();
+            String Con = res1.getString("Contraseña");
+            res1.close();
+            conf=1;
+            if(conf ==1 ){
+                if(Con.equals(ca)){
+                    String contra = "UPDATE Usuario set Contraseña = '"+cn+"' WHERE Nombre = '"+u+"'";
+                    try{
+                    PreparedStatement pstm2 = this.getConexion().prepareStatement(contra);
+                    pstm2.execute();
+                    pstm2.close();
+                    res= true;
+                    JOptionPane.showMessageDialog(null, "Contraseña Modificada");
+                    } catch(SQLException ex){
+                    JOptionPane.showMessageDialog(null, "Error al modificar");
+                    ex.getStackTrace();
+                }
+                   
+                
+            }else{
+                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+                }
+         }else{
+                JOptionPane.showMessageDialog(null, "Error al conectar");
+            }  
+            
+        }catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Error al consultar valores");
+        }  
+        
+        
+        return res;
+     }
 }

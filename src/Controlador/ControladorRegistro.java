@@ -39,6 +39,7 @@ public class ControladorRegistro implements ActionListener{
         this.vista2.radioMago.addActionListener(this);
         this.vista2.radioGuerrero.setActionCommand("Guerrero");
         this.vista2.radioGuerrero.addActionListener(this);
+        
     }
      @Override
     public void actionPerformed(ActionEvent e) {
