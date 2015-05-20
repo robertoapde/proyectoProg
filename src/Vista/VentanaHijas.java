@@ -94,7 +94,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogMochila = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tablaMochila = new javax.swing.JTable();
         jLabel33 = new javax.swing.JLabel();
         btnMochilaUsar = new javax.swing.JButton();
         btnMochilaEquipar = new javax.swing.JButton();
@@ -699,7 +699,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tablaMochila.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -726,7 +726,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane6.setViewportView(jTable3);
+        jScrollPane6.setViewportView(tablaMochila);
 
         jPanel7.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 11, 462, 410));
 
@@ -1366,10 +1366,10 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     public javax.swing.JTextField jTextContraseñaA;
     public javax.swing.JTextField jTextContraseñaN;
+    public javax.swing.JTable tablaMochila;
     public javax.swing.JTable tablaTaberna;
     public javax.swing.JTable tablaTienda;
     private javax.swing.JTable tablaVenderT;

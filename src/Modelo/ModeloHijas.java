@@ -146,5 +146,44 @@ public class ModeloHijas extends Database{
                 JOptionPane.showMessageDialog(null, "Error al consultar valores");
         }
         return res;
-     }
+    }
+    
+    public DefaultTableModel getTablaMochila(String u){
+        
+        DefaultTableModel tablemodel = new DefaultTableModel();
+        String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
+        int registros = 0;
+
+        try{
+            PreparedStatement pstm = this.getConexion().prepareStatement("SELECT count(*) as total FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"')");
+            ResultSet res = pstm.executeQuery();
+            res.next();
+            registros = res.getInt("total");
+            res.close();
+        }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        
+        Object[][] data = new String[registros][5];
+        
+        try{
+          
+        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"')");
+        ResultSet res = pstm.executeQuery();
+        int i=0;
+        while(res.next()){
+            data[i][0] = res.getString("Nombre");
+            data[i][1] = res.getString("Precio");
+            data[i][2] = res.getString("Tipo");
+            data[i][3] = res.getString("Efecto");
+            i++;
+        }
+        res.close();
+        
+        tablemodel.setDataVector(data, columnNames);
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+        return tablemodel;
+    }
 }

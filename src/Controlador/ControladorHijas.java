@@ -68,7 +68,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
     
     public ControladorHijas(VentanaHijas vista){
         this.vista = vista;
-        
     }
     
    public void iniciar(){
@@ -147,6 +146,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
         
         this.vista.tablaTaberna.addMouseListener(this);
         this.vista.tablaTaberna.setModel(modelo.getTablaTaberna());
+        
+        this.vista.tablaMochila.addMouseListener(this);
+        this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
         
         this.vista.btnCambiarC.setActionCommand("btnCambiarC");
         this.vista.btnCambiarC.addActionListener(this);
