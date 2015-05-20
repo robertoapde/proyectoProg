@@ -155,8 +155,8 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        cambiarContraseña = new javax.swing.JMenu();
+        cerrarSesion = new javax.swing.JMenu();
 
         dialogTaberna.setResizable(false);
         dialogTaberna.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -1121,11 +1121,11 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jMenu1.setText("Opciones");
 
-        jMenu4.setText("Cambiar Contraseña");
-        jMenu1.add(jMenu4);
+        cambiarContraseña.setText("Cambiar Contraseña");
+        jMenu1.add(cambiarContraseña);
 
-        jMenu2.setText("Cerrar Sesión  ");
-        jMenu1.add(jMenu2);
+        cerrarSesion.setText("Cerrar Sesión  ");
+        jMenu1.add(cerrarSesion);
 
         jMenuBar1.add(jMenu1);
 
@@ -1279,6 +1279,8 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JButton btnVenderTienda;
     public javax.swing.JButton btnVenderVenderTienda;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JMenu cambiarContraseña;
+    private javax.swing.JMenu cerrarSesion;
     public javax.swing.JDialog dialogCambiarContraseña;
     public javax.swing.JDialog dialogCombatir;
     public javax.swing.JDialog dialogHuir;
@@ -1346,8 +1348,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
