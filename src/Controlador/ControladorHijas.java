@@ -12,8 +12,8 @@ import Vista.VentanaCarga;
 
 public class ControladorHijas implements ActionListener, MouseListener{
 
-    VentanaHijas vista;
-    VentanaCarga vista2;
+    VentanaHijas vista = new VentanaHijas();
+    VentanaCarga vista2 = new VentanaCarga();
     ModeloHijas modelo = new ModeloHijas();
     ControladorCarga controlC = new ControladorCarga(vista2);
     
@@ -57,8 +57,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
     
     btnSalirMochilaCombate,
     btnUsarMochilaCombate,
+   // Menu superior
+    btnCambiarC,
+    btnCerrarS,
     btnAceptarCambiarContraseña,
-    btnCancelarCambiarContraseña
+    btnCancelarCambiarContraseña,
     }
     
     public ControladorHijas(VentanaHijas vista){
@@ -141,7 +144,18 @@ public class ControladorHijas implements ActionListener, MouseListener{
         
         this.vista.tablaTaberna.addMouseListener(this);
         this.vista.tablaTaberna.setModel(modelo.getTablaTaberna());
-    }
+        
+        //menu superior
+        this.vista.btnCambiarC.setActionCommand("btnCambiarC");
+        this.vista.btnCambiarC.addActionListener(this);
+        this.vista.btnCerrarS.setActionCommand("btnCerrarS");
+        this.vista.btnCerrarS.addActionListener(this);
+        this.vista.btnAceptarCambiarContraseña.setActionCommand("btnAceptarCambiarContraseña");
+        this.vista.btnAceptarCambiarContraseña.addActionListener(this);
+        this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
+        this.vista.btnCancelarCambiarContraseña.addActionListener(this);
+                 
+         }
     
     public void actionPerformed(ActionEvent e) {
         switch ( AccionMVC.valueOf( e.getActionCommand() ) )
@@ -281,7 +295,17 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
             case btnUsarMochilaCombate:
                 
+            case btnCambiarC:
+                this.vista.dialogCambiarContraseña.setVisible(true);
+                this.vista.dialogCambiarContraseña.setSize(511, 301);
+                this.vista.dialogCambiarContraseña.setLocation(100,100);
                 break;
+                
+            case btnCerrarS:
+                this.vista.dispose();
+                this.vista2.setVisible(true);
+                break;
+                      
             case btnAceptarCambiarContraseña:
                 
                 break;

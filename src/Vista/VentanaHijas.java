@@ -118,10 +118,10 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jTextContraseñaA = new javax.swing.JTextField();
+        jTextContraseñaN = new javax.swing.JTextField();
+        btnAceptarCambiarContraseña = new javax.swing.JButton();
+        btnCancelarCambiarContraseña = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
         dialogMochilaCombate = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
@@ -155,8 +155,8 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        cambiarContraseña = new javax.swing.JMenu();
-        cerrarSesion = new javax.swing.JMenu();
+        btnCambiarC = new javax.swing.JRadioButtonMenuItem();
+        btnCerrarS = new javax.swing.JRadioButtonMenuItem();
 
         dialogTaberna.setResizable(false);
         dialogTaberna.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -857,28 +857,28 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel45.setOpaque(true);
         jPanel9.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 130, 20));
 
-        jTextField1.setBorder(new javax.swing.border.MatteBorder(null));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextContraseñaA.setBorder(new javax.swing.border.MatteBorder(null));
+        jTextContraseñaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextContraseñaAActionPerformed(evt);
             }
         });
-        jPanel9.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 320, 20));
+        jPanel9.add(jTextContraseñaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 320, 20));
 
-        jTextField2.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel9.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 320, 20));
+        jTextContraseñaN.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel9.add(jTextContraseñaN, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 320, 20));
 
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 204));
-        jButton1.setText("Aceptar");
-        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 200, 30));
+        btnAceptarCambiarContraseña.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnAceptarCambiarContraseña.setForeground(new java.awt.Color(0, 0, 204));
+        btnAceptarCambiarContraseña.setText("Aceptar");
+        btnAceptarCambiarContraseña.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel9.add(btnAceptarCambiarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 220, 30));
 
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Cancelar");
-        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel9.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 220, 30));
+        btnCancelarCambiarContraseña.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnCancelarCambiarContraseña.setForeground(new java.awt.Color(255, 0, 0));
+        btnCancelarCambiarContraseña.setText("Cancelar");
+        btnCancelarCambiarContraseña.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel9.add(btnCancelarCambiarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 220, 30));
 
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.JPG"))); // NOI18N
         jPanel9.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, -1, -1));
@@ -1121,11 +1121,18 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jMenu1.setText("Opciones");
 
-        cambiarContraseña.setText("Cambiar Contraseña");
-        jMenu1.add(cambiarContraseña);
+        btnCambiarC.setSelected(true);
+        btnCambiarC.setText("Cambiar Contraseña");
+        jMenu1.add(btnCambiarC);
 
-        cerrarSesion.setText("Cerrar Sesión  ");
-        jMenu1.add(cerrarSesion);
+        btnCerrarS.setSelected(true);
+        btnCerrarS.setText("Cerrar Sesión");
+        btnCerrarS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnCerrarS);
 
         jMenuBar1.add(jMenu1);
 
@@ -1223,13 +1230,17 @@ public class VentanaHijas extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnMochilaSalirActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextContraseñaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextContraseñaAActionPerformed
 
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextContraseñaAActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnCerrarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSActionPerformed
 
     public static void main(String args[]) {
 
@@ -1247,14 +1258,18 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JProgressBar barraHP;
     private javax.swing.JProgressBar barraHPEn;
     public javax.swing.JButton btnAceptarAlojamiento;
+    public javax.swing.JButton btnAceptarCambiarContraseña;
     public javax.swing.JButton btnAceptarCompraTienda;
     public javax.swing.JButton btnAceptarComprarTaberna;
     public javax.swing.JButton btnAceptarVenderVenderTienda;
     public javax.swing.JButton btnAlojamientoTaberna;
+    public javax.swing.JRadioButtonMenuItem btnCambiarC;
     public javax.swing.JButton btnCancelarAlojamiento;
+    public javax.swing.JButton btnCancelarCambiarContraseña;
     public javax.swing.JButton btnCancelarCompraTienda;
     public javax.swing.JButton btnCancelarComprarTaberna;
     public javax.swing.JButton btnCancelarVenderVenderTienda;
+    public javax.swing.JRadioButtonMenuItem btnCerrarS;
     public javax.swing.JButton btnCombatir;
     public javax.swing.JButton btnCombatirAtacar;
     public javax.swing.JButton btnCombatirDefender;
@@ -1279,8 +1294,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JButton btnVenderTienda;
     public javax.swing.JButton btnVenderVenderTienda;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JMenu cambiarContraseña;
-    private javax.swing.JMenu cerrarSesion;
     public javax.swing.JDialog dialogCambiarContraseña;
     public javax.swing.JDialog dialogCombatir;
     public javax.swing.JDialog dialogHuir;
@@ -1297,8 +1310,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JTextPane historial;
     public javax.swing.JTextPane historialCombate;
     private javax.swing.JScrollPane historialScroll;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -1367,8 +1378,8 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextContraseñaA;
+    private javax.swing.JTextField jTextContraseñaN;
     public javax.swing.JTable tablaTaberna;
     public javax.swing.JTable tablaTienda;
     private javax.swing.JTable tablaVenderT;
