@@ -43,7 +43,7 @@ public class ModeloRegistro extends Database{
                     pstm2.close();
                     resu = true;
                 }catch(SQLException ex){
-                    JOptionPane.showMessageDialog(null, "Error al insertar usuario");
+                    JOptionPane.showMessageDialog(null, "Nombre en uso o demasiado largo");
                     ex.getStackTrace();
                 }
             }
@@ -86,7 +86,7 @@ public class ModeloRegistro extends Database{
                     pstm2.close();
                     resu = true;
                 }catch(SQLException ex){
-                    JOptionPane.showMessageDialog(null, "Error al insertar usuario");
+                    JOptionPane.showMessageDialog(null, "Nombre en uso o demasiado largo");
                     ex.getStackTrace();
                 }
             }
@@ -129,7 +129,7 @@ public class ModeloRegistro extends Database{
                     pstm2.close();
                     resu = true;
                 }catch(SQLException ex){
-                    JOptionPane.showMessageDialog(null, "Error al insertar usuario");
+                    JOptionPane.showMessageDialog(null, "Nombre en uso o demasiado largo");
                     ex.getStackTrace();
                 }
             }

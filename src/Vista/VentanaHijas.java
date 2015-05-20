@@ -144,12 +144,12 @@ public class VentanaHijas extends javax.swing.JFrame {
         BarraEp = new javax.swing.JProgressBar();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jNombreUsu = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JLabel();
+        txtNivel = new javax.swing.JLabel();
+        txtClase = new javax.swing.JLabel();
+        txtExperiencia = new javax.swing.JLabel();
+        txtOro = new javax.swing.JLabel();
+        fotoClase = new javax.swing.JLabel();
         historialScroll = new javax.swing.JScrollPane();
         historial = new javax.swing.JTextPane();
         jLabel39 = new javax.swing.JLabel();
@@ -1077,39 +1077,34 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel9.setOpaque(true);
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 20, -1));
 
-        jNombreUsu.setForeground(new java.awt.Color(0, 153, 153));
-        jNombreUsu.setText("       Robrj");
-        jNombreUsu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jNombreUsu.setOpaque(true);
-        getContentPane().add(jNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 70, 20));
+        txtNombre.setForeground(new java.awt.Color(0, 153, 153));
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre.setOpaque(true);
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 70, 20));
 
-        jLabel11.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel11.setText("         99");
-        jLabel11.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel11.setOpaque(true);
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 70, 20));
+        txtNivel.setForeground(new java.awt.Color(0, 153, 153));
+        txtNivel.setBorder(new javax.swing.border.MatteBorder(null));
+        txtNivel.setOpaque(true);
+        getContentPane().add(txtNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 70, 20));
 
-        jLabel12.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel12.setText("      Picaro");
-        jLabel12.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel12.setOpaque(true);
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 70, 20));
+        txtClase.setForeground(new java.awt.Color(0, 153, 153));
+        txtClase.setBorder(new javax.swing.border.MatteBorder(null));
+        txtClase.setOpaque(true);
+        getContentPane().add(txtClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 70, 20));
 
-        jLabel13.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel13.setText("  9999/9999");
-        jLabel13.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel13.setOpaque(true);
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 70, 20));
+        txtExperiencia.setForeground(new java.awt.Color(0, 153, 153));
+        txtExperiencia.setBorder(new javax.swing.border.MatteBorder(null));
+        txtExperiencia.setOpaque(true);
+        getContentPane().add(txtExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 70, 20));
 
-        jLabel14.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel14.setText("    10.000");
-        jLabel14.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel14.setOpaque(true);
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 70, 20));
+        txtOro.setForeground(new java.awt.Color(0, 153, 153));
+        txtOro.setBorder(new javax.swing.border.MatteBorder(null));
+        txtOro.setOpaque(true);
+        getContentPane().add(txtOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 70, 20));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
-        jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 100, 100));
+        fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
+        fotoClase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(fotoClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 100, 100));
 
         historial.setEditable(false);
         historialScroll.setViewportView(historial);
@@ -1307,18 +1302,14 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JDialog dialogTiendaComprar;
     public javax.swing.JDialog dialogTiendaVender;
     public javax.swing.JDialog dialogTiendaVenderVender;
+    public javax.swing.JLabel fotoClase;
     public javax.swing.JTextPane historial;
     public javax.swing.JTextPane historialCombate;
     private javax.swing.JScrollPane historialScroll;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1359,7 +1350,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    public javax.swing.JLabel jNombreUsu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -1383,5 +1373,10 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JTable tablaTaberna;
     public javax.swing.JTable tablaTienda;
     private javax.swing.JTable tablaVenderT;
+    public javax.swing.JLabel txtClase;
+    public javax.swing.JLabel txtExperiencia;
+    public javax.swing.JLabel txtNivel;
+    public javax.swing.JLabel txtNombre;
+    public javax.swing.JLabel txtOro;
     // End of variables declaration//GEN-END:variables
 }

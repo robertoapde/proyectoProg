@@ -9,17 +9,19 @@ import Vista.VentanaHijas;
 
 import Modelo.ModeloHijas;
 import Vista.VentanaCarga;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class ControladorHijas implements ActionListener, MouseListener{
 
-    VentanaHijas vista = new VentanaHijas();
-    VentanaCarga vista2 = new VentanaCarga();
+    VentanaHijas vista = Controlador.Main.controlC.vista3;
+    VentanaCarga vista2 = Controlador.Main.controlC.vista1;
+    
     ModeloHijas modelo = new ModeloHijas();
-    ControladorCarga controlC = new ControladorCarga(vista2);
     
     String historialString = "Historial de partida:";
-    String historialCombateString = "Historial de combate: "; 
-    String usuario;    
+    String historialCombateString = "Historial de combate: ";
+    String usuario;
     
     public enum AccionMVC{
     btnCombatir,
@@ -57,7 +59,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
     
     btnSalirMochilaCombate,
     btnUsarMochilaCombate,
-   // Menu superior
+    
     btnCambiarC,
     btnCerrarS,
     btnAceptarCambiarContraseña,
@@ -71,8 +73,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
     
    public void iniciar(){
         this.vista.setVisible(true);
-        usuario = this.controlC.usuario;
-        this.modelo.getInfoInterfaz(usuario);
+        usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
+        String[] info = this.modelo.getInfoInterfaz(usuario);
+        this.setInfoInterfaz(info);
        
         this.vista.btnCombatir.setActionCommand("btnCombatir");
         this.vista.btnCombatir.addActionListener(this);
@@ -145,7 +148,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.tablaTaberna.addMouseListener(this);
         this.vista.tablaTaberna.setModel(modelo.getTablaTaberna());
         
-        //menu superior
         this.vista.btnCambiarC.setActionCommand("btnCambiarC");
         this.vista.btnCambiarC.addActionListener(this);
         this.vista.btnCerrarS.setActionCommand("btnCerrarS");
@@ -154,9 +156,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnAceptarCambiarContraseña.addActionListener(this);
         this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
         this.vista.btnCancelarCambiarContraseña.addActionListener(this);
-        
-                 
-         }
+    }
     
     public void actionPerformed(ActionEvent e) {
         switch ( AccionMVC.valueOf( e.getActionCommand() ) )
@@ -296,6 +296,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
             case btnUsarMochilaCombate:
                 
+                break;
             case btnCambiarC:
                 this.vista.dialogCambiarContraseña.setVisible(true);
                 this.vista.dialogCambiarContraseña.setSize(511, 301);
@@ -309,7 +310,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                       
             case btnAceptarCambiarContraseña:
               
-                modelo.CambiarContraseña("Robrj",this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText() );
+                modelo.CambiarContraseña(this.vista.txtNombre.getText(),this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText() );
                 break;
             case btnCancelarCambiarContraseña:
                 this.vista.dialogCambiarContraseña.dispose();
@@ -318,7 +319,31 @@ public class ControladorHijas implements ActionListener, MouseListener{
     }
     
     public void setInfoInterfaz(String[] s){
-        
+        String nivel = s[0];
+        String clase = s[1];
+        String experiencia = s[2];
+        String oro = s[3];
+        String vida = s[4];
+        String energia = s[5];
+        String vidaMax = s[6];
+        String energiaMax = s[7];
+        vista.txtNombre.setText(usuario);
+        vista.txtNivel.setText(nivel);
+        vista.txtClase.setText(clase);
+        vista.txtExperiencia.setText(experiencia);
+        vista.txtOro.setText(oro);
+        switch (clase){
+            case "Picaro":
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/picaro.png")));
+                break;
+            case "Mago":
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mago.jpg")));
+                break;
+            case "Guerrero":
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guerrero.png")));
+                break;
+        }
+        JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+s[1]+" Nvl. "+s[0]+")");
     }
     
     public void mouseClicked(MouseEvent e) {}

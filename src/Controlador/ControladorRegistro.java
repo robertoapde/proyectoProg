@@ -9,8 +9,9 @@ import javax.swing.JOptionPane;
 
 
 public class ControladorRegistro implements ActionListener{
-    VentanaCarga vista1 = new VentanaCarga();
-    Registro vista2 = new Registro();
+    VentanaCarga vista1 = Controlador.Main.controlC.vista1;
+    Registro vista2 = Controlador.Main.controlC.vista2;
+    
     ModeloRegistro modeloR = new ModeloRegistro();
 
     public enum AccionMVC{
@@ -39,7 +40,6 @@ public class ControladorRegistro implements ActionListener{
         this.vista2.radioMago.addActionListener(this);
         this.vista2.radioGuerrero.setActionCommand("Guerrero");
         this.vista2.radioGuerrero.addActionListener(this);
-        
     }
      @Override
     public void actionPerformed(ActionEvent e) {
@@ -60,7 +60,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoPicaro(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
-                                    new ControladorCarga(new VentanaCarga()).iniciar();
+                                    new ControladorCarga(vista1).iniciar();
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear picaro");
@@ -70,7 +70,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoMago(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Mago "+user+" creado");
-                                    new ControladorCarga(new VentanaCarga()).iniciar();
+                                    new ControladorCarga(vista1).iniciar();
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear mago");
@@ -80,7 +80,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoGuerrero(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Guerrero "+user+" creado");
-                                    new ControladorCarga(new VentanaCarga()).iniciar();
+                                    new ControladorCarga(vista1).iniciar();
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear guerrero");
@@ -97,7 +97,7 @@ public class ControladorRegistro implements ActionListener{
                 }
                  break;
             case btnRegistrarseSalir:
-                new ControladorCarga(new VentanaCarga()).iniciar();
+                new ControladorCarga(vista1).iniciar();
                 vista2.dispose();
                 break;
             case Picaro:

@@ -13,9 +13,10 @@ public class ControladorCarga implements ActionListener{
     VentanaCarga vista1 = new VentanaCarga();
     Registro vista2 = new Registro();
     VentanaHijas vista3 = new VentanaHijas();
-    String usuario;
     
     ModeloCarga modelo = new ModeloCarga();
+    
+    String usuario;
     
     public enum AccionMVC{
         btnLogin,
@@ -54,9 +55,9 @@ public class ControladorCarga implements ActionListener{
                         int logeado;
                         logeado = modelo.login(u, p);
                         if(logeado == 1){
-                            new ControladorHijas(new VentanaHijas()).iniciar();
-                            usuario = u;
-                            vista1.dispose();
+                            new ControladorHijas(vista3).iniciar();
+                            setUsuario(u);
+                            vista1.setVisible(false);
                         }else{
                             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
                         }
@@ -66,9 +67,17 @@ public class ControladorCarga implements ActionListener{
                 }
                 break;
             case btnRegistrarse:
-                new ControladorRegistro(new Registro()).iniciar();
-                vista1.dispose();
+                new ControladorRegistro(vista2).iniciar();
+                vista1.setVisible(false);
                 break;
         }
+    }
+    
+    public String getUsuario(){
+        return usuario;
+    }
+    
+    public void setUsuario(String u){
+        usuario = u;
     }
 }

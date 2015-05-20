@@ -1,6 +1,5 @@
 package Modelo;
 
-import Controlador.ControladorCarga;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,7 +7,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ModeloHijas extends Database{
-   
     
     public ModeloHijas(){
     }
@@ -92,34 +90,28 @@ public class ModeloHijas extends Database{
     
     public String[] getInfoInterfaz(String u){
         String[] info = new String[8];
-        String q1 = "SELECT Nivel, Clase, Experiencia, Oro, PV, PE, PVMaximo, PEMaximo FROM Usuario WHERE Nombre = "+u;
+        String q1 = "SELECT Nivel, Clase, Experiencia, Oro, PV, PE, PVMaximo, PEMaximo FROM Usuario WHERE Nombre = '"+u+"'";
         try{
             PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
             ResultSet res = pstm1.executeQuery();
             res.next();
-            int niv = res.getInt("Nivel");
-            info[0] = String.valueOf(niv);
+            info[0] = String.valueOf(res.getInt("Nivel"));
             info[1] = res.getString("Clase");
-            int exp = res.getInt("Experiencia");
-            info[2] = String.valueOf(exp);
-            int oro = res.getInt("Oro");
-            info[3] = String.valueOf(oro);
-            int pv = res.getInt("PV");
-            info[4] = String.valueOf(pv);
-            int pe = res.getInt("PE");
-            info[5] = String.valueOf(pe);
-            int pvm = res.getInt("PVMaximo");
-            info[6] = String.valueOf(pvm);
-            int pem = res.getInt("PEMaximo");
-            info[7] = String.valueOf(pem);
+            info[2] = String.valueOf(res.getInt("Experiencia"));
+            info[3] = String.valueOf(res.getInt("Oro"));
+            info[4] = String.valueOf(res.getInt("PV"));
+            info[5] = String.valueOf(res.getInt("PE"));
+            info[6] = String.valueOf(res.getInt("PVMaximo"));
+            info[7] = String.valueOf(res.getInt("PEMaximo"));
             res.close();
             pstm1.close();
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error de SQL");
+            JOptionPane.showMessageDialog(null, "Error de SQL para el usuario "+u);
         }
         return info;
     }
-     public boolean CambiarContraseña(String u,String ca, String cn){
+    
+    public boolean CambiarContraseña(String u,String ca, String cn){
         boolean res = false;
         int conf = 0;
         String c = "SELECT Contraseña FROM Usuario WHERE Nombre = '"+u+"'";
@@ -144,20 +136,15 @@ public class ModeloHijas extends Database{
                     JOptionPane.showMessageDialog(null, "Error al modificar");
                     ex.getStackTrace();
                 }
-                   
-                
             }else{
                     JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
                 }
          }else{
                 JOptionPane.showMessageDialog(null, "Error al conectar");
-            }  
-            
+            } 
         }catch(Exception ex){
                 JOptionPane.showMessageDialog(null, "Error al consultar valores");
-        }  
-        
-        
+        }
         return res;
      }
 }
