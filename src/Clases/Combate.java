@@ -17,16 +17,12 @@ public class Combate {
         Enemigo e= new Enemigo();
         Picaro p = new Picaro();
         ArrayList A= new ArrayList();
-                
+        int num;
+        
         do{
             
-        if(g.getTurno()==true){
-            System.out.println("Es tu turno heroe");     
-            
+            if(g.getTurno()==true){
         try{
-            System.out.println(g.info());
-            g.subirNivel();
-            System.out.println(g.info());
             
             System.out.println("1.Ataque");
             System.out.println("2.Defensa");
@@ -78,8 +74,10 @@ public class Combate {
         }catch(Exception ex){
          JOptionPane.showMessageDialog(null, "Error");
         }   
+        g.setTurno(false);
         }else 
-            System.out.println("El enemigo se dispone a atacar");  
+            System.out.println("El enemigo se dispone a atacar");
+            g.setTurno(true);
             e.Atacar();
             if (e.golpe > g.Armadura) {
                 System.out.println("Has impactado el ataque");

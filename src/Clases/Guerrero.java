@@ -21,6 +21,7 @@ public class Guerrero{
       this.ataque=1;  
       this.golpe=0;
       this.Defensa=0;
+      this.turno=true;
     }
   
     public int getPV(){
@@ -53,6 +54,9 @@ public class Guerrero{
     public int getArma(){
         return Arma;  
     }
+     public boolean getTurno(){
+        return turno;
+    }
     public String info(){
         return PV+","+PE+","+Armadura+","+daño+","+ataque;
     }
@@ -83,19 +87,16 @@ public class Guerrero{
     public void setAtaque( int ataque){
       this.ataque = ataque;
     }
-    public boolean getTurno(){
-        return turno;
-    }
     public void setTurno (boolean t){
          turno=t;
     }
     public void indicarTurno(){   
         if(getTurno()==true){
             System.out.println("Es tu turno heroe");
-        }else 
+            
+        }else        
             System.out.println("El enemigo se dispone a atacar");
-    }
-    
+    } 
     public void subirNivel(){
         int  armadura = this.Armadura + 1;
         int pv = this.PV +10;
@@ -128,5 +129,6 @@ public class Guerrero{
                 PE=PE-4;
         }else
             System.out.println("No tienes suficiente energía");
+            setTurno(true);
     }    
 }
