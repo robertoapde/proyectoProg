@@ -10,15 +10,18 @@ public class VentanaHijas extends javax.swing.JFrame {
         this.setTitle("Inicio de sesión");
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTaberna.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        dialogTienda.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        dialogHuir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        dialogCombatir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);  
-        dialogSoltar.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTabernaCompra.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogTabernaAlojamiento.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogTienda.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTiendaComprar.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTiendaVender.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        dialogTabernaAlojamiento.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogCombatir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); 
+        dialogHuir.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogMochila.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogSoltar.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogTiendaVenderVender.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogCambiarContraseña.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        dialogMochilaCombate.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 
@@ -125,10 +128,10 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         dialogMochilaCombate = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnUsarObjetoCombate = new javax.swing.JButton();
+        btnSalirMochilaCombate = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaMochilaCombate = new javax.swing.JTable();
         btnTienda = new javax.swing.JButton();
         btnMochila = new javax.swing.JButton();
         btnTaberna = new javax.swing.JButton();
@@ -432,6 +435,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        dialogTiendaComprar.setAlwaysOnTop(true);
         dialogTiendaComprar.setResizable(false);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -474,6 +478,8 @@ public class VentanaHijas extends javax.swing.JFrame {
             dialogTiendaComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        dialogTiendaVender.setResizable(false);
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -810,6 +816,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         dialogTiendaVenderVender.setAlwaysOnTop(true);
         dialogTiendaVenderVender.setModal(true);
+        dialogTiendaVenderVender.setResizable(false);
         dialogTiendaVenderVender.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel35.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -833,6 +840,9 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
         dialogTiendaVenderVender.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -10, 460, 250));
+
+        dialogCambiarContraseña.setAlwaysOnTop(true);
+        dialogCambiarContraseña.setResizable(false);
 
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -896,7 +906,26 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        dialogMochilaCombate.setAlwaysOnTop(true);
+        dialogMochilaCombate.setModal(true);
+        dialogMochilaCombate.setResizable(false);
+
+        btnUsarObjetoCombate.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnUsarObjetoCombate.setForeground(new java.awt.Color(0, 0, 255));
+        btnUsarObjetoCombate.setText("Usar");
+        btnUsarObjetoCombate.setBorder(new javax.swing.border.MatteBorder(null));
+        btnUsarObjetoCombate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsarObjetoCombateActionPerformed(evt);
+            }
+        });
+
+        btnSalirMochilaCombate.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnSalirMochilaCombate.setForeground(new java.awt.Color(255, 0, 0));
+        btnSalirMochilaCombate.setText("Salir");
+        btnSalirMochilaCombate.setBorder(new javax.swing.border.MatteBorder(null));
+
+        tablaMochilaCombate.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -907,44 +936,34 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane7.setViewportView(jTable4);
-
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 255));
-        jButton3.setText("Usar");
-        jButton3.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 0, 0));
-        jButton4.setText("Salir");
-        jButton4.setBorder(new javax.swing.border.MatteBorder(null));
+        jScrollPane4.setViewportView(tablaMochilaCombate);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUsarObjetoCombate, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnSalirMochilaCombate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnUsarObjetoCombate, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(btnSalirMochilaCombate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout dialogMochilaCombateLayout = new javax.swing.GroupLayout(dialogMochilaCombate.getContentPane());
@@ -1229,9 +1248,9 @@ public class VentanaHijas extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextContraseñaAActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnUsarObjetoCombateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsarObjetoCombateActionPerformed
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnUsarObjetoCombateActionPerformed
 
     private void btnCerrarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSActionPerformed
         // TODO add your handling code here:
@@ -1279,6 +1298,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JButton btnMochilaSalir;
     public javax.swing.JButton btnMochilaSoltar;
     public javax.swing.JButton btnMochilaUsar;
+    public javax.swing.JButton btnSalirMochilaCombate;
     public javax.swing.JButton btnSalirTaberna;
     public javax.swing.JButton btnSalirTienda;
     public javax.swing.JButton btnSalirVenderTienda;
@@ -1286,6 +1306,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JButton btnSoltarCancelar;
     public javax.swing.JButton btnTaberna;
     public javax.swing.JButton btnTienda;
+    public javax.swing.JButton btnUsarObjetoCombate;
     public javax.swing.JButton btnVenderTienda;
     public javax.swing.JButton btnVenderVenderTienda;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -1306,8 +1327,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JTextPane historial;
     public javax.swing.JTextPane historialCombate;
     private javax.swing.JScrollPane historialScroll;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
@@ -1363,13 +1382,13 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable4;
     public javax.swing.JTextField jTextContraseñaA;
     public javax.swing.JTextField jTextContraseñaN;
     public javax.swing.JTable tablaMochila;
+    public javax.swing.JTable tablaMochilaCombate;
     public javax.swing.JTable tablaMochilaVender;
     public javax.swing.JTable tablaTaberna;
     public javax.swing.JTable tablaTienda;

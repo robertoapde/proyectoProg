@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE TRIGGER BEFORE DELETE ON Usuario FOR EACH ROW
+BEGIN
+DELETE FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = OLD.Nombre);
+DELETE FROM Mochila WHERE NombreUsuario = OLD.Nombre;
+END; $$

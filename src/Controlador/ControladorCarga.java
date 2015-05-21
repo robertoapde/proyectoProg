@@ -42,6 +42,7 @@ public class ControladorCarga implements ActionListener{
         controlH = new ControladorHijas(vista3);
         
         this.vista1.setVisible(true);
+        this.vista1.setLocation(100,100);
         
         this.vista1.btnLogin.setActionCommand("btnLogin");
         this.vista1.btnLogin.addActionListener(this);

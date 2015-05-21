@@ -29,6 +29,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
     int precioObjetoTiendaSeleccionado = 0;
     int precioObjetoTabernaSeleccionado = 0;
     int precioObjetoMochilaSeleccionado = 0;
+    String tipoObjetoMochilaSeleccionado = "";
     
     
     public enum AccionMVC{
@@ -64,9 +65,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
     btnSoltarCancelar,
     btnAceptarVenderVenderTienda,
     btnCancelarVenderVenderTienda,
-    
+    btnUsarObjetoCombate,
     btnSalirMochilaCombate,
-    btnUsarMochilaCombate,
     
     btnCambiarC,
     btnCerrarS,
@@ -80,8 +80,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
     
    public void iniciar(){        
         usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
-        String [] info = this.modelo.getInfoInterfaz(usuario);
-        this.setInfoInterfaz(info);
+        String [] i = this.modelo.getInfoInterfaz(usuario);
+        this.setInfoInterfaz(i);
+        JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+i[1]+" Nvl. "+i[0]+")");
        
         this.vista.btnCombatir.setActionCommand("btnCombatir");
         this.vista.btnCombatir.addActionListener(this);
@@ -147,6 +148,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnAceptarVenderVenderTienda.addActionListener(this);
         this.vista.btnCancelarVenderVenderTienda.setActionCommand("btnCancelarVenderVenderTienda");
         this.vista.btnCancelarVenderVenderTienda.addActionListener(this);
+        this.vista.btnUsarObjetoCombate.setActionCommand("btnUsarObjetoCombate");
+        this.vista.btnUsarObjetoCombate.addActionListener(this);
+        this.vista.btnSalirMochilaCombate.setActionCommand("btnSalirMochilaCombate");
+        this.vista.btnSalirMochilaCombate.addActionListener(this);
         
         this.vista.tablaTienda.addMouseListener(this);
         this.vista.tablaTienda.setModel(modelo.getTablaTienda());
@@ -163,6 +168,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.tablaMochilaVender.addMouseListener(this);
         this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
         this.vista.tablaMochilaVender.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
+        this.vista.tablaMochilaCombate.addMouseListener(this);
+        this.vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
+        this.vista.tablaMochilaCombate.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
         this.vista.btnCambiarC.setActionCommand("btnCambiarC");
         this.vista.btnCambiarC.addActionListener(this);
@@ -253,25 +262,26 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.dialogTienda.dispose();
                 historialString = historialString + "\nHas vuelto del mercado.";
                 vista.historial.setText(historialString);
+                vista.dialogTiendaComprar.dispose();
                 break;
             case btnAceptarCompraTienda:
                 int oro = Integer.parseInt(this.vista.txtOro.getText());
                 if(oro >= precioObjetoTiendaSeleccionado){
                     String usuario = this.vista.txtNombre.getText();
-                    int funciona = this.modelo.comprarObjetoTienda(usuario, oro, objetoTiendaSeleccionado);
+                    int funciona = this.modelo.comprarObjetoTienda(usuario, objetoTiendaSeleccionado);
                     if (funciona == 1){
                         JOptionPane.showMessageDialog(null, objetoTiendaSeleccionado+" comprad@.");
                         this.vista.txtOro.setText(String.valueOf(oro - precioObjetoTiendaSeleccionado));
+                        this.setInfoBD();
+                        String [] nuevoOroPostCompra = this.modelo.getInfoInterfaz(usuario);
+                        this.setInfoInterfaz(nuevoOroPostCompra);
                         historialString = historialString + "\n"+objetoTiendaSeleccionado+" comprad@.";
-                        String [] info = this.modelo.getInfoInterfaz(usuario);
-                        this.setInfoInterfaz(info);
                     }else{
                         JOptionPane.showMessageDialog(null, "Error al comprar objeto.");
                     }
                 }else{
                     JOptionPane.showMessageDialog(null, "Objeto demasiado caro.");
                 }
-                
                 this.vista.dialogTiendaComprar.dispose();
                 break;
             case btnCancelarCompraTienda:
@@ -295,7 +305,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 vista.historialCombate.setText(historialCombateString);
                 break;
             case btnCombatirMochila:
-                historialCombateString = historialCombateString + "\nNo tienes mochila, porque eres pobre y ni siquiera llevas ropa puesta.";
+                this.vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
+                vista.dialogCombatir.setVisible(false);
+                vista.dialogMochilaCombate.setVisible(true);
+                vista.dialogMochilaCombate.setSize(470,640);
+                vista.dialogMochilaCombate.setLocation(100,100);
                 vista.historialCombate.setText(historialCombateString);
                 break;
             case btnCombatirHuir:
@@ -310,6 +324,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
             case btnHuirPerder:
                 this.vista.dialogHuir.dispose();
+                vista.dialogCombatir.setVisible(true);
                 break; 
             case btnMochilaUsar:
                 break;
@@ -328,9 +343,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.dialogSoltar.dispose();
                 break;    
             case btnAceptarVenderVenderTienda:
-                String [] info1 = this.modelo.getInfoInterfaz(usuario);
-                this.setInfoInterfaz(info1);
-               
                 break;  
             case btnCancelarVenderVenderTienda:
                 this.vista.dialogTiendaVenderVender.dispose();
@@ -338,21 +350,17 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnSalirMochilaCombate:
                 this.vista.dialogMochilaCombate.dispose();
                 break;
-            case btnUsarMochilaCombate:
-                
+            case btnUsarObjetoCombate:
                 break;
             case btnCambiarC:
                 this.vista.dialogCambiarContraseña.setVisible(true);
                 this.vista.dialogCambiarContraseña.setSize(511, 301);
                 this.vista.dialogCambiarContraseña.setLocation(100,100);
                 break;
-                
             case btnCerrarS:
-                this.setInfoBD();
                 this.vista.dispose();
                 this.vista2.setVisible(true);
                 break;
-                      
             case btnAceptarCambiarContraseña:
                 modelo.CambiarContraseña(this.vista.txtNombre.getText(),this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText() );
                 break;
@@ -387,21 +395,19 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guerrero.png")));
                 break;
         }
-        JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+s[1]+" Nvl. "+s[0]+")");
     }
     
- public void setInfoBD(){
+    public void setInfoBD(){
         String usuario = vista.txtNombre.getText();
-        String nivel =  vista.txtNivel.getText();
+        String nivel = vista.txtNivel.getText();
         String experiencia = vista.txtExperiencia.getText();
-        String oro =  vista.txtOro.getText();
+        String oro = vista.txtOro.getText();
         String vida;
         String energia ;
         String vidaMax ;
         String energiaMax ;
         
-       modelo.actualizarBD(usuario, nivel, experiencia, oro );
-     
+        modelo.actualizarBD(usuario, nivel, experiencia, oro);
     }
     
     public void mouseClicked(MouseEvent e) {
@@ -426,6 +432,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             }else if(filaMochila > -1){
                 objetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 0));
                 precioObjetoMochilaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 1)));
+                tipoObjetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 2));
             }else if(filaMochila == -1){
                 objetoMochilaSeleccionado = "";
                 precioObjetoTabernaSeleccionado = 0;

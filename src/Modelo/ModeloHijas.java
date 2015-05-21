@@ -187,7 +187,7 @@ public class ModeloHijas extends Database{
         return tablemodel;
     }
   
-    public int comprarObjetoTienda(String usuario,int oro, String objeto){
+    public int comprarObjetoTienda(String usuario, String objeto){
         int resu = 0;
         int mochi = 0;
         String nombre = "";
@@ -288,14 +288,51 @@ public class ModeloHijas extends Database{
     public void actualizarBD(String usuario , String nivel , String experiencia, String oro){
         
         String q = "UPDATE Usuario set Nombre = '"+usuario+"', Nivel = "+nivel+",  Experiencia = "+experiencia+",  Oro = "+oro+" WHERE Nombre = '"+usuario+"'";
-                try{
-                    PreparedStatement pstm2 = this.getConexion().prepareStatement(q);
-                    pstm2.execute();
-                    pstm2.close();
-                    } catch(SQLException ex){
-                    JOptionPane.showMessageDialog(null, "Error al actualizar");
-                    ex.getStackTrace();
-                    }
+            try{
+                PreparedStatement pstm2 = this.getConexion().prepareStatement(q);
+                pstm2.execute();
+                pstm2.close();
+            } catch(SQLException ex){
+                JOptionPane.showMessageDialog(null, "Error al actualizar");
+                ex.getStackTrace();
+            }
     }
     
+    public DefaultTableModel getTablaMochilaCombate(String u){
+        
+        DefaultTableModel tablemodel = new DefaultTableModel();
+        String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
+        int registros = 0;
+
+        try{
+            PreparedStatement pstm = this.getConexion().prepareStatement("SELECT count(*) as total FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"') AND Tipo LIKE 'usable_%'");
+            ResultSet res = pstm.executeQuery();
+            res.next();
+            registros = res.getInt("total");
+            res.close();
+        }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        
+        Object[][] data = new String[registros][5];
+        
+        try{
+          
+        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"') AND Tipo LIKE 'usable%'");
+        ResultSet res = pstm.executeQuery();
+        int i=0;
+        while(res.next()){
+            data[i][0] = res.getString("Nombre");
+            data[i][1] = res.getString("Tipo");
+            data[i][2] = res.getString("Efecto");
+            i++;
+        }
+        res.close();
+        
+        tablemodel.setDataVector(data, columnNames);
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+        return tablemodel;
+    }
 }
