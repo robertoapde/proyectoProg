@@ -6,6 +6,12 @@ public class Guerrero{
     protected int daño;
     protected int ataque;
     protected int Arma;
+    protected int Oro;
+    protected int Experiencia;
+    protected boolean turno;
+    protected int golpe;
+    protected int Defensa;
+    protected int Nivel;
     
   public Guerrero (){
       this.PV = 10;
@@ -13,6 +19,8 @@ public class Guerrero{
       this.Armadura = 10;
       this.daño=5;
       this.ataque=1;  
+      this.golpe=0;
+      this.Defensa=0;
     }
   
     public int getPV(){
@@ -20,6 +28,18 @@ public class Guerrero{
     }
     public int getPE(){
         return PE;  
+    }
+    public int getOro(){
+        return Oro;  
+    }
+    public int getExperiencia(){
+        return Experiencia;  
+    }
+    public int getgolpe(){
+      return golpe;
+    }
+    public int getNivel(){
+      return Nivel;
     }
     public int getArmadura(){
         return Armadura;  
@@ -42,6 +62,18 @@ public class Guerrero{
     public void setPE( int pe){
       this.PE = pe;
     }
+    public void setOro( int o){
+      this.Oro = o;
+    }
+    public void setExperiencia( int px){
+      this.Experiencia = px;
+    }
+    public void setgolpe( int gp){
+      this.golpe = gp;
+    }
+    public void setNivel(int nv){
+      this.Nivel=nv;
+    }
     public void setArmadura( int armadura){
       this.Armadura = armadura;
     }
@@ -50,6 +82,18 @@ public class Guerrero{
     }
     public void setAtaque( int ataque){
       this.ataque = ataque;
+    }
+    public boolean getTurno(){
+        return turno;
+    }
+    public void setTurno (boolean t){
+         turno=t;
+    }
+    public void indicarTurno(){   
+        if(getTurno()==true){
+            System.out.println("Es tu turno heroe");
+        }else 
+            System.out.println("El enemigo se dispone a atacar");
     }
     
     public void subirNivel(){
@@ -66,93 +110,24 @@ public class Guerrero{
     }
     public void Atacar() {
 	int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;
-            if (golpe > Armadura/*Enemigo.Armadura*/) {
-                PV = PV - daño;//(daño+ Arma)
-                /*if(Enemigo.PV<=0){
-                Oro=Oro+Recompensa;
-                Experiencia=Experiencia+px;*/
-            }else
-	System.out.println("Has fallado el ataque");
+        golpe= golpe+ ataque;        
     }
     
-    public void Defensa(){//Duracion 2 turnos, después del combate debería restaurarse
-        /*Defensa=0;
-        if(Defensa<=4){*/
+    public void Defensa(){
+        if(Defensa<=4){
         ataque=ataque-2;
-        //Defensa=Defensa+2;
-        //Armadura=Armadura+Defensa;
-        /*}
-        else
-        System.out.println("No puedes utilizar mas veces DEFENSA");
-        */
+        Defensa=Defensa+2;
+        Armadura=Armadura+Defensa;
+        }else
+        System.out.println("Tu DEFENSA esta al MÁXIMO");
     }
     
-    public void AtaqueEspecial1() {
-        /*if(PE>=2){*/
+    public void AtaqueEspecial() {
+        if(PE>=4){
 	int golpe=(int) (Math.random()*(20)+1);
         golpe= golpe+ ataque;
-            if (golpe > Armadura) {/*Enemigo.Armadura*/
-                PV = PV - (daño+5);//(daño+ Arma)
-                PE=PE-2;
-                /*if(Enemigo.PV<=0){
-                Oro=Oro+Recompensa;
-                Experiencia=Experiencia+px;
-                Defensa=0*/
-            }else      
-	System.out.println("Has fallado el ATAQUE ESPECIAL!!!");
-        /*}else
-            System.out.println("No tienes suficiente energía");*/
-    }
-    
-    public void AtaqueEspecial2() {
-        /*if(PE>=4){*/
-	int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;
-            if (golpe > Armadura) {/*Enemigo.Armadura*/
-                PV = PV - (daño+10);//(daño+ Arma)
                 PE=PE-4;
-                /*if(Enemigo.PV<=0){
-                Oro=Oro+Recompensa;
-                Experiencia=Experiencia+px;
-                Defensa=0*/
-            }else
-	System.out.println("Has fallado el ATAQUE ESPECIAL!!!");
-            /*}else
-            System.out.println("No tienes suficiente energía");*/
-	}
-    
-    public void AtaqueEspecial3() {
-	/*if(PE>=8){*/
-        int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;
-            if (golpe > Armadura) {/*Enemigo.Armadura*/
-                PV = PV - (daño+15);//(daño+ Arma)
-                PE=PE-8;
-                /*if(Enemigo.PV<=0){
-                Oro=Oro+Recompensa;
-                Experiencia=Experiencia+px;
-                Defensa=0*/
-            }else
-	System.out.println("Has fallado el ATAQUE ESPECIAL!!!");
-            /*}else
-            System.out.println("No tienes suficiente energía");*/
-	}
-    
-    public void AtaqueEspecial4() {
-	/*if(PE>=11){*/
-        int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;
-            if (golpe > Armadura) {/*Enemigo.Armadura*/
-                PV = PV - (daño+25);//(daño+ Arma)
-                PE=PE-11;
-                /*if(Enemigo.PV<=0){
-                Oro=Oro+Recompensa;
-                Experiencia=Experiencia+px;
-                Defensa=0*/
-            }else
-	System.out.println("Has fallado el ATAQUE ESPECIAL!!!");
-            /*}else
-            System.out.println("No tienes suficiente energía");*/
-	}
+        }else
+            System.out.println("No tienes suficiente energía");
+    }    
 }

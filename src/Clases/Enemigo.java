@@ -8,6 +8,11 @@ public class Enemigo {
     protected int Nivel;
     protected int Oro;
     protected int ataque;
+    protected int golpe;
+    
+    public Enemigo(){
+        int golpe=0;
+    }
     
     public void setPV( int pv){
       this.PV = pv;
@@ -33,16 +38,6 @@ public class Enemigo {
     public void Atacar() {
 	int golpe=(int) (Math.random()*(20)+1);
         golpe= golpe+ ataque;
-            if (golpe > Armadura/*Heroe.Armadura*/) {
-                PV = PV - daño;
-                /*if(Heroes.PV<=0)
-                Experiencia=Experiencia-(25*Nivel*3)
-                Oro=Oro-(5*4*Nivel)
-                Heroe.Defensa=0
-                if(Experiencia<0){
-                Experiencia=0;
-                */
-            }else
-	System.out.println("Has fallado el ataque");
-	}
+            
+}
 }
