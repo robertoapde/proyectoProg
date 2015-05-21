@@ -18,7 +18,7 @@ public class Combate {
         Picaro p = new Picaro();
         ArrayList A= new ArrayList();
                 
-        //do{
+        do{
             
         if(g.getTurno()==true){
             System.out.println("Es tu turno heroe");     
@@ -78,26 +78,20 @@ public class Combate {
         }catch(Exception ex){
          JOptionPane.showMessageDialog(null, "Error");
         }   
-        }else {
+        }else 
             System.out.println("El enemigo se dispone a atacar");  
             e.Atacar();
-            if (e.golpe > g.Armadura){
+            if (e.golpe > g.Armadura) {
+                System.out.println("Has impactado el ataque");
                 g.PV = g.PV - e.daño;
-                System.out.println(g.info());
-                if(g.PV<=0){
-                    g.Experiencia = g.Experiencia - (25 * g.Nivel * 3);
-                    g.Oro = g.Oro - ( 5 * 4 * g.Nivel);
-                }
-                if(g.Experiencia < 0){
-                    g.Experiencia = 0;
-                    System.out.println(g.info());
-                }
-            }else{
-                    System.out.println("Ha fallado el ataque");
-                    System.out.println(g.info());
-            }
-        }
-    
-        //}while(g.PV>0||e.PV>0);
+                if(g.PV<=0)
+                g.Experiencia=g.Experiencia-(25*g.Nivel*3);
+                g.Oro=g.Oro-(5*4*g.Nivel);
+                if(g.Experiencia<0){
+                g.Experiencia=0;
+                }else
+	System.out.println("Ha fallado el ataque");
+	}
+        }while(g.PV>0||e.PV>0);
     }
 }

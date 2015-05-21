@@ -115,7 +115,6 @@ public class Guerrero{
     
     public void Defensa(){
         if(Defensa<=4){
-        ataque=ataque-2;
         Defensa=Defensa+2;
         Armadura=Armadura+Defensa;
         }else
