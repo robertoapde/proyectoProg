@@ -1,34 +1,57 @@
 package Clases;
 public class Guerrero{
-    private int PV;
-    private int PE;
-    private int Armadura;
-    private int daño;
-    private int ataque;
-    private int Arma;
+    protected int PV;
+    protected int PE;
+    protected int Armadura;
+    protected int daño;
+    protected int ataque;
+    protected int Arma;
     
   public Guerrero (){
       this.PV = 10;
       this.PE= 2;
       this.Armadura = 10;
       this.daño=5;
-      this.ataque=1;
-  }
+      this.ataque=1;  
+    }
+  
+    public int getPV(){
+        return PV;  
+    }
+    public int getPE(){
+        return PE;  
+    }
+    public int getArmadura(){
+        return Armadura;  
+    }
+    public int getDaño(){
+        return daño;  
+    }
+    public int getAtaque(){
+        return ataque;  
+    }
+    public int getArma(){
+        return Arma;  
+    }
+    public String info(){
+        return PV+","+PE+","+Armadura+","+daño+","+ataque;
+    }
     public void setPV( int pv){
       this.PV = pv;
-  }
+    }
     public void setPE( int pe){
       this.PE = pe;
-  }
+    }
     public void setArmadura( int armadura){
       this.Armadura = armadura;
-  }
+    }
     public void setDaño( int daño){
       this.daño = daño;
-  }
+    }
     public void setAtaque( int ataque){
       this.ataque = ataque;
-  }
+    }
+    
     public void subirNivel(){
         int  armadura = this.Armadura + 1;
         int pv = this.PV +10;
@@ -40,7 +63,7 @@ public class Guerrero{
         setPE(pe);
         setDaño(daño);
         setAtaque(ataque);
-  }
+    }
     public void Atacar() {
 	int golpe=(int) (Math.random()*(20)+1);
         golpe= golpe+ ataque;
@@ -51,7 +74,7 @@ public class Guerrero{
                 Experiencia=Experiencia+px;*/
             }else
 	System.out.println("Has fallado el ataque");
-	}
+    }
     
     public void Defensa(){//Duracion 2 turnos, después del combate debería restaurarse
         /*Defensa=0;

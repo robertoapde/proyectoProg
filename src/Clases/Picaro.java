@@ -1,12 +1,12 @@
 package Clases;
 
 public class Picaro {
-    private int PV;
-    private int PE;
-    private int Armadura;
-    private int daño;
-    private int ataque;
-    private int Arma;
+    protected int PV;
+    protected int PE;
+    protected int Armadura;
+    protected int daño;
+    protected int ataque;
+    protected int Arma;
     
     public Picaro (){
       this.PV = 10;
@@ -28,6 +28,25 @@ public class Picaro {
       setDaño(daño);
        setAtaque(ataque);
     }
+    public int getPV(){
+        return PV;  
+    }
+    public int getPE(){
+        return PE;  
+    }
+    public int getArmadura(){
+        return Armadura;  
+    }
+    public int getDaño(){
+        return daño;  
+    }
+    public int getAtaque(){
+        return ataque;  
+    }
+    public int getArma(){
+        return Arma;  
+    }
+  
     public void setPV( int pv){
       this.PV = pv;
     }
