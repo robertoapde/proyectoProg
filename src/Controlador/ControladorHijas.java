@@ -70,8 +70,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista = vista;
     }
     
-   public void iniciar(){
-        this.vista.setVisible(true);
+   public void iniciar(){        
         usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
         String[] info = this.modelo.getInfoInterfaz(usuario);
         this.setInfoInterfaz(info);

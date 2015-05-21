@@ -1,0 +1,9 @@
+DELIMITER $$
+CREATE TRIGGER nuevaMochila AFTER INSERT ON Usuario FOR EACH ROW
+BEGIN
+DECLARE idMax INT;
+DECLARE nuevaId INT;
+SELECT max(IdMochila) INTO idMax FROM Mochila;
+SET nuevaId = idMax + 1;
+INSERT INTO Mochila VALUES(nuevaId, NEW.Nombre);
+END; $$

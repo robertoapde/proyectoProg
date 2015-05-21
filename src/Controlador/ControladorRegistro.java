@@ -27,8 +27,6 @@ public class ControladorRegistro implements ActionListener{
     }
     
     public void iniciar(){
-        this.vista2.setVisible(true);
-        
         this.vista2.btnRegistrarseComenzar.setActionCommand("btnRegistrarseComenzar");
         this.vista2.btnRegistrarseComenzar.addActionListener(this);
         this.vista2.btnRegistrarseSalir.setActionCommand("btnRegistrarseSalir");
@@ -60,7 +58,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoPicaro(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Picaro "+user+" creado");
-                                    new ControladorCarga(vista1).iniciar();
+                                    vista1.setVisible(true);
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear picaro");
@@ -70,7 +68,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoMago(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Mago "+user+" creado");
-                                    new ControladorCarga(vista1).iniciar();
+                                    vista1.setVisible(true);
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear mago");
@@ -80,7 +78,7 @@ public class ControladorRegistro implements ActionListener{
                                 creado = modeloR.nuevoGuerrero(user, contraseña, email);
                                 if(creado == true){
                                     JOptionPane.showMessageDialog(null, "Guerrero "+user+" creado");
-                                    new ControladorCarga(vista1).iniciar();
+                                    vista1.setVisible(true);
                                     vista2.dispose();
                                 }else{
                                     JOptionPane.showMessageDialog(null, "Error al crear guerrero");
@@ -97,7 +95,7 @@ public class ControladorRegistro implements ActionListener{
                 }
                  break;
             case btnRegistrarseSalir:
-                new ControladorCarga(vista1).iniciar();
+                vista1.setVisible(true);
                 vista2.dispose();
                 break;
             case Picaro:

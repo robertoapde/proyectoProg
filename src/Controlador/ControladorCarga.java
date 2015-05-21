@@ -9,14 +9,16 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 public class ControladorCarga implements ActionListener{
+    VentanaCarga vista1 = Main.vista1;
+    Registro vista2;
+    VentanaHijas vista3;
     
-    VentanaCarga vista1 = new VentanaCarga();
-    Registro vista2 = new Registro();
-    VentanaHijas vista3 = new VentanaHijas();
-    
-    ModeloCarga modelo = new ModeloCarga();
+    ModeloCarga modelo;
     
     String usuario;
+    
+    ControladorRegistro controlR;
+    ControladorHijas controlH;
     
     public enum AccionMVC{
         btnLogin,
@@ -29,12 +31,22 @@ public class ControladorCarga implements ActionListener{
     }
     
     public void iniciar(){
+        vista2 = new Registro();
+        vista3 = new VentanaHijas();
+        
+        modelo = new ModeloCarga();
+        
+        controlR = new ControladorRegistro(vista2);
+        controlR.iniciar();
+        
+        controlH = new ControladorHijas(vista3);
+        
         this.vista1.setVisible(true);
         
         this.vista1.btnLogin.setActionCommand("btnLogin");
         this.vista1.btnLogin.addActionListener(this);
         this.vista1.btnRegistrarse.setActionCommand("btnRegistrarse");
-        this.vista1.btnRegistrarse.addActionListener(this);   
+        this.vista1.btnRegistrarse.addActionListener(this);
     }
     
     @Override
@@ -55,9 +67,10 @@ public class ControladorCarga implements ActionListener{
                         int logeado;
                         logeado = modelo.login(u, p);
                         if(logeado == 1){
-                            new ControladorHijas(vista3).iniciar();
                             setUsuario(u);
                             vista1.setVisible(false);
+                            controlH.iniciar();
+                            vista3.setVisible(true);
                         }else{
                             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
                         }
@@ -67,7 +80,7 @@ public class ControladorCarga implements ActionListener{
                 }
                 break;
             case btnRegistrarse:
-                new ControladorRegistro(vista2).iniciar();
+                vista2.setVisible(true);
                 vista1.setVisible(false);
                 break;
         }
