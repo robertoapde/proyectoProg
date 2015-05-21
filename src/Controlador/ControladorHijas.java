@@ -330,6 +330,39 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnMochilaSoltar:
                 break;
             case btnMochilaEquipar:
+                if(objetoMochilaSeleccionado.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto equipable");
+                }else{
+                    switch (objetoMochilaSeleccionado) {
+                    case "Armadura Ligera I":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera I.png")));
+                        break;
+                    case "Armadura Ligera II":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera II.png")));
+                        break;
+                    case "Armadura Ligera III":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera III.png")));
+                        break;
+                    case "Armadura Intermedia I":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia I.png")));
+                        break;
+                    case "Armadura Intermedia II":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia II.png")));
+                        break;
+                    case "Armadura Intermedia III":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia III.png")));
+                        break;
+                    case "Armadura Pesada I":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada I.png")));
+                        break;
+                    case "Armadura Pesada II":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada II.png")));
+                        break;
+                    case "Armadura Pesada III":
+                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada III.png")));
+                        break;
+                    }
+                }
                 break;
             case btnMochilaSalir:
                 this.vista.dialogMochila.dispose();
@@ -357,6 +390,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.dialogCambiarContraseña.setLocation(100,100);
                 break;
             case btnCerrarS:
+                this.setInfoBD();
                 this.vista.dispose();
                 this.vista2.setVisible(true);
                 break;
@@ -419,19 +453,21 @@ public class ControladorHijas implements ActionListener, MouseListener{
             if (filaTienda > -1){
                 objetoTiendaSeleccionado = String.valueOf(this.vista.tablaTienda.getValueAt(filaTienda, 0));
                 precioObjetoTiendaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaTienda.getValueAt(filaTienda, 1)));
-            }else if(filaTienda == -1){
+            }else{
                 objetoTiendaSeleccionado = "";
                 precioObjetoTiendaSeleccionado = 0;
-            }else if(filaTaberna > -1){
-                objetoTabernaSeleccionado = String.valueOf(this.vista.tablaTaberna.getValueAt(filaTienda, 0));
-                precioObjetoTabernaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaTaberna.getValueAt(filaTienda, 1)));
-            }else if(filaTaberna == -1){
+            }
+            if(filaTaberna > -1){
+                objetoTabernaSeleccionado = String.valueOf(this.vista.tablaTaberna.getValueAt(filaTaberna, 0));
+                precioObjetoTabernaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaTaberna.getValueAt(filaTaberna, 1)));
+            }else{
                 objetoTabernaSeleccionado = "";
                 precioObjetoTabernaSeleccionado = 0;
-            }else if(filaMochila > -1){
-                objetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 0));
-                precioObjetoMochilaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 1)));
-            }else if(filaMochila == -1){
+            }
+            if(filaMochila > -1){
+                objetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaMochila, 0));
+                precioObjetoMochilaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochila.getValueAt(filaMochila, 1)));
+            }else{
                 objetoMochilaSeleccionado = "";
                 precioObjetoTabernaSeleccionado = 0;
             }

@@ -98,7 +98,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tablaMochila = new javax.swing.JTable();
-        jLabel33 = new javax.swing.JLabel();
+        fotoEquipo = new javax.swing.JLabel();
         btnMochilaUsar = new javax.swing.JButton();
         btnMochilaEquipar = new javax.swing.JButton();
         btnMochilaSalir = new javax.swing.JButton();
@@ -736,9 +736,9 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jPanel7.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 11, 462, 410));
 
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tio pajo.jpg"))); // NOI18N
-        jLabel33.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel7.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 11, -1, -1));
+        fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tio pajo.jpg"))); // NOI18N
+        fotoEquipo.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel7.add(fotoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 11, -1, -1));
 
         btnMochilaUsar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnMochilaUsar.setForeground(new java.awt.Color(0, 51, 255));
@@ -1324,6 +1324,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JDialog dialogTiendaVender;
     public javax.swing.JDialog dialogTiendaVenderVender;
     public javax.swing.JLabel fotoClase;
+    public javax.swing.JLabel fotoEquipo;
     public javax.swing.JTextPane historial;
     public javax.swing.JTextPane historialCombate;
     private javax.swing.JScrollPane historialScroll;
@@ -1347,7 +1348,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
