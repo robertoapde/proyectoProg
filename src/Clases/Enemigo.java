@@ -7,7 +7,7 @@ public class Enemigo {
     protected int Experiencia;
     protected int Nivel;
     protected int Oro;
-    protected int ataque;
+    protected int ataque=50;
     protected int golpe;
     
     public Enemigo(){
@@ -36,7 +36,7 @@ public class Enemigo {
       this.ataque = at;
    }
     public void Atacar() {
-	int golpe=(int) (Math.random()*(20)+1);
+	int golpe=50;//(int) (Math.random()*(20)+1);
         golpe= golpe+ ataque;
             
 }

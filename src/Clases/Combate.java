@@ -82,6 +82,7 @@ public class Combate {
             System.out.println("El enemigo se dispone a atacar");  
             e.Atacar();
             if (e.golpe > g.Armadura) {
+                System.out.println("Has impactado el ataque");
                 g.PV = g.PV - e.daño;
                 if(g.PV<=0)
                 g.Experiencia=g.Experiencia-(25*g.Nivel*3);
