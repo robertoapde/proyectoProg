@@ -62,7 +62,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTiendaVender = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        tablaVenderT = new javax.swing.JTable();
+        tablaMochilaVender = new javax.swing.JTable();
         btnVenderVenderTienda = new javax.swing.JButton();
         btnSalirVenderTienda = new javax.swing.JButton();
         dialogCombatir = new javax.swing.JDialog();
@@ -477,7 +477,7 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tablaVenderT.setModel(new javax.swing.table.DefaultTableModel(
+        tablaMochilaVender.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -494,7 +494,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(tablaVenderT);
+        jScrollPane5.setViewportView(tablaMochilaVender);
 
         jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 230));
 
@@ -1370,9 +1370,9 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JTextField jTextContraseñaA;
     public javax.swing.JTextField jTextContraseñaN;
     public javax.swing.JTable tablaMochila;
+    public javax.swing.JTable tablaMochilaVender;
     public javax.swing.JTable tablaTaberna;
     public javax.swing.JTable tablaTienda;
-    private javax.swing.JTable tablaVenderT;
     public javax.swing.JLabel txtClase;
     public javax.swing.JLabel txtExperiencia;
     public javax.swing.JLabel txtNivel;
