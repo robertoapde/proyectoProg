@@ -29,7 +29,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
     int precioObjetoTiendaSeleccionado = 0;
     int precioObjetoTabernaSeleccionado = 0;
     int precioObjetoMochilaSeleccionado = 0;
-    String tipoObjetoMochilaSeleccionado = "";
     
     
     public enum AccionMVC{
@@ -432,7 +431,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
             }else if(filaMochila > -1){
                 objetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 0));
                 precioObjetoMochilaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 1)));
-                tipoObjetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaTienda, 2));
             }else if(filaMochila == -1){
                 objetoMochilaSeleccionado = "";
                 precioObjetoTabernaSeleccionado = 0;
