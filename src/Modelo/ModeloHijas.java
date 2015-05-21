@@ -186,4 +186,62 @@ public class ModeloHijas extends Database{
         }
         return tablemodel;
     }
+    
+    public int comprarObjetoTienda(String usuario,int oro, String objeto){
+        int resu = 0;
+        int mochi = 0;
+        String nombre = "";
+        int precio = 0;
+        String tipo = "";
+        int efecto = 0;
+        int maxId = 0;
+        String q1 = "SELECT Nombre, Precio, Tipo, Efecto FROM Tienda WHERE Nombre = '"+objeto+"'";
+        String q2 = "SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+usuario+"'";
+        String q3 = "SELECT max(IdObjeto) FROM Objeto";
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+            ResultSet res1 = pstm1.executeQuery();
+            res1.next();
+            nombre = res1.getString("Nombre");
+            precio = res1.getInt("Precio");
+            tipo = res1.getString("Tipo");
+            efecto = res1.getInt("Efecto");
+            res1.close();
+            pstm1.close();
+            try{
+                PreparedStatement pstm2 = this.getConexion().prepareStatement(q2);
+                ResultSet res2 = pstm2.executeQuery();
+                res2.next();
+                mochi = res2.getInt("IdMochila");
+                res2.close();
+                pstm2.close();
+                try{
+                    PreparedStatement pstm3 = this.getConexion().prepareStatement(q3);
+                    ResultSet res3 = pstm3.executeQuery();
+                    res3.next();
+                    maxId = res3.getInt("max(IdObjeto)");
+                    maxId = maxId + 1;
+                    res3.close();
+                    pstm3.close();
+                    try{
+                        String q4 = "INSERT INTO Objeto (IdObjeto, Nombre, Precio, Tipo, Efecto, IdMochila) "
+                                +"VALUES("+maxId+", '"+nombre+"', "+precio+", '"+tipo+"', "+efecto+", "+mochi+")";
+                        PreparedStatement pstm4 = this.getConexion().prepareStatement(q4);
+                        pstm4.execute();
+                        pstm4.close();
+                        resu = 1;
+                    }catch(SQLException e){
+                        JOptionPane.showMessageDialog(null, "Error de SQL al insertar objeto");
+                    }
+                }catch(SQLException e){
+                    JOptionPane.showMessageDialog(null, "Error de SQL al obtener max id de objeto");
+                }
+            }catch(SQLException e){
+                JOptionPane.showMessageDialog(null, "Error de SQL al obtener mochila");
+            }
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error de SQL al obtener datos de objeto");
+        }
+        return resu;
+    }
 }
