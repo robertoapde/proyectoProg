@@ -30,6 +30,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
     int precioObjetoTabernaSeleccionado = 0;
     int precioObjetoMochilaSeleccionado = 0;
     
+    String objetoMochilaVenderSeleccionado = "";
+    int precioObjetoMochilaVenderSeleccionado = 0;
+    
     
     public enum AccionMVC{
     btnCombatir,
@@ -190,79 +193,93 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 vista.historial.setText(historialString);
                 historialCombateString = historialCombateString + "\n¡Olonam salvaje ha aparecido!";
                 vista.historialCombate.setText(historialCombateString);
-                vista.dialogCombatir.setSize(382, 410);
+                vista.dialogCombatir.setSize(420, 401);
                 vista.dialogCombatir.setLocation(450, 325);
                 vista.dialogCombatir.setVisible(true);
                 break;
+                
             case  btnMochila:
                 this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                 historialString = historialString + "\nMochila abierta.";
                 vista.historial.setText(historialString);
-                this.vista.dialogMochila.setSize(725,625);//ancho , largo
+                this.vista.dialogMochila.setSize(720, 580);//ancho , largo
                 this.vista.dialogMochila.setLocation(100,100);
                 this.vista.dialogMochila.setVisible(true);
                 break;
+                
             case btnTienda:
                 historialString = historialString + "\nPaseas por el mercado.";
                 vista.historial.setText(historialString);
-                this.vista.dialogTienda.setSize(625,700);
+                this.vista.dialogTienda.setSize(630, 658);
                 this.vista.dialogTienda.setLocation(100,100);
                 this.vista.dialogTienda.setVisible(true);
                 break;
+                
             case btnTaberna:
                 historialString = historialString + "\nHas entrado en la taberna.";
                 vista.historial.setText(historialString);
-                this.vista.dialogTaberna.setSize(540,400);
+                this.vista.dialogTaberna.setSize(527, 353);
                 this.vista.dialogTaberna.setLocation(150,150);
                 this.vista.dialogTaberna.setVisible(true);
                 break;
+                
             case btnComprarTaberna:
-                this.vista.dialogTabernaCompra.setSize(400,400);
+                this.vista.dialogTabernaCompra.setSize(402, 361);
                 this.vista.dialogTabernaCompra.setLocation(150,150);
                 this.vista.dialogTabernaCompra.setVisible(true);
                 break;
+                
             case btnAlojamientoTaberna:
-                this.vista.dialogTabernaAlojamiento.setSize(300,250);
+                this.vista.dialogTabernaAlojamiento.setSize(541, 275);
                 this.vista.dialogTabernaAlojamiento.setLocation(150,150);
                 this.vista.dialogTabernaAlojamiento.setVisible(true);
                 break;
+                
             case btnSalirTaberna:
                 this.vista.dialogTaberna.dispose();
                 historialString = historialString + "\nHas salido de la taberna.";
                 vista.historial.setText(historialString);
                 break;
+                
             case btnAceptarComprarTaberna:
                 break;
+                
             case btnCancelarComprarTaberna:
                 this.vista.dialogTabernaCompra.dispose();
                 break;
+                
             case btnAceptarAlojamiento:
                 break;
+                
             case btnCancelarAlojamiento:
                 this.vista.dialogTabernaAlojamiento.dispose();
                 break;
+                
             case btnComprarTienda:
                 if(objetoTiendaSeleccionado != ""){
-                    this.vista.dialogTiendaComprar.setSize(400,350);
+                    this.vista.dialogTiendaComprar.setSize(470, 320);
                     this.vista.dialogTiendaComprar.setLocation(100,100);
                     this.vista.dialogTiendaComprar.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(null, "Seleccione un objeto del mercado");
                 }
                 break;
+                
             case btnVenderTienda:
                 this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
                 historialString = historialString + "\nHas salido de la tienda";
-                this.vista.dialogTiendaVender.setSize(420,350);
+                this.vista.dialogTiendaVender.setSize(400, 320);
                 this.vista.dialogTiendaVender.setLocation(100,100);
                 this.vista.dialogTiendaVender.setVisible(true);
-                break;   
+                break;
+                
             case btnSalirTienda:
                 this.vista.dialogTienda.dispose();
                 historialString = historialString + "\nHas vuelto del mercado.";
                 vista.historial.setText(historialString);
                 vista.dialogTiendaComprar.dispose();
                 break;
+                
             case btnAceptarCompraTienda:
                 int oro = Integer.parseInt(this.vista.txtOro.getText());
                 if(oro >= precioObjetoTiendaSeleccionado){
@@ -283,52 +300,74 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 }
                 this.vista.dialogTiendaComprar.dispose();
                 break;
+                
             case btnCancelarCompraTienda:
                 this.vista.dialogTiendaComprar.dispose();
-                break;    
-            case btnVenderVenderTienda:
                 break;
+                
+            case btnVenderVenderTienda:
+                if(objetoMochilaVenderSeleccionado.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto");
+                }else{
+                    this.vista.dialogTiendaVenderVender.setSize(410, 270);
+                    this.vista.dialogTiendaVenderVender.setLocation(100,100);
+                    this.vista.dialogTiendaVenderVender.setVisible(true);
+                }
+                break;
+                
             case btnSalirVenderTienda:
                 this.vista.dialogTiendaVender.dispose();
                 break;
+                
             case btnCombatirAtacar:
                 historialCombateString = historialCombateString + "\nHa intentado atacar a Olonam, pero como es muy fuerte, esquiva fácilmente tus ataques.";
                 vista.historialCombate.setText(historialCombateString);
-                break;    
+                break;
+                
             case btnCombatirDefender:
                 historialCombateString = historialCombateString + "\nNo puedes defenderte porque no quiero.";
                 vista.historialCombate.setText(historialCombateString);
                 break;
+                
             case btnCombatirEspecial:
                 historialCombateString = historialCombateString + "\nNo, lo siento, no tienes nada de especial.";
                 vista.historialCombate.setText(historialCombateString);
                 break;
+                
             case btnCombatirMochila:
                 this.vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
                 vista.dialogCombatir.setVisible(false);
-                vista.dialogMochilaCombate.setVisible(true);
-                vista.dialogMochilaCombate.setSize(470,640);
+                vista.dialogMochilaCombate.setSize(400, 313);
                 vista.dialogMochilaCombate.setLocation(100,100);
+                vista.dialogMochilaCombate.setVisible(true);
                 vista.historialCombate.setText(historialCombateString);
                 break;
+                
             case btnCombatirHuir:
                 historialCombateString = "Historial de combate:";
                 vista.historialCombate.setText(historialCombateString);
                 vista.dialogCombatir.dispose();
-                vista.dialogHuir.setSize(470,640);
+                vista.dialogHuir.setSize(420, 560);
                 vista.dialogHuir.setLocation(100,100);
                 vista.dialogHuir.setVisible(true);
                 historialString = historialString + "\nCombate finalizado.";
                 vista.historial.setText(historialString);
                 break;
+                
             case btnHuirPerder:
-                this.vista.dialogHuir.dispose();
-                vista.dialogCombatir.setVisible(true);
-                break; 
+                vista.dialogHuir.dispose();
+                vista.dialogCombatir.dispose();
+                break;
+                
             case btnMochilaUsar:
                 break;
+                
             case btnMochilaSoltar:
+                vista.dialogSoltar.setSize(350, 200);
+                vista.dialogSoltar.setLocation(100,100);
+                vista.dialogSoltar.setVisible(true);
                 break;
+                
             case btnMochilaEquipar:
                 if(objetoMochilaSeleccionado.equals("")){
                     JOptionPane.showMessageDialog(null, "Seleccione un objeto equipable");
@@ -364,39 +403,56 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     }
                 }
                 break;
+                
             case btnMochilaSalir:
                 this.vista.dialogMochila.dispose();
                 historialString = historialString + "\nHas cerrado la mochila.";
                 vista.historial.setText(historialString);
                 break;
+                
             case btnSoltarAceptar:
                 break;
+                
             case btnSoltarCancelar:
                 this.vista.dialogSoltar.dispose();
-                break;    
+                break;
+                
             case btnAceptarVenderVenderTienda:
-                break;  
+                modelo.venderObjetoMochila(usuario, precioObjetoMochilaVenderSeleccionado, objetoMochilaVenderSeleccionado);
+                this.setInfoBD();
+                String [] nuevoOroPostCompra = this.modelo.getInfoInterfaz(usuario);
+                this.setInfoInterfaz(nuevoOroPostCompra);
+                this.vista.dialogTiendaVenderVender.dispose();
+                this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
+                break;
+                
             case btnCancelarVenderVenderTienda:
                 this.vista.dialogTiendaVenderVender.dispose();
                 break;
+                
             case btnSalirMochilaCombate:
                 this.vista.dialogMochilaCombate.dispose();
                 break;
+                
             case btnUsarObjetoCombate:
                 break;
+                
             case btnCambiarC:
                 this.vista.dialogCambiarContraseña.setVisible(true);
-                this.vista.dialogCambiarContraseña.setSize(511, 301);
+                this.vista.dialogCambiarContraseña.setSize(511, 330);
                 this.vista.dialogCambiarContraseña.setLocation(100,100);
                 break;
+                
             case btnCerrarS:
                 this.setInfoBD();
                 this.vista.dispose();
                 this.vista2.setVisible(true);
                 break;
+                
             case btnAceptarCambiarContraseña:
                 modelo.CambiarContraseña(this.vista.txtNombre.getText(),this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText() );
                 break;
+                
             case btnCancelarCambiarContraseña:
                 this.vista.dialogCambiarContraseña.dispose();
                 break;
@@ -436,9 +492,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
         String experiencia = vista.txtExperiencia.getText();
         String oro = vista.txtOro.getText();
         String vida;
-        String energia ;
-        String vidaMax ;
-        String energiaMax ;
+        String energia;
+        String vidaMax;
+        String energiaMax;
         
         modelo.actualizarBD(usuario, nivel, experiencia, oro);
     }
@@ -449,6 +505,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             int filaTienda = this.vista.tablaTienda.rowAtPoint(e.getPoint());
             int filaTaberna = this.vista.tablaTaberna.rowAtPoint(e.getPoint());
             int filaMochila = this.vista.tablaMochila.rowAtPoint(e.getPoint());
+            int filaMochilaVender = this.vista.tablaMochilaVender.rowAtPoint(e.getPoint());
             
             if (filaTienda > -1){
                 objetoTiendaSeleccionado = String.valueOf(this.vista.tablaTienda.getValueAt(filaTienda, 0));
@@ -470,6 +527,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
             }else{
                 objetoMochilaSeleccionado = "";
                 precioObjetoTabernaSeleccionado = 0;
+            }
+            if(filaMochilaVender > -1){
+                objetoMochilaVenderSeleccionado = String.valueOf(this.vista.tablaMochilaVender.getValueAt(filaMochilaVender, 0));
+                precioObjetoMochilaVenderSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochilaVender.getValueAt(filaMochilaVender, 1)));
+            }else if(filaMochilaVender == -1){
+                objetoMochilaVenderSeleccionado = "";
+                precioObjetoMochilaVenderSeleccionado = 0;
             }
         }
     }

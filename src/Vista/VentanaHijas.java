@@ -218,8 +218,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogTabernaCompra.setResizable(false);
-
         tablaTaberna.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -505,7 +503,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 230));
 
         btnVenderVenderTienda.setText("Vender");
-        jPanel6.add(btnVenderVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        jPanel6.add(btnVenderVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
 
         btnSalirVenderTienda.setText("Salir");
         btnSalirVenderTienda.addActionListener(new java.awt.event.ActionListener() {
@@ -513,7 +511,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnSalirVenderTiendaActionPerformed(evt);
             }
         });
-        jPanel6.add(btnSalirVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+        jPanel6.add(btnSalirVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
 
         javax.swing.GroupLayout dialogTiendaVenderLayout = new javax.swing.GroupLayout(dialogTiendaVender.getContentPane());
         dialogTiendaVender.getContentPane().setLayout(dialogTiendaVenderLayout);
@@ -804,10 +802,10 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         jLabel34.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel34.setText("¿Desea eliminar el objeto?");
+        jLabel34.setText("¿Desea soltar/eliminar el objeto?");
         jLabel34.setBorder(new javax.swing.border.MatteBorder(null));
         jLabel34.setOpaque(true);
-        jPanel8.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+        jPanel8.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
         jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 400, 180));
@@ -830,16 +828,16 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnAceptarVenderVenderTienda.setForeground(new java.awt.Color(0, 0, 255));
         btnAceptarVenderVenderTienda.setText("Aceptar");
         btnAceptarVenderVenderTienda.setBorder(new javax.swing.border.MatteBorder(null));
-        dialogTiendaVenderVender.getContentPane().add(btnAceptarVenderVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 260, 20));
+        dialogTiendaVenderVender.getContentPane().add(btnAceptarVenderVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 260, 30));
 
         btnCancelarVenderVenderTienda.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCancelarVenderVenderTienda.setForeground(new java.awt.Color(255, 0, 0));
         btnCancelarVenderVenderTienda.setText("Cancelar");
         btnCancelarVenderVenderTienda.setBorder(new javax.swing.border.MatteBorder(null));
-        dialogTiendaVenderVender.getContentPane().add(btnCancelarVenderVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 260, 20));
+        dialogTiendaVenderVender.getContentPane().add(btnCancelarVenderVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 260, 30));
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
-        dialogTiendaVenderVender.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -10, 460, 250));
+        dialogTiendaVenderVender.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 460, 240));
 
         dialogCambiarContraseña.setAlwaysOnTop(true);
         dialogCambiarContraseña.setResizable(false);

@@ -245,7 +245,7 @@ public class ModeloHijas extends Database{
         return resu;
     }
     
-      public DefaultTableModel getTablaMochilaVender(String u){
+    public DefaultTableModel getTablaMochilaVender(String u){
         
         DefaultTableModel tablemodel = new DefaultTableModel();
         String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
@@ -334,5 +334,59 @@ public class ModeloHijas extends Database{
             System.err.println(e.getMessage());
         }
         return tablemodel;
+    }
+    
+    public boolean venderObjetoMochila(String usuario,int precio,String objeto){
+        boolean res = false;
+        String q1= "SELECT IdORobjeto FROM Objeto WHERE Nombre = '"+objeto+"' limit 1"  ;
+        String q2= "SELECT Oro FROM Usuario WHERE Nombre='"+usuario+"'";
+        int idObjeto ;
+        int oro;
+        
+        try{
+               
+                PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+                ResultSet res1 = pstm1.executeQuery();
+                res1.next();
+                idObjeto= res1.getInt("IdObjeto");
+                res1.close();
+                pstm1.close();
+            try{
+                PreparedStatement pstm2 = this.getConexion().prepareStatement(q2);
+                ResultSet res2 = pstm2.executeQuery();
+                res2.next();
+                oro= res2.getInt("Oro");
+                res2.close();
+                pstm2.close();
+                    try{
+                       oro = oro + precio;
+                       String q3 = "UPDATE Usuario set Oro = "+oro+" WHERE Nombre = '"+usuario+"'";
+                       PreparedStatement pstm3 = this.getConexion().prepareStatement(q3);
+                       pstm3.execute();
+                       pstm3.close();
+                       
+                        try{
+                           String q4 = "DELETE FROM Objeto WHERE IdObjeto = "+idObjeto;
+                           PreparedStatement pstm4 = this.getConexion().prepareStatement(q4);
+                           pstm4.execute();
+                           pstm4.close();
+                           JOptionPane.showMessageDialog(null, "Objeto Vendido");
+                           JOptionPane.showMessageDialog(null, "Has ganado algo de oro");
+                           res=true;
+                        } catch(SQLException ex){
+                           JOptionPane.showMessageDialog(null, "Error al Eliminar");
+                           ex.getStackTrace();
+                        }
+                    } catch(SQLException ex){
+                       JOptionPane.showMessageDialog(null, "Error al modificar");
+                       ex.getStackTrace();
+                    }
+            }catch(SQLException e){
+                JOptionPane.showMessageDialog(null, "Error de SQL al obtener oro");
+            }
+        }catch(SQLException e){
+                JOptionPane.showMessageDialog(null, "Error de SQL al obtener objeto");
+        }
+      return res;
     }
 }
