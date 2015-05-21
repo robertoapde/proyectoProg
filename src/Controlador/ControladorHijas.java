@@ -348,7 +348,22 @@ public class ControladorHijas implements ActionListener, MouseListener{
         JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+s[1]+" Nvl. "+s[0]+")");
     }
     
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+        if( e.getButton()== 1)//boton izquierdo
+        {
+            int filaTienda = this.vista.tablaTienda.rowAtPoint(e.getPoint());
+            int filaTaberna = this.vista.tablaTaberna.rowAtPoint(e.getPoint());
+            int filaMochila = this.vista.tablaMochila.rowAtPoint(e.getPoint());
+            
+            if (filaTienda > -1){
+                
+            }else if(filaTaberna > -1){
+                
+            }else if(filaMochila > -1){
+                
+            }
+        }
+    }
     
     public void mousePressed(MouseEvent e) {}
 
