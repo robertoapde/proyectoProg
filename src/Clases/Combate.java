@@ -38,11 +38,13 @@ public class Combate {
                     g.Atacar();
                     if (g.golpe > e.Armadura) {
                     e.PV = e.PV - g.daño;
+                    System.out.println(e.info());
                     if(e.PV<=0){
                     g.Oro=g.Oro+e.Oro;
                     g.Experiencia=g.Experiencia+e.Experiencia;
                     }else
                         System.out.println("Has fallado el ataque");
+                    System.out.println(e.info());
                     }
 		break;
                     
@@ -50,11 +52,13 @@ public class Combate {
                     g.AtaqueEspecial();
                     if (g.golpe > e.Armadura) {
                     e.PV = e.PV - g.daño;
+                    System.out.println(e.info());
                     if(e.PV<=0){
                     g.Oro=g.Oro+e.Oro;
                     g.Experiencia=g.Experiencia+e.Experiencia;
                     }else
                         System.out.println("Has fallado el ataque");
+                    System.out.println(e.info());
                     }
 		break;
                     
@@ -82,6 +86,7 @@ public class Combate {
             if (e.golpe > g.Armadura) {
                 System.out.println("Has impactado el ataque");
                 g.PV = g.PV - e.daño;
+                System.out.println(g.info());
                 if(g.PV<=0)
                 g.Experiencia=g.Experiencia-(25*g.Nivel*3);
                 g.Oro=g.Oro-(5*4*g.Nivel);
@@ -89,6 +94,7 @@ public class Combate {
                 g.Experiencia=0;
                 }else
 	System.out.println("Ha fallado el ataque");
+                System.out.println(e.info());
 	}
         }while(g.PV>0||e.PV>0);
     }
