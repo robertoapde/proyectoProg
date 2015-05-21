@@ -7,11 +7,11 @@ public class Enemigo {
     protected int Experiencia;
     protected int Nivel;
     protected int Oro;
-    protected int ataque = 50;
+    protected int ataque;
     protected int golpe;
     
     public Enemigo(){
-        int golpe = 0;
+        int golpe=0;
     }
     
     public void setPV( int pv){
@@ -36,8 +36,8 @@ public class Enemigo {
       this.ataque = at;
    }
     public void Atacar() {
-	int golpe = (int) (Math.random()*(20)+1);
-        golpe = golpe + ataque;
+	int golpe=(int) (Math.random()*(20)+1);
+        golpe= golpe+ ataque;
             
-    }
+}
 }
