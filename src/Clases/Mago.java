@@ -25,7 +25,7 @@ package Clases;
     protected int Equipo;
     
          
- public Mago (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax, int equipo){
+ public Mago (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax,int nivel){
       this.PV = PV;
       this.MaxPE= MPE;
       this.MaxPV = MPV;
@@ -40,7 +40,7 @@ package Clases;
       this.turno=true;
       this.Huir=0;
       this.ExpMax=pxMax;
-      this.Equipo=equipo;
+       this.Nivel=nivel;
     } 
     
     
@@ -89,6 +89,7 @@ package Clases;
     public boolean getTurno(){
         return turno;
     }
+    
     public int getDefensa(){
         return Defensa;
     }
