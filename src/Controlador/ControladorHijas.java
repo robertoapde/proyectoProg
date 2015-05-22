@@ -47,6 +47,16 @@ public class ControladorHijas implements ActionListener, MouseListener{
     Picaro p ;
     ObjetoTemp o;
     
+    Enemigo enemigo;
+    String nombreEne;
+    int vidaEne;
+    int nivelEne;
+    int experienciaEne;
+    int dañoEne;
+    int armaduraEne;
+    int oroEne;
+    int ataqueEne;
+    
     public enum AccionMVC{
     btnCombatir,
     btnMochila,
@@ -99,9 +109,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
         int contNv =1 ;
         int  ExpMax=0;
         for(int i = 0; i >= Nivel ; i++){
-         ExpMax=cont*25*contNv;
+         ExpMax = cont * 25 * contNv;
          cont++;
-         contNv=contNv*2;
+         contNv = contNv * 2;
          }
        return ExpMax;
     }
@@ -270,6 +280,35 @@ public class ControladorHijas implements ActionListener, MouseListener{
         switch ( AccionMVC.valueOf( e.getActionCommand() ) )
         {
             case btnCombatir:
+                int nivelUsuario = Integer.parseInt(vista.txtNivel.getText());
+                
+                if(nivelUsuario == 1){
+                    String[][] enemigos = new String[2][8];
+                    enemigos = modelo.datosEnemigo(nivelUsuario);
+                    int huir = (int) (Math.random()*(2));
+                    nombreEne = enemigos[huir][0];
+                    vidaEne = Integer.parseInt(enemigos[huir][1]);
+                    nivelEne = Integer.parseInt(enemigos[huir][2]);
+                    experienciaEne = Integer.parseInt(enemigos[huir][3]);
+                    dañoEne = Integer.parseInt(enemigos[huir][4]);
+                    armaduraEne = Integer.parseInt(enemigos[huir][5]);
+                    oroEne = Integer.parseInt(enemigos[huir][6]);
+                    ataqueEne = Integer.parseInt(enemigos[huir][7]);
+                    enemigo = new Enemigo(vidaEne, armaduraEne, dañoEne, ataqueEne);
+                }else{
+                    String[][] enemigos = new String[3][8];
+                    enemigos = modelo.datosEnemigo(nivelUsuario);
+                    int huir = (int) (Math.random()*(3));
+                    nombreEne = enemigos[huir][0];
+                    vidaEne = Integer.parseInt(enemigos[huir][1]);
+                    nivelEne = Integer.parseInt(enemigos[huir][2]);
+                    experienciaEne = Integer.parseInt(enemigos[huir][3]);
+                    dañoEne = Integer.parseInt(enemigos[huir][4]);
+                    armaduraEne = Integer.parseInt(enemigos[huir][5]);
+                    oroEne = Integer.parseInt(enemigos[huir][6]);
+                    ataqueEne = Integer.parseInt(enemigos[huir][7]);
+                    enemigo = new Enemigo(vidaEne, armaduraEne, dañoEne, ataqueEne);
+                }
                
                 historialCombateString="";
                 this.vista.historialCombate.setText(historialCombateString);
@@ -277,19 +316,24 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.historial.setText(historialString);
                 historialString = historialString + "\n¡Combate iniciado!";
                 this.vista.historial.setText(historialString);
-                historialCombateString = historialCombateString + "\n¡Enemigo salvaje ha aparecido!";
+                historialCombateString = historialCombateString + "\n¡"+nombreEne+" ha aparecido!";
                 this.vista.historialCombate.setText(historialCombateString);
                 this.vista.dialogCombatir.setSize(420, 540);
                 this.vista.dialogCombatir.setLocation(450, 325);
-                this.vista.dialogCombatir.setVisible(true);
-                this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
-                //this.vista.txtNombreEnemigo.setText();
+                
                 this.vista.txtNombreCombate.setText(usuario);
                 this.vista.txtPVCombate.setText(this.vista.txtPV.getText());
                 this.vista.txtPVCombateMax.setText(this.vista.txtPVMax.getText());
                 this.vista.txtPECombate.setText(this.vista.txtPE.getText());
                 this.vista.txtPECombateMax.setText(this.vista.txtPEMax.getText());
-            
+                
+                this.vista.txtPVEnemigo.setText(String.valueOf(vidaEne));
+                this.vista.txtPVEnemigoMax.setText(String.valueOf(vidaEne));
+                this.vista.txtNombreEnemigo.setText(nombreEne);
+                this.vista.txtNivelEnemigo.setText(String.valueOf(nivelEne));
+                
+                this.vista.dialogCombatir.setVisible(true);
+                this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
                 break;
                 
             case  btnMochila:

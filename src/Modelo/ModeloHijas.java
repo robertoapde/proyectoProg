@@ -563,31 +563,62 @@ public class ModeloHijas extends Database{
         }
         return efecto;
     }
-     public Object[] datosEnemigo(String Nivel){
-        String[] datosE = new String[5];
-         int NivelU = Integer.parseInt(Nivel);
-         int n1 = NivelU - 1;
-         int n2 = NivelU;
-         int n3 = NivelU + 1;
-        
-        String q = "SELECT Nombre, Vida, Nivel, Experiencia, Oro  FROM Enemigo WHERE Nivel IN ("+n1+","+n2+","+n3+")";
-        
-        try{
-        PreparedStatement pstm = this.getConexion().prepareStatement(q);
-        ResultSet res = pstm.executeQuery();
-        res.next();
-            datosE[0] = String.valueOf(res.getInt("Nombre"));
-            datosE[1] = String.valueOf(res.getInt("Vida"));
-            datosE[2] = String.valueOf(res.getInt("Nivel"));
-            datosE[3] = String.valueOf(res.getInt("Experiencia"));
-            datosE[4] = String.valueOf(res.getInt("Oro"));
- 
-        res.close();
-        pstm.close();
-        }catch(SQLException e){
-            System.err.println( e.getMessage() );
+     public String[][] datosEnemigo(int nivel){
+        String[][] datosE;
+        int nivelU = nivel;
+        int n1 = nivelU - 1;
+        int n2 = nivelU;
+        int n3 = nivelU + 1;
+        int i;
+        if(nivelU == 1){
+            datosE = new String[2][8];
+            String q = "SELECT * FROM Enemigo WHERE Nivel IN ("+n2+","+n3+")";
+            
+            try{
+                PreparedStatement pstm1 = this.getConexion().prepareStatement(q);
+                ResultSet res1 = pstm1.executeQuery();
+                i = 0;
+                while(res1.next()){
+                    datosE[i][0] = res1.getString("Nombre");
+                    datosE[i][1] = String.valueOf(res1.getInt("Vida"));
+                    datosE[i][2] = String.valueOf(res1.getInt("Nivel"));
+                    datosE[i][3] = String.valueOf(res1.getInt("Experiencia"));
+                    datosE[i][4] = String.valueOf(res1.getInt("DañoEnemigo"));
+                    datosE[i][5] = String.valueOf(res1.getInt("ArmaduraEnemigo"));
+                    datosE[i][6] = String.valueOf(res1.getInt("Oro"));
+                    datosE[i][7] = String.valueOf(res1.getInt("AtaqueEnemigo"));
+                    i++;
+                } 
+                res1.close();
+                pstm1.close();
+            }catch(SQLException e){
+                System.err.println( e.getMessage() );
+            }
+        }else{
+            datosE = new String[3][8];
+            String q = "SELECT * FROM Enemigo WHERE Nivel IN ("+n1+","+n2+","+n3+")";
+            
+            try{
+                PreparedStatement pstm2 = this.getConexion().prepareStatement(q);
+                ResultSet res2 = pstm2.executeQuery();
+                i = 0;
+                while(res2.next()){
+                    datosE[i][0] = res2.getString("Nombre");
+                    datosE[i][1] = String.valueOf(res2.getInt("Vida"));
+                    datosE[i][2] = String.valueOf(res2.getInt("Nivel"));
+                    datosE[i][3] = String.valueOf(res2.getInt("Experiencia"));
+                    datosE[i][4] = String.valueOf(res2.getInt("DañoEnemigo"));
+                    datosE[i][5] = String.valueOf(res2.getInt("ArmaduraEnemigo"));
+                    datosE[i][6] = String.valueOf(res2.getInt("Oro"));
+                    datosE[i][7] = String.valueOf(res2.getInt("AtaqueEnemigo"));
+                    i++;
+                } 
+                res2.close();
+                pstm2.close();
+            }catch(SQLException e){
+                System.err.println( e.getMessage() );
+            }
         }
-     
         return datosE;
     }  
 }

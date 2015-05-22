@@ -1448,7 +1448,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JLabel txtEquipo;
     public javax.swing.JLabel txtExperiencia;
     public javax.swing.JLabel txtNivel;
-    private javax.swing.JLabel txtNivelEnemigo;
+    public javax.swing.JLabel txtNivelEnemigo;
     public javax.swing.JLabel txtNombre;
     public javax.swing.JLabel txtNombreCombate;
     public javax.swing.JLabel txtNombreEnemigo;
