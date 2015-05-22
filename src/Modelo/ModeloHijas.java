@@ -131,19 +131,19 @@ public class ModeloHijas extends Database{
                     pstm2.execute();
                     pstm2.close();
                     res= true;
-                    JOptionPane.showMessageDialog(null, "Contraseña Modificada");
+                    JOptionPane.showMessageDialog(null, "Contraseña modificada.");
                     } catch(SQLException ex){
-                    JOptionPane.showMessageDialog(null, "Error al modificar");
+                    JOptionPane.showMessageDialog(null, "Error al modificar.");
                     ex.getStackTrace();
                 }
             }else{
-                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden.");
                 }
          }else{
-                JOptionPane.showMessageDialog(null, "Error al conectar");
+                JOptionPane.showMessageDialog(null, "Error al conectar.");
             } 
         }catch(Exception ex){
-                JOptionPane.showMessageDialog(null, "Error al consultar valores");
+                JOptionPane.showMessageDialog(null, "Error al consultar valores.");
         }
         return res;
     }
@@ -231,16 +231,16 @@ public class ModeloHijas extends Database{
                         pstm4.close();
                         resu = 1;
                     }catch(SQLException e){
-                        JOptionPane.showMessageDialog(null, "Error de SQL al insertar objeto");
+                        JOptionPane.showMessageDialog(null, "Error de SQL al insertar objeto.");
                     }
                 }catch(SQLException e){
-                    JOptionPane.showMessageDialog(null, "Error de SQL al obtener max id de objeto");
+                    JOptionPane.showMessageDialog(null, "Error de SQL al obtener MAX ID de objeto.");
                 }
             }catch(SQLException e){
-                JOptionPane.showMessageDialog(null, "Error de SQL al obtener mochila");
+                JOptionPane.showMessageDialog(null, "Error de SQL al obtener mochila.");
             }
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error de SQL al obtener datos de objeto");
+            JOptionPane.showMessageDialog(null, "Error de SQL al obtener datos de objeto.");
         }
         return resu;
     }
@@ -293,7 +293,7 @@ public class ModeloHijas extends Database{
                 pstm2.execute();
                 pstm2.close();
             } catch(SQLException ex){
-                JOptionPane.showMessageDialog(null, "Error al actualizar");
+                JOptionPane.showMessageDialog(null, "Error al actualizar.");
                 ex.getStackTrace();
             }
     }
@@ -338,7 +338,7 @@ public class ModeloHijas extends Database{
     
     public boolean venderObjetoMochila(String usuario,int precio,String objeto){
         boolean res = false;
-        String q1= "SELECT IdORobjeto FROM Objeto WHERE Nombre = '"+objeto+"' limit 1"  ;
+        String q1= "SELECT IdObjeto FROM Objeto WHERE Nombre = '"+objeto+"' limit 1";
         String q2= "SELECT Oro FROM Usuario WHERE Nombre='"+usuario+"'";
         int idObjeto ;
         int oro;
@@ -370,23 +370,51 @@ public class ModeloHijas extends Database{
                            PreparedStatement pstm4 = this.getConexion().prepareStatement(q4);
                            pstm4.execute();
                            pstm4.close();
-                           JOptionPane.showMessageDialog(null, "Objeto Vendido");
-                           JOptionPane.showMessageDialog(null, "Has ganado algo de oro");
+                           JOptionPane.showMessageDialog(null, "Objeto vendido.");
+                           JOptionPane.showMessageDialog(null, "Has ganado algo de oro.");
                            res=true;
                         } catch(SQLException ex){
-                           JOptionPane.showMessageDialog(null, "Error al Eliminar");
+                           JOptionPane.showMessageDialog(null, "Error al eliminar.");
                            ex.getStackTrace();
                         }
                     } catch(SQLException ex){
-                       JOptionPane.showMessageDialog(null, "Error al modificar");
+                       JOptionPane.showMessageDialog(null, "Error al modificar.");
                        ex.getStackTrace();
                     }
             }catch(SQLException e){
-                JOptionPane.showMessageDialog(null, "Error de SQL al obtener oro");
+                JOptionPane.showMessageDialog(null, "Error de SQL al obtener oro.");
             }
         }catch(SQLException e){
-                JOptionPane.showMessageDialog(null, "Error de SQL al obtener objeto");
+                JOptionPane.showMessageDialog(null, "Error de SQL al obtener objeto.");
         }
       return res;
+    }
+    
+    public int soltarObjeto(String objeto){
+        int resu = 0;
+        String q1= "SELECT IdObjeto FROM Objeto WHERE Nombre = '"+objeto+"' limit 1";
+        int idObjeto;
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+            ResultSet res1 = pstm1.executeQuery();
+            res1.next();
+            idObjeto= res1.getInt("IdObjeto");
+            res1.close();
+            pstm1.close();
+            try{
+                String q4 = "DELETE FROM Objeto WHERE IdObjeto = "+idObjeto;
+                PreparedStatement pstm4 = this.getConexion().prepareStatement(q4);
+                pstm4.execute();
+                pstm4.close();
+                JOptionPane.showMessageDialog(null, "Objeto soltado y perdido para siempre.");
+                resu = 1;
+            }catch(SQLException ex){
+                JOptionPane.showMessageDialog(null, "Error al eliminar.");
+                ex.getStackTrace();
+            }
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error de SQL al obtener objeto.");
+        }
+        return resu;
     }
 }

@@ -20,7 +20,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
     ModeloHijas modelo = new ModeloHijas();
     
     String historialString = "Historial de partida:";
-    String historialCombateString = "Historial de combate: ";
+    String historialCombateString = "Historial de combate:";
     String usuario;
     
     String objetoTiendaSeleccionado = "";
@@ -74,6 +74,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
     btnCerrarS,
     btnAceptarCambiarContraseña,
     btnCancelarCambiarContraseña,
+    
+    btnVerificarSoltarAceptar,
+    btnVerificarSoltarCancelar
     }
     
     public ControladorHijas(VentanaHijas vista){
@@ -84,7 +87,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
         String [] i = this.modelo.getInfoInterfaz(usuario);
         this.setInfoInterfaz(i);
-        JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+i[1]+" Nvl. "+i[0]+")");
+        JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+i[1]+" Nvl. "+i[0]+").");
        
         this.vista.btnCombatir.setActionCommand("btnCombatir");
         this.vista.btnCombatir.addActionListener(this);
@@ -183,6 +186,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnAceptarCambiarContraseña.addActionListener(this);
         this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
         this.vista.btnCancelarCambiarContraseña.addActionListener(this);
+        
+        this.vista.btnVerificarSoltarAceptar.setActionCommand("btnVerificarSoltarAceptar");
+        this.vista.btnVerificarSoltarAceptar.addActionListener(this);
+        this.vista.btnVerificarSoltarCancelar.setActionCommand("btnVerificarSoltarCancelar");
+        this.vista.btnVerificarSoltarCancelar.addActionListener(this);         
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -202,7 +210,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                 historialString = historialString + "\nMochila abierta.";
                 vista.historial.setText(historialString);
-                this.vista.dialogMochila.setSize(720, 580);//ancho , largo
+                this.vista.dialogMochila.setSize(720, 580);
                 this.vista.dialogMochila.setLocation(100,100);
                 this.vista.dialogMochila.setVisible(true);
                 break;
@@ -278,7 +286,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     this.vista.dialogTiendaComprar.setLocation(100,100);
                     this.vista.dialogTiendaComprar.setVisible(true);
                 }else{
-                    JOptionPane.showMessageDialog(null, "Seleccione un objeto del mercado");
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto del mercado.");
                 }
                 break;
                 
@@ -325,7 +333,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnVenderVenderTienda:
                 if(objetoMochilaVenderSeleccionado.equals("")){
-                    JOptionPane.showMessageDialog(null, "Seleccione un objeto");
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto.");
                 }else{
                     this.vista.dialogTiendaVender.setVisible(false);
                     this.vista.dialogTiendaVenderVender.setSize(410, 270);
@@ -390,7 +398,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnMochilaEquipar:
                 if(objetoMochilaSeleccionado.equals("")){
-                    JOptionPane.showMessageDialog(null, "Seleccione un objeto equipable");
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto equipable.");
                 }else{
                     switch (objetoMochilaSeleccionado) {
                     case "Armadura Ligera I":
@@ -431,6 +439,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnSoltarAceptar:
+                if(objetoMochilaSeleccionado.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto.");
+                }
+                vista.dialogVerificarSoltar.setSize(470, 320);
+                vista.dialogVerificarSoltar.setLocation(100,100);
+                vista.dialogVerificarSoltar.setVisible(true);
+                modelo.soltarObjeto(objetoMochilaSeleccionado);
                 break;
                 
             case btnSoltarCancelar:
@@ -481,6 +496,12 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnCancelarCambiarContraseña:
                 this.vista.dialogCambiarContraseña.dispose();
                 this.vista.setVisible(true);
+                break;
+                
+            case btnVerificarSoltarAceptar:
+                break;
+                
+            case btnVerificarSoltarCancelar:
                 break;
         }
     }

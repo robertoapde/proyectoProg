@@ -132,6 +132,12 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnSalirMochilaCombate = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaMochilaCombate = new javax.swing.JTable();
+        dialogVerificarSoltar = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        btnVerificarSoltarAceptar = new javax.swing.JButton();
+        btnVerificarSoltarCancelar = new javax.swing.JButton();
+        jLabel47 = new javax.swing.JLabel();
         btnTienda = new javax.swing.JButton();
         btnMochila = new javax.swing.JButton();
         btnTaberna = new javax.swing.JButton();
@@ -984,6 +990,51 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        dialogVerificarSoltar.setAlwaysOnTop(true);
+        dialogVerificarSoltar.setModal(true);
+        dialogVerificarSoltar.setResizable(false);
+
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel33.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel33.setText("¿Seguro que deseas soltarlo?");
+        jLabel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel33.setOpaque(true);
+        jPanel11.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 330, -1));
+
+        btnVerificarSoltarAceptar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnVerificarSoltarAceptar.setForeground(new java.awt.Color(51, 51, 255));
+        btnVerificarSoltarAceptar.setText("Aceptar");
+        btnVerificarSoltarAceptar.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel11.add(btnVerificarSoltarAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 370, 30));
+
+        btnVerificarSoltarCancelar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnVerificarSoltarCancelar.setForeground(new java.awt.Color(255, 0, 51));
+        btnVerificarSoltarCancelar.setText("Cancelar");
+        btnVerificarSoltarCancelar.setBorder(new javax.swing.border.MatteBorder(null));
+        btnVerificarSoltarCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerificarSoltarCancelarActionPerformed(evt);
+            }
+        });
+        jPanel11.add(btnVerificarSoltarCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 370, 30));
+
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
+        jPanel11.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 290));
+
+        javax.swing.GroupLayout dialogVerificarSoltarLayout = new javax.swing.GroupLayout(dialogVerificarSoltar.getContentPane());
+        dialogVerificarSoltar.getContentPane().setLayout(dialogVerificarSoltarLayout);
+        dialogVerificarSoltarLayout.setHorizontalGroup(
+            dialogVerificarSoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dialogVerificarSoltarLayout.setVerticalGroup(
+            dialogVerificarSoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1281,6 +1332,10 @@ public class VentanaHijas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCerrarSActionPerformed
 
+    private void btnVerificarSoltarCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarSoltarCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerificarSoltarCancelarActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1332,6 +1387,8 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JButton btnUsarObjetoCombate;
     public javax.swing.JButton btnVenderTienda;
     public javax.swing.JButton btnVenderVenderTienda;
+    public javax.swing.JButton btnVerificarSoltarAceptar;
+    public javax.swing.JButton btnVerificarSoltarCancelar;
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JDialog dialogCambiarContraseña;
     public javax.swing.JDialog dialogCombatir;
@@ -1346,6 +1403,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JDialog dialogTiendaComprar;
     public javax.swing.JDialog dialogTiendaVender;
     public javax.swing.JDialog dialogTiendaVenderVender;
+    public javax.swing.JDialog dialogVerificarSoltar;
     public javax.swing.JLabel fotoClase;
     public javax.swing.JLabel fotoEquipo;
     public javax.swing.JTextPane historial;
@@ -1373,6 +1431,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -1387,6 +1446,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
@@ -1394,6 +1454,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
