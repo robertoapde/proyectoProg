@@ -12,6 +12,8 @@ package Clases;
 public class ObjetoTemp {
     protected int PV;
     protected int PE;
+    protected int MaxPV;
+    protected int MaxPE;
     protected int Armadura;
     protected int daño;
     protected int ataque;
@@ -23,10 +25,13 @@ public class ObjetoTemp {
     protected int Defensa;
     protected int Nivel;
     protected int Huir;
-   
+    protected int ExpMax;
+    protected int Equipo;
     
-  public ObjetoTemp (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){
+  public ObjetoTemp (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax, int equipo){
       this.PV = PV;
+      this.MaxPE= MPE;
+      this.MaxPV = MPV;
       this.PE= PE;
       this.Armadura = Armadura;
       this.daño=daño;
@@ -37,7 +42,13 @@ public class ObjetoTemp {
       this.Experiencia=experiencia;
       this.turno=true;
       this.Huir=0;
+      this.ExpMax=pxMax;
+      this.Equipo=equipo;
     } 
+
+    public ObjetoTemp(int pv, int pe, int armadura, int daño, int ataque, int oro, int experiencia) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   
     public int getPV(){
         return PV;  
@@ -45,8 +56,20 @@ public class ObjetoTemp {
     public int getPE(){
         return PE;  
     }
+    public int getMaxPV(){
+        return MaxPV;  
+    }
+    public int getMaxPE(){
+        return MaxPE;  
+    }
+    public int getExpMax(){
+      return ExpMax;
+    }
     public int getOro(){
         return Oro;  
+    }
+    public int getEquipo(){
+        return Equipo;  
     }
     public int getExperiencia(){
         return Experiencia;  
@@ -69,8 +92,11 @@ public class ObjetoTemp {
     public int getArma(){
         return Arma;  
     }
-     public boolean getTurno(){
+    public boolean getTurno(){
         return turno;
+    }
+    public int getDefensa(){
+        return Defensa;
     }
     public String info(){
        return "\nPV: " +PV+"\nArmadura: "+Armadura+"\nDaño: "+daño+"\nAtaque: "+ataque;
@@ -81,8 +107,17 @@ public class ObjetoTemp {
     public void setPE( int pe){
       this.PE = pe;
     }
+    public void setMaxPV(int MPV){
+        this.MaxPV=MPV;  
+    }
+    public void setMaxPE(int MPE){
+        this.MaxPE=MPE;  
+    }
     public void setOro( int o){
       this.Oro = o;
+    }
+    public void setExpMax( int px){
+      this.ExpMax = px;
     }
     public void setExperiencia( int px){
       this.Experiencia = px;
@@ -133,13 +168,9 @@ public class ObjetoTemp {
         return golpe;
     }
     
-    public void Defensa(){
-        
-        if(Defensa<4){
+    public void Defensa(){   
             Defensa=Defensa+2;
-            Armadura=Armadura+Defensa;
-        }else{       
-        }
+            Armadura=Armadura+Defensa;       
     }
    
     public void Huir(){
