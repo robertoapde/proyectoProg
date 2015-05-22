@@ -563,12 +563,12 @@ public class ModeloHijas extends Database{
         }
         return efecto;
     }
-     public Object[] datosEnemigo(String u){
-        String[] datosE = new String[10];
-        int NivelU = 0;
-        int n1 = NivelU - 1;
-        int n2 = NivelU;
-        int n3 = NivelU + 1;
+     public Object[] datosEnemigo(String Nivel){
+        String[] datosE = new String[5];
+         int NivelU = Integer.parseInt(Nivel);
+         int n1 = NivelU - 1;
+         int n2 = NivelU;
+         int n3 = NivelU + 1;
         
         String q = "SELECT Nombre, Vida, Nivel, Experiencia, Oro  FROM Enemigo WHERE Nivel IN ("+n1+","+n2+","+n3+")";
         
