@@ -256,9 +256,14 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 if(oroP >= 30){
                     oroP = oroP - 30;
                     vista.txtOro.setText(String.valueOf(oroP));
+                    vista.txtPV.setText(vista.txtPVMax.getText());
+                    vista.txtPE.setText(vista.txtPEMax.getText());
+                    this.setInfoBD();
+                    String [] nuevaVidaPostAlojamiento = this.modelo.getInfoInterfaz(usuario);
+                    this.setInfoInterfaz(nuevaVidaPostAlojamiento);
                     JOptionPane.showMessageDialog(null, "Te alojas en la posada y te recuperas.");
+                    vista.dialogTabernaAlojamiento.dispose();
                 }
-                JOptionPane.showMessageDialog(null, "");
                 break;
                 
             case btnCancelarAlojamiento:
