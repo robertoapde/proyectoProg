@@ -141,12 +141,6 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        Barrahp = new javax.swing.JProgressBar();
-        BarraEp = new javax.swing.JProgressBar();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JLabel();
         txtNivel = new javax.swing.JLabel();
         txtClase = new javax.swing.JLabel();
@@ -155,12 +149,22 @@ public class VentanaHijas extends javax.swing.JFrame {
         fotoClase = new javax.swing.JLabel();
         historialScroll = new javax.swing.JScrollPane();
         historial = new javax.swing.JTextPane();
+        jLabel6 = new javax.swing.JLabel();
+        txtPV = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtPE = new javax.swing.JLabel();
+        txtPVMax = new javax.swing.JLabel();
+        txtPEMax = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnCambiarC = new javax.swing.JRadioButtonMenuItem();
         btnCerrarS = new javax.swing.JRadioButtonMenuItem();
 
+        dialogTaberna.setAlwaysOnTop(true);
+        dialogTaberna.setModal(true);
         dialogTaberna.setResizable(false);
         dialogTaberna.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -217,6 +221,9 @@ public class VentanaHijas extends javax.swing.JFrame {
             dialogTabernaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        dialogTabernaCompra.setAlwaysOnTop(true);
+        dialogTabernaCompra.setResizable(false);
 
         tablaTaberna.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -295,6 +302,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        dialogTabernaAlojamiento.setAlwaysOnTop(true);
         dialogTabernaAlojamiento.setResizable(false);
         dialogTabernaAlojamiento.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -477,6 +485,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        dialogTiendaVender.setAlwaysOnTop(true);
         dialogTiendaVender.setResizable(false);
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -988,7 +997,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnTiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 250, 30));
+        getContentPane().add(btnTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 250, 30));
 
         btnMochila.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnMochila.setForeground(new java.awt.Color(51, 51, 255));
@@ -999,7 +1008,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnMochilaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMochila, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 250, 30));
+        getContentPane().add(btnMochila, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 250, 30));
 
         btnTaberna.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnTaberna.setForeground(new java.awt.Color(51, 51, 255));
@@ -1010,7 +1019,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnTabernaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 250, 30));
+        getContentPane().add(btnTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 250, 30));
 
         btnCombatir.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnCombatir.setForeground(new java.awt.Color(255, 0, 0));
@@ -1021,115 +1030,133 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCombatir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 170, 90));
+        getContentPane().add(btnCombatir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 160, 90));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nombre:");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 50, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 50, 20));
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Nivel:");
-        jLabel2.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 50, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Clase:");
-        jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 50, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 50, 20));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel4.setText("Exp :");
-        jLabel4.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Exp:");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel4.setOpaque(true);
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 50, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 50, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel5.setText("Oro :");
-        jLabel5.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Oro:");
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel5.setOpaque(true);
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 50, 20));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
 
-        jLabel6.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel6.setText("HP:");
-        jLabel6.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel6.setOpaque(true);
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, 20));
-
-        jLabel7.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel7.setText("EP:");
-        jLabel7.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel7.setOpaque(true);
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 20, 20));
-
-        Barrahp.setBorder(new javax.swing.border.MatteBorder(null));
-        Barrahp.setFocusTraversalPolicyProvider(true);
-        getContentPane().add(Barrahp, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, 20));
-
-        BarraEp.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(BarraEp, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 190, 20));
-
-        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel8.setText("0%");
-        jLabel8.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel8.setOpaque(true);
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel9.setText("0%");
-        jLabel9.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel9.setOpaque(true);
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 20, -1));
-
+        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
         txtNombre.setForeground(new java.awt.Color(0, 153, 153));
+        txtNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNombre.setOpaque(true);
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 70, 20));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 160, 20));
 
+        txtNivel.setBackground(new java.awt.Color(255, 255, 255));
         txtNivel.setForeground(new java.awt.Color(0, 153, 153));
-        txtNivel.setBorder(new javax.swing.border.MatteBorder(null));
+        txtNivel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtNivel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNivel.setOpaque(true);
-        getContentPane().add(txtNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 70, 20));
+        getContentPane().add(txtNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 160, 20));
 
+        txtClase.setBackground(new java.awt.Color(255, 255, 255));
         txtClase.setForeground(new java.awt.Color(0, 153, 153));
-        txtClase.setBorder(new javax.swing.border.MatteBorder(null));
+        txtClase.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtClase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtClase.setOpaque(true);
-        getContentPane().add(txtClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 70, 20));
+        getContentPane().add(txtClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 160, 20));
 
+        txtExperiencia.setBackground(new java.awt.Color(255, 255, 255));
         txtExperiencia.setForeground(new java.awt.Color(0, 153, 153));
-        txtExperiencia.setBorder(new javax.swing.border.MatteBorder(null));
+        txtExperiencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtExperiencia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtExperiencia.setOpaque(true);
-        getContentPane().add(txtExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 70, 20));
+        getContentPane().add(txtExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 160, 20));
 
+        txtOro.setBackground(new java.awt.Color(255, 255, 255));
         txtOro.setForeground(new java.awt.Color(0, 153, 153));
-        txtOro.setBorder(new javax.swing.border.MatteBorder(null));
+        txtOro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtOro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtOro.setOpaque(true);
-        getContentPane().add(txtOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 70, 20));
+        getContentPane().add(txtOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 160, 20));
 
         fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
         fotoClase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(fotoClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 100, 100));
+        getContentPane().add(fotoClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 100, 100));
 
         historial.setEditable(false);
         historialScroll.setViewportView(historial);
 
-        getContentPane().add(historialScroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 160, 180));
+        getContentPane().add(historialScroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 200, 210));
+
+        jLabel6.setFont(new java.awt.Font("Yu Mincho Demibold", 1, 12)); // NOI18N
+        jLabel6.setText("PV");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
+
+        txtPV.setBackground(new java.awt.Color(255, 255, 255));
+        txtPV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPV.setOpaque(true);
+        getContentPane().add(txtPV, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 40, 20));
+
+        jLabel8.setFont(new java.awt.Font("Yu Mincho Demibold", 1, 12)); // NOI18N
+        jLabel8.setText("PE");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
+
+        txtPE.setBackground(new java.awt.Color(255, 255, 255));
+        txtPE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPE.setOpaque(true);
+        getContentPane().add(txtPE, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 40, 20));
+
+        txtPVMax.setBackground(new java.awt.Color(255, 255, 255));
+        txtPVMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPVMax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPVMax.setOpaque(true);
+        getContentPane().add(txtPVMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 40, 20));
+
+        txtPEMax.setBackground(new java.awt.Color(255, 255, 255));
+        txtPEMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPEMax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPEMax.setOpaque(true);
+        getContentPane().add(txtPEMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 40, 20));
+
+        jLabel12.setText("/");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 10, 20));
+
+        jLabel13.setText("/");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 10, 20));
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
-        getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 290));
+        getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 350));
 
         jMenu1.setText("Opciones");
 
@@ -1264,8 +1291,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar BarraEp;
-    private javax.swing.JProgressBar Barrahp;
     private javax.swing.JProgressBar barraEP;
     private javax.swing.JProgressBar barraHP;
     private javax.swing.JProgressBar barraHPEn;
@@ -1327,6 +1352,8 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JTextPane historialCombate;
     private javax.swing.JScrollPane historialScroll;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1362,9 +1389,7 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -1395,5 +1420,9 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JLabel txtNivel;
     public javax.swing.JLabel txtNombre;
     public javax.swing.JLabel txtOro;
+    public javax.swing.JLabel txtPE;
+    public javax.swing.JLabel txtPEMax;
+    public javax.swing.JLabel txtPV;
+    public javax.swing.JLabel txtPVMax;
     // End of variables declaration//GEN-END:variables
 }

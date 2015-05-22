@@ -118,16 +118,16 @@ public class Registro extends javax.swing.JFrame {
         jLabel7.setOpaque(true);
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 50, -1));
 
-        jTextUsuario.setBorder(new javax.swing.border.MatteBorder(null));
+        jTextUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jTextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 171, 330, -1));
 
-        jTextContraseña.setBorder(new javax.swing.border.MatteBorder(null));
+        jTextContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jTextContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 209, 330, -1));
 
-        jTextConfiContraseña.setBorder(new javax.swing.border.MatteBorder(null));
+        jTextConfiContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jTextConfiContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 247, 330, -1));
 
-        jTextEmail.setBorder(new javax.swing.border.MatteBorder(null));
+        jTextEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 285, 330, -1));
 
         btnRegistrarseSalir.setBackground(new java.awt.Color(204, 204, 204));

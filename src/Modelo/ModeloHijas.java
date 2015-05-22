@@ -285,9 +285,9 @@ public class ModeloHijas extends Database{
         }
         return tablemodel;
     }
-    public void actualizarBD(String usuario , String nivel , String experiencia, String oro){
+    public void actualizarBD(String usuario , String nivel , String experiencia, String oro, String pv, String pe, String pvm, String pem){
         
-        String q = "UPDATE Usuario set Nombre = '"+usuario+"', Nivel = "+nivel+",  Experiencia = "+experiencia+",  Oro = "+oro+" WHERE Nombre = '"+usuario+"'";
+        String q = "UPDATE Usuario set Nombre = '"+usuario+"', Nivel = "+nivel+", Experiencia = "+experiencia+", Oro = "+oro+", PV = "+pv+", PE = "+pe+", PVMaximo = "+pvm+", PEMaximo = "+pem+" WHERE Nombre = '"+usuario+"'";
             try{
                 PreparedStatement pstm2 = this.getConexion().prepareStatement(q);
                 pstm2.execute();

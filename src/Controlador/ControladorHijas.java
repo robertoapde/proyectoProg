@@ -224,12 +224,14 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnComprarTaberna:
+                this.vista.dialogTaberna.setVisible(false);
                 this.vista.dialogTabernaCompra.setSize(402, 361);
                 this.vista.dialogTabernaCompra.setLocation(150,150);
                 this.vista.dialogTabernaCompra.setVisible(true);
                 break;
                 
             case btnAlojamientoTaberna:
+                this.vista.dialogTaberna.setVisible(false);
                 this.vista.dialogTabernaAlojamiento.setSize(541, 275);
                 this.vista.dialogTabernaAlojamiento.setLocation(150,150);
                 this.vista.dialogTabernaAlojamiento.setVisible(true);
@@ -246,17 +248,27 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnCancelarComprarTaberna:
                 this.vista.dialogTabernaCompra.dispose();
+                this.vista.dialogTaberna.setVisible(true);
                 break;
                 
             case btnAceptarAlojamiento:
+                int oroP = Integer.parseInt(vista.txtOro.getText());
+                if(oroP >= 30){
+                    oroP = oroP - 30;
+                    vista.txtOro.setText(String.valueOf(oroP));
+                    JOptionPane.showMessageDialog(null, "Te alojas en la posada y te recuperas.");
+                }
+                JOptionPane.showMessageDialog(null, "");
                 break;
                 
             case btnCancelarAlojamiento:
                 this.vista.dialogTabernaAlojamiento.dispose();
+                this.vista.dialogTaberna.setVisible(true);
                 break;
                 
             case btnComprarTienda:
                 if(objetoTiendaSeleccionado != ""){
+                    this.vista.dialogTienda.setVisible(false);
                     this.vista.dialogTiendaComprar.setSize(470, 320);
                     this.vista.dialogTiendaComprar.setLocation(100,100);
                     this.vista.dialogTiendaComprar.setVisible(true);
@@ -267,7 +279,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnVenderTienda:
                 this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
-                historialString = historialString + "\nHas salido de la tienda";
+                this.vista.dialogTienda.setVisible(false);
                 this.vista.dialogTiendaVender.setSize(400, 320);
                 this.vista.dialogTiendaVender.setLocation(100,100);
                 this.vista.dialogTiendaVender.setVisible(true);
@@ -303,12 +315,14 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnCancelarCompraTienda:
                 this.vista.dialogTiendaComprar.dispose();
+                this.vista.dialogTienda.setVisible(true);
                 break;
                 
             case btnVenderVenderTienda:
                 if(objetoMochilaVenderSeleccionado.equals("")){
                     JOptionPane.showMessageDialog(null, "Seleccione un objeto");
                 }else{
+                    this.vista.dialogTiendaVender.setVisible(false);
                     this.vista.dialogTiendaVenderVender.setSize(410, 270);
                     this.vista.dialogTiendaVenderVender.setLocation(100,100);
                     this.vista.dialogTiendaVenderVender.setVisible(true);
@@ -317,6 +331,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnSalirVenderTienda:
                 this.vista.dialogTiendaVender.dispose();
+                this.vista.dialogTienda.setVisible(true);
                 break;
                 
             case btnCombatirAtacar:
@@ -420,24 +435,28 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnAceptarVenderVenderTienda:
                 modelo.venderObjetoMochila(usuario, precioObjetoMochilaVenderSeleccionado, objetoMochilaVenderSeleccionado);
                 this.setInfoBD();
-                String [] nuevoOroPostCompra = this.modelo.getInfoInterfaz(usuario);
-                this.setInfoInterfaz(nuevoOroPostCompra);
+                String [] nuevoOroPostVenta = this.modelo.getInfoInterfaz(usuario);
+                this.setInfoInterfaz(nuevoOroPostVenta);
                 this.vista.dialogTiendaVenderVender.dispose();
+                this.vista.dialogTiendaVender.setVisible(true);
                 this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
                 break;
                 
             case btnCancelarVenderVenderTienda:
                 this.vista.dialogTiendaVenderVender.dispose();
+                this.vista.dialogTiendaVender.setVisible(true);
                 break;
                 
             case btnSalirMochilaCombate:
                 this.vista.dialogMochilaCombate.dispose();
+                this.vista.dialogCombatir.setVisible(true);
                 break;
                 
             case btnUsarObjetoCombate:
                 break;
                 
             case btnCambiarC:
+                this.vista.setVisible(false);
                 this.vista.dialogCambiarContraseña.setVisible(true);
                 this.vista.dialogCambiarContraseña.setSize(511, 330);
                 this.vista.dialogCambiarContraseña.setLocation(100,100);
@@ -450,11 +469,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnAceptarCambiarContraseña:
-                modelo.CambiarContraseña(this.vista.txtNombre.getText(),this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText() );
+                modelo.CambiarContraseña(this.vista.txtNombre.getText(),this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText());
+                this.vista.setVisible(true);
                 break;
                 
             case btnCancelarCambiarContraseña:
                 this.vista.dialogCambiarContraseña.dispose();
+                this.vista.setVisible(true);
                 break;
         }
     }
@@ -473,6 +494,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
         vista.txtClase.setText(clase);
         vista.txtExperiencia.setText(experiencia);
         vista.txtOro.setText(oro);
+        vista.txtPV.setText(vida);
+        vista.txtPE.setText(energia);
+        vista.txtPVMax.setText(vidaMax);
+        vista.txtPEMax.setText(energiaMax);
         switch (clase){
             case "Picaro":
                 this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/picaro.png")));
@@ -491,12 +516,12 @@ public class ControladorHijas implements ActionListener, MouseListener{
         String nivel = vista.txtNivel.getText();
         String experiencia = vista.txtExperiencia.getText();
         String oro = vista.txtOro.getText();
-        String vida;
-        String energia;
-        String vidaMax;
-        String energiaMax;
+        String vida = vista.txtPV.getText();
+        String energia = vista.txtPE.getText();;
+        String vidaMax = vista.txtPVMax.getText();;
+        String energiaMax = vista.txtPEMax.getText();;
         
-        modelo.actualizarBD(usuario, nivel, experiencia, oro);
+        modelo.actualizarBD(usuario, nivel, experiencia, oro, vida, energia, vidaMax, energiaMax);
     }
     
     public void mouseClicked(MouseEvent e) {
