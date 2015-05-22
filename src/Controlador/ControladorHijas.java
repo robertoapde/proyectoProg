@@ -763,32 +763,31 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCombatirHuir:
-                historialCombateString = "Historial de combate:";
-                vista.historialCombate.setText(historialCombateString);
-                vista.dialogCombatir.dispose();
-                vista.dialogHuir.setSize(420, 560);
-                vista.dialogHuir.setLocation(100,100);
-                vista.dialogHuir.setVisible(true);
-                historialString = historialString + "\nCombate finalizado.";
-                vista.historial.setText(historialString);
+                o.Huir();
+                if(o.getHuir()==1){
+                    System.out.println("Has conseguido HUIR");
+                    historialCombateString = "Historial de combate:";
+                    vista.historialCombate.setText(historialCombateString);
+                    vista.dialogCombatir.dispose();
+                    vista.dialogHuir.setSize(420, 560);
+                    vista.dialogHuir.setLocation(100,100);
+                    vista.dialogHuir.setVisible(true);
+                    historialString = historialString + "\nCombate finalizado.";
+                    vista.historial.setText(historialString);
+                }
+                if(o.getHuir()==2){
+                    System.out.println("NO puedes HUIR");
+                    o.setTurno(false);
+                }
+                if(o.getHuir()==3){
+                    System.out.println("No puedes HUIR");
+                    o.setTurno(false);
+                }
                 break;
                 
             case btnHuirPerder:
-                /*Guerrero g =new Guerrero(); 
-                g.Huir();
-                if(s==1){
-                    System.out.println("Has conseguido HUIR");
-                    vista.dialogHuir.dispose();
-                    vista.dialogCombatir.dispose();    
-                }
-                if(s==2){
-                    System.out.println("NO puedes HUIR");
-                }
-                if(s==3){
-                    System.out.println("No puedes HUIR");
-                }*/
-                vista.dialogHuir.setVisible(false);
-                vista.dialogCombatir.setVisible(false);
+                    vista.dialogHuir.setVisible(false);
+                    vista.dialogCombatir.setVisible(false);
                 break;
                 
             case btnMochilaUsar:
@@ -1178,6 +1177,47 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnUsarObjetoCombate:
+                if(objetoMochilaSeleccionado.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto.");
+                }else{
+                    if(tipoObjetoMochilaSeleccionado.equals("usable_HP")){
+                        if(vista.txtPV.getText().equals(vista.txtPVMax.getText())){
+                            JOptionPane.showMessageDialog(null, "Ya tienes la vida al máximo.");
+                        }else{
+                            int nuevoPV = Integer.parseInt(vista.txtPV.getText()) + efectoObjetoMochilaSeleccionado;
+                            if(nuevoPV > Integer.parseInt(vista.txtPVMax.getText())){
+                                nuevoPV = Integer.parseInt(vista.txtPVMax.getText());
+                            }
+                            vista.txtPV.setText(String.valueOf(nuevoPV));
+                            modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
+                            JOptionPane.showMessageDialog(null, "Poción de vida usada.");
+                            this.setInfoBD();
+                            String [] nuevaVidaPostPocion = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevaVidaPostPocion);
+                            vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                        }
+                    }else if(tipoObjetoMochilaSeleccionado.equals("usable_EP")){
+                        if(vista.txtPE.getText().equals(vista.txtPEMax.getText())){
+                            JOptionPane.showMessageDialog(null, "Ya tienes la energía al máximo.");
+                        }else{
+                            int nuevoPE = Integer.parseInt(vista.txtPE.getText()) + efectoObjetoMochilaSeleccionado;
+                            if(nuevoPE > Integer.parseInt(vista.txtPEMax.getText())){
+                                nuevoPE = Integer.parseInt(vista.txtPEMax.getText());
+                            }
+                            vista.txtPE.setText(String.valueOf(nuevoPE));
+                            modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
+                            JOptionPane.showMessageDialog(null, "Poción de energía usada.");
+                            this.setInfoBD();
+                            String [] nuevaEnergiaPostPocion = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevaEnergiaPostPocion);
+                            vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                        }
+                    }else if(tipoObjetoMochilaSeleccionado.equals("usable_DAÑO")){
+                        JOptionPane.showMessageDialog(null, "Este objeto no puede ser usado aquí.");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Seleccione un objeto usable.");
+                    }
+                }
                 break;
                 
             case btnCambiarC:

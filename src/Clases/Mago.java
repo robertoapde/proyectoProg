@@ -93,6 +93,9 @@ package Clases;
     public int getDefensa(){
         return Defensa;
     }
+    public int getHuir(){
+        return Huir;
+    }
     public String info(){
        return "\nPV: " +PV+"\nArmadura: "+Armadura+"\nDaño: "+daño+"\nAtaque: "+ataque;
     }
@@ -169,7 +172,7 @@ package Clases;
     }
    
     public void Huir(){
-        int s=(int) (Math.random()*(3)+1);     
+        int Huir=(int) (Math.random()*(3)+1);     
     }
     public void AtaqueEspecial() {
         if(PE>=4){
