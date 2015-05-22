@@ -28,7 +28,7 @@ public class ObjetoTemp {
     protected int ExpMax;
     protected int Equipo;
     
-  public ObjetoTemp (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax, int equipo){
+  public ObjetoTemp (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax,int nivel){
       this.PV = PV;
       this.MaxPE= MPE;
       this.MaxPV = MPV;
@@ -43,13 +43,9 @@ public class ObjetoTemp {
       this.turno=true;
       this.Huir=0;
       this.ExpMax=pxMax;
-      this.Equipo=equipo;
+      this.Nivel=nivel;
     } 
 
-    public ObjetoTemp(int pv, int pe, int armadura, int daño, int ataque, int oro, int experiencia) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-  
     public int getPV(){
         return PV;  
     }

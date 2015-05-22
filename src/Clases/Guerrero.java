@@ -19,7 +19,7 @@ public class Guerrero{
     protected int Equipo;
    
     
-  public Guerrero (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax, int equipo){
+  public Guerrero (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax,int nivel){
       this.PV = PV;
       this.MaxPE= MPE;
       this.MaxPV = MPV;
@@ -34,7 +34,7 @@ public class Guerrero{
       this.turno=true;
       this.Huir=0;
       this.ExpMax=pxMax;
-      this.Equipo=equipo;
+      this.Nivel=nivel;
     } 
   
     public int getPV(){
@@ -42,6 +42,12 @@ public class Guerrero{
     }
     public int getPE(){
         return PE;  
+    }
+      public int getMaxPV(){
+        return MaxPV;  
+    }
+      public int getMaxPE(){
+        return MaxPE;  
     }
     public int getOro(){
         return Oro;  
@@ -56,6 +62,7 @@ public class Guerrero{
       return Nivel;
     }
     public int getArmadura(){
+
         return Armadura;  
     }
     public int getDaño(){
@@ -67,6 +74,13 @@ public class Guerrero{
     public int getArma(){
         return Arma;  
     }
+      public int getEquipo(){
+        return Equipo;  
+    }
+      public int getExpMax(){
+        return ExpMax;  
+    }
+   
      public boolean getTurno(){
         return turno;
     }
@@ -153,4 +167,5 @@ public class Guerrero{
             setTurno(true);
         }
     }    
+    
 }

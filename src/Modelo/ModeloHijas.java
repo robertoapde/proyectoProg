@@ -146,7 +146,7 @@ public class ModeloHijas extends Database{
                     JOptionPane.showMessageDialog(null, "Error al modificar.");
                     ex.getStackTrace();
                 }
-            }else{
+                }else{
                     JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden.");
                 }
          }else{
@@ -547,28 +547,24 @@ public class ModeloHijas extends Database{
         }
         return ataque;
     }
-   /* public void HeroeEnCombate(){
-        try{
-          
-            PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Usuario WHERE  Usuario = '"+u+"'");
-            ResultSet res = pstm.executeQuery();
-            int i=0;
-        while(res.next()){
-            Object[][] data = new String[][7];
-            data[i][0] = res.getString("PV");
-            data[i][1] = res.getString("PE");
-            data[i][2] = res.getString("Armadura");
-            data[i][3] = res.getString("daño");
-            data[i][4] = res.getString("ataque");
-            data[i][5] = res.getString("Oro");
-            data[i][6] = res.getString("Experiencia");
-                     
-            i++;
-        }
-        res.close();
+    
+     public int obtenerEquipo(String usuario){
         
+        String q = "SELECT Efecto FROM Tienda WHERE Nombre =(SELECT Equipo FROM Usuario WHERE Nombre ='"+usuario+"')" ;
+        int efecto=0;
+        try{
+                PreparedStatement pstm1 = this.getConexion().prepareStatement(q);
+                ResultSet res1 = pstm1.executeQuery();
+                res1.next();
+                efecto = res1.getInt("Efecto");
+                res1.close();
+                pstm1.close();
         }catch(SQLException e){
-            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "No se pudo obtener el Efecto ");
+            System.err.println( e.getMessage() );
         }
-    }*/
+     
+        return efecto;
+    }
+   
 }
