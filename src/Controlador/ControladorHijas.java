@@ -268,7 +268,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 vista.historial.setText(historialString);
                 historialCombateString = historialCombateString + "\n¡Enemigo salvaje ha aparecido!";
                 vista.historialCombate.setText(historialCombateString);
-                vista.dialogCombatir.setSize(420, 401);
+                vista.dialogCombatir.setSize(420, 540);
                 vista.dialogCombatir.setLocation(450, 325);
                 vista.dialogCombatir.setVisible(true);
                 
