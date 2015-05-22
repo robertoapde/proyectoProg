@@ -340,18 +340,61 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCombatirAtacar:
-                historialCombateString = historialCombateString + "\nHa intentado atacar a Olonam, pero como es muy fuerte, esquiva fácilmente tus ataques.";
+                historialCombateString = historialCombateString + "\nHas lanzado un ataque con tu ";//+Arma;
                 vista.historialCombate.setText(historialCombateString);
+                /*g.Atacar();
+                            if (g.golpe > e.Armadura) {
+                                     System.out.println("Tu ATAQUE ha IMPACTADO");
+                                    e.PV = e.PV - g.daño;
+                                     System.out.println("Daño Hecho:"+ g.daño);
+                                    System.out.println("Enemigo: " + e.info());
+                                if(e.PV<=0){
+                                    g.Oro=g.Oro+e.Oro;
+                                    g.Experiencia=g.Experiencia+e.Experiencia;
+                                }
+                              
+                            }else{
+                                    System.out.println("Tu ATAQUE fallado ha FALLADO");
+                                    System.out.println("Enemigo: " + e.info());
+                                }
+                              g.setTurno(false);*/
                 break;
                 
             case btnCombatirDefender:
-                historialCombateString = historialCombateString + "\nNo puedes defenderte porque no quiero.";
+                historialCombateString = historialCombateString + "\nPOSICION DEFENSIVA";
                 vista.historialCombate.setText(historialCombateString);
+                /*if(g.Defensa<4){
+                                g.Defensa();
+                                System.out.println("DURO como la PIEDRA");
+                                System.out.println("Guerrero: "+ g.info());
+                                g.setTurno(false); 
+                                
+                         }else{
+                               System.out.println("Tu DEFENSA esta al MÁXIMO");
+                               g.setTurno(true);
+                               System.out.println("Guerrero: "+ g.info());
+                         }*/
                 break;
                 
             case btnCombatirEspecial:
-                historialCombateString = historialCombateString + "\nNo, lo siento, no tienes nada de especial.";
+                historialCombateString = historialCombateString + "\nLanzas un ATAQUE con todas tu FUERZAS";
                 vista.historialCombate.setText(historialCombateString);
+                /*g.AtaqueEspecial();                 
+                            if (g.golpe > e.Armadura) {
+                                System.out.println("¿Eso era personal?BOOM.");
+                                e.PV = e.PV - g.daño;
+                                System.out.println("Daño Hecho:"+ g.daño);
+                                System.out.println("Enemigo: " + e.info());
+                                if(e.PV<=0){
+                                    g.Oro=g.Oro+e.Oro;
+                                    g.Experiencia=g.Experiencia+e.Experiencia;
+                                 }
+                             
+                            }else{
+                                    System.out.println("Has fallado el ataque");
+                                    System.out.println("Enemigo: " + e.info());
+                                }
+                              g.setTurno(false);*/
                 break;
                 
             case btnCombatirMochila:
@@ -375,8 +418,20 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnHuirPerder:
+                /*g.Huir();
+                if(s==1){
+                    System.out.println("Has conseguido HUIR");
+                    vista.dialogHuir.dispose();
+                    vista.dialogCombatir.dispose();    
+                }
+                if(s==2){
+                    System.out.println("NO puedes HUIR");
+                }
+                if(s==3){
+                    System.out.println("No puedes HUIR");
+                }*/
                 vista.dialogHuir.dispose();
-                vista.dialogCombatir.dispose();
+                vista.dialogCombatir.dispose();         
                 break;
                 
             case btnMochilaUsar:

@@ -16,8 +16,7 @@ public class Combate {
         Mago m= new Mago();
         Enemigo e= new Enemigo();
         Picaro p = new Picaro();
-        ArrayList A= new ArrayList();
-        int num;
+       
         
         do{
 
@@ -35,8 +34,7 @@ public class Combate {
                     int menu = entrada.nextInt();
 
                     switch (menu) {
-                        case 1:
-                            
+                        case 1:          
                             g.Atacar();
                             if (g.golpe > e.Armadura) {
                                      System.out.println("Le has dado campeon.");
@@ -56,8 +54,7 @@ public class Combate {
                         break;
 
                         case 2:
-                            g.AtaqueEspecial();
-                         
+                            g.AtaqueEspecial();                 
                             if (g.golpe > e.Armadura) {
                                 System.out.println("¿Eso era personal?BOOM.");
                                 e.PV = e.PV - g.daño;
@@ -78,7 +75,7 @@ public class Combate {
                         case 3:
                          if(g.Defensa<4){
                                 g.Defensa();
-                                System.out.println("Mas duro que un examen de Antonio");
+                                System.out.println("DURO como la PIEDRA");
                                 System.out.println("Guerrero: "+ g.info());
                                 g.setTurno(false); 
                                 
@@ -132,11 +129,11 @@ public class Combate {
                  g.setTurno(true);
             }
             
-        }while(g.PV>0 && e.PV>0);
-        if(g.PV == 0){
-            System.out.println("Has perdido.");
-        }else if(e.PV == 0){
-            System.out.println("Has ganado.");
+        }while(g.PV>0 && e.PV>0 && g.Huir != 1);
+            if(g.PV == 0){
+                System.out.println("Has perdido.");
+            }else if(e.PV == 0){
+                System.out.println("Has ganado.");
         }
     }
 }

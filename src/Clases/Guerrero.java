@@ -13,17 +13,19 @@ public class Guerrero{
     protected int Defensa;
     protected int Nivel;
     protected int tempGolpe;
+    protected int Huir;
    
     
   public Guerrero (){
       this.PV = 10;
-      this.PE= 4;
+      this.PE= 3;
       this.Armadura = 10;
       this.daño=5;
       this.ataque=1;  
       this.golpe=0;
       this.Defensa=0;
       this.turno=true;
+      this.Huir=0;
     }
   
     public int getPV(){
@@ -125,12 +127,13 @@ public class Guerrero{
         if(Defensa<4){
             Defensa=Defensa+2;
             Armadura=Armadura+Defensa;
-        }else{
-           
+        }else{       
         }
-      
     }
-    
+   
+    public void Huir(){
+        int s=(int) (Math.random()*(3)+1);     
+    }
     public void AtaqueEspecial() {
         if(PE>=4){
             int golpe=(int) (Math.random()*(20)+1);
