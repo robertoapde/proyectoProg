@@ -99,7 +99,7 @@ public class Guerrero{
     public void setExperiencia( int px){
       this.Experiencia = px;
     }
-    public void setgolpe( int gp){
+    public void setGolpe( int gp){
       this.golpe = gp;
     }
     public void setNivel(int nv){
