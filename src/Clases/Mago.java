@@ -6,23 +6,23 @@
 package Clases;
 
     public class Mago{
-        protected int PV;
-        protected int PE;
-        protected int MaxPV;
-        protected int MaxPE;
-        protected int Armadura;
-        protected int daño;
-        protected int ataque;
-        protected int Arma;
-        protected int Oro;
-        protected int Experiencia;
-        protected boolean turno;
-        protected int golpe;
-        protected int Defensa;
-        protected int Nivel;
-        protected int Huir;
-        protected int ExpMax;
-        protected int Equipo;
+    protected int PV;
+    protected int PE;
+    protected int MaxPV;
+    protected int MaxPE;
+    protected int Armadura;
+    protected int daño;
+    protected int ataque;
+    protected int Arma;
+    protected int Oro;
+    protected int Experiencia;
+    protected boolean turno;
+    protected int golpe;
+    protected int Defensa;
+    protected int Nivel;
+    protected int Huir;
+    protected int ExpMax;
+    protected int Equipo;
     
          
  public Mago (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){
@@ -38,6 +38,8 @@ package Clases;
       this.turno=true;
       this.Huir=0;
     } 
+    
+    
     public int getPV(){
         return PV;  
     }
@@ -140,10 +142,10 @@ package Clases;
     } 
     public void subirNivel(){
         int  armadura = this.Armadura + 1;
-        int pv = this.PV +10;
-        int pe = this.PE +1;
-        int daño = this.daño +1;
-        int ataque = this.ataque+1;
+        int pv = this.PV +4;
+        int pe = this.PE +4;
+        int daño = this.daño +3;
+        int ataque = this.ataque+3;
         setArmadura(armadura);
         setPV(pv);
         setPE(pe);
@@ -174,4 +176,5 @@ package Clases;
             setTurno(true);
         }
     }    
-  }
+}
+
