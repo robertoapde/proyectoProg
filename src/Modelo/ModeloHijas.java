@@ -390,9 +390,9 @@ public class ModeloHijas extends Database{
       return res;
     }
     
-    public int soltarObjeto(String objeto){
+    public int soltarObjeto(String objeto, String usuario){
         int resu = 0;
-        String q1= "SELECT IdObjeto FROM Objeto WHERE Nombre = '"+objeto+"' limit 1";
+        String q1= "SELECT IdObjeto FROM Objeto WHERE Nombre = '"+objeto+"' AND IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+usuario+"') limit 1";
         int idObjeto;
         try{
             PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
@@ -406,7 +406,6 @@ public class ModeloHijas extends Database{
                 PreparedStatement pstm4 = this.getConexion().prepareStatement(q4);
                 pstm4.execute();
                 pstm4.close();
-                JOptionPane.showMessageDialog(null, "Objeto soltado y perdido para siempre.");
                 resu = 1;
             }catch(SQLException ex){
                 JOptionPane.showMessageDialog(null, "Error al eliminar.");

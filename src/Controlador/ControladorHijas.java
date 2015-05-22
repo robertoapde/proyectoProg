@@ -73,10 +73,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
     btnCambiarC,
     btnCerrarS,
     btnAceptarCambiarContraseña,
-    btnCancelarCambiarContraseña,
-    
-    btnVerificarSoltarAceptar,
-    btnVerificarSoltarCancelar
+    btnCancelarCambiarContraseña
     }
     
     public ControladorHijas(VentanaHijas vista){
@@ -185,12 +182,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnAceptarCambiarContraseña.setActionCommand("btnAceptarCambiarContraseña");
         this.vista.btnAceptarCambiarContraseña.addActionListener(this);
         this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
-        this.vista.btnCancelarCambiarContraseña.addActionListener(this);
-        
-        this.vista.btnVerificarSoltarAceptar.setActionCommand("btnVerificarSoltarAceptar");
-        this.vista.btnVerificarSoltarAceptar.addActionListener(this);
-        this.vista.btnVerificarSoltarCancelar.setActionCommand("btnVerificarSoltarCancelar");
-        this.vista.btnVerificarSoltarCancelar.addActionListener(this);         
+        this.vista.btnCancelarCambiarContraseña.addActionListener(this); 
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -391,9 +383,14 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnMochilaSoltar:
-                vista.dialogSoltar.setSize(350, 200);
-                vista.dialogSoltar.setLocation(100,100);
-                vista.dialogSoltar.setVisible(true);
+                if(objetoMochilaSeleccionado.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto.");
+                }else{
+                    vista.dialogMochila.setVisible(false);
+                    vista.dialogSoltar.setSize(350, 200);
+                    vista.dialogSoltar.setLocation(100,100);
+                    vista.dialogSoltar.setVisible(true);
+                }
                 break;
                 
             case btnMochilaEquipar:
@@ -439,17 +436,16 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnSoltarAceptar:
-                if(objetoMochilaSeleccionado.equals("")){
-                    JOptionPane.showMessageDialog(null, "Seleccione un objeto.");
-                }
-                vista.dialogVerificarSoltar.setSize(470, 320);
-                vista.dialogVerificarSoltar.setLocation(100,100);
-                vista.dialogVerificarSoltar.setVisible(true);
-                modelo.soltarObjeto(objetoMochilaSeleccionado);
+                modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
+                vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                JOptionPane.showMessageDialog(null, "Objeto soltado y perdido para siempre.");
+                vista.dialogSoltar.dispose();
+                vista.dialogMochila.setVisible(true);
                 break;
                 
             case btnSoltarCancelar:
                 this.vista.dialogSoltar.dispose();
+                vista.dialogMochila.setVisible(true);
                 break;
                 
             case btnAceptarVenderVenderTienda:
@@ -490,18 +486,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnAceptarCambiarContraseña:
                 modelo.CambiarContraseña(this.vista.txtNombre.getText(),this.vista.jTextContraseñaA.getText(),this.vista.jTextContraseñaN.getText());
+                this.vista.dialogCambiarContraseña.setVisible(false);
                 this.vista.setVisible(true);
                 break;
                 
             case btnCancelarCambiarContraseña:
                 this.vista.dialogCambiarContraseña.dispose();
                 this.vista.setVisible(true);
-                break;
-                
-            case btnVerificarSoltarAceptar:
-                break;
-                
-            case btnVerificarSoltarCancelar:
                 break;
         }
     }
