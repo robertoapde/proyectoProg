@@ -34,6 +34,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
     int precioObjetoMochilaVenderSeleccionado = 0;
     String tipoObjetoMochilaSeleccionado = "";
     int efectoObjetoMochilaSeleccionado = 0;
+    int efectoObjetoTabernaSeleccionado = 0;
     
     
     public enum AccionMVC{
@@ -257,6 +258,39 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnAceptarComprarTaberna:
+                if(objetoTabernaSeleccionado.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione un alimento.");
+                }else{
+                    if((Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado) < 0){
+                        JOptionPane.showMessageDialog(null, "No tienes suficiente oro.");
+                    }else{
+                        if(objetoTabernaSeleccionado.equals("Pan") || objetoTabernaSeleccionado.equals("Pollo") || objetoTabernaSeleccionado.equals("Conejo")){
+                            int nuevoOro = Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado;
+                            int nuevoPV = Integer.parseInt(vista.txtPV.getText()) - efectoObjetoTabernaSeleccionado;
+                            if(nuevoPV > Integer.parseInt(vista.txtPVMax.getText())){
+                                nuevoPV = Integer.parseInt(vista.txtPVMax.getText());
+                            }
+                            vista.txtOro.setText(String.valueOf(nuevoOro));
+                            vista.txtPV.setText(String.valueOf(nuevoPV));
+                            objetoTabernaSeleccionado = "";
+                            this.setInfoBD();
+                            String [] nuevaVidaPostCoTa = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevaVidaPostCoTa);
+                        }else{
+                            int nuevoOro = Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado;
+                            int nuevoPE = Integer.parseInt(vista.txtPE.getText()) - efectoObjetoTabernaSeleccionado;
+                            if(nuevoPE > Integer.parseInt(vista.txtPEMax.getText())){
+                                nuevoPE = Integer.parseInt(vista.txtPEMax.getText());
+                            }
+                            vista.txtOro.setText(String.valueOf(nuevoOro));
+                            vista.txtPE.setText(String.valueOf(nuevoPE));
+                            objetoTabernaSeleccionado = "";
+                            this.setInfoBD();
+                            String [] nuevaEnergiaPostCoTa = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevaEnergiaPostCoTa);
+                        } 
+                    }
+                }
                 break;
                 
             case btnCancelarComprarTaberna:
@@ -465,9 +499,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             vista.txtPV.setText(String.valueOf(nuevoPV));
                             modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
                             JOptionPane.showMessageDialog(null, "Poción de vida usada.");
+                            this.setInfoBD();
                             String [] nuevaVidaPostPocion = this.modelo.getInfoInterfaz(usuario);
                             this.setInfoInterfaz(nuevaVidaPostPocion);
-                            this.setInfoBD();
                             vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                         }
                     }else if(tipoObjetoMochilaSeleccionado.equals("usable_EP")){
@@ -481,9 +515,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             vista.txtPE.setText(String.valueOf(nuevoPE));
                             modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
                             JOptionPane.showMessageDialog(null, "Poción de energía usada.");
+                            this.setInfoBD();
                             String [] nuevaEnergiaPostPocion = this.modelo.getInfoInterfaz(usuario);
                             this.setInfoInterfaz(nuevaEnergiaPostPocion);
-                            this.setInfoBD();
                             vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                         }
                     }else if(tipoObjetoMochilaSeleccionado.equals("usable_DAÑO")){
@@ -709,6 +743,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             if(filaTaberna > -1){
                 objetoTabernaSeleccionado = String.valueOf(this.vista.tablaTaberna.getValueAt(filaTaberna, 0));
                 precioObjetoTabernaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaTaberna.getValueAt(filaTaberna, 1)));
+                efectoObjetoTabernaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaTaberna.getValueAt(filaTaberna, 2)));
             }else{
                 objetoTabernaSeleccionado = "";
                 precioObjetoTabernaSeleccionado = 0;
@@ -741,5 +776,4 @@ public class ControladorHijas implements ActionListener, MouseListener{
     public void mouseEntered(MouseEvent e) {}
 
     public void mouseExited(MouseEvent e) {}
-    
 }

@@ -7,7 +7,6 @@ public class VentanaHijas extends javax.swing.JFrame {
 
     public VentanaHijas() {
         initComponents();
-        this.setTitle("Inicio de sesión");
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTaberna.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         dialogTabernaCompra.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -223,6 +222,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         );
 
         dialogTabernaCompra.setAlwaysOnTop(true);
+        dialogTabernaCompra.setModal(true);
         dialogTabernaCompra.setResizable(false);
 
         tablaTaberna.setModel(new javax.swing.table.DefaultTableModel(
