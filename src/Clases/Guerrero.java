@@ -92,6 +92,9 @@ public class Guerrero{
     public void setTurno (boolean t){
       this.turno=t;
     }
+     public void setDefensa (int d){
+      this.Defensa=d;
+    }
     public void indicarTurno(){   
         if(getTurno()==true){
             System.out.println("Es tu turno heroe");
@@ -119,13 +122,13 @@ public class Guerrero{
     
     public void Defensa(){
         
-        if(Defensa<2){
+        if(Defensa<4){
             Defensa=Defensa+2;
             Armadura=Armadura+Defensa;
         }else{
-            setTurno(true);
-            System.out.println("Tu DEFENSA esta al MÁXIMO");
+           
         }
+      
     }
     
     public void AtaqueEspecial() {

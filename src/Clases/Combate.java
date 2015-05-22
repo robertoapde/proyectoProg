@@ -22,8 +22,9 @@ public class Combate {
         do{
 
             if(g.getTurno()==true){
+                
                 try{
-
+                    System.out.println("---------Tu Turno----------");
                     System.out.println("1.Ataque");
                     System.out.println("2.Ataque Especial");
                     System.out.println("3.Defensa");
@@ -56,6 +57,7 @@ public class Combate {
 
                         case 2:
                             g.AtaqueEspecial();
+                         
                             if (g.golpe > e.Armadura) {
                                 System.out.println("¿Eso era personal?BOOM.");
                                 e.PV = e.PV - g.daño;
@@ -65,7 +67,7 @@ public class Combate {
                                     g.Oro=g.Oro+e.Oro;
                                     g.Experiencia=g.Experiencia+e.Experiencia;
                                  }
-                               
+                             
                             }else{
                                     System.out.println("Has fallado el ataque");
                                     System.out.println("Enemigo: " + e.info());
@@ -74,11 +76,18 @@ public class Combate {
                         break;
 
                         case 3:
-                            g.Defensa();
-                            System.out.println("Mas duro que un examen de Antonio");
-                            System.out.println("Tu defensa sube -->"+g.Defensa);
-                            System.out.println("Guerrero: "+ g.info());
-                            
+                         if(g.Defensa<4){
+                                g.Defensa();
+                                System.out.println("Mas duro que un examen de Antonio");
+                                System.out.println("Guerrero: "+ g.info());
+                                g.setTurno(false); 
+                                
+                         }else{
+                               System.out.println("Tu DEFENSA esta al MÁXIMO");
+                               g.setTurno(true);
+                               System.out.println("Guerrero: "+ g.info());
+                         }
+                          
                             
                         break;
 
@@ -96,10 +105,10 @@ public class Combate {
                 }   
                
             }else{ 
+                System.out.println("---------Turno Enemigo----------");
                 System.out.println("El enemigo se dispone a atacar");
                 e.Atacar();
                 if (e.golpe > g.Armadura) {
-                    System.out.println(" ");
                     System.out.println("El enemigo ha impactado el ataque");
                     g.PV = g.PV - e.daño;
                     System.out.println("Daño Hecho:"+ e.daño);
