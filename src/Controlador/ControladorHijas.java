@@ -206,33 +206,32 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnAceptarCambiarContraseña.setActionCommand("btnAceptarCambiarContraseña");
         this.vista.btnAceptarCambiarContraseña.addActionListener(this);
         this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
-        this.vista.btnCancelarCambiarContraseña.addActionListener(this); 
+        this.vista.btnCancelarCambiarContraseña.addActionListener(this);
         
-        en = new  Enemigo(30, 2, 2, 2);
-        int Armadura = this.modelo.obtenerArmadura(usuario);
+        this.comIni();
+    }
+   
+    public void comIni(){
+        int armadura = this.modelo.obtenerArmadura(usuario);
         int daño = this.modelo.obtenerDaño(usuario);
-        int ataque = this.modelo.obtenerAtaque(usuario);
-
-                if(this.vista.txtClase.getText().equals("Picaro"))
-                {
-                   historialCombateString = historialCombateString + "\nPicaro";
-                   vista.historialCombate.setText(historialCombateString);
-                   p = new Picaro(Integer.parseInt(this.vista.txtPV.getText()),Integer.parseInt(this.vista.txtPE.getText()),Armadura,daño, ataque,Integer.parseInt(this.vista.txtOro.getText()),Integer.parseInt(this.vista.txtExperiencia.getText()));
-                    o = new ObjetoTemp(p.getPV(),p.getPE(),p.getArmadura(),p.getDaño(),p.getAtaque(),p.getOro(),p.getExperiencia());
-                }else if(this.vista.txtClase.getText().equals("Mago"))
-                {
-                    historialCombateString = historialCombateString + "\nMago";
-                    vista.historialCombate.setText(historialCombateString);
-                    m= new Mago(Integer.parseInt(this.vista.txtPV.getText()),Integer.parseInt(this.vista.txtPE.getText()),Armadura,daño, ataque,Integer.parseInt(this.vista.txtOro.getText()),Integer.parseInt(this.vista.txtExperiencia.getText()));
-                    o = new ObjetoTemp(m.getPV(),m.getPE(),m.getArmadura(),m.getDaño(),m.getAtaque(),m.getOro(),m.getExperiencia());
-                } else if(this.vista.txtClase.getText().equals("Guerrero"))
-                {
-                    historialCombateString = historialCombateString + "\nGuerreo";
-                    vista.historialCombate.setText(historialCombateString);
-                    g = new Guerrero(Integer.parseInt(this.vista.txtPV.getText()),Integer.parseInt(this.vista.txtPE.getText()),Armadura,daño, ataque,Integer.parseInt(this.vista.txtOro.getText()),Integer.parseInt(this.vista.txtExperiencia.getText()));
-                    o = new ObjetoTemp(g.getPV(),g.getPE(),g.getArmadura(),g.getDaño(),g.getAtaque(),g.getOro(),g.getExperiencia());
-                }  
-                
+        int ataque = this.modelo.obtenerAtaque(usuario); 
+        
+        if(this.vista.txtClase.getText().equals("Picaro")){
+            historialCombateString = historialCombateString + "\nPicaro";
+            vista.historialCombate.setText(historialCombateString);
+            p = new Picaro(Integer.parseInt(this.vista.txtPV.getText()), Integer.parseInt(this.vista.txtPE.getText()), armadura, daño, ataque, Integer.parseInt(this.vista.txtOro.getText()), Integer.parseInt(this.vista.txtExperiencia.getText()));
+            o = new ObjetoTemp(p.getPV(), p.getPE(), p.getArmadura(), p.getDaño(), p.getAtaque(), p.getOro(), p.getExperiencia());
+        }else if(this.vista.txtClase.getText().equals("Mago")){
+            historialCombateString = historialCombateString + "\nMago";
+            vista.historialCombate.setText(historialCombateString);
+            m= new Mago(Integer.parseInt(this.vista.txtPV.getText()), Integer.parseInt(this.vista.txtPE.getText()), armadura, daño, ataque, Integer.parseInt(this.vista.txtOro.getText()), Integer.parseInt(this.vista.txtExperiencia.getText()));
+            o = new ObjetoTemp(m.getPV(), m.getPE(), m.getArmadura(), m.getDaño(), m.getAtaque(), m.getOro(), m.getExperiencia());
+        } else if(this.vista.txtClase.getText().equals("Guerrero")){
+            historialCombateString = historialCombateString + "\nGuerreo";
+            vista.historialCombate.setText(historialCombateString);
+            g = new Guerrero(Integer.parseInt(this.vista.txtPV.getText()), Integer.parseInt(this.vista.txtPE.getText()), armadura, daño, ataque, Integer.parseInt(this.vista.txtOro.getText()), Integer.parseInt(this.vista.txtExperiencia.getText()));
+            o = new ObjetoTemp(g.getPV(), g.getPE(), g.getArmadura(), g.getDaño(), g.getAtaque(), g.getOro(), g.getExperiencia());
+        }
     }
     
     public void actionPerformed(ActionEvent e) {
