@@ -125,7 +125,7 @@ public class Picaro {
         int pv = this.PV +6;
         int pe = this.PE +2;
         int daño = this.daño +2;
-        int ataque = this.ataque+1;
+        int ataque = this.ataque+2;
         setArmadura(armadura);
         setPV(pv);
         setPE(pe);
