@@ -110,6 +110,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         vista.historial.setText(historialString);
         usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
         String [] i = this.modelo.getInfoInterfaz(usuario);
+ 
         this.setInfoInterfaz(i);
         JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+i[1]+" Nvl. "+i[0]+").");
        
@@ -221,7 +222,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
         this.vista.btnCancelarCambiarContraseña.addActionListener(this);
         
-        en =  new Enemigo(30,5,5,5);
+        en =  new Enemigo(5,5,5,5);
         int armadura = this.modelo.obtenerArmadura(usuario);
         int daño = this.modelo.obtenerDaño(usuario);
         int ataque = this.modelo.obtenerAtaque(usuario); 
@@ -252,6 +253,14 @@ public class ControladorHijas implements ActionListener, MouseListener{
             o = new ObjetoTemp(g.getPV(), g.getPE(),g.getMaxPV(),g.getMaxPE(), g.getArmadura(), g.getDaño(), g.getAtaque(), g.getOro(), g.getExperiencia(),g.getExpMax(),g.getNivel());
         }
         
+        this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
+        //this.vista.txtNombreEnemigo.setText();
+        this.vista.txtNombreCombate.setText(usuario);
+        this.vista.txtPVCombate.setText(this.vista.txtPV.getText());
+        this.vista.txtPVCombateMax.setText(this.vista.txtPVMax.getText());
+        this.vista.txtPECombate.setText(this.vista.txtPE.getText());
+        this.vista.txtPECombateMax.setText(this.vista.txtPEMax.getText());
+        
      
     }
    
@@ -261,18 +270,26 @@ public class ControladorHijas implements ActionListener, MouseListener{
         switch ( AccionMVC.valueOf( e.getActionCommand() ) )
         {
             case btnCombatir:
-                
-                vista.historialCombate.setText(historialCombateString);
+               
+                historialCombateString="";
+                this.vista.historialCombate.setText(historialCombateString);
                 historialString = historialString + "";
-                vista.historial.setText(historialString);
+                this.vista.historial.setText(historialString);
                 historialString = historialString + "\n¡Combate iniciado!";
-                vista.historial.setText(historialString);
+                this.vista.historial.setText(historialString);
                 historialCombateString = historialCombateString + "\n¡Enemigo salvaje ha aparecido!";
-                vista.historialCombate.setText(historialCombateString);
-                vista.dialogCombatir.setSize(420, 540);
-                vista.dialogCombatir.setLocation(450, 325);
-                vista.dialogCombatir.setVisible(true);
-                
+                this.vista.historialCombate.setText(historialCombateString);
+                this.vista.dialogCombatir.setSize(420, 540);
+                this.vista.dialogCombatir.setLocation(450, 325);
+                this.vista.dialogCombatir.setVisible(true);
+                this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
+                //this.vista.txtNombreEnemigo.setText();
+                this.vista.txtNombreCombate.setText(usuario);
+                this.vista.txtPVCombate.setText(this.vista.txtPV.getText());
+                this.vista.txtPVCombateMax.setText(this.vista.txtPVMax.getText());
+                this.vista.txtPECombate.setText(this.vista.txtPE.getText());
+                this.vista.txtPECombateMax.setText(this.vista.txtPEMax.getText());
+            
                 break;
                 
             case  btnMochila:
@@ -486,16 +503,25 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         o.Atacar();
                         if (o.getGolpe() > en.getArmadura()) {
                                
-                              historialCombateString = historialCombateString +"\nTu ATAQUE ha IMPACTADO";
-                              vista.historialCombate.setText(historialCombateString);
-                                    en.setPV(en.getPV() - o.getDaño());
-                                    historialCombateString = historialCombateString +"\nDaño Hecho:"+ o.getDaño();
-                                    vista.historialCombate.setText(historialCombateString);
-                                    historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
-                                    vista.historialCombate.setText(historialCombateString);
+                                historialCombateString = historialCombateString +"\nTu ATAQUE ha IMPACTADO";
+                                vista.historialCombate.setText(historialCombateString);
+                                int vidaE=en.getPV() - o.getDaño();
+                                en.setPV(vidaE);
+                                this.vista.txtPVEnemigo.setText(String.valueOf(vidaE));
+                                int vidaEM=en.getPV() + o.getDaño();
+                                this.vista.txtPVEnemigoMax.setText(String.valueOf(vidaE));
+                                
+                                historialCombateString = historialCombateString +"\nDaño Hecho:"+ o.getDaño();
+                                vista.historialCombate.setText(historialCombateString);
+                                historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
+                                vista.historialCombate.setText(historialCombateString);
                                      if(en.getPV()<=0){
                                         o.setOro(o.getOro()+ en.getOro());
                                         o.setExperiencia(o.getExperiencia()+en.getExperiencia());
+                                        this.vista.dialogCombatir.dispose();
+                                        JOptionPane.showMessageDialog(null, "Termino el combate.Has ganado");
+                                        JOptionPane.showMessageDialog(null, "Has gando : "+ en.getOro()+" oro.");
+                                        
                                      }
                                 o.setTurno(false);    
                         }else{
@@ -518,7 +544,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
                            
                             historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
                             vista.historialCombate.setText(historialCombateString);
-                            o.setPV ( o.getPV() - en.getDaño());
+                              
+                                int vidaH=o.getPV() - en.getDaño();
+                                o.setPV(vidaH);
+                                this.vista.txtPV.setText(String.valueOf(vidaH));
+                                
                             historialCombateString = historialCombateString +"\nDaño Hecho:"+ en.getDaño();
                             vista.historialCombate.setText(historialCombateString);
                             historialCombateString = historialCombateString +"\nGuerrero: "+ o.info();
@@ -534,6 +564,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 o.setOro(0);
                             }
                             o.setTurno(true);
+                            this.vista.dialogCombatir.dispose();
+                            JOptionPane.showMessageDialog(null, "Termino el combate.Has perdido");
+                            JOptionPane.showMessageDialog(null, "Has perdido : "+ en.getOro()+" oro.");
+                                        
                         }
                     }else{
                             
@@ -567,6 +601,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         contNv=contNv*2;
                         modelo.actualizarBD(usuario, String.valueOf(o.getNivel()), String.valueOf(o.getExperiencia()), String.valueOf(o.getOro()), String.valueOf(o.getPV()), String.valueOf(o.getPE()), String.valueOf(o.getMaxPV()), String.valueOf(o.getMaxPE()), String.valueOf(o.getArma()), String.valueOf(o.getEquipo()));
                     }
+                    
                     vista.historial.setText(historialString);
                     this.vista.dialogCombatir.dispose();
                 }
@@ -575,9 +610,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCombatirDefender:
-          int contBDefensea = 0;
-         boolean res=false;
-          if(o.getTurno() == true){
+                          int contBDefensea = 0;
+                          boolean res=false;
+               if(o.getTurno() == true){
                     historialCombateString = historialCombateString +"\n---------Tu Turno----------";
                     vista.historialCombate.setText(historialCombateString);
                     historialCombateString = historialCombateString + "\nPOSICION DEFENSIVA";
@@ -595,41 +630,47 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                System.out.println("Guerrero: "+ o.info());
                          }
                     
-            if(res==true){ 
-                    historialCombateString = historialCombateString +"\n---------Turno Enemigo----------";
-                    vista.historialCombate.setText(historialCombateString);
-                        historialCombateString = historialCombateString +"\nEl enemigo se dispone a atacar";
-                        vista.historialCombate.setText(historialCombateString);
-                         en.Atacar();
-                    if (en.getGolpe() > o.getArmadura()) {
-                            historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
-                            vista.historialCombate.setText(historialCombateString);
-                            o.setPV ( o.getPV() - en.getDaño());
-                            historialCombateString = historialCombateString +"\nDaño Hecho:"+ en.getDaño();
-                            vista.historialCombate.setText(historialCombateString);
-                            historialCombateString = historialCombateString +"\nGuerrero: "+ o.info();
-                            vista.historialCombate.setText(historialCombateString);
-                        if(o.getPV()<=0){
-                            o.setExperiencia(o.getExperiencia()-(25*o.getNivel()*3));
-                            o.setOro(o.getOro()-(5*4*o.getNivel()));
-                            o.setArmadura(o.getArmadura()-o.getDefensa());
-                            o.setDefensa(0);
-                            if(o.getExperiencia()<0 ){
-                                o.setExperiencia(0);
-                                
-                            }
-                            if (o.getOro()<0){
-                                o.setOro(0);
-                            }
-                            o.setTurno(true);
-                        }
-                    }else{
-                            historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
-                            vista.historialCombate.setText(historialCombateString);
-                            historialCombateString = historialCombateString +"\nGuerrero: "+ o.info();
-                            vista.historialCombate.setText(historialCombateString);
-                            
-                     }
+             if(res==true){ 
+                          historialCombateString = historialCombateString +"\n---------Turno Enemigo----------";
+                          vista.historialCombate.setText(historialCombateString);
+                              historialCombateString = historialCombateString +"\nEl enemigo se dispone a atacar";
+                              vista.historialCombate.setText(historialCombateString);
+                               en.Atacar();
+                          if (en.getGolpe() > o.getArmadura()) {
+                                  historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
+                                  vista.historialCombate.setText(historialCombateString);
+                                  int vidaH=en.getPV() - o.getDaño();
+                                    o.setPV(vidaH);
+                                  this.vista.txtPV.setText(String.valueOf(vidaH));
+                                  historialCombateString = historialCombateString +"\nDaño Hecho:"+ en.getDaño();
+                                  vista.historialCombate.setText(historialCombateString);
+                                  historialCombateString = historialCombateString +"\nGuerrero: "+ o.info();
+                                  vista.historialCombate.setText(historialCombateString);
+                              if(o.getPV()<=0){
+                                  o.setExperiencia(o.getExperiencia()-(25*o.getNivel()*3));
+                                  o.setOro(o.getOro()-(5*4*o.getNivel()));
+                                  o.setArmadura(o.getArmadura()-o.getDefensa());
+                                  o.setDefensa(0);
+                                  if(o.getExperiencia()<0 ){
+                                      o.setExperiencia(0);
+
+                                  }
+                                  if (o.getOro()<0){
+                                      o.setOro(0);
+                                    }
+                                    o.setTurno(true);
+                                    this.vista.dialogCombatir.dispose();
+                                    JOptionPane.showMessageDialog(null, "Termino el combate.Has perdido");
+                                    JOptionPane.showMessageDialog(null, "Has perdido : "+ en.getOro()+" oro.");
+
+                                      }
+                            }else{
+                                    historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
+                                    vista.historialCombate.setText(historialCombateString);
+                                    historialCombateString = historialCombateString +"\nGuerrero: "+ o.info();
+                                    vista.historialCombate.setText(historialCombateString);
+
+                             }
                         o.setTurno(true);
                   }
                 if(o.getPV()<=0){
@@ -638,6 +679,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     this.vista.dialogCombatir.dispose();
                     o.setPV(1);
                     modelo.actualizarBD(usuario, String.valueOf(o.getNivel()), String.valueOf(o.getExperiencia()), String.valueOf(o.getOro()), String.valueOf(o.getPV()), String.valueOf(o.getPE()), String.valueOf(o.getMaxPV()), String.valueOf(o.getMaxPE()), String.valueOf(o.getArma()), String.valueOf(o.getEquipo()));
+                    this.vista.dialogCombatir.dispose();
+                    JOptionPane.showMessageDialog(null, "Termino el combate.Has ganado");
+                    JOptionPane.showMessageDialog(null, "Has Ganado : "+ en.getOro()+" oro.");
+                                        
                 }else if(en.getPV()<=0){
                     int cont=5, contNv=1;
                     historialString = historialString + "\nHas ganado.";
@@ -650,8 +695,12 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         contNv=contNv*2;
                         modelo.actualizarBD(usuario, String.valueOf(o.getNivel()), String.valueOf(o.getExperiencia()), String.valueOf(o.getOro()), String.valueOf(o.getPV()), String.valueOf(o.getPE()), String.valueOf(o.getMaxPV()), String.valueOf(o.getMaxPE()), String.valueOf(o.getArma()), String.valueOf(o.getEquipo()));
                     }
+                    
                     vista.historial.setText(historialString);
-                    this.vista.dialogCombatir.dispose();
+                   this.vista.dialogCombatir.dispose();
+                   JOptionPane.showMessageDialog(null, "Termino el combate.Has ganado");
+                   JOptionPane.showMessageDialog(null, "Has perdido : "+ en.getOro()+" oro.");
+                                        
                 }
               
                   
@@ -672,7 +721,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             if (o.getGolpe() > en.getArmadura()) {
                               historialCombateString = historialCombateString +"\nTu ATAQUE ha IMPACTADO";
                               vista.historialCombate.setText(historialCombateString);
-                                    en.setPV(en.getPV() - o.getDaño()+5);
+                                    int vidaE=en.getPV() - o.getDaño();
+                                    en.setPV(vidaE);
+                                    this.vista.txtPVEnemigo.setText(String.valueOf(vidaE));
+                                    int vidaEM=en.getPV() + o.getDaño();
+                                    this.vista.txtPVEnemigoMax.setText(String.valueOf(vidaEM));
+                                
+                                   
                                     historialCombateString = historialCombateString +"\nDaño Hecho:"+ o.getDaño()+"\nEnergia gastada: "+o.getPE();
                                     vista.historialCombate.setText(historialCombateString);
                                     historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
@@ -680,6 +735,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                      if(en.getPV()<=0){
                                         o.setOro(o.getOro()+ en.getOro());
                                         o.setExperiencia(o.getExperiencia()+en.getExperiencia());
+                                         this.vista.dialogCombatir.dispose();
+                                         JOptionPane.showMessageDialog(null, "Ha termino el combate.Has ganado");
+                                         JOptionPane.showMessageDialog(null, "Has ganado : "+ en.getOro()+" oro.");
+                                        
                                      }
                                 o.setTurno(false);    
                             }else{
@@ -699,7 +758,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         if (en.getGolpe() > o.getArmadura()) {
                             historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
                             vista.historialCombate.setText(historialCombateString);
-                            o.setPV ( o.getPV() - en.getDaño());
+                            
+                            int vidaH=o.getPV() - en.getDaño();
+                            o.setPV (vidaH);
+                            this.vista.txtPV.setText(String.valueOf(vidaH));
                                 historialCombateString = historialCombateString +"\nDaño Hecho:"+ en.getDaño();
                                 vista.historialCombate.setText(historialCombateString);
                                 historialCombateString = historialCombateString +"\nGuerrero: "+ o.info();
@@ -715,6 +777,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 o.setOro(0);
                             }
                             o.setTurno(true);
+                            this.vista.dialogCombatir.dispose();
+                            JOptionPane.showMessageDialog(null, "Ha termino el combate.Has Ganado");
+                            JOptionPane.showMessageDialog(null, "Has ganado : "+ en.getOro()+" oro.");
                         }
                     }else{
                             historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
@@ -733,6 +798,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     this.vista.dialogCombatir.dispose();
                     o.setPV(1);
                     modelo.actualizarBD(usuario, String.valueOf(o.getNivel()), String.valueOf(o.getExperiencia()), String.valueOf(o.getOro()), String.valueOf(o.getPV()), String.valueOf(o.getPE()), String.valueOf(o.getMaxPV()), String.valueOf(o.getMaxPE()), String.valueOf(o.getArma()), String.valueOf(o.getEquipo()));
+                    this.vista.dialogCombatir.dispose();
+                    JOptionPane.showMessageDialog(null, "Ha termino el combate.Has ganado.");
+                    JOptionPane.showMessageDialog(null, "Has ganado : "+ en.getOro()+" oro.");
                 }else if(en.getPV()<=0){
                     int cont=5, contNv=1;
                     historialString = historialString + "\nHas ganado.";
@@ -749,6 +817,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     }
                     vista.historial.setText(historialString);
                     this.vista.dialogCombatir.dispose();
+                    JOptionPane.showMessageDialog(null, "Ha termino el combate.Has perdido");
+                    JOptionPane.showMessageDialog(null, "Has perdido : "+ en.getOro()+" oro.");
                 }
              contBAtacarEspecial++;
             }while(contBAtacarEspecial== 1);
@@ -1231,8 +1301,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 historialString = "Historial de partida:";
                 vista.historial.setText(historialString);
                 this.setInfoBD();
-                this.vista.dispose();
-                this.vista2.setVisible(true);
+                System.exit(0);
                 break;
                 
             case btnAceptarCambiarContraseña:
