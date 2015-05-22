@@ -1,5 +1,6 @@
 package Controlador;
 
+import Clases.Guerrero;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -196,6 +197,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 vista.dialogCombatir.setSize(420, 401);
                 vista.dialogCombatir.setLocation(450, 325);
                 vista.dialogCombatir.setVisible(true);
+                
                 break;
                 
             case  btnMochila:
@@ -418,7 +420,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnHuirPerder:
-                /*g.Huir();
+                /*Guerrero g =new Guerrero(); 
+                g.Huir();
                 if(s==1){
                     System.out.println("Has conseguido HUIR");
                     vista.dialogHuir.dispose();

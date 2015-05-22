@@ -416,4 +416,40 @@ public class ModeloHijas extends Database{
         }
         return resu;
     }
+    
+   /* public void HeroeEnCombate(){
+        try{
+          
+            PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Usuario WHERE  Usuario = '"+u+"'");
+            ResultSet res = pstm.executeQuery();
+            int i=0;
+        while(res.next()){
+            Object[][] data = new String[][7];
+            data[i][0] = res.getString("PV");
+            data[i][1] = res.getString("PE");
+            data[i][2] = res.getString("Armadura");
+            data[i][3] = res.getString("daño");
+            data[i][4] = res.getString("ataque");
+            data[i][5] = res.getString("Oro");
+            data[i][6] = res.getString("Experiencia");
+            
+            if(.equals('Picaro')){
+            
+             
+            }
+       
+            if(clase.equals('Mago')){
+            
+            }
+            if(clase.equals('Guerrero')){
+            
+            }
+            i++;
+        }
+        res.close();
+        
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+    }*/
 }
