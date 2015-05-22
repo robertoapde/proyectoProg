@@ -470,9 +470,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         vista.historialCombate.setText(historialCombateString);
                        /* if(this.vista.txtArma.getText().equals("")){
                              historialCombateString = historialCombateString + "\nRealizando el ataque";
-                        }else{}*/
+                        }else{}
                         historialCombateString = historialCombateString + "\nHas lanzado un ataque  "+this.vista.txtArma.getText();//+Arma;
-                        vista.historialCombate.setText(historialCombateString);
+                        vista.historialCombate.setText(historialCombateString);*/
                         JOptionPane.showMessageDialog(null, "Antes de atacar");
                         o.Atacar();
                         if (o.getGolpe() > en.getArmadura()) {
