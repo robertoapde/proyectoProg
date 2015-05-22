@@ -227,7 +227,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             m= new Mago(Integer.parseInt(this.vista.txtPV.getText()), Integer.parseInt(this.vista.txtPE.getText()), armadura, daño, ataque, Integer.parseInt(this.vista.txtOro.getText()), Integer.parseInt(this.vista.txtExperiencia.getText()));
             o = new ObjetoTemp(m.getPV(), m.getPE(), m.getArmadura(), m.getDaño(), m.getAtaque(), m.getOro(), m.getExperiencia());
         } else if(this.vista.txtClase.getText().equals("Guerrero")){
-            historialCombateString = historialCombateString + "\nGuerreo";
+            historialCombateString = historialCombateString + "\nGuerrero";
             vista.historialCombate.setText(historialCombateString);
             g = new Guerrero(Integer.parseInt(this.vista.txtPV.getText()), Integer.parseInt(this.vista.txtPE.getText()), armadura, daño, ataque, Integer.parseInt(this.vista.txtOro.getText()), Integer.parseInt(this.vista.txtExperiencia.getText()));
             o = new ObjetoTemp(g.getPV(), g.getPE(), g.getArmadura(), g.getDaño(), g.getAtaque(), g.getOro(), g.getExperiencia());
