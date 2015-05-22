@@ -546,7 +546,6 @@ public class ModeloHijas extends Database{
         }
         return ataque;
     }
-    
      public int obtenerEquipo(String usuario){
         
         String q = "SELECT Efecto FROM Tienda WHERE Nombre =(SELECT Equipo FROM Usuario WHERE Nombre ='"+usuario+"')" ;
@@ -562,8 +561,34 @@ public class ModeloHijas extends Database{
             JOptionPane.showMessageDialog(null, "No se pudo obtener el Efecto ");
             System.err.println( e.getMessage() );
         }
-     
         return efecto;
     }
-   
+     public Object[] datosEnemigo(String u){
+        String[] datosE = new String[10];
+        int NivelU = 0;
+        int n1 = NivelU - 1;
+        int n2 = NivelU;
+        int n3 = NivelU + 1;
+        
+        String q = "SELECT Nombre, Vida, Nivel, Experiencia, Oro  FROM Enemigo WHERE Nivel IN ("+n1+","+n2+","+n3+")";
+        
+        try{
+        PreparedStatement pstm = this.getConexion().prepareStatement(q);
+        ResultSet res = pstm.executeQuery();
+        res.next();
+            datosE[0] = String.valueOf(res.getInt("Nombre"));
+            datosE[1] = String.valueOf(res.getInt("Vida"));
+            datosE[2] = String.valueOf(res.getInt("Nivel"));
+            datosE[3] = String.valueOf(res.getInt("Experiencia"));
+            datosE[4] = String.valueOf(res.getInt("Oro"));
+            
+        
+        res.close();
+        pstm.close();
+        }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+     
+        return datosE;
+    }  
 }
