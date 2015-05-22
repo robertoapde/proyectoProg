@@ -265,29 +265,38 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         JOptionPane.showMessageDialog(null, "No tienes suficiente oro.");
                     }else{
                         if(objetoTabernaSeleccionado.equals("Pan") || objetoTabernaSeleccionado.equals("Pollo") || objetoTabernaSeleccionado.equals("Conejo")){
-                            int nuevoOro = Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado;
-                            int nuevoPV = Integer.parseInt(vista.txtPV.getText()) - efectoObjetoTabernaSeleccionado;
-                            if(nuevoPV > Integer.parseInt(vista.txtPVMax.getText())){
-                                nuevoPV = Integer.parseInt(vista.txtPVMax.getText());
-                            }
-                            vista.txtOro.setText(String.valueOf(nuevoOro));
-                            vista.txtPV.setText(String.valueOf(nuevoPV));
-                            objetoTabernaSeleccionado = "";
-                            this.setInfoBD();
-                            String [] nuevaVidaPostCoTa = this.modelo.getInfoInterfaz(usuario);
-                            this.setInfoInterfaz(nuevaVidaPostCoTa);
+                            if(vista.txtPV.getText().equals(vista.txtPVMax.getText())){
+                                JOptionPane.showMessageDialog(null, "Ya tienes la vida al máximo.");
+                            }else{
+                                int nuevoOro = Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado;
+                                int nuevoPV = Integer.parseInt(vista.txtPV.getText()) + efectoObjetoTabernaSeleccionado;
+                                if(nuevoPV > Integer.parseInt(vista.txtPVMax.getText())){
+                                    nuevoPV = Integer.parseInt(vista.txtPVMax.getText());
+                                }
+                                vista.txtOro.setText(String.valueOf(nuevoOro));
+                                vista.txtPV.setText(String.valueOf(nuevoPV));
+                                objetoTabernaSeleccionado = "";
+                                this.setInfoBD();
+                                String [] nuevaVidaPostCoTa = this.modelo.getInfoInterfaz(usuario);
+                                this.setInfoInterfaz(nuevaVidaPostCoTa);
+                            }                                
+                            
                         }else{
-                            int nuevoOro = Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado;
-                            int nuevoPE = Integer.parseInt(vista.txtPE.getText()) - efectoObjetoTabernaSeleccionado;
-                            if(nuevoPE > Integer.parseInt(vista.txtPEMax.getText())){
-                                nuevoPE = Integer.parseInt(vista.txtPEMax.getText());
+                            if(vista.txtPV.getText().equals(vista.txtPVMax.getText())){
+                                JOptionPane.showMessageDialog(null, "Ya tienes la vida al máximo.");
+                            }else{
+                                int nuevoOro = Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado;
+                                int nuevoPE = Integer.parseInt(vista.txtPE.getText()) + efectoObjetoTabernaSeleccionado;
+                                if(nuevoPE > Integer.parseInt(vista.txtPEMax.getText())){
+                                    nuevoPE = Integer.parseInt(vista.txtPEMax.getText());
+                                }
+                                vista.txtOro.setText(String.valueOf(nuevoOro));
+                                vista.txtPE.setText(String.valueOf(nuevoPE));
+                                objetoTabernaSeleccionado = "";
+                                this.setInfoBD();
+                                String [] nuevaEnergiaPostCoTa = this.modelo.getInfoInterfaz(usuario);
+                                this.setInfoInterfaz(nuevaEnergiaPostCoTa);
                             }
-                            vista.txtOro.setText(String.valueOf(nuevoOro));
-                            vista.txtPE.setText(String.valueOf(nuevoPE));
-                            objetoTabernaSeleccionado = "";
-                            this.setInfoBD();
-                            String [] nuevaEnergiaPostCoTa = this.modelo.getInfoInterfaz(usuario);
-                            this.setInfoInterfaz(nuevaEnergiaPostCoTa);
                         } 
                     }
                 }
