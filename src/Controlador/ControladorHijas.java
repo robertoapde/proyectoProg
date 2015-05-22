@@ -376,16 +376,22 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnAceptarAlojamiento:
                 int oroP = Integer.parseInt(vista.txtOro.getText());
-                if(oroP >= 30){
-                    oroP = oroP - 30;
-                    vista.txtOro.setText(String.valueOf(oroP));
-                    vista.txtPV.setText(vista.txtPVMax.getText());
-                    vista.txtPE.setText(vista.txtPEMax.getText());
-                    this.setInfoBD();
-                    String [] nuevaVidaPostAlojamiento = this.modelo.getInfoInterfaz(usuario);
-                    this.setInfoInterfaz(nuevaVidaPostAlojamiento);
-                    JOptionPane.showMessageDialog(null, "Te alojas en la posada y te recuperas.");
-                    vista.dialogTabernaAlojamiento.setVisible(false);
+                String vida = vista.txtPV.getText();
+                String energia = vista.txtPE.getText();
+                if(vida.equals(vista.txtPVMax.getText()) && energia.equals(vista.txtPEMax.getText())){
+                    JOptionPane.showMessageDialog(null, "Ya tienes la vida y energía al máximo.");
+                }else{
+                    if(oroP >= 30){
+                        oroP = oroP - 30;
+                        vista.txtOro.setText(String.valueOf(oroP));
+                        vista.txtPV.setText(vista.txtPVMax.getText());
+                        vista.txtPE.setText(vista.txtPEMax.getText());
+                        this.setInfoBD();
+                        String [] nuevaVidaPostAlojamiento = this.modelo.getInfoInterfaz(usuario);
+                        this.setInfoInterfaz(nuevaVidaPostAlojamiento);
+                        JOptionPane.showMessageDialog(null, "Te alojas en la posada y te recuperas.");
+                        vista.dialogTabernaAlojamiento.setVisible(false);
+                    }
                 }
                 break;
                 
@@ -1121,6 +1127,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
                     vista.txtEquipo.setText("");
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);
@@ -1143,6 +1150,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
                     vista.txtEquipo.setText("");
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);

@@ -69,26 +69,29 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnSalirVenderTienda = new javax.swing.JButton();
         dialogCombatir = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        barraHP = new javax.swing.JProgressBar();
-        barraEP = new javax.swing.JProgressBar();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         historialCombate = new javax.swing.JTextPane();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        barraHPEn = new javax.swing.JProgressBar();
-        jLabel31 = new javax.swing.JLabel();
         btnCombatirAtacar = new javax.swing.JButton();
         btnCombatirDefender = new javax.swing.JButton();
         btnCombatirEspecial = new javax.swing.JButton();
         btnCombatirMochila = new javax.swing.JButton();
         btnCombatirHuir = new javax.swing.JButton();
+        txtNombreCombate = new javax.swing.JLabel();
+        txtNombreEnemigo = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtPVEnemigoMax = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        txtPVCombateMax = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        txtPVEnemigo = new javax.swing.JLabel();
+        txtPVCombate = new javax.swing.JLabel();
+        txtPECombate = new javax.swing.JLabel();
+        txtPECombateMax = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtNivelEnemigo = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         dialogHuir = new javax.swing.JDialog();
         btnHuirPerder = new javax.swing.JButton();
@@ -547,83 +550,10 @@ public class VentanaHijas extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(153, 153, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel22.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel22.setText("EP:");
-        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel22.setOpaque(true);
-        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 33, 20, -1));
-
-        barraHP.setFocusTraversalPolicyProvider(true);
-        jPanel5.add(barraHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 10, 340, -1));
-        jPanel5.add(barraEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 33, 340, -1));
-
-        jLabel23.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel23.setText("0%");
-        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel23.setOpaque(true);
-        jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 20, -1));
-
-        jLabel24.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel24.setText("0%");
-        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel24.setOpaque(true);
-        jPanel5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 20, -1));
-
-        jLabel25.setFont(new java.awt.Font("Arial Black", 0, 9)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel25.setText("HP:");
-        jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel25.setOpaque(true);
-        jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
         historialCombate.setEditable(false);
         jScrollPane3.setViewportView(historialCombate);
 
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 380, 160));
-
-        jLabel26.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel26.setText("Enemigo:");
-        jLabel26.setOpaque(true);
-        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
-
-        jLabel27.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel27.setText("Olonam");
-        jLabel27.setOpaque(true);
-        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
-
-        jLabel28.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel28.setText("Nv:");
-        jLabel28.setOpaque(true);
-        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
-
-        jLabel29.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel29.setText("99");
-        jLabel29.setOpaque(true);
-        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
-
-        jLabel30.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel30.setText("HP:");
-        jLabel30.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel30.setOpaque(true);
-        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-
-        barraHPEn.setFocusTraversalPolicyProvider(true);
-        jPanel5.add(barraHPEn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 340, -1));
-
-        jLabel31.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel31.setText("0%");
-        jLabel31.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel31.setOpaque(true);
-        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 20, 20));
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 380, 320));
 
         btnCombatirAtacar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirAtacar.setForeground(new java.awt.Color(0, 0, 255));
@@ -634,7 +564,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirAtacarActionPerformed(evt);
             }
         });
-        jPanel5.add(btnCombatirAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 210, 30));
+        jPanel5.add(btnCombatirAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 210, 30));
 
         btnCombatirDefender.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirDefender.setForeground(new java.awt.Color(0, 0, 255));
@@ -646,7 +576,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirDefenderActionPerformed(evt);
             }
         });
-        jPanel5.add(btnCombatirDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 210, 30));
+        jPanel5.add(btnCombatirDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 210, 30));
 
         btnCombatirEspecial.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirEspecial.setForeground(new java.awt.Color(255, 51, 0));
@@ -657,7 +587,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirEspecialActionPerformed(evt);
             }
         });
-        jPanel5.add(btnCombatirEspecial, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 190, 30));
+        jPanel5.add(btnCombatirEspecial, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 190, 30));
 
         btnCombatirMochila.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCombatirMochila.setForeground(new java.awt.Color(0, 0, 255));
@@ -668,7 +598,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirMochilaActionPerformed(evt);
             }
         });
-        jPanel5.add(btnCombatirMochila, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 190, 30));
+        jPanel5.add(btnCombatirMochila, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 190, 30));
 
         btnCombatirHuir.setBackground(new java.awt.Color(255, 51, 51));
         btnCombatirHuir.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -679,10 +609,81 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCombatirHuirActionPerformed(evt);
             }
         });
-        jPanel5.add(btnCombatirHuir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 400, 30));
+        jPanel5.add(btnCombatirHuir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 400, 30));
+
+        txtNombreCombate.setBackground(new java.awt.Color(204, 204, 255));
+        txtNombreCombate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtNombreCombate.setOpaque(true);
+        jPanel5.add(txtNombreCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 150, 20));
+
+        txtNombreEnemigo.setBackground(new java.awt.Color(255, 51, 51));
+        txtNombreEnemigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtNombreEnemigo.setOpaque(true);
+        jPanel5.add(txtNombreEnemigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, 20));
+
+        jLabel14.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("PV");
+        jLabel14.setOpaque(true);
+        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 20, 20));
+
+        jLabel22.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("PE");
+        jLabel22.setOpaque(true);
+        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 20, 20));
+
+        txtPVEnemigoMax.setBackground(new java.awt.Color(255, 255, 255));
+        txtPVEnemigoMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPVEnemigoMax.setOpaque(true);
+        jPanel5.add(txtPVEnemigoMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 30, 20));
+
+        jLabel25.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("PV");
+        jLabel25.setOpaque(true);
+        jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 20, 20));
+
+        txtPVCombateMax.setBackground(new java.awt.Color(255, 255, 255));
+        txtPVCombateMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPVCombateMax.setOpaque(true);
+        jPanel5.add(txtPVCombateMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 30, 20));
+
+        jLabel16.setText("/");
+        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 10, 20));
+
+        jLabel27.setText("/");
+        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 10, 20));
+
+        txtPVEnemigo.setBackground(new java.awt.Color(255, 255, 255));
+        txtPVEnemigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPVEnemigo.setOpaque(true);
+        jPanel5.add(txtPVEnemigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 30, 20));
+
+        txtPVCombate.setBackground(new java.awt.Color(255, 255, 255));
+        txtPVCombate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPVCombate.setOpaque(true);
+        jPanel5.add(txtPVCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 30, 20));
+
+        txtPECombate.setBackground(new java.awt.Color(255, 255, 255));
+        txtPECombate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPECombate.setOpaque(true);
+        jPanel5.add(txtPECombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 30, 20));
+
+        txtPECombateMax.setBackground(new java.awt.Color(255, 255, 255));
+        txtPECombateMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtPECombateMax.setOpaque(true);
+        jPanel5.add(txtPECombateMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 30, 20));
+
+        jLabel33.setText("/");
+        jPanel5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 10, 20));
+
+        jLabel10.setText("Nvl:");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 20, 20));
+        jPanel5.add(txtNivelEnemigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 50, 20));
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
-        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 370));
+        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 510));
 
         javax.swing.GroupLayout dialogCombatirLayout = new javax.swing.GroupLayout(dialogCombatir.getContentPane());
         dialogCombatir.getContentPane().setLayout(dialogCombatirLayout);
@@ -692,7 +693,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         );
         dialogCombatirLayout.setVerticalGroup(
             dialogCombatirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         dialogHuir.setAlwaysOnTop(true);
@@ -1322,9 +1323,6 @@ public class VentanaHijas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar barraEP;
-    private javax.swing.JProgressBar barraHP;
-    private javax.swing.JProgressBar barraHPEn;
     public javax.swing.JButton btnAceptarAlojamiento;
     public javax.swing.JButton btnAceptarCambiarContraseña;
     public javax.swing.JButton btnAceptarCompraTienda;
@@ -1383,9 +1381,12 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JTextPane historialCombate;
     private javax.swing.JScrollPane historialScroll;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1393,17 +1394,11 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -1453,11 +1448,20 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JLabel txtEquipo;
     public javax.swing.JLabel txtExperiencia;
     public javax.swing.JLabel txtNivel;
+    private javax.swing.JLabel txtNivelEnemigo;
     public javax.swing.JLabel txtNombre;
+    public javax.swing.JLabel txtNombreCombate;
+    public javax.swing.JLabel txtNombreEnemigo;
     public javax.swing.JLabel txtOro;
     public javax.swing.JLabel txtPE;
+    public javax.swing.JLabel txtPECombate;
+    public javax.swing.JLabel txtPECombateMax;
     public javax.swing.JLabel txtPEMax;
     public javax.swing.JLabel txtPV;
+    public javax.swing.JLabel txtPVCombate;
+    public javax.swing.JLabel txtPVCombateMax;
+    public javax.swing.JLabel txtPVEnemigo;
+    public javax.swing.JLabel txtPVEnemigoMax;
     public javax.swing.JLabel txtPVMax;
     // End of variables declaration//GEN-END:variables
 }
