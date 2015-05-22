@@ -13,7 +13,9 @@ public class Enemigo {
     public Enemigo(){
         int golpe=0;
     }
-    
+    public String info(){
+        return PV+","+Armadura+","+daño+","+ataque;
+    }
     public void setPV( int pv){
       this.PV = pv;
   }
