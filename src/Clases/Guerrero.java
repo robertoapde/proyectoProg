@@ -19,8 +19,10 @@ public class Guerrero{
     protected int Equipo;
    
     
-  public Guerrero (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){
+  public Guerrero (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax, int equipo){
       this.PV = PV;
+      this.MaxPE= MPE;
+      this.MaxPV = MPV;
       this.PE= PE;
       this.Armadura = Armadura;
       this.daño=daño;
@@ -31,6 +33,8 @@ public class Guerrero{
       this.Experiencia=experiencia;
       this.turno=true;
       this.Huir=0;
+      this.ExpMax=pxMax;
+      this.Equipo=equipo;
     } 
   
     public int getPV(){

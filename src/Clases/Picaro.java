@@ -18,6 +18,25 @@ public class Picaro {
     protected int Huir;
     protected int ExpMax;
     protected int Equipo;
+
+    public Picaro(int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax, int equipo) {
+      this.PV = PV;
+      this.MaxPE= MPE;
+      this.MaxPV = MPV;
+      this.PE= PE;
+      this.Armadura = Armadura;
+      this.daño=daño;
+      this.ataque=ataque;  
+      this.golpe=0;
+      this.Defensa=0;
+      this.Oro=oro;
+      this.Experiencia=experiencia;
+      this.turno=true;
+      this.Huir=0;
+      this.ExpMax=pxMax;
+      this.Equipo=equipo;
+    }
+       
     
          
  public int getPV(){
