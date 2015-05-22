@@ -432,18 +432,7 @@ public class ModeloHijas extends Database{
             data[i][4] = res.getString("ataque");
             data[i][5] = res.getString("Oro");
             data[i][6] = res.getString("Experiencia");
-            
-            if(.equals('Picaro')){
-            
-             
-            }
-       
-            if(clase.equals('Mago')){
-            
-            }
-            if(clase.equals('Guerrero')){
-            
-            }
+                     
             i++;
         }
         res.close();
