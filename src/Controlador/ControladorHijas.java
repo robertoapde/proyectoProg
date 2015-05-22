@@ -468,15 +468,15 @@ public class ControladorHijas implements ActionListener, MouseListener{
       
                         historialCombateString = historialCombateString +"\n---------Tu Turno----------";
                         vista.historialCombate.setText(historialCombateString);
-                        if(this.vista.txtArma.getText().equals("")){
+                       /* if(this.vista.txtArma.getText().equals("")){
                              historialCombateString = historialCombateString + "\nRealizando el ataque";
-                        }else{
+                        }else{}*/
                         historialCombateString = historialCombateString + "\nHas lanzado un ataque  "+this.vista.txtArma.getText();//+Arma;
                         vista.historialCombate.setText(historialCombateString);
-                        }
+                        JOptionPane.showMessageDialog(null, "Antes de atacar");
                         o.Atacar();
                         if (o.getGolpe() > en.getArmadura()) {
-                                JOptionPane.showMessageDialog(null, "Entro 1");
+                                JOptionPane.showMessageDialog(null, "Despues de atacar");
                               historialCombateString = historialCombateString +"\nTu ATAQUE ha IMPACTADO";
                               vista.historialCombate.setText(historialCombateString);
                                     en.setPV(en.getPV() - o.getDaño());
@@ -645,7 +645,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnCombatirEspecial:
                 
                 historialCombateString = historialCombateString + "\nHas lanzado un ataque con tu ";//+Arma;
-                vista.historialCombate.setText(historialCombateString);
                 vista.historialCombate.setText(historialCombateString);
  
                 if(o.getTurno() == true){
