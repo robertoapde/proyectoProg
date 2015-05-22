@@ -1083,9 +1083,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 if(objetoMochilaSeleccionado.equals(vista.txtEquipo.getText())){
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
+                    vista.txtEquipo.setText("");
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);
+                    vista.txtArma.setText("");
                 }
                 modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
                 vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
@@ -1103,9 +1105,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 if(objetoMochilaSeleccionado.equals(vista.txtEquipo.getText())){
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
+                    vista.txtEquipo.setText("");
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);
+                    vista.txtArma.setText("");
                 }
                 modelo.venderObjetoMochila(usuario, precioObjetoMochilaVenderSeleccionado, objetoMochilaVenderSeleccionado);
                 int nuevoOro = Integer.parseInt(vista.txtOro.getText()) + precioObjetoMochilaVenderSeleccionado;
