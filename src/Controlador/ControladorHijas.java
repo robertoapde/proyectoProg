@@ -765,7 +765,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnCombatirHuir:
                 o.Huir();
                 if(o.getHuir()==1){
-                    System.out.println("Has conseguido HUIR");
                     historialCombateString = "Historial de combate:";
                     vista.historialCombate.setText(historialCombateString);
                     vista.dialogCombatir.dispose();
@@ -1194,7 +1193,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.setInfoBD();
                             String [] nuevaVidaPostPocion = this.modelo.getInfoInterfaz(usuario);
                             this.setInfoInterfaz(nuevaVidaPostPocion);
-                            vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                            vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
                         }
                     }else if(tipoObjetoMochilaSeleccionado.equals("usable_EP")){
                         if(vista.txtPE.getText().equals(vista.txtPEMax.getText())){
@@ -1210,7 +1209,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.setInfoBD();
                             String [] nuevaEnergiaPostPocion = this.modelo.getInfoInterfaz(usuario);
                             this.setInfoInterfaz(nuevaEnergiaPostPocion);
-                            vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                            vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
                         }
                     }else if(tipoObjetoMochilaSeleccionado.equals("usable_DAÑO")){
                         JOptionPane.showMessageDialog(null, "Este objeto no puede ser usado aquí.");
