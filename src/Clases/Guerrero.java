@@ -9,24 +9,25 @@ public class Guerrero{
     protected int Oro;
     protected int Experiencia;
     protected boolean turno;
-    protected int golpe;
+    public int golpe;
     protected int Defensa;
     protected int Nivel;
-    protected int tempGolpe;
     protected int Huir;
    
     
-  public Guerrero (){
-      this.PV = 10;
-      this.PE= 3;
-      this.Armadura = 10;
-      this.daño=5;
-      this.ataque=1;  
+  public Guerrero (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){
+      this.PV = PV;
+      this.PE= PE;
+      this.Armadura = Armadura;
+      this.daño=daño;
+      this.ataque=ataque;  
       this.golpe=0;
       this.Defensa=0;
+      this.Oro=oro;
+      this.Experiencia=experiencia;
       this.turno=true;
       this.Huir=0;
-    }
+    } 
   
     public int getPV(){
         return PV;  

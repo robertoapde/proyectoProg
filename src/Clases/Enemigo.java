@@ -9,20 +9,54 @@ public class Enemigo {
     protected int Oro;
     protected int ataque;
     protected int golpe;
-    protected int tempGolpe;
     
-    public Enemigo(){
-        this.golpe=0;
-        this.PV = 10;
-        this.Armadura = 10;
-        this.ataque=5;
-        this.daño=2;
-        this.golpe=10;
-        
+    
+ public Enemigo(int PV,int Armadura,int daño,int ataque){
+      this.PV = PV;
+      this.Armadura = Armadura;
+      this.daño=daño;
+      this.ataque=ataque;  
+      this.golpe=0;
+  
     }
+
+ public Enemigo() {
+      this.PV = 6;
+      this.Armadura = 7;
+      this.daño=3;
+      this.ataque=5;  
+      this.golpe=0;
+    }
+    
     public String info(){
         return "\nPV: " +PV+"\nArmadura: "+Armadura+"\nDaño: "+daño+"\nAtaque: "+ataque;
     }
+    
+    public int getPV(){
+        return PV;  
+    }
+    public int getOro(){
+        return Oro;  
+    }
+    public int getExperiencia(){
+        return Experiencia;  
+    }
+    public int getGolpe(){
+      return golpe;
+    }
+    public int getNivel(){
+      return Nivel;
+    }
+    public int getArmadura(){
+        return Armadura;  
+    }
+    public int getDaño(){
+        return daño;  
+    }
+    public int getAtaque(){
+        return ataque;  
+    }
+  
     public void setPV( int pv){
       this.PV = pv;
   }
@@ -45,8 +79,8 @@ public class Enemigo {
       this.ataque = at;
    }
   
-     public void Atacar() {
-	golpe=(int)(Math.random()*(20)+1);
-        golpe= golpe+ ataque;        
-    }
+   public void Atacar() {
+       golpe=(int)(Math.random()*(20)+1);
+       golpe= golpe+ ataque;        
+   }
 }

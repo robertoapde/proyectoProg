@@ -442,6 +442,62 @@ public class ModeloHijas extends Database{
         return resu;
     }
     
+  public int obtenerDaño(String usuario){
+        
+        String q = "SELECT Daño FROM Usuario WHERE Nombre = '"+usuario+"'";
+        int daño=0;
+        try{
+               
+                PreparedStatement pstm1 = this.getConexion().prepareStatement(q);
+                ResultSet res1 = pstm1.executeQuery();
+                res1.next();
+                daño = res1.getInt("Daño");
+                res1.close();
+                pstm1.close();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "No se pudo obtener el daño");
+            System.err.println( e.getMessage() );
+        }
+        return daño;
+    }
+  
+     public int obtenerArmadura(String usuario){
+        
+        String q = "SELECT Armadura FROM Usuario WHERE Nombre = '"+usuario+"'";
+        int armadura=0;
+        try{
+               
+                PreparedStatement pstm1 = this.getConexion().prepareStatement(q);
+                ResultSet res1 = pstm1.executeQuery();
+                res1.next();
+                armadura = res1.getInt("Armadura");
+                res1.close();
+                pstm1.close();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "No se pudo obtener la armadura");
+            System.err.println( e.getMessage() );
+        }
+        return armadura;
+    }
+     
+        public int obtenerAtaque(String usuario){
+        
+        String q = "SELECT Ataque FROM Usuario WHERE Nombre = '"+usuario+"'";
+        int ataque=0;
+        try{
+               
+                PreparedStatement pstm1 = this.getConexion().prepareStatement(q);
+                ResultSet res1 = pstm1.executeQuery();
+                res1.next();
+                ataque = res1.getInt("Ataque");
+                res1.close();
+                pstm1.close();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "No se pudo obtener el ataque");
+            System.err.println( e.getMessage() );
+        }
+        return ataque;
+    }
    /* public void HeroeEnCombate(){
         try{
           

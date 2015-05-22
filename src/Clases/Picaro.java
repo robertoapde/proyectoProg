@@ -13,16 +13,22 @@ public class Picaro {
     protected int golpe;
     protected int Defensa;
     protected int Nivel;
+      protected int Huir;
     
-    public Picaro (){
-      this.PV = 10;
-      this.PE= 4;
-      this.Armadura = 10;
-      this.daño=8;
-      this.ataque=1;
+         
+ public Picaro (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){
+      this.PV = PV;
+      this.PE= PE;
+      this.Armadura = Armadura;
+      this.daño=daño;
+      this.ataque=ataque;  
       this.golpe=0;
       this.Defensa=0;
-    }
+      this.Oro=oro;
+      this.Experiencia=experiencia;
+      this.turno=true;
+      this.Huir=0;
+    } 
    
     public void subirNivel(){
      int  armadura = this.Armadura + 1;
@@ -126,4 +132,8 @@ public class Picaro {
         }else
             System.out.println("No tienes suficiente energía");
     }    
+    
+    public void Huir(){
+        int s=(int) (Math.random()*(3)+1);     
+    }
 }
