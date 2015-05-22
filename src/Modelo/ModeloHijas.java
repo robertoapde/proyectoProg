@@ -581,8 +581,7 @@ public class ModeloHijas extends Database{
             datosE[2] = String.valueOf(res.getInt("Nivel"));
             datosE[3] = String.valueOf(res.getInt("Experiencia"));
             datosE[4] = String.valueOf(res.getInt("Oro"));
-            
-        
+ 
         res.close();
         pstm.close();
         }catch(SQLException e){
