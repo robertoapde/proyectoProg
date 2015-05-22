@@ -2,6 +2,8 @@ package Clases;
 public class Guerrero{
     protected int PV;
     protected int PE;
+    protected int MaxPV;
+    protected int MaxPE;
     protected int Armadura;
     protected int daño;
     protected int ataque;
@@ -9,10 +11,12 @@ public class Guerrero{
     protected int Oro;
     protected int Experiencia;
     protected boolean turno;
-    public int golpe;
+    protected int golpe;
     protected int Defensa;
     protected int Nivel;
     protected int Huir;
+    protected int ExpMax;
+    protected int Equipo;
    
     
   public Guerrero (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){

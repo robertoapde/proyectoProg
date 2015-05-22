@@ -3,6 +3,8 @@ package Clases;
 public class Picaro {
     protected int PV;
     protected int PE;
+    protected int MaxPV;
+    protected int MaxPE;
     protected int Armadura;
     protected int daño;
     protected int ataque;
@@ -13,48 +15,36 @@ public class Picaro {
     protected int golpe;
     protected int Defensa;
     protected int Nivel;
-      protected int Huir;
+    protected int Huir;
+    protected int ExpMax;
+    protected int Equipo;
     
          
- public Picaro (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){
-      this.PV = PV;
-      this.PE= PE;
-      this.Armadura = Armadura;
-      this.daño=daño;
-      this.ataque=ataque;  
-      this.golpe=0;
-      this.Defensa=0;
-      this.Oro=oro;
-      this.Experiencia=experiencia;
-      this.turno=true;
-      this.Huir=0;
-    } 
-   
-    public void subirNivel(){
-     int  armadura = this.Armadura + 1;
-     int pv = this.PV +6;
-     int pe = this.PE +2;
-     int daño = this.daño +2;
-     int ataque = this.ataque +2;
-      setArmadura(armadura);
-      setPV(pv);
-      setPE(pe);
-      setDaño(daño);
-       setAtaque(ataque);
-    }
-    public int getPV(){
+ public int getPV(){
         return PV;  
     }
     public int getPE(){
         return PE;  
     }
+    public int getMaxPV(){
+        return MaxPV;  
+    }
+    public int getMaxPE(){
+        return MaxPE;  
+    }
+    public int getExpMax(){
+      return ExpMax;
+    }
     public int getOro(){
         return Oro;  
+    }
+    public int getEquipo(){
+        return Equipo;  
     }
     public int getExperiencia(){
         return Experiencia;  
     }
-    public int getgolpe(){
+    public int getGolpe(){
       return golpe;
     }
     public int getNivel(){
@@ -71,69 +61,99 @@ public class Picaro {
     }
     public int getArma(){
         return Arma;  
-    }  
+    }
+    public boolean getTurno(){
+        return turno;
+    }
+    public int getDefensa(){
+        return Defensa;
+    }
+    public String info(){
+       return "\nPV: " +PV+"\nArmadura: "+Armadura+"\nDaño: "+daño+"\nAtaque: "+ataque;
+    }
     public void setPV( int pv){
       this.PV = pv;
     }
     public void setPE( int pe){
       this.PE = pe;
     }
+    public void setMaxPV(int MPV){
+        this.MaxPV=MPV;  
+    }
+    public void setMaxPE(int MPE){
+        this.MaxPE=MPE;  
+    }
     public void setOro( int o){
       this.Oro = o;
+    }
+    public void setExpMax( int px){
+      this.ExpMax = px;
     }
     public void setExperiencia( int px){
       this.Experiencia = px;
     }
-    public void setgolpe( int gp){
+    public void setGolpe( int gp){
       this.golpe = gp;
     }
     public void setNivel(int nv){
       this.Nivel=nv;
     }
     public void setArmadura( int armadura){
-      this.Armadura = Armadura;
+      this.Armadura = armadura;
     }
-     public void setDaño( int daño){
+    public void setDaño( int daño){
       this.daño = daño;
     }
     public void setAtaque( int ataque){
       this.ataque = ataque;
     }
-    public boolean getTurno(){
-        return turno;
-    }
     public void setTurno (boolean t){
-         turno=t;
+      this.turno=t;
+    }
+     public void setDefensa (int d){
+      this.Defensa=d;
     }
     public void indicarTurno(){   
         if(getTurno()==true){
             System.out.println("Es tu turno heroe");
-        }else 
+            
+        }else        
             System.out.println("El enemigo se dispone a atacar");
+    } 
+    public void subirNivel(){
+        int  armadura = this.Armadura + 1;
+        int pv = this.PV +10;
+        int pe = this.PE +1;
+        int daño = this.daño +1;
+        int ataque = this.ataque+1;
+        setArmadura(armadura);
+        setPV(pv);
+        setPE(pe);
+        setDaño(daño);
+        setAtaque(ataque);
     }
-    public void Atacar() {
-	int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;        
+    public int Atacar() {
+	golpe= (int) (Math.random()*(20)+1);
+        golpe= golpe+ ataque;     
+        return golpe;
     }
     
-    public void Defensa(){
-        if(Defensa<=4){
-        Defensa=Defensa+2;
-        Armadura=Armadura+Defensa;
-        }else
-        System.out.println("Tu DEFENSA esta al MÁXIMO");
+    public void Defensa(){   
+            Defensa=Defensa+2;
+            Armadura=Armadura+Defensa;       
     }
-    
-    public void AtaqueEspecial() {
-        if(PE>=4){
-	int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;
-                PE=PE-4;
-        }else
-            System.out.println("No tienes suficiente energía");
-    }    
-    
+   
     public void Huir(){
         int s=(int) (Math.random()*(3)+1);     
     }
+    public void AtaqueEspecial() {
+        if(PE>=4){
+            int golpe=(int) (Math.random()*(20)+1);
+            golpe= golpe+ ataque;
+            PE=PE-4;
+        }else{
+            System.out.println("No tienes suficiente energía");
+            setTurno(true);
+        }
+    }    
 }
