@@ -658,92 +658,263 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     switch (objetoMochilaSeleccionado) {
                     case "Armadura Ligera I":
                         if(vista.txtClase.getText().equals("Mago")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un mago.");
                         }
                         break;
                     case "Armadura Ligera II":
                         if(vista.txtClase.getText().equals("Mago")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un mago.");
                         }
                         break;
                     case "Armadura Ligera III":
                         if(vista.txtClase.getText().equals("Mago")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un mago.");
                         }
                         break;
                     case "Armadura Intermedia I":
                         if(vista.txtClase.getText().equals("Picaro")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un picaro.");
                         }
                         break;
                     case "Armadura Intermedia II":
                         if(vista.txtClase.getText().equals("Picaro")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un picaro.");
                         }
                         break;
                     case "Armadura Intermedia III":
                         if(vista.txtClase.getText().equals("Picaro")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un picaro.");
                         }
                         break;
                     case "Armadura Pesada I":
                         if(vista.txtClase.getText().equals("Guerrero")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un guerrero.");
                         }
                         break;
                     case "Armadura Pesada II":
                         if(vista.txtClase.getText().equals("Guerrero")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un guerrero.");
                         }
                         break;
                     case "Armadura Pesada III":
                         if(vista.txtClase.getText().equals("Guerrero")){
+                            if(!vista.txtEquipo.getText().equals("")){
+                                String objeto = vista.txtEquipo.getText();
+                                modelo.desequiparEquipo(objeto, usuario);
+                                vista.txtEquipo.setText("");
+                            }
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
-                            modelo.equiparObjeto(equipo, usuario);
+                            modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
                         }else{
-                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un guerrero.");
+                        }
+                        break;
+                    case "Daga Espectral":
+                        if(vista.txtClase.getText().equals("Picaro")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un picaro.");
+                        }
+                        break;
+                    case "Daga Vampirica":
+                        if(vista.txtClase.getText().equals("Picaro")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un picaro.");
+                        }
+                        break;
+                    case "Daga Agonia de las Sombras":
+                        if(vista.txtClase.getText().equals("Picaro")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un picaro.");
+                        }
+                        break;
+                    case "Baston del Crepusculo":
+                        if(vista.txtClase.getText().equals("Mago")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un mago.");
+                        }
+                        break;
+                    case "Baston del Ocaso":
+                        if(vista.txtClase.getText().equals("Mago")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un mago.");
+                        }
+                        break;
+                    case "Baston de Hinojosa":
+                        if(vista.txtClase.getText().equals("Mago")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un mago.");
+                        }
+                        break;
+                    case "Espada Viento Furioso":
+                        if(vista.txtClase.getText().equals("Guerrero")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un guerrero.");
+                        }
+                        break;
+                    case "Espada Frostmourne":
+                        if(vista.txtClase.getText().equals("Guerrero")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un guerrero.");
+                        }
+                        break;
+                    case "Espada Mata Dioses":
+                        if(vista.txtClase.getText().equals("Guerrero")){
+                            if(!vista.txtArma.getText().equals("")){
+                                String objeto = vista.txtArma.getText();
+                                modelo.desequiparArma(objeto, usuario);
+                                vista.txtArma.setText("");
+                            }
+                            this.vista.txtArma.setText(objetoMochilaSeleccionado);
+                            String arma = vista.txtArma.getText();
+                            modelo.equiparArma(arma, efectoObjetoMochilaSeleccionado, usuario);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser equipado por un guerrero.");
                         }
                         break;
                     }
@@ -757,6 +928,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnSoltarAceptar:
+                
+                if(objetoMochilaSeleccionado.equals(vista.txtEquipo.getText()) || objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
+                    
+                }
                 modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
                 vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                 JOptionPane.showMessageDialog(null, "Objeto soltado y perdido para siempre.");

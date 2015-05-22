@@ -427,9 +427,58 @@ public class ModeloHijas extends Database{
         return resu;
     }
     
-    public int equiparObjeto(String objeto, String usuario){
+    public int equiparEquipo(String objeto, int armadura, String usuario){
         int resu = 0;
-        String q1 = "UPDATE Usuario SET Equipo = '"+objeto+"' WHERE Nombre = '"+usuario+"'";
+        int antiguaArmadura = obtenerArmadura(usuario);
+        int nuevaArmadura = antiguaArmadura + armadura;
+        String q1 = "UPDATE Usuario SET Equipo = '"+objeto+"', Armadura = "+nuevaArmadura+" WHERE Nombre = '"+usuario+"'";
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+            pstm1.execute();
+            pstm1.close();
+            resu = 1;
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al insertar.");
+            ex.getStackTrace();
+        }
+        return resu;
+    }
+    
+    public int desequiparEquipo(String objeto, String usuario){
+        int resu = 0;
+        String q1 = "UPDATE Usuario SET Equipo = '', Armadura = (Armadura - (SELECT Efecto FROM Tienda WHERE Nombre = '"+objeto+"')) WHERE Nombre = '"+usuario+"'";
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+            pstm1.execute();
+            pstm1.close();
+            resu = 1;
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al insertar.");
+            ex.getStackTrace();
+        }
+        return resu;
+    }
+    
+    public int equiparArma(String objeto, int daño, String usuario){
+        int resu = 0;
+        int antiguoDaño = obtenerDaño(usuario);
+        int nuevoDaño = antiguoDaño + daño;
+        String q1 = "UPDATE Usuario SET Arma = '"+objeto+"', Daño = "+nuevoDaño+" WHERE Nombre = '"+usuario+"'";
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+            pstm1.execute();
+            pstm1.close();
+            resu = 1;
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al insertar.");
+            ex.getStackTrace();
+        }
+        return resu;
+    }
+    
+    public int desequiparArma(String objeto, String usuario){
+        int resu = 0;
+        String q1 = "UPDATE Usuario SET Arma = '', Daño = (Daño - (SELECT Efecto FROM Tienda WHERE Nombre = '"+objeto+"')) WHERE Nombre = '"+usuario+"'";
         try{
             PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
             pstm1.execute();
@@ -461,7 +510,7 @@ public class ModeloHijas extends Database{
         return daño;
     }
   
-     public int obtenerArmadura(String usuario){
+    public int obtenerArmadura(String usuario){
         
         String q = "SELECT Armadura FROM Usuario WHERE Nombre = '"+usuario+"'";
         int armadura=0;
@@ -480,7 +529,7 @@ public class ModeloHijas extends Database{
         return armadura;
     }
      
-        public int obtenerAtaque(String usuario){
+    public int obtenerAtaque(String usuario){
         
         String q = "SELECT Ataque FROM Usuario WHERE Nombre = '"+usuario+"'";
         int ataque=0;
