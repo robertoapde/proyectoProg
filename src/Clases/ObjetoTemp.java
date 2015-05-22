@@ -41,7 +41,7 @@ public class ObjetoTemp {
       this.Oro=oro;
       this.Experiencia=experiencia;
       this.turno=true;
-      this.Huir=0;
+      this.Huir=1;
       this.ExpMax=pxMax;
       this.Nivel=nivel;
     } 
