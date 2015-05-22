@@ -311,7 +311,7 @@ public class ModeloHijas extends Database{
     public DefaultTableModel getTablaMochilaCombate(String u){
         
         DefaultTableModel tablemodel = new ModeloTablaNoEditable();
-        String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
+        String[] columnNames = {"Nombre","Efecto"};
         int registros = 0;
 
         try{
@@ -328,13 +328,12 @@ public class ModeloHijas extends Database{
         
         try{
           
-        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"') AND Tipo LIKE 'usable%'");
+        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT Nombre, Efecto FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"') AND Tipo LIKE 'usable%'");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
             data[i][0] = res.getString("Nombre");
-            data[i][1] = res.getString("Tipo");
-            data[i][2] = res.getString("Efecto");
+            data[i][1] = res.getString("Efecto");
             i++;
         }
         res.close();
