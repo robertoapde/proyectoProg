@@ -7,14 +7,21 @@ public class Enemigo {
     protected int Experiencia;
     protected int Nivel;
     protected int Oro;
-    protected int ataque=50;
+    protected int ataque;
     protected int golpe;
+    protected int tempGolpe;
     
     public Enemigo(){
-        int golpe=0;
+        this.golpe=0;
+        this.PV = 10;
+        this.Armadura = 10;
+        this.ataque=5;
+        this.daño=2;
+        this.golpe=10;
+        
     }
     public String info(){
-        return PV+","+Armadura+","+daño+","+ataque;
+        return "\nPV: " +PV+"\nArmadura: "+Armadura+"\nDaño: "+daño+"\nAtaque: "+ataque;
     }
     public void setPV( int pv){
       this.PV = pv;
@@ -37,9 +44,9 @@ public class Enemigo {
     public void setAtaque( int at){
       this.ataque = at;
    }
-    public void Atacar() {
-	int golpe=50;//(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;
-            
-}
+  
+     public void Atacar() {
+	golpe=(int)(Math.random()*(20)+1);
+        golpe= golpe+ ataque;        
+    }
 }

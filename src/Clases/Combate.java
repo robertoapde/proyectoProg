@@ -20,82 +20,114 @@ public class Combate {
         int num;
         
         do{
-            
+
             if(g.getTurno()==true){
-        try{
-            
-            System.out.println("1.Ataque");
-            System.out.println("2.Defensa");
-            System.out.println("3.Ataque Especial");
-            System.out.println("4.Mochila");
-            System.out.println("5.Huir");
+                try{
 
-            Scanner entrada = new Scanner(System.in);
-            int menu = entrada.nextInt();
+                    System.out.println("1.Ataque");
+                    System.out.println("2.Ataque Especial");
+                    System.out.println("3.Defensa");
+                    System.out.println("4.Mochila");
+                    System.out.println("5.Huir");
 
-            switch (menu) {
-		case 1:
-                    g.Atacar();
-                    if (g.golpe > e.Armadura) {
-                    e.PV = e.PV - g.daño;
-                    System.out.println(e.info());
-                    if(e.PV<=0){
-                    g.Oro=g.Oro+e.Oro;
-                    g.Experiencia=g.Experiencia+e.Experiencia;
-                    }else
-                        System.out.println("Has fallado el ataque");
-                    System.out.println(e.info());
+                    Scanner entrada = new Scanner(System.in);
+                    int menu = entrada.nextInt();
+
+                    switch (menu) {
+                        case 1:
+                            
+                            g.Atacar();
+                            if (g.golpe > e.Armadura) {
+                                     System.out.println("Le has dado campeon.");
+                                    e.PV = e.PV - g.daño;
+                                     System.out.println("Daño Hecho:"+ g.daño);
+                                    System.out.println("Enemigo: " + e.info());
+                                if(e.PV<=0){
+                                    g.Oro=g.Oro+e.Oro;
+                                    g.Experiencia=g.Experiencia+e.Experiencia;
+                                }
+                              
+                            }else{
+                                    System.out.println("Has fallado el ataque.");
+                                    System.out.println("Enemigo: " + e.info());
+                                }
+                              g.setTurno(false);
+                        break;
+
+                        case 2:
+                            g.AtaqueEspecial();
+                            if (g.golpe > e.Armadura) {
+                                System.out.println("¿Eso era personal?BOOM.");
+                                e.PV = e.PV - g.daño;
+                                System.out.println("Daño Hecho:"+ g.daño);
+                                System.out.println("Enemigo: " + e.info());
+                                if(e.PV<=0){
+                                    g.Oro=g.Oro+e.Oro;
+                                    g.Experiencia=g.Experiencia+e.Experiencia;
+                                 }
+                               
+                            }else{
+                                    System.out.println("Has fallado el ataque");
+                                    System.out.println("Enemigo: " + e.info());
+                                }
+                              g.setTurno(false);
+                        break;
+
+                        case 3:
+                            g.Defensa();
+                            System.out.println("Mas duro que un examen de Antonio");
+                            System.out.println("Tu defensa sube -->"+g.Defensa);
+                            System.out.println("Guerrero: "+ g.info());
+                            
+                            
+                        break;
+
+                        case 4:
+                            //Mochila
+                        break;
+
+                        case 5:
+                            //btnHuir
+                        break;
                     }
-		break;
-                    
-                case 2:
-                    g.AtaqueEspecial();
-                    if (g.golpe > e.Armadura) {
-                    e.PV = e.PV - g.daño;
-                    System.out.println(e.info());
-                    if(e.PV<=0){
-                    g.Oro=g.Oro+e.Oro;
-                    g.Experiencia=g.Experiencia+e.Experiencia;
-                    }else
-                        System.out.println("Has fallado el ataque");
-                    System.out.println(e.info());
-                    }
-		break;
-                    
-                case 3:
-                    g.Defensa();
-		break;
-                    
-                case 4:
-                    //Mochila
-		break;
-                
-                case 5:
-                    //btnHuir
-		break;
+
+                }catch(Exception ex){
+                 JOptionPane.showMessageDialog(null, "Error");
+                }   
+               
+            }else{ 
+                System.out.println("El enemigo se dispone a atacar");
+                e.Atacar();
+                if (e.golpe > g.Armadura) {
+                    System.out.println(" ");
+                    System.out.println("El enemigo ha impactado el ataque");
+                    g.PV = g.PV - e.daño;
+                    System.out.println("Daño Hecho:"+ e.daño);
+                    System.out.println("Guerrero: "+ g.info());
+                        if(g.PV<=0){
+                            g.Experiencia=g.Experiencia-(25*g.Nivel*3);
+                            g.Oro=g.Oro-(5*4*g.Nivel);
+                            if(g.Experiencia<0 ){
+                                g.Experiencia=0;
+                                
+                            }
+                            if (g.Oro<0){
+                                g.Oro=0;
+                            }
+                        }
+                }else{
+                    System.out.println(" ");
+                    System.out.println("El enemigo ha fallado el ataque");
+                    System.out.println("Guerrero: "+ g.info());
+                }
+                 g.setTurno(true);
             }
             
-        }catch(Exception ex){
-         JOptionPane.showMessageDialog(null, "Error");
-        }   
-        g.setTurno(false);
-        }else 
-            System.out.println("El enemigo se dispone a atacar");
-            g.setTurno(true);
-            e.Atacar();
-            if (e.golpe > g.Armadura) {
-                System.out.println("Has impactado el ataque");
-                g.PV = g.PV - e.daño;
-                System.out.println(g.info());
-                if(g.PV<=0)
-                g.Experiencia=g.Experiencia-(25*g.Nivel*3);
-                g.Oro=g.Oro-(5*4*g.Nivel);
-                if(g.Experiencia<0){
-                g.Experiencia=0;
-                }else
-	System.out.println("Ha fallado el ataque");
-                System.out.println(e.info());
-	}
-        }while(g.PV>0||e.PV>0);
+        }while(g.PV>0 && e.PV>0);
+        if(g.PV == 0){
+            System.out.println("Has perdido.");
+        }else if(e.PV == 0){
+            System.out.println("Has ganado.");
+        }
     }
 }

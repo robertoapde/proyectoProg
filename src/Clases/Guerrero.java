@@ -12,10 +12,12 @@ public class Guerrero{
     protected int golpe;
     protected int Defensa;
     protected int Nivel;
+    protected int tempGolpe;
+   
     
   public Guerrero (){
       this.PV = 10;
-      this.PE= 2;
+      this.PE= 4;
       this.Armadura = 10;
       this.daño=5;
       this.ataque=1;  
@@ -58,7 +60,7 @@ public class Guerrero{
         return turno;
     }
     public String info(){
-        return PV+","+PE+","+Armadura+","+daño+","+ataque;
+       return "\nPV: " +PV+"\nArmadura: "+Armadura+"\nDaño: "+daño+"\nAtaque: "+ataque;
     }
     public void setPV( int pv){
       this.PV = pv;
@@ -88,7 +90,7 @@ public class Guerrero{
       this.ataque = ataque;
     }
     public void setTurno (boolean t){
-         turno=t;
+      this.turno=t;
     }
     public void indicarTurno(){   
         if(getTurno()==true){
@@ -109,26 +111,31 @@ public class Guerrero{
         setDaño(daño);
         setAtaque(ataque);
     }
-    public void Atacar() {
-	int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;        
+    public int Atacar() {
+	golpe= (int) (Math.random()*(20)+1);
+        golpe= golpe+ ataque;     
+        return golpe;
     }
     
     public void Defensa(){
-        if(Defensa<=4){
-        Defensa=Defensa+2;
-        Armadura=Armadura+Defensa;
-        }else
-        System.out.println("Tu DEFENSA esta al MÁXIMO");
+        
+        if(Defensa<2){
+            Defensa=Defensa+2;
+            Armadura=Armadura+Defensa;
+        }else{
+            setTurno(true);
+            System.out.println("Tu DEFENSA esta al MÁXIMO");
+        }
     }
     
     public void AtaqueEspecial() {
         if(PE>=4){
-	int golpe=(int) (Math.random()*(20)+1);
-        golpe= golpe+ ataque;
-                PE=PE-4;
-        }else
+            int golpe=(int) (Math.random()*(20)+1);
+            golpe= golpe+ ataque;
+            PE=PE-4;
+        }else{
             System.out.println("No tienes suficiente energía");
             setTurno(true);
+        }
     }    
 }
