@@ -261,7 +261,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
         switch ( AccionMVC.valueOf( e.getActionCommand() ) )
         {
             case btnCombatir:
-              
+                
+                vista.historialCombate.setText(historialCombateString);
                 historialString = historialString + "";
                 vista.historial.setText(historialString);
                 historialString = historialString + "\n¡Combate iniciado!";
@@ -671,7 +672,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             if (o.getGolpe() > en.getArmadura()) {
                               historialCombateString = historialCombateString +"\nTu ATAQUE ha IMPACTADO";
                               vista.historialCombate.setText(historialCombateString);
-                                    en.setPV(en.getPV() - o.getDaño());
+                                    en.setPV(en.getPV() - o.getDaño()+5);
                                     historialCombateString = historialCombateString +"\nDaño Hecho:"+ o.getDaño()+"\nEnergia gastada: "+o.getPE();
                                     vista.historialCombate.setText(historialCombateString);
                                     historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
