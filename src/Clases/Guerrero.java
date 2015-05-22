@@ -2,6 +2,8 @@ package Clases;
 public class Guerrero{
     protected int PV;
     protected int PE;
+    protected int MaxPV;
+    protected int MaxPE;
     protected int Armadura;
     protected int daño;
     protected int ataque;
@@ -9,14 +11,18 @@ public class Guerrero{
     protected int Oro;
     protected int Experiencia;
     protected boolean turno;
-    public int golpe;
+    protected int golpe;
     protected int Defensa;
     protected int Nivel;
     protected int Huir;
+    protected int ExpMax;
+    protected int Equipo;
    
     
-  public Guerrero (int PV,int PE,int Armadura,int daño,int ataque,int oro, int experiencia){
+  public Guerrero (int PV,int PE, int MPV,int MPE,int Armadura,int daño,int ataque,int oro, int experiencia, int pxMax, int equipo){
       this.PV = PV;
+      this.MaxPE= MPE;
+      this.MaxPV = MPV;
       this.PE= PE;
       this.Armadura = Armadura;
       this.daño=daño;
@@ -27,6 +33,8 @@ public class Guerrero{
       this.Experiencia=experiencia;
       this.turno=true;
       this.Huir=0;
+      this.ExpMax=pxMax;
+      this.Equipo=equipo;
     } 
   
     public int getPV(){
