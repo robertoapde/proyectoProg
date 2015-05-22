@@ -257,6 +257,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaTaberna.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(tablaTaberna);
 
         btnAceptarComprarTaberna.setText("Aceptar");
@@ -370,6 +371,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaTienda.setShowVerticalLines(false);
         jScrollPane2.setViewportView(tablaTienda);
 
         btnComprarTienda.setText("Comprar");
@@ -507,6 +509,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaMochilaVender.setShowVerticalLines(false);
         jScrollPane5.setViewportView(tablaMochilaVender);
 
         jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 230));
@@ -739,6 +742,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaMochila.setShowVerticalLines(false);
         jScrollPane6.setViewportView(tablaMochila);
 
         jPanel7.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 11, 462, 410));
@@ -943,6 +947,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaMochilaCombate.setShowVerticalLines(false);
         jScrollPane4.setViewportView(tablaMochilaCombate);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);

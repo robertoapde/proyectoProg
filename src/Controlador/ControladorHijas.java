@@ -30,9 +30,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
     int precioObjetoTiendaSeleccionado = 0;
     int precioObjetoTabernaSeleccionado = 0;
     int precioObjetoMochilaSeleccionado = 0;
-    
     String objetoMochilaVenderSeleccionado = "";
     int precioObjetoMochilaVenderSeleccionado = 0;
+    String tipoObjetoMochilaSeleccionado = "";
+    int efectoObjetoMochilaSeleccionado = 0;
     
     
     public enum AccionMVC{
@@ -159,22 +160,32 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista.tablaTienda.addMouseListener(this);
         this.vista.tablaTienda.setModel(modelo.getTablaTienda());
         this.vista.tablaTienda.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.vista.tablaTienda.getTableHeader().setReorderingAllowed(false);
+        this.vista.tablaTienda.getTableHeader().setResizingAllowed(false);
         
         this.vista.tablaTaberna.addMouseListener(this);
         this.vista.tablaTaberna.setModel(modelo.getTablaTaberna());
         this.vista.tablaTaberna.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.vista.tablaTaberna.getTableHeader().setReorderingAllowed(false);
+        this.vista.tablaTienda.getTableHeader().setResizingAllowed(false);
         
         this.vista.tablaMochila.addMouseListener(this);
         this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
         this.vista.tablaMochila.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.vista.tablaMochila.getTableHeader().setReorderingAllowed(false);
+        this.vista.tablaMochila.getTableHeader().setResizingAllowed(false);
         
         this.vista.tablaMochilaVender.addMouseListener(this);
         this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
         this.vista.tablaMochilaVender.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.vista.tablaMochilaVender.getTableHeader().setReorderingAllowed(false);
+        this.vista.tablaMochilaVender.getTableHeader().setResizingAllowed(false);
         
         this.vista.tablaMochilaCombate.addMouseListener(this);
         this.vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
         this.vista.tablaMochilaCombate.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.vista.tablaMochilaCombate.getTableHeader().setReorderingAllowed(false);
+        this.vista.tablaMochilaCombate.getTableHeader().setResizingAllowed(false);
         
         this.vista.btnCambiarC.setActionCommand("btnCambiarC");
         this.vista.btnCambiarC.addActionListener(this);
@@ -311,6 +322,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         String [] nuevoOroPostCompra = this.modelo.getInfoInterfaz(usuario);
                         this.setInfoInterfaz(nuevoOroPostCompra);
                         historialString = historialString + "\n"+objetoTiendaSeleccionado+" comprad@.";
+                        objetoTiendaSeleccionado = "";
+                        vista.dialogTienda.setVisible(true);
                     }else{
                         JOptionPane.showMessageDialog(null, "Error al comprar objeto.");
                     }
@@ -438,6 +451,47 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnMochilaUsar:
+                if(objetoMochilaSeleccionado.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione un objeto.");
+                }else{
+                    if(tipoObjetoMochilaSeleccionado.equals("usable_HP")){
+                        if(vista.txtPV.getText().equals(vista.txtPVMax.getText())){
+                            JOptionPane.showMessageDialog(null, "Ya tienes la vida al máximo.");
+                        }else{
+                            int nuevoPV = Integer.parseInt(vista.txtPV.getText()) + efectoObjetoMochilaSeleccionado;
+                            if(nuevoPV > Integer.parseInt(vista.txtPVMax.getText())){
+                                nuevoPV = Integer.parseInt(vista.txtPVMax.getText());
+                            }
+                            vista.txtPV.setText(String.valueOf(nuevoPV));
+                            modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
+                            JOptionPane.showMessageDialog(null, "Poción de vida usada.");
+                            String [] nuevaVidaPostPocion = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevaVidaPostPocion);
+                            this.setInfoBD();
+                            vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                        }
+                    }else if(tipoObjetoMochilaSeleccionado.equals("usable_EP")){
+                        if(vista.txtPE.getText().equals(vista.txtPEMax.getText())){
+                            JOptionPane.showMessageDialog(null, "Ya tienes la energía al máximo.");
+                        }else{
+                            int nuevoPE = Integer.parseInt(vista.txtPE.getText()) + efectoObjetoMochilaSeleccionado;
+                            if(nuevoPE > Integer.parseInt(vista.txtPEMax.getText())){
+                                nuevoPE = Integer.parseInt(vista.txtPEMax.getText());
+                            }
+                            vista.txtPE.setText(String.valueOf(nuevoPE));
+                            modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
+                            JOptionPane.showMessageDialog(null, "Poción de energía usada.");
+                            String [] nuevaEnergiaPostPocion = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevaEnergiaPostPocion);
+                            this.setInfoBD();
+                            vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                        }
+                    }else if(tipoObjetoMochilaSeleccionado.equals("usable_DAÑO")){
+                        JOptionPane.showMessageDialog(null, "Este objeto no puede ser usado aquí.");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Seleccione un objeto usable.");
+                    }
+                }
                 break;
                 
             case btnMochilaSoltar:
@@ -457,31 +511,67 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 }else{
                     switch (objetoMochilaSeleccionado) {
                     case "Armadura Ligera I":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera I.png")));
+                        if(vista.txtClase.getText().equals("Mago")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera I.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
+                        }
                         break;
                     case "Armadura Ligera II":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera II.png")));
+                        if(vista.txtClase.getText().equals("Mago")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera II.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
+                        }
                         break;
                     case "Armadura Ligera III":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera III.png")));
+                        if(vista.txtClase.getText().equals("Mago")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera III.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
+                        }
                         break;
                     case "Armadura Intermedia I":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia I.png")));
+                        if(vista.txtClase.getText().equals("Picaro")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia I.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
+                        }
                         break;
                     case "Armadura Intermedia II":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia II.png")));
+                        if(vista.txtClase.getText().equals("Picaro")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia II.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
+                        }
                         break;
                     case "Armadura Intermedia III":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia III.png")));
+                        if(vista.txtClase.getText().equals("Picaro")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia III.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
+                        }
                         break;
                     case "Armadura Pesada I":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada I.png")));
+                        if(vista.txtClase.getText().equals("Guerrero")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada I.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
+                        }
                         break;
                     case "Armadura Pesada II":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada II.png")));
+                        if(vista.txtClase.getText().equals("Guerrero")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada II.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
+                        }
                         break;
                     case "Armadura Pesada III":
-                        this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada III.png")));
+                        if(vista.txtClase.getText().equals("Guerrero")){
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada III.png")));
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
+                        }
                         break;
                     }
                 }
@@ -508,6 +598,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnAceptarVenderVenderTienda:
                 modelo.venderObjetoMochila(usuario, precioObjetoMochilaVenderSeleccionado, objetoMochilaVenderSeleccionado);
+                int nuevoOro = Integer.parseInt(vista.txtOro.getText()) + precioObjetoMochilaVenderSeleccionado;
+                vista.txtOro.setText(String.valueOf(nuevoOro));
                 this.setInfoBD();
                 String [] nuevoOroPostVenta = this.modelo.getInfoInterfaz(usuario);
                 this.setInfoInterfaz(nuevoOroPostVenta);
@@ -624,9 +716,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
             if(filaMochila > -1){
                 objetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaMochila, 0));
                 precioObjetoMochilaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochila.getValueAt(filaMochila, 1)));
+                tipoObjetoMochilaSeleccionado = String.valueOf(this.vista.tablaMochila.getValueAt(filaMochila, 2));
+                efectoObjetoMochilaSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochila.getValueAt(filaMochila, 3)));
             }else{
                 objetoMochilaSeleccionado = "";
                 precioObjetoTabernaSeleccionado = 0;
+                tipoObjetoMochilaSeleccionado = "";
+                efectoObjetoMochilaSeleccionado = 0;
             }
             if(filaMochilaVender > -1){
                 objetoMochilaVenderSeleccionado = String.valueOf(this.vista.tablaMochilaVender.getValueAt(filaMochilaVender, 0));
@@ -645,4 +741,5 @@ public class ControladorHijas implements ActionListener, MouseListener{
     public void mouseEntered(MouseEvent e) {}
 
     public void mouseExited(MouseEvent e) {}
+    
 }

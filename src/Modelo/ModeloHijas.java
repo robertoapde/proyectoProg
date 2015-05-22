@@ -11,9 +11,17 @@ public class ModeloHijas extends Database{
     public ModeloHijas(){
     }
     
+    public class ModeloTablaNoEditable extends DefaultTableModel {
+
+        public boolean isCellEditable(int row, int column){  
+            return false;  
+        }
+
+    }
+    
     public DefaultTableModel getTablaTienda(){
         
-        DefaultTableModel tablemodel = new DefaultTableModel();
+        DefaultTableModel tablemodel = new ModeloTablaNoEditable();
         String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
         int registros = 0;
 
@@ -52,7 +60,7 @@ public class ModeloHijas extends Database{
     
     public DefaultTableModel getTablaTaberna(){
         
-        DefaultTableModel tablemodel = new DefaultTableModel();
+        DefaultTableModel tablemodel = new ModeloTablaNoEditable();
         String[] columnNames = {"Comida","Precio","Efecto"};
         int registros = 0;
 
@@ -150,7 +158,7 @@ public class ModeloHijas extends Database{
     
     public DefaultTableModel getTablaMochila(String u){
         
-        DefaultTableModel tablemodel = new DefaultTableModel();
+        DefaultTableModel tablemodel = new ModeloTablaNoEditable();
         String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
         int registros = 0;
 
@@ -247,7 +255,7 @@ public class ModeloHijas extends Database{
     
     public DefaultTableModel getTablaMochilaVender(String u){
         
-        DefaultTableModel tablemodel = new DefaultTableModel();
+        DefaultTableModel tablemodel = new ModeloTablaNoEditable();
         String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
         int registros = 0;
 
@@ -300,7 +308,7 @@ public class ModeloHijas extends Database{
     
     public DefaultTableModel getTablaMochilaCombate(String u){
         
-        DefaultTableModel tablemodel = new DefaultTableModel();
+        DefaultTableModel tablemodel = new ModeloTablaNoEditable();
         String[] columnNames = {"Nombre","Precio","Tipo","Efecto"};
         int registros = 0;
 
