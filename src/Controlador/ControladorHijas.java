@@ -1,6 +1,5 @@
 package Controlador;
 
-import Clases.Guerrero;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -83,7 +82,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
         this.vista = vista;
     }
     
-   public void iniciar(){        
+   public void iniciar(){
+        vista.historial.setText(historialString);
         usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
         String [] i = this.modelo.getInfoInterfaz(usuario);
         this.setInfoInterfaz(i);
@@ -214,6 +214,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case  btnMochila:
                 this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+                if(vista.txtEquipo.getText().equals("")){
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
+                }else{
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/"+vista.txtEquipo.getText()+".png")));
+                }
                 historialString = historialString + "\nMochila abierta.";
                 vista.historial.setText(historialString);
                 this.vista.dialogMochila.setSize(720, 580);
@@ -252,7 +257,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnSalirTaberna:
-                this.vista.dialogTaberna.dispose();
+                this.vista.dialogTaberna.setVisible(false);
                 historialString = historialString + "\nHas salido de la taberna.";
                 vista.historial.setText(historialString);
                 break;
@@ -303,7 +308,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCancelarComprarTaberna:
-                this.vista.dialogTabernaCompra.dispose();
+                this.vista.dialogTabernaCompra.setVisible(false);
                 this.vista.dialogTaberna.setVisible(true);
                 break;
                 
@@ -318,12 +323,12 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     String [] nuevaVidaPostAlojamiento = this.modelo.getInfoInterfaz(usuario);
                     this.setInfoInterfaz(nuevaVidaPostAlojamiento);
                     JOptionPane.showMessageDialog(null, "Te alojas en la posada y te recuperas.");
-                    vista.dialogTabernaAlojamiento.dispose();
+                    vista.dialogTabernaAlojamiento.setVisible(false);
                 }
                 break;
                 
             case btnCancelarAlojamiento:
-                this.vista.dialogTabernaAlojamiento.dispose();
+                this.vista.dialogTabernaAlojamiento.setVisible(false);
                 this.vista.dialogTaberna.setVisible(true);
                 break;
                 
@@ -347,10 +352,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnSalirTienda:
-                this.vista.dialogTienda.dispose();
+                this.vista.dialogTienda.setVisible(false);
                 historialString = historialString + "\nHas vuelto del mercado.";
                 vista.historial.setText(historialString);
-                vista.dialogTiendaComprar.dispose();
+                vista.dialogTiendaComprar.setVisible(false);
                 break;
                 
             case btnAceptarCompraTienda:
@@ -373,11 +378,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 }else{
                     JOptionPane.showMessageDialog(null, "Objeto demasiado caro.");
                 }
-                this.vista.dialogTiendaComprar.dispose();
+                this.vista.dialogTiendaComprar.setVisible(false);
                 break;
                 
             case btnCancelarCompraTienda:
-                this.vista.dialogTiendaComprar.dispose();
+                this.vista.dialogTiendaComprar.setVisible(false);
                 this.vista.dialogTienda.setVisible(true);
                 break;
                 
@@ -393,7 +398,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnSalirVenderTienda:
-                this.vista.dialogTiendaVender.dispose();
+                this.vista.dialogTiendaVender.setVisible(false);
                 this.vista.dialogTienda.setVisible(true);
                 break;
                 
@@ -489,8 +494,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 if(s==3){
                     System.out.println("No puedes HUIR");
                 }*/
-                vista.dialogHuir.dispose();
-                vista.dialogCombatir.dispose();         
+                vista.dialogHuir.setVisible(false);
+                vista.dialogCombatir.setVisible(false);
                 break;
                 
             case btnMochilaUsar:
@@ -556,6 +561,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Ligera I":
                         if(vista.txtClase.getText().equals("Mago")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera I.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
                         }
@@ -563,6 +571,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Ligera II":
                         if(vista.txtClase.getText().equals("Mago")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera II.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
                         }
@@ -570,6 +581,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Ligera III":
                         if(vista.txtClase.getText().equals("Mago")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera III.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un mago.");
                         }
@@ -577,6 +591,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Intermedia I":
                         if(vista.txtClase.getText().equals("Picaro")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia I.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
                         }
@@ -584,6 +601,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Intermedia II":
                         if(vista.txtClase.getText().equals("Picaro")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia II.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
                         }
@@ -591,6 +611,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Intermedia III":
                         if(vista.txtClase.getText().equals("Picaro")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia III.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un picaro.");
                         }
@@ -598,6 +621,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Pesada I":
                         if(vista.txtClase.getText().equals("Guerrero")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada I.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
                         }
@@ -605,6 +631,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Pesada II":
                         if(vista.txtClase.getText().equals("Guerrero")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada II.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
                         }
@@ -612,6 +641,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     case "Armadura Pesada III":
                         if(vista.txtClase.getText().equals("Guerrero")){
                             this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada III.png")));
+                            this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
+                            String equipo = vista.txtEquipo.getText();
+                            modelo.equiparObjeto(equipo, usuario);
                         }else{
                             JOptionPane.showMessageDialog(null, "Este objeto solo puede ser usado por un guerrero.");
                         }
@@ -621,7 +653,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnMochilaSalir:
-                this.vista.dialogMochila.dispose();
+                this.vista.dialogMochila.setVisible(false);
                 historialString = historialString + "\nHas cerrado la mochila.";
                 vista.historial.setText(historialString);
                 break;
@@ -630,12 +662,12 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
                 vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                 JOptionPane.showMessageDialog(null, "Objeto soltado y perdido para siempre.");
-                vista.dialogSoltar.dispose();
+                vista.dialogSoltar.setVisible(false);
                 vista.dialogMochila.setVisible(true);
                 break;
                 
             case btnSoltarCancelar:
-                this.vista.dialogSoltar.dispose();
+                this.vista.dialogSoltar.setVisible(false);
                 vista.dialogMochila.setVisible(true);
                 break;
                 
@@ -646,18 +678,18 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.setInfoBD();
                 String [] nuevoOroPostVenta = this.modelo.getInfoInterfaz(usuario);
                 this.setInfoInterfaz(nuevoOroPostVenta);
-                this.vista.dialogTiendaVenderVender.dispose();
+                this.vista.dialogTiendaVenderVender.setVisible(false);
                 this.vista.dialogTiendaVender.setVisible(true);
                 this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
                 break;
                 
             case btnCancelarVenderVenderTienda:
-                this.vista.dialogTiendaVenderVender.dispose();
+                this.vista.dialogTiendaVenderVender.setVisible(false);
                 this.vista.dialogTiendaVender.setVisible(true);
                 break;
                 
             case btnSalirMochilaCombate:
-                this.vista.dialogMochilaCombate.dispose();
+                this.vista.dialogMochilaCombate.setVisible(false);
                 this.vista.dialogCombatir.setVisible(true);
                 break;
                 
@@ -672,6 +704,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCerrarS:
+                historialString = "Historial de partida:";
+                vista.historial.setText(historialString);
                 this.setInfoBD();
                 this.vista.dispose();
                 this.vista2.setVisible(true);
@@ -684,7 +718,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCancelarCambiarContraseña:
-                this.vista.dialogCambiarContraseña.dispose();
+                this.vista.dialogCambiarContraseña.setVisible(false);
                 this.vista.setVisible(true);
                 break;
         }
@@ -699,6 +733,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
         String energia = s[5];
         String vidaMax = s[6];
         String energiaMax = s[7];
+        String arma = s[8];
+        String equipo = s[9];
         vista.txtNombre.setText(usuario);
         vista.txtNivel.setText(nivel);
         vista.txtClase.setText(clase);
@@ -708,6 +744,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
         vista.txtPE.setText(energia);
         vista.txtPVMax.setText(vidaMax);
         vista.txtPEMax.setText(energiaMax);
+        vista.txtArma.setText(arma);
+        vista.txtEquipo.setText(equipo);
         switch (clase){
             case "Picaro":
                 this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/picaro.png")));
@@ -727,11 +765,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
         String experiencia = vista.txtExperiencia.getText();
         String oro = vista.txtOro.getText();
         String vida = vista.txtPV.getText();
-        String energia = vista.txtPE.getText();;
-        String vidaMax = vista.txtPVMax.getText();;
-        String energiaMax = vista.txtPEMax.getText();;
+        String energia = vista.txtPE.getText();
+        String vidaMax = vista.txtPVMax.getText();
+        String energiaMax = vista.txtPEMax.getText();
+        String arma = vista.txtArma.getText();
+        String equipo = vista.txtEquipo.getText();
         
-        modelo.actualizarBD(usuario, nivel, experiencia, oro, vida, energia, vidaMax, energiaMax);
+        modelo.actualizarBD(usuario, nivel, experiencia, oro, vida, energia, vidaMax, energiaMax, arma, equipo);
     }
     
     public void mouseClicked(MouseEvent e) {

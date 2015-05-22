@@ -97,8 +97,8 @@ public class ModeloHijas extends Database{
     }
     
     public String[] getInfoInterfaz(String u){
-        String[] info = new String[8];
-        String q1 = "SELECT Nivel, Clase, Experiencia, Oro, PV, PE, PVMaximo, PEMaximo FROM Usuario WHERE Nombre = '"+u+"'";
+        String[] info = new String[10];
+        String q1 = "SELECT Nivel, Clase, Experiencia, Oro, PV, PE, PVMaximo, PEMaximo, Arma, Equipo FROM Usuario WHERE Nombre = '"+u+"'";
         try{
             PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
             ResultSet res = pstm1.executeQuery();
@@ -111,6 +111,8 @@ public class ModeloHijas extends Database{
             info[5] = String.valueOf(res.getInt("PE"));
             info[6] = String.valueOf(res.getInt("PVMaximo"));
             info[7] = String.valueOf(res.getInt("PEMaximo"));
+            info[8] = res.getString("Arma");
+            info[9] = res.getString("Equipo");
             res.close();
             pstm1.close();
         }catch(SQLException e){
@@ -293,9 +295,9 @@ public class ModeloHijas extends Database{
         }
         return tablemodel;
     }
-    public void actualizarBD(String usuario , String nivel , String experiencia, String oro, String pv, String pe, String pvm, String pem){
+    public void actualizarBD(String usuario , String nivel , String experiencia, String oro, String pv, String pe, String pvm, String pem, String arma, String equipo){
         
-        String q = "UPDATE Usuario set Nombre = '"+usuario+"', Nivel = "+nivel+", Experiencia = "+experiencia+", Oro = "+oro+", PV = "+pv+", PE = "+pe+", PVMaximo = "+pvm+", PEMaximo = "+pem+" WHERE Nombre = '"+usuario+"'";
+        String q = "UPDATE Usuario set Nombre = '"+usuario+"', Nivel = "+nivel+", Experiencia = "+experiencia+", Oro = "+oro+", PV = "+pv+", PE = "+pe+", PVMaximo = "+pvm+", PEMaximo = "+pem+", Arma = '"+arma+"', Equipo = '"+equipo+"' WHERE Nombre = '"+usuario+"'";
             try{
                 PreparedStatement pstm2 = this.getConexion().prepareStatement(q);
                 pstm2.execute();
@@ -368,7 +370,7 @@ public class ModeloHijas extends Database{
                 pstm2.close();
                     try{
                        oro = oro + precio;
-                       String q3 = "UPDATE Usuario set Oro = "+oro+" WHERE Nombre = '"+usuario+"'";
+                       String q3 = "UPDATE Usuario SET Oro = "+oro+" WHERE Nombre = '"+usuario+"'";
                        PreparedStatement pstm3 = this.getConexion().prepareStatement(q3);
                        pstm3.execute();
                        pstm3.close();
@@ -400,7 +402,7 @@ public class ModeloHijas extends Database{
     
     public int soltarObjeto(String objeto, String usuario){
         int resu = 0;
-        String q1= "SELECT IdObjeto FROM Objeto WHERE Nombre = '"+objeto+"' AND IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+usuario+"') limit 1";
+        String q1 = "SELECT IdObjeto FROM Objeto WHERE Nombre = '"+objeto+"' AND IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+usuario+"') limit 1";
         int idObjeto;
         try{
             PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
@@ -421,6 +423,21 @@ public class ModeloHijas extends Database{
             }
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error de SQL al obtener objeto.");
+        }
+        return resu;
+    }
+    
+    public int equiparObjeto(String objeto, String usuario){
+        int resu = 0;
+        String q1 = "UPDATE Usuario SET Equipo = '"+objeto+"' WHERE Nombre = '"+usuario+"'";
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
+            pstm1.execute();
+            pstm1.close();
+            resu = 1;
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al insertar.");
+            ex.getStackTrace();
         }
         return resu;
     }

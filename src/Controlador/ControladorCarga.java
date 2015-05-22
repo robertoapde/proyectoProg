@@ -55,8 +55,8 @@ public class ControladorCarga implements ActionListener{
         switch (AccionMVC.valueOf(e.getActionCommand())){
             case btnLogin:
                 try{
-                    String u = this.vista1.txtUsuario.getText();
-                    String p = this.vista1.txtPassword.getText();
+                    String u = String.valueOf(this.vista1.txtUsuario.getText());
+                    String p = String.valueOf(this.vista1.txtPassword.getText());
                     
                     if(u.equals("")){
                         JOptionPane.showMessageDialog(null, "Introduzca un usuario");

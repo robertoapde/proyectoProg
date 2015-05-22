@@ -102,6 +102,10 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnMochilaEquipar = new javax.swing.JButton();
         btnMochilaSalir = new javax.swing.JButton();
         btnMochilaSoltar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtArma = new javax.swing.JLabel();
+        txtEquipo = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         dialogSoltar = new javax.swing.JDialog();
@@ -780,6 +784,28 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnMochilaSoltar.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel7.add(btnMochilaSoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 458, 300, 30));
 
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("ARMA:");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel7.setOpaque(true);
+        jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, 20));
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("EQUIPO:");
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel9.setOpaque(true);
+        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, -1, 20));
+
+        txtArma.setBackground(new java.awt.Color(255, 255, 255));
+        txtArma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtArma.setOpaque(true);
+        jPanel7.add(txtArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 250, 20));
+
+        txtEquipo.setBackground(new java.awt.Color(255, 255, 255));
+        txtEquipo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtEquipo.setOpaque(true);
+        jPanel7.add(txtEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 250, 20));
+
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargaperso.jpg"))); // NOI18N
         jPanel7.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -10, 1170, 560));
 
@@ -1394,7 +1420,9 @@ public class VentanaHijas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -1420,7 +1448,9 @@ public class VentanaHijas extends javax.swing.JFrame {
     public javax.swing.JTable tablaMochilaVender;
     public javax.swing.JTable tablaTaberna;
     public javax.swing.JTable tablaTienda;
+    public javax.swing.JLabel txtArma;
     public javax.swing.JLabel txtClase;
+    public javax.swing.JLabel txtEquipo;
     public javax.swing.JLabel txtExperiencia;
     public javax.swing.JLabel txtNivel;
     public javax.swing.JLabel txtNombre;
