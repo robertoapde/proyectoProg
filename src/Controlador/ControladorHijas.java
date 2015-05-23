@@ -648,6 +648,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     historialString = historialString + "\nHas ganado.";
                     if(Integer.parseInt(vista.txtExperiencia.getText()) >= Integer.parseInt(vista.txtExperienciaMax.getText())){
                         modelo.subirNivel(usuario, vista.txtClase.getText());
+                        String [] nuevosStatPostSubida1 = this.modelo.getInfoInterfaz(usuario);
+                        this.setInfoInterfaz(nuevosStatPostSubida1);
                         int n = Integer.parseInt(vista.txtNivel.getText());
                         vista.txtNivel.setText(String.valueOf(n + 1));
                         int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
@@ -656,8 +658,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         contNv = contNv * 2;
                         vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
                         this.setInfoBD();
-                        String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
-                        this.setInfoInterfaz(nuevosStatPostSubida);
+                        String [] nuevosStatPostSubida2 = this.modelo.getInfoInterfaz(usuario);
+                        this.setInfoInterfaz(nuevosStatPostSubida2);
                     }
                     
                     vista.historial.setText(historialString);
@@ -856,6 +858,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             o.setDefensa(0);
                             if(Integer.parseInt(vista.txtExperiencia.getText()) >= Integer.parseInt(vista.txtExperienciaMax.getText())){
                                 modelo.subirNivel(usuario, vista.txtClase.getText());
+                                String [] nuevosStatPostSubida1 = this.modelo.getInfoInterfaz(usuario);
+                                this.setInfoInterfaz(nuevosStatPostSubida1);
                                 int n = Integer.parseInt(vista.txtNivel.getText());
                                 vista.txtNivel.setText(String.valueOf(n + 1));
                                 int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
