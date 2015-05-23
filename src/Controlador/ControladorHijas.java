@@ -638,8 +638,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         modelo.subirNivel(usuario, vista.txtClase.getText());
                         int n = Integer.parseInt(vista.txtNivel.getText());
                         vista.txtNivel.setText(String.valueOf(n + 1));
-                        int px = Integer.parseInt(vista.txtExperiencia.getText()) - o.getExpMax();
-                        vista.txtExperiencia.setText(String.valueOf(px));
+                        int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
+                                vista.txtExperienciaMax.setText(String.valueOf(px));
                         cont++;
                         contNv = contNv * 2;
                         vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
@@ -747,7 +747,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                         
                         }
                     }
-                }       
+                }
                 break;
             case btnCombatirEspecial:
                 int contBAtacarEspecial = 0;
