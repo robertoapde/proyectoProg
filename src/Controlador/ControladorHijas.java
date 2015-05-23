@@ -646,14 +646,27 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     o.setArmadura(o.getArmadura() - o.getDefensa());
                     o.setDefensa(0);
                     historialString = historialString + "\nHas ganado.";
-                    if(Integer.parseInt(vista.txtExperiencia.getText()) >= Integer.parseInt(vista.txtExperienciaMax.getText())){
+                    if(Integer.parseInt(vista.txtExperiencia.getText()) > Integer.parseInt(vista.txtExperienciaMax.getText())){
                         modelo.subirNivel(usuario, vista.txtClase.getText());
                         String [] nuevosStatPostSubida1 = this.modelo.getInfoInterfaz(usuario);
                         this.setInfoInterfaz(nuevosStatPostSubida1);
                         int n = Integer.parseInt(vista.txtNivel.getText());
                         vista.txtNivel.setText(String.valueOf(n + 1));
-                        int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
+                        int px = -(Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText()));
                         vista.txtExperiencia.setText(String.valueOf(px));
+                        cont++;
+                        contNv = contNv * 2;
+                        vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
+                        this.setInfoBD();
+                        String [] nuevosStatPostSubida2 = this.modelo.getInfoInterfaz(usuario);
+                        this.setInfoInterfaz(nuevosStatPostSubida2);
+                    }else if(Integer.parseInt(vista.txtExperiencia.getText()) == Integer.parseInt(vista.txtExperienciaMax.getText())){
+                        modelo.subirNivel(usuario, vista.txtClase.getText());
+                        String [] nuevosStatPostSubida1 = this.modelo.getInfoInterfaz(usuario);
+                        this.setInfoInterfaz(nuevosStatPostSubida1);
+                        int n = Integer.parseInt(vista.txtNivel.getText());
+                        vista.txtNivel.setText(String.valueOf(n + 1));
+                        vista.txtExperiencia.setText("0");
                         cont++;
                         contNv = contNv * 2;
                         vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
@@ -799,7 +812,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         vista.historialCombate.setText(historialCombateString);
                         historialCombateString = historialCombateString +"\nEl enemigo se dispone a atacar";
                         vista.historialCombate.setText(historialCombateString);
-                         en.Atacar();
+                        en.Atacar();
                         if (en.getGolpe() > o.getArmadura()) {
                             historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
                             vista.historialCombate.setText(historialCombateString);
@@ -830,14 +843,14 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                     JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))+" oro.");
 
                                 }
-                            }else{
+                            }
+                            o.setTurno(true);
+                        }else{
                                 historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
                                 vista.historialCombate.setText(historialCombateString);
                                 historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                                 vista.historialCombate.setText(historialCombateString);
                                 o.setTurno(true);
-                            }
-                            o.setTurno(true);
                         }
                         if(Integer.parseInt(vista.txtPVCombate.getText()) <= 0){
                             historialString = historialString + "\nHas perdido.";
@@ -856,20 +869,33 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             historialString = historialString + "\nHas ganado.";
                             o.setArmadura(o.getArmadura() - o.getDefensa());
                             o.setDefensa(0);
-                            if(Integer.parseInt(vista.txtExperiencia.getText()) >= Integer.parseInt(vista.txtExperienciaMax.getText())){
+                            if(Integer.parseInt(vista.txtExperiencia.getText()) > Integer.parseInt(vista.txtExperienciaMax.getText())){
                                 modelo.subirNivel(usuario, vista.txtClase.getText());
                                 String [] nuevosStatPostSubida1 = this.modelo.getInfoInterfaz(usuario);
                                 this.setInfoInterfaz(nuevosStatPostSubida1);
                                 int n = Integer.parseInt(vista.txtNivel.getText());
                                 vista.txtNivel.setText(String.valueOf(n + 1));
-                                int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
+                                int px = -(Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText()));
                                 vista.txtExperiencia.setText(String.valueOf(px));
                                 cont++;
                                 contNv = contNv * 2;
                                 vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
                                 this.setInfoBD();
-                                String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
-                                this.setInfoInterfaz(nuevosStatPostSubida);
+                                String [] nuevosStatPostSubida2 = this.modelo.getInfoInterfaz(usuario);
+                                this.setInfoInterfaz(nuevosStatPostSubida2);
+                            }else if(Integer.parseInt(vista.txtExperiencia.getText()) == Integer.parseInt(vista.txtExperienciaMax.getText())){
+                                modelo.subirNivel(usuario, vista.txtClase.getText());
+                                String [] nuevosStatPostSubida1 = this.modelo.getInfoInterfaz(usuario);
+                                this.setInfoInterfaz(nuevosStatPostSubida1);
+                                int n = Integer.parseInt(vista.txtNivel.getText());
+                                vista.txtNivel.setText(String.valueOf(n + 1));
+                                vista.txtExperiencia.setText("0");
+                                cont++;
+                                contNv = contNv * 2;
+                                vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
+                                this.setInfoBD();
+                                String [] nuevosStatPostSubida2 = this.modelo.getInfoInterfaz(usuario);
+                                this.setInfoInterfaz(nuevosStatPostSubida2);
                             }
                             vista.historial.setText(historialString);
                             this.vista.dialogCombatir.dispose();
