@@ -235,7 +235,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
             this.vista.btnCancelarCambiarContraseña.addActionListener(this);
 
-            en =  new Enemigo(5,5,5,5);
+            
             int armadura = this.modelo.obtenerArmadura(usuario);
             int daño = this.modelo.obtenerDaño(usuario);
             int ataque = this.modelo.obtenerAtaque(usuario); 
@@ -562,9 +562,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         vidaEne=vidaEne - o.getDaño();
                         this.vista.txtPVEnemigo.setText(String.valueOf(vidaEne));
                                 
-                        historialCombateString = historialCombateString +"\nDaño Hecho:"+ o.getDaño();
+                        
                         vista.historialCombate.setText(historialCombateString);
-                        historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
                         vista.historialCombate.setText(historialCombateString);
                         if(vidaEne <= 0){
                             this.vista.txtOro.setText(String.valueOf(Integer.parseInt(vista.txtOro.getText())+ oroEne));
@@ -600,7 +599,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         this.vista.txtPVCombate.setText(String.valueOf(vidaH));
                         this.vista.txtPV.setText(String.valueOf(vidaH));
 
-                        historialCombateString = historialCombateString +"\nDaño Hecho:"+ dañoEne;
+                        
                         vista.historialCombate.setText(historialCombateString);
                         historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                         vista.historialCombate.setText(historialCombateString);
@@ -711,7 +710,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             vista.historialCombate.setText(historialCombateString);
                             vidaEne=vidaEne - o.getDaño();
                             this.vista.txtPV.setText(String.valueOf(vidaEne));
-                            historialCombateString = historialCombateString +"\nDaño Hecho:"+ dañoEne;
+                            
                             vista.historialCombate.setText(historialCombateString);
                             historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                             vista.historialCombate.setText(historialCombateString);
@@ -787,7 +786,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                    
                             historialCombateString = historialCombateString +"\nDaño Hecho:"+ o.getDaño()+"\nEnergia gastada: "+Integer.parseInt(vista.txtPECombate.getText());
                             vista.historialCombate.setText(historialCombateString);
-                            historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
                             vista.historialCombate.setText(historialCombateString);
                             if(vidaEne<=0){
                                 this.vista.txtOro.setText(String.valueOf(Integer.parseInt(vista.txtOro.getText())+ oroEne));
@@ -819,7 +817,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             
                             this.vista.txtPVCombate.setText(String.valueOf(Integer.parseInt(this.vista.txtPVCombate.getText()) - dañoEne));
                             
-                            historialCombateString = historialCombateString +"\nDaño Hecho:"+ dañoEne;
+                            
                             vista.historialCombate.setText(historialCombateString);
                             historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                             vista.historialCombate.setText(historialCombateString);
