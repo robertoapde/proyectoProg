@@ -855,7 +855,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 vista.txtExperienciaMax.setText(String.valueOf(px));
                                 cont++;
                                 contNv=contNv*2;
-                                vista.txtExperienciaMax.setText(String.valueOf(cont*25*contNv));
+                                vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
                                 this.setInfoBD();
                             }
                             vista.historial.setText(historialString);
