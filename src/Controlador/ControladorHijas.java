@@ -537,9 +537,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCombatirAtacar:
-                int contBatacar = 0;
-            do{
-                if(o.getTurno() == true){
+               
+           
+                
       
                     historialCombateString = historialCombateString +"\n---------Tu Turno----------";
                     vista.historialCombate.setText(historialCombateString);
@@ -577,8 +577,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         o.setTurno(false);    
                     }
                     o.setTurno(false);     
-                }else{ 
-                    
+                                   
                     historialCombateString = historialCombateString +"\n---------Turno Enemigo----------";
                     vista.historialCombate.setText(historialCombateString);
                     historialCombateString = historialCombateString +"\nEl enemigo se dispone a atacar";
@@ -622,7 +621,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         o.setTurno(true);
                     }
                     o.setTurno(true);
-                }
+                
                 if(Integer.parseInt(vista.txtPVCombate.getText()) <= 0){
                     historialString = historialString + "\nHas perdido.";
                     vista.historial.setText(historialString);
@@ -650,8 +649,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     vista.historial.setText(historialString);
                     this.vista.dialogCombatir.dispose();
                 }
-                
-            }while(o.getPV()>0 && vidaEne <= 0);
+     
+            
                 break;
                 
             case btnCombatirDefender:
@@ -712,27 +711,26 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.vista.dialogCombatir.dispose();
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
                             o.setTurno(true);
-                             }
+                            }
                            
                    
                         }else{
-                                    historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
-                                    vista.historialCombate.setText(historialCombateString);
-                                    historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
-                                    vista.historialCombate.setText(historialCombateString);
-                                    o.setTurno(true);                         
-                    }
+                            historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
+                            vista.historialCombate.setText(historialCombateString);
+                            historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
+                            vista.historialCombate.setText(historialCombateString);
+                            o.setTurno(true);                         
+                        }
                         
                 
                 break;
                 
             case btnCombatirEspecial:
-                int contBAtacarEspecial = 0;
-                do{
+                
                     historialCombateString = historialCombateString + "\nHas lanzado un golpe especial";
                     vista.historialCombate.setText(historialCombateString);
  
-                    if(o.getTurno() == true){
+                    
                         historialCombateString = historialCombateString +"\n---------Tu Turno----------";
                         vista.historialCombate.setText(historialCombateString);
                         historialCombateString = historialCombateString + "\nHas lanzado un ataque especial ";
@@ -767,7 +765,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             o.setTurno(false);    
                         }
                         o.setTurno(false);     
-                    }else{ 
+                    
                         historialCombateString = historialCombateString +"\n---------Turno Enemigo----------";
                         vista.historialCombate.setText(historialCombateString);
                         historialCombateString = historialCombateString +"\nEl enemigo se dispone a atacar";
@@ -842,9 +840,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has ganado.");
                             JOptionPane.showMessageDialog(null, "Has ganado : "+ en.getOro()+" oro.");
                         }
-                    }
-                    contBAtacarEspecial++;
-                }while(contBAtacarEspecial== 1);
+                    
+                   
                 
             break;
             case btnCombatirMochila:
@@ -857,8 +854,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCombatirHuir:
-                o.Huir();
-                if(o.getHuir()==1){
+               
+                
                     historialCombateString = "Historial de combate:";
                     vista.historialCombate.setText(historialCombateString);
                     vista.dialogCombatir.dispose();
@@ -867,15 +864,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     vista.dialogHuir.setVisible(true);
                     historialString = historialString + "\nCombate finalizado.";
                     vista.historial.setText(historialString);
-                }
-                if(o.getHuir()==2){
-                    System.out.println("NO puedes HUIR");
-                    o.setTurno(false);
-                }
-                if(o.getHuir()==3){
-                    System.out.println("No puedes HUIR");
-                    o.setTurno(false);
-                }
+           
                 break;
                 
             case btnHuirPerder:
@@ -1338,7 +1327,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.setVisible(true);
                 break;
         }
-    }
+}
+   
     
     public void setInfoInterfaz(String[] s){
         String nivel = s[0];
@@ -1376,6 +1366,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
         }
     }
+   
     
     public void setInfoBD(){
         String usuario = vista.txtNombre.getText();
