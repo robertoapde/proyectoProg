@@ -564,7 +564,7 @@ public class ModeloHijas extends Database{
         }
         return efecto;
     }
-     public String[][] datosEnemigo(int nivel){
+    public String[][] datosEnemigo(int nivel){
         String[][] datosE;
         int nivelU = nivel;
         int n1 = nivelU - 1;
@@ -621,5 +621,24 @@ public class ModeloHijas extends Database{
             }
         }
         return datosE;
-    }  
+    }
+    
+    public void subirNivel(String usuario, String clase){
+        String q = "";
+        if(clase.equals("Picaro")){
+            q = "UPDATE Usuario SET PVMaximo = PVMaximo + 7, PEMaximo = PEMaximo + 2, PV = PVMaximo, PE = PEMaximo, Daño = Daño + 2, Armadura = Armadura + 1, Ataque = Ataque + 2 WHERE Nombre = '"+usuario+"'";
+        }else if(clase.equals("Mago")){
+            q = "UPDATE Usuario SET PVMaximo = PVMaximo + 5, PEMaximo = PEMaximo + 4, PV = PVMaximo, PE = PEMaximo, Daño = Daño + 3, Armadura = Armadura + 1, Ataque = Ataque + 3 WHERE Nombre = '"+usuario+"'";
+        }else if(clase.equals("Guerrero")){
+            q = "UPDATE Usuario SET PVMaximo = PVMaximo + 10, PEMaximo = PEMaximo + 1, PV = PVMaximo, PE = PEMaximo, Daño = Daño + 1, Armadura = Armadura + 1, Ataque = Ataque + 1 WHERE Nombre = '"+usuario+"'";
+        }
+        try{
+            PreparedStatement pstm1 = this.getConexion().prepareStatement(q);
+            pstm1.execute();
+            pstm1.close();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al insertar.");
+            ex.getStackTrace();
+        }
+    }
 }

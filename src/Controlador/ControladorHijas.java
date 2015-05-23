@@ -633,7 +633,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     o.setDefensa(0);
                     historialString = historialString + "\nHas ganado.";
                     if(Integer.parseInt(vista.txtExperiencia.getText()) >= Integer.parseInt(vista.txtExperienciaMax.getText())){
-                        o.subirNivel();
+                        modelo.subirNivel(usuario, vista.txtClase.getText());
                         int n = Integer.parseInt(vista.txtNivel.getText());
                         vista.txtNivel.setText(String.valueOf(n + 1));
                         int px = Integer.parseInt(vista.txtExperiencia.getText()) - o.getExpMax();
@@ -727,7 +727,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     
                             historialString = historialString + "\nHas ganado.";
                             if(Integer.parseInt(vista.txtExperiencia.getText()) >= Integer.parseInt(vista.txtExperienciaMax.getText())){
-                                o.subirNivel();
+                                modelo.subirNivel(usuario, vista.txtClase.getText());
                                 int n = Integer.parseInt(vista.txtNivel.getText());
                                 vista.txtNivel.setText(String.valueOf(n + 1));
                                 int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
@@ -848,7 +848,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             o.setArmadura(o.getArmadura() - o.getDefensa());
                             o.setDefensa(0);
                             if(Integer.parseInt(vista.txtExperiencia.getText()) >= Integer.parseInt(vista.txtExperienciaMax.getText())){
-                                o.subirNivel();
+                                modelo.subirNivel(usuario, vista.txtClase.getText());
                                 int n = Integer.parseInt(vista.txtNivel.getText());
                                 vista.txtNivel.setText(String.valueOf(n + 1));
                                 int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());

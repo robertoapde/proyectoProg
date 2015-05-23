@@ -149,18 +149,7 @@ public class ObjetoTemp {
         }else        
             System.out.println("El enemigo se dispone a atacar");
     } 
-    public void subirNivel(){
-        int  armadura = this.Armadura + 1;
-        int pv = this.PV +10;
-        int pe = this.PE +1;
-        int daño = this.daño +1;
-        int ataque = this.ataque+1;
-        setArmadura(armadura);
-        setPV(pv);
-        setPE(pe);
-        setDaño(daño);
-        setAtaque(ataque);
-    }
+    
     public int Atacar() {
 	golpe= (int) (Math.random()*(20)+1);
         golpe= golpe+ ataque;     
