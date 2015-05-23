@@ -58,8 +58,8 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTiendaComprar = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
-        btnAceptarCompraTienda = new javax.swing.JButton();
         btnCancelarCompraTienda = new javax.swing.JButton();
+        btnAceptarCompraTienda = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         dialogTiendaVender = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
@@ -179,9 +179,9 @@ public class VentanaHijas extends javax.swing.JFrame {
                 dialogTabernaWindowClosed(evt);
             }
         });
+        dialogTaberna.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnComprarTaberna.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnComprarTaberna.setForeground(new java.awt.Color(0, 153, 153));
@@ -192,7 +192,6 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnComprarTabernaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnComprarTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 375, 40));
 
         btnAlojamientoTaberna.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnAlojamientoTaberna.setForeground(new java.awt.Color(0, 153, 153));
@@ -203,7 +202,6 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnAlojamientoTabernaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAlojamientoTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 376, 40));
 
         btnSalirTaberna.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnSalirTaberna.setForeground(new java.awt.Color(0, 153, 153));
@@ -214,25 +212,45 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnSalirTabernaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalirTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 373, 40));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/taberna3.jpg"))); // NOI18N
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout dialogTabernaLayout = new javax.swing.GroupLayout(dialogTaberna.getContentPane());
-        dialogTaberna.getContentPane().setLayout(dialogTabernaLayout);
-        dialogTabernaLayout.setHorizontalGroup(
-            dialogTabernaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(btnSalirTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(btnComprarTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel17)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(btnAlojamientoTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        dialogTabernaLayout.setVerticalGroup(
-            dialogTabernaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(btnSalirTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(btnComprarTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel17)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(btnAlojamientoTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        dialogTaberna.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         dialogTabernaCompra.setAlwaysOnTop(true);
         dialogTabernaCompra.setModal(true);
         dialogTabernaCompra.setResizable(false);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaTaberna.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -269,7 +287,10 @@ public class VentanaHijas extends javax.swing.JFrame {
         tablaTaberna.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(tablaTaberna);
 
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 402, 275));
+
         btnAceptarComprarTaberna.setText("Aceptar");
+        jPanel2.add(btnAceptarComprarTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 286, 114, -1));
 
         btnCancelarComprarTaberna.setText("Cancelar");
         btnCancelarComprarTaberna.addActionListener(new java.awt.event.ActionListener() {
@@ -277,29 +298,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnCancelarComprarTabernaActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(btnAceptarComprarTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(btnCancelarComprarTaberna, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAceptarComprarTaberna)
-                    .addComponent(btnCancelarComprarTaberna))
-                .addGap(0, 22, Short.MAX_VALUE))
-        );
+        jPanel2.add(btnCancelarComprarTaberna, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 286, 119, -1));
 
         javax.swing.GroupLayout dialogTabernaCompraLayout = new javax.swing.GroupLayout(dialogTabernaCompra.getContentPane());
         dialogTabernaCompra.getContentPane().setLayout(dialogTabernaCompraLayout);
@@ -359,6 +358,8 @@ public class VentanaHijas extends javax.swing.JFrame {
 
         dialogTienda.setResizable(false);
 
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         tablaTienda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -383,12 +384,15 @@ public class VentanaHijas extends javax.swing.JFrame {
         tablaTienda.setShowVerticalLines(false);
         jScrollPane2.setViewportView(tablaTienda);
 
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 344, 610, 239));
+
         btnComprarTienda.setText("Comprar");
         btnComprarTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarTiendaActionPerformed(evt);
             }
         });
+        jPanel3.add(btnComprarTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 594, 211, -1));
 
         btnVenderTienda.setText("Vender");
         btnVenderTienda.addActionListener(new java.awt.event.ActionListener() {
@@ -396,6 +400,7 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnVenderTiendaActionPerformed(evt);
             }
         });
+        jPanel3.add(btnVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 594, 195, -1));
 
         btnSalirTienda.setText("Salir");
         btnSalirTienda.addActionListener(new java.awt.event.ActionListener() {
@@ -403,53 +408,22 @@ public class VentanaHijas extends javax.swing.JFrame {
                 btnSalirTiendaActionPerformed(evt);
             }
         });
+        jPanel3.add(btnSalirTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 594, 168, -1));
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Market.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnComprarTienda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVenderTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalirTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel32))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnComprarTienda)
-                    .addComponent(btnVenderTienda)
-                    .addComponent(btnSalirTienda))
-                .addContainerGap())
-        );
+        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 610, -1));
 
         javax.swing.GroupLayout dialogTiendaLayout = new javax.swing.GroupLayout(dialogTienda.getContentPane());
         dialogTienda.getContentPane().setLayout(dialogTiendaLayout);
         dialogTiendaLayout.setHorizontalGroup(
             dialogTiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(dialogTiendaLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dialogTiendaLayout.setVerticalGroup(
             dialogTiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
         );
 
         dialogTiendaComprar.setAlwaysOnTop(true);
@@ -465,12 +439,6 @@ public class VentanaHijas extends javax.swing.JFrame {
         jLabel21.setOpaque(true);
         jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 330, -1));
 
-        btnAceptarCompraTienda.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        btnAceptarCompraTienda.setForeground(new java.awt.Color(51, 51, 255));
-        btnAceptarCompraTienda.setText("Aceptar");
-        btnAceptarCompraTienda.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel4.add(btnAceptarCompraTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 370, 30));
-
         btnCancelarCompraTienda.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnCancelarCompraTienda.setForeground(new java.awt.Color(255, 0, 51));
         btnCancelarCompraTienda.setText("Cancelar");
@@ -481,6 +449,12 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
         jPanel4.add(btnCancelarCompraTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 370, 30));
+
+        btnAceptarCompraTienda.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        btnAceptarCompraTienda.setForeground(new java.awt.Color(51, 51, 255));
+        btnAceptarCompraTienda.setText("Aceptar");
+        btnAceptarCompraTienda.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel4.add(btnAceptarCompraTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 370, 30));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.JPG"))); // NOI18N
         jPanel4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 290));
@@ -521,7 +495,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         tablaMochilaVender.setShowVerticalLines(false);
         jScrollPane5.setViewportView(tablaMochilaVender);
 
-        jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 230));
+        jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 360, 230));
 
         btnVenderVenderTienda.setText("Vender");
         jPanel6.add(btnVenderVenderTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
@@ -538,11 +512,11 @@ public class VentanaHijas extends javax.swing.JFrame {
         dialogTiendaVender.getContentPane().setLayout(dialogTiendaVenderLayout);
         dialogTiendaVenderLayout.setHorizontalGroup(
             dialogTiendaVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         dialogTiendaVenderLayout.setVerticalGroup(
             dialogTiendaVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         dialogCombatir.setAlwaysOnTop(true);
