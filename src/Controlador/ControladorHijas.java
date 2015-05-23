@@ -800,24 +800,24 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
                             vista.historialCombate.setText(historialCombateString);
                             
-                            int vidaH=o.getPV() - en.getDaño();
-                            o.setPV (vidaH);
-                            this.vista.txtPV.setText(String.valueOf(vidaH));
+                          this.vista.txtPVCombate.setText(String.valueOf(Integer.parseInt(this.vista.txtPVCombate.getText()) - dañoEne));
+                            
                                 historialCombateString = historialCombateString +"\nDaño Hecho:"+ dañoEne;
                                 vista.historialCombate.setText(historialCombateString);
                                 historialCombateString = historialCombateString +"\nGuerrero: "+ o.info();
                                 vista.historialCombate.setText(historialCombateString);
-                       if(o.getPV()<=0){
-                                  this.vista.txtExperiencia.setText(String.valueOf(o.getExperiencia()-(25*o.getNivel()*3)));
-                                  if(o.getExperiencia()<0 ){
+                       if(Integer.parseInt(this.vista.txtPV.getText())<=0){
+                                  this.vista.txtExperiencia.setText(String.valueOf((Integer.parseInt(this.vista.txtNivel.getText()))-(25*(Integer.parseInt(this.vista.txtNivel.getText())*3))));
+                                  this.vista.txtOro.setText(String.valueOf(Integer.parseInt(this.vista.txtOro.getText())-(5*4*Integer.parseInt(this.vista.txtNivel.getText()))));
+                                  if(Integer.parseInt(this.vista.txtExperiencia.getText())<0 ){
                                         o.setExperiencia(0);
-                                        this.vista.txtExperiencia.setText(String.valueOf(o.getExperiencia()-(25*o.getNivel()*3)));
+                                        this.vista.txtExperiencia.setText(String.valueOf(0));
                                         o.setArmadura(o.getArmadura()-o.getDefensa());
                                         o.setDefensa(0);
                                   
-                                  if (o.getOro()<0){
-                                        o.setOro(0);
-                                        this.vista.txtOro.setText(String.valueOf(o.getOro()-(5*4*o.getNivel())));
+                                  if (Integer.parseInt(this.vista.txtOro.getText())<0){
+                                        this.vista.txtOro.setText(String.valueOf(0));
+                                        
                                     }
                                         o.setTurno(true);
                                         this.vista.dialogCombatir.dispose();
