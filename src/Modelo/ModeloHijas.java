@@ -97,8 +97,8 @@ public class ModeloHijas extends Database{
     }
     
     public String[] getInfoInterfaz(String u){
-        String[] info = new String[10];
-        String q1 = "SELECT Nivel, Clase, Experiencia, Oro, PV, PE, PVMaximo, PEMaximo, Arma, Equipo FROM Usuario WHERE Nombre = '"+u+"'";
+        String[] info = new String[11];
+        String q1 = "SELECT Nivel, Clase, Experiencia, Oro, PV, PE, PVMaximo, PEMaximo, Arma, Equipo, ExpMax FROM Usuario WHERE Nombre = '"+u+"'";
         try{
             PreparedStatement pstm1 = this.getConexion().prepareStatement(q1);
             ResultSet res = pstm1.executeQuery();
@@ -113,6 +113,7 @@ public class ModeloHijas extends Database{
             info[7] = String.valueOf(res.getInt("PEMaximo"));
             info[8] = res.getString("Arma");
             info[9] = res.getString("Equipo");
+            info[10] = String.valueOf(res.getInt("ExpMax"));
             res.close();
             pstm1.close();
         }catch(SQLException e){
@@ -295,9 +296,9 @@ public class ModeloHijas extends Database{
         }
         return tablemodel;
     }
-    public void actualizarBD(String usuario , String nivel , String experiencia, String oro, String pv, String pe, String pvm, String pem, String arma, String equipo){
+    public void actualizarBD(String usuario , String nivel , String experiencia, String oro, String pv, String pe, String pvm, String pem, String arma, String equipo, String expmax){
         
-        String q = "UPDATE Usuario set Nombre = '"+usuario+"', Nivel = "+nivel+", Experiencia = "+experiencia+", Oro = "+oro+", PV = "+pv+", PE = "+pe+", PVMaximo = "+pvm+", PEMaximo = "+pem+", Arma = '"+arma+"', Equipo = '"+equipo+"' WHERE Nombre = '"+usuario+"'";
+        String q = "UPDATE Usuario set Nombre = '"+usuario+"', Nivel = "+nivel+", Experiencia = "+experiencia+", Oro = "+oro+", PV = "+pv+", PE = "+pe+", PVMaximo = "+pvm+", PEMaximo = "+pem+", Arma = '"+arma+"', Equipo = '"+equipo+"', ExpMax = "+expmax+" WHERE Nombre = '"+usuario+"'";
             try{
                 PreparedStatement pstm2 = this.getConexion().prepareStatement(q);
                 pstm2.execute();
