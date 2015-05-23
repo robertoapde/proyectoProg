@@ -165,14 +165,11 @@ public class ObjetoTemp {
         int Huir=(int) (Math.random()*(3)+1);     
     }
     public void AtaqueEspecial() {
-        if(PE>=4){
+        
             int golpe=(int) (Math.random()*(20)+1);
             golpe= golpe+ ataque;
-            PE=PE-4;
-        }else{
-            System.out.println("No tienes suficiente energía");
-            setTurno(true);
-        }
+        
+        
     }    
 }
 

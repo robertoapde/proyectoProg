@@ -727,20 +727,27 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnCombatirEspecial:
                 
+            if(Integer.parseInt(vista.txtPECombate.getText())>=4){
+                historialCombateString = historialCombateString +"\n---------Tu Turno----------";
+                vista.historialCombate.setText(historialCombateString);
+                
                     historialCombateString = historialCombateString + "\nHas lanzado un golpe especial";
                     vista.historialCombate.setText(historialCombateString);
- 
+                    vista.txtPECombate.setText(String.valueOf(Integer.parseInt(vista.txtPECombate.getText())-4));
                     
-                        historialCombateString = historialCombateString +"\n---------Tu Turno----------";
-                        vista.historialCombate.setText(historialCombateString);
+                        
+                    
                         historialCombateString = historialCombateString + "\nHas lanzado un ataque especial ";
                         vista.historialCombate.setText(historialCombateString);
-                        o.AtaqueEspecial(); 
+                        o.AtaqueEspecial();
+                    
+                        
                         if (o.getGolpe() > armaduraEne) {
                             historialCombateString = historialCombateString +"\nTu ATAQUE ha IMPACTADO";
                             vista.historialCombate.setText(historialCombateString);
-                            vidaEne=vidaEne - o.getDaño();
+                            vidaEne = vidaEne - (o.getDaño()+ 5);
                             this.vista.txtPVEnemigo.setText(String.valueOf(vidaEne));
+                            
                                    
                                 
                                    
@@ -840,7 +847,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has ganado.");
                             JOptionPane.showMessageDialog(null, "Has ganado : "+ en.getOro()+" oro.");
                         }
-                    
+            }else{
+                JOptionPane.showMessageDialog(null, "No tienes suficiente energia.");
+            }        
                    
                 
             break;
