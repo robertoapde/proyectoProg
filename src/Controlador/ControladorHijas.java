@@ -607,7 +607,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             o.setTurno(true);
                             this.vista.dialogCombatir.dispose();
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
-                            JOptionPane.showMessageDialog(null, "Has perdido : "+ oroEne +" oro.");
+                            JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText())) +" oro.");
 
                         }
                     }else{
@@ -699,7 +699,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                     o.setTurno(true);
                                     this.vista.dialogCombatir.dispose();
                                     JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
-                                    JOptionPane.showMessageDialog(null, "Has perdido : "+ oroEne+" oro.");
+                                    JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))+" oro.");
 
                                 }
                             }else{
@@ -719,7 +719,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.setInfoBD();
                             this.vista.dialogCombatir.dispose();
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
-                            JOptionPane.showMessageDialog(null, "Has perdido : "+ oroEne +" oro.");
+                            JOptionPane.showMessageDialog(null, "Has perdido : "+(5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))+" oro.");
                                         
                         }else if(vidaEne <= 0){
                     
@@ -816,7 +816,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                     o.setTurno(true);
                                     this.vista.dialogCombatir.dispose();
                                     JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
-                                    JOptionPane.showMessageDialog(null, "Has perdido : "+ oroEne+" oro.");
+                                    JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))+" oro.");
 
                                 }
                             }else{
@@ -838,7 +838,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.setInfoBD();
                             this.vista.dialogCombatir.dispose();
                             JOptionPane.showMessageDialog(null, "Ha termino el combate. Has perdido.");
-                            JOptionPane.showMessageDialog(null, "Has perdido : "+ oroEne +" oro.");
+                            JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText())) +" oro.");
                         }else if(vidaEne <= 0){
                             historialString = historialString + "\nHas ganado.";
                             o.setArmadura(o.getArmadura() - o.getDefensa());
