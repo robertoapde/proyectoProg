@@ -45,7 +45,7 @@ public class Registro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/picaro.png"))); // NOI18N
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
 
         grupoRadiosClases.add(radioPicaro);
@@ -55,10 +55,10 @@ public class Registro extends javax.swing.JFrame {
         radioPicaro.setBorder(new javax.swing.border.MatteBorder(null));
         radioPicaro.setBorderPainted(true);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mago.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mago.jpg"))); // NOI18N
         jLabel2.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guerrero.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guerrero.png"))); // NOI18N
         jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
 
         grupoRadiosClases.add(radioMago);

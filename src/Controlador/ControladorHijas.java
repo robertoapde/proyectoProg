@@ -119,161 +119,163 @@ public class ControladorHijas implements ActionListener, MouseListener{
     }
      
    public void iniciar(){
-        vista.historial.setText(historialString);
-        usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
-        String [] i = this.modelo.getInfoInterfaz(usuario);
- 
-        this.setInfoInterfaz(i);
-        JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+i[1]+" Nvl. "+i[0]+").");
-       
-        this.vista.btnCombatir.setActionCommand("btnCombatir");
-        this.vista.btnCombatir.addActionListener(this);
-        this.vista.btnMochila.setActionCommand("btnMochila");
-        this.vista.btnMochila.addActionListener(this);
-        this.vista.btnTienda.setActionCommand("btnTienda");
-        this.vista.btnTienda.addActionListener(this);
-        this.vista.btnTaberna.setActionCommand("btnTaberna");
-        this.vista.btnTaberna.addActionListener(this);
-        this.vista.btnComprarTaberna.setActionCommand("btnComprarTaberna");
-        this.vista.btnComprarTaberna.addActionListener(this);
-        this.vista.btnAlojamientoTaberna.setActionCommand("btnAlojamientoTaberna");
-        this.vista.btnAlojamientoTaberna.addActionListener(this);
-        this.vista.btnSalirTaberna.setActionCommand("btnSalirTaberna");
-        this.vista.btnSalirTaberna.addActionListener(this);
-        this.vista.btnAceptarComprarTaberna.setActionCommand("btnAceptarComprarTaberna");
-        this.vista.btnAceptarComprarTaberna.addActionListener(this);
-        this.vista.btnCancelarComprarTaberna.setActionCommand("btnCancelarComprarTaberna");
-        this.vista.btnCancelarComprarTaberna.addActionListener(this);
-        this.vista.btnAceptarAlojamiento.setActionCommand("btnAceptarAlojamiento");
-        this.vista.btnAceptarAlojamiento.addActionListener(this);
-        this.vista.btnCancelarAlojamiento.setActionCommand("btnCancelarAlojamiento");
-        this.vista.btnCancelarAlojamiento.addActionListener(this);
-        this.vista.btnComprarTienda.setActionCommand("btnComprarTienda");
-        this.vista.btnComprarTienda.addActionListener(this);
-        this.vista.btnVenderTienda.setActionCommand("btnVenderTienda");
-        this.vista.btnVenderTienda.addActionListener(this);
-        this.vista.btnSalirTienda.setActionCommand("btnSalirTienda");
-        this.vista.btnSalirTienda.addActionListener(this);
-        this.vista.btnAceptarCompraTienda.setActionCommand("btnAceptarCompraTienda");
-        this.vista.btnAceptarCompraTienda.addActionListener(this);
-        this.vista.btnCancelarCompraTienda.setActionCommand("btnCancelarCompraTienda");
-        this.vista.btnCancelarCompraTienda.addActionListener(this);
-        this.vista.btnVenderVenderTienda.setActionCommand("btnVenderVenderTienda");
-        this.vista.btnVenderVenderTienda.addActionListener(this);
-        this.vista.btnSalirVenderTienda.setActionCommand("btnSalirVenderTienda");
-        this.vista.btnSalirVenderTienda.addActionListener(this);
-        this.vista.btnCombatirAtacar.setActionCommand("btnCombatirAtacar");
-        this.vista.btnCombatirAtacar.addActionListener(this);
-        this.vista.btnCombatirDefender.setActionCommand("btnCombatirDefender");
-        this.vista.btnCombatirDefender.addActionListener(this);
-        this.vista.btnCombatirEspecial.setActionCommand("btnCombatirEspecial");
-        this.vista.btnCombatirEspecial.addActionListener(this);
-        this.vista.btnCombatirMochila.setActionCommand("btnCombatirMochila");
-        this.vista.btnCombatirMochila.addActionListener(this);
-        this.vista.btnCombatirHuir.setActionCommand("btnCombatirHuir");
-        this.vista.btnCombatirHuir.addActionListener(this);
-        this.vista.btnHuirPerder.setActionCommand("btnHuirPerder");
-        this.vista.btnHuirPerder.addActionListener(this);
-        this.vista.btnMochilaUsar.setActionCommand("btnMochilaUsar");
-        this.vista.btnMochilaUsar.addActionListener(this);
-        this.vista.btnMochilaSoltar.setActionCommand("btnMochilaSoltar");
-        this.vista.btnMochilaSoltar.addActionListener(this);
-        this.vista.btnMochilaEquipar.setActionCommand("btnMochilaEquipar");
-        this.vista.btnMochilaEquipar.addActionListener(this);
-        this.vista.btnMochilaSalir.setActionCommand("btnMochilaSalir");
-        this.vista.btnMochilaSalir.addActionListener(this);
-        this.vista.btnSoltarAceptar.setActionCommand("btnSoltarAceptar");
-        this.vista.btnSoltarAceptar.addActionListener(this);
-        this.vista.btnSoltarCancelar.setActionCommand("btnSoltarCancelar");
-        this.vista.btnSoltarCancelar.addActionListener(this);
-        this.vista.btnAceptarVenderVenderTienda.setActionCommand("btnAceptarVenderVenderTienda");
-        this.vista.btnAceptarVenderVenderTienda.addActionListener(this);
-        this.vista.btnCancelarVenderVenderTienda.setActionCommand("btnCancelarVenderVenderTienda");
-        this.vista.btnCancelarVenderVenderTienda.addActionListener(this);
-        this.vista.btnUsarObjetoCombate.setActionCommand("btnUsarObjetoCombate");
-        this.vista.btnUsarObjetoCombate.addActionListener(this);
-        this.vista.btnSalirMochilaCombate.setActionCommand("btnSalirMochilaCombate");
-        this.vista.btnSalirMochilaCombate.addActionListener(this);
-        
-        this.vista.tablaTienda.addMouseListener(this);
-        this.vista.tablaTienda.setModel(modelo.getTablaTienda());
-        this.vista.tablaTienda.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.vista.tablaTienda.getTableHeader().setReorderingAllowed(false);
-        this.vista.tablaTienda.getTableHeader().setResizingAllowed(false);
-        
-        this.vista.tablaTaberna.addMouseListener(this);
-        this.vista.tablaTaberna.setModel(modelo.getTablaTaberna());
-        this.vista.tablaTaberna.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.vista.tablaTaberna.getTableHeader().setReorderingAllowed(false);
-        this.vista.tablaTienda.getTableHeader().setResizingAllowed(false);
-        
-        this.vista.tablaMochila.addMouseListener(this);
-        this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
-        this.vista.tablaMochila.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.vista.tablaMochila.getTableHeader().setReorderingAllowed(false);
-        this.vista.tablaMochila.getTableHeader().setResizingAllowed(false);
-        
-        this.vista.tablaMochilaVender.addMouseListener(this);
-        this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
-        this.vista.tablaMochilaVender.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.vista.tablaMochilaVender.getTableHeader().setReorderingAllowed(false);
-        this.vista.tablaMochilaVender.getTableHeader().setResizingAllowed(false);
-        
-        this.vista.tablaMochilaCombate.addMouseListener(this);
-        this.vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
-        this.vista.tablaMochilaCombate.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.vista.tablaMochilaCombate.getTableHeader().setReorderingAllowed(false);
-        this.vista.tablaMochilaCombate.getTableHeader().setResizingAllowed(false);
-        
-        this.vista.btnCambiarC.setActionCommand("btnCambiarC");
-        this.vista.btnCambiarC.addActionListener(this);
-        this.vista.btnCerrarS.setActionCommand("btnCerrarS");
-        this.vista.btnCerrarS.addActionListener(this);
-        this.vista.btnAceptarCambiarContraseña.setActionCommand("btnAceptarCambiarContraseña");
-        this.vista.btnAceptarCambiarContraseña.addActionListener(this);
-        this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
-        this.vista.btnCancelarCambiarContraseña.addActionListener(this);
-        
-        en =  new Enemigo(5,5,5,5);
-        int armadura = this.modelo.obtenerArmadura(usuario);
-        int daño = this.modelo.obtenerDaño(usuario);
-        int ataque = this.modelo.obtenerAtaque(usuario); 
-        int nivel = Integer.parseInt(this.vista.txtNivel.getText());
-        int expMax = this.ExpMax(nivel);
-        int PV = Integer.parseInt(this.vista.txtPV.getText());
-        int PE = Integer.parseInt(this.vista.txtPE.getText());
-        int PVMax =Integer.parseInt(this.vista.txtPVMax.getText());
-        int PEMax =Integer.parseInt(this.vista.txtPEMax.getText());
-        int oroCombate = Integer.parseInt(this.vista.txtOro.getText());
-        int experiencia=Integer.parseInt(this.vista.txtExperiencia.getText());
-        
-        
-        if(this.vista.txtClase.getText().equals("Picaro")){
-            historialCombateString = historialCombateString + "\nPicaro";
-            vista.historialCombate.setText(historialCombateString);
-            p= new Picaro(PV,PE,PVMax,PEMax, armadura, daño, ataque,oroCombate,experiencia ,expMax,nivel);
-            o = new ObjetoTemp(p.getPV(), p.getPE(),p.getMaxPV(),p.getMaxPV(), p.getArmadura(), p.getDaño(), p.getAtaque(), p.getOro(), p.getExperiencia(),p.getExpMax(),p.getNivel());
-        }else if(this.vista.txtClase.getText().equals("Mago")){
-            historialCombateString = historialCombateString + "\nMago";
-            vista.historialCombate.setText(historialCombateString);
-            m= new Mago(PV,PE,PVMax,PEMax, armadura, daño, ataque,oroCombate,experiencia ,expMax,nivel);
-            o = new ObjetoTemp(m.getPV(), m.getPE(),m.getMaxPV(),m.getMaxPV(), m.getArmadura(), m.getDaño(), m.getAtaque(), m.getOro(), m.getExperiencia(),m.getExpMax(),m.getNivel());
-        } else if(this.vista.txtClase.getText().equals("Guerrero")){
-            historialCombateString = historialCombateString + "\nGuerrero";
-            vista.historialCombate.setText(historialCombateString);
-            g= new Guerrero(PV,PE,PVMax,PEMax, armadura, daño, ataque,oroCombate,experiencia ,expMax,nivel);
-            o = new ObjetoTemp(g.getPV(), g.getPE(),g.getMaxPV(),g.getMaxPE(), g.getArmadura(), g.getDaño(), g.getAtaque(), g.getOro(), g.getExperiencia(),g.getExpMax(),g.getNivel());
+        try{
+           vista.historial.setText(historialString);
+            usuario = Controlador.Main.controlC.vista1.txtUsuario.getText();
+            String [] i = this.modelo.getInfoInterfaz(usuario);
+
+            this.setInfoInterfaz(i);
+            JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario+" ("+i[1]+" Nvl. "+i[0]+").");
+
+            this.vista.btnCombatir.setActionCommand("btnCombatir");
+            this.vista.btnCombatir.addActionListener(this);
+            this.vista.btnMochila.setActionCommand("btnMochila");
+            this.vista.btnMochila.addActionListener(this);
+            this.vista.btnTienda.setActionCommand("btnTienda");
+            this.vista.btnTienda.addActionListener(this);
+            this.vista.btnTaberna.setActionCommand("btnTaberna");
+            this.vista.btnTaberna.addActionListener(this);
+            this.vista.btnComprarTaberna.setActionCommand("btnComprarTaberna");
+            this.vista.btnComprarTaberna.addActionListener(this);
+            this.vista.btnAlojamientoTaberna.setActionCommand("btnAlojamientoTaberna");
+            this.vista.btnAlojamientoTaberna.addActionListener(this);
+            this.vista.btnSalirTaberna.setActionCommand("btnSalirTaberna");
+            this.vista.btnSalirTaberna.addActionListener(this);
+            this.vista.btnAceptarComprarTaberna.setActionCommand("btnAceptarComprarTaberna");
+            this.vista.btnAceptarComprarTaberna.addActionListener(this);
+            this.vista.btnCancelarComprarTaberna.setActionCommand("btnCancelarComprarTaberna");
+            this.vista.btnCancelarComprarTaberna.addActionListener(this);
+            this.vista.btnAceptarAlojamiento.setActionCommand("btnAceptarAlojamiento");
+            this.vista.btnAceptarAlojamiento.addActionListener(this);
+            this.vista.btnCancelarAlojamiento.setActionCommand("btnCancelarAlojamiento");
+            this.vista.btnCancelarAlojamiento.addActionListener(this);
+            this.vista.btnComprarTienda.setActionCommand("btnComprarTienda");
+            this.vista.btnComprarTienda.addActionListener(this);
+            this.vista.btnVenderTienda.setActionCommand("btnVenderTienda");
+            this.vista.btnVenderTienda.addActionListener(this);
+            this.vista.btnSalirTienda.setActionCommand("btnSalirTienda");
+            this.vista.btnSalirTienda.addActionListener(this);
+            this.vista.btnAceptarCompraTienda.setActionCommand("btnAceptarCompraTienda");
+            this.vista.btnAceptarCompraTienda.addActionListener(this);
+            this.vista.btnCancelarCompraTienda.setActionCommand("btnCancelarCompraTienda");
+            this.vista.btnCancelarCompraTienda.addActionListener(this);
+            this.vista.btnVenderVenderTienda.setActionCommand("btnVenderVenderTienda");
+            this.vista.btnVenderVenderTienda.addActionListener(this);
+            this.vista.btnSalirVenderTienda.setActionCommand("btnSalirVenderTienda");
+            this.vista.btnSalirVenderTienda.addActionListener(this);
+            this.vista.btnCombatirAtacar.setActionCommand("btnCombatirAtacar");
+            this.vista.btnCombatirAtacar.addActionListener(this);
+            this.vista.btnCombatirDefender.setActionCommand("btnCombatirDefender");
+            this.vista.btnCombatirDefender.addActionListener(this);
+            this.vista.btnCombatirEspecial.setActionCommand("btnCombatirEspecial");
+            this.vista.btnCombatirEspecial.addActionListener(this);
+            this.vista.btnCombatirMochila.setActionCommand("btnCombatirMochila");
+            this.vista.btnCombatirMochila.addActionListener(this);
+            this.vista.btnCombatirHuir.setActionCommand("btnCombatirHuir");
+            this.vista.btnCombatirHuir.addActionListener(this);
+            this.vista.btnHuirPerder.setActionCommand("btnHuirPerder");
+            this.vista.btnHuirPerder.addActionListener(this);
+            this.vista.btnMochilaUsar.setActionCommand("btnMochilaUsar");
+            this.vista.btnMochilaUsar.addActionListener(this);
+            this.vista.btnMochilaSoltar.setActionCommand("btnMochilaSoltar");
+            this.vista.btnMochilaSoltar.addActionListener(this);
+            this.vista.btnMochilaEquipar.setActionCommand("btnMochilaEquipar");
+            this.vista.btnMochilaEquipar.addActionListener(this);
+            this.vista.btnMochilaSalir.setActionCommand("btnMochilaSalir");
+            this.vista.btnMochilaSalir.addActionListener(this);
+            this.vista.btnSoltarAceptar.setActionCommand("btnSoltarAceptar");
+            this.vista.btnSoltarAceptar.addActionListener(this);
+            this.vista.btnSoltarCancelar.setActionCommand("btnSoltarCancelar");
+            this.vista.btnSoltarCancelar.addActionListener(this);
+            this.vista.btnAceptarVenderVenderTienda.setActionCommand("btnAceptarVenderVenderTienda");
+            this.vista.btnAceptarVenderVenderTienda.addActionListener(this);
+            this.vista.btnCancelarVenderVenderTienda.setActionCommand("btnCancelarVenderVenderTienda");
+            this.vista.btnCancelarVenderVenderTienda.addActionListener(this);
+            this.vista.btnUsarObjetoCombate.setActionCommand("btnUsarObjetoCombate");
+            this.vista.btnUsarObjetoCombate.addActionListener(this);
+            this.vista.btnSalirMochilaCombate.setActionCommand("btnSalirMochilaCombate");
+            this.vista.btnSalirMochilaCombate.addActionListener(this);
+
+            this.vista.tablaTienda.addMouseListener(this);
+            this.vista.tablaTienda.setModel(modelo.getTablaTienda());
+            this.vista.tablaTienda.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            this.vista.tablaTienda.getTableHeader().setReorderingAllowed(false);
+            this.vista.tablaTienda.getTableHeader().setResizingAllowed(false);
+
+            this.vista.tablaTaberna.addMouseListener(this);
+            this.vista.tablaTaberna.setModel(modelo.getTablaTaberna());
+            this.vista.tablaTaberna.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            this.vista.tablaTaberna.getTableHeader().setReorderingAllowed(false);
+            this.vista.tablaTienda.getTableHeader().setResizingAllowed(false);
+
+            this.vista.tablaMochila.addMouseListener(this);
+            this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
+            this.vista.tablaMochila.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            this.vista.tablaMochila.getTableHeader().setReorderingAllowed(false);
+            this.vista.tablaMochila.getTableHeader().setResizingAllowed(false);
+
+            this.vista.tablaMochilaVender.addMouseListener(this);
+            this.vista.tablaMochilaVender.setModel(modelo.getTablaMochilaVender(usuario));
+            this.vista.tablaMochilaVender.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            this.vista.tablaMochilaVender.getTableHeader().setReorderingAllowed(false);
+            this.vista.tablaMochilaVender.getTableHeader().setResizingAllowed(false);
+
+            this.vista.tablaMochilaCombate.addMouseListener(this);
+            this.vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
+            this.vista.tablaMochilaCombate.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            this.vista.tablaMochilaCombate.getTableHeader().setReorderingAllowed(false);
+            this.vista.tablaMochilaCombate.getTableHeader().setResizingAllowed(false);
+
+            this.vista.btnCambiarC.setActionCommand("btnCambiarC");
+            this.vista.btnCambiarC.addActionListener(this);
+            this.vista.btnCerrarS.setActionCommand("btnCerrarS");
+            this.vista.btnCerrarS.addActionListener(this);
+            this.vista.btnAceptarCambiarContraseña.setActionCommand("btnAceptarCambiarContraseña");
+            this.vista.btnAceptarCambiarContraseña.addActionListener(this);
+            this.vista.btnCancelarCambiarContraseña.setActionCommand("btnCancelarCambiarContraseña");
+            this.vista.btnCancelarCambiarContraseña.addActionListener(this);
+
+            en =  new Enemigo(5,5,5,5);
+            int armadura = this.modelo.obtenerArmadura(usuario);
+            int daño = this.modelo.obtenerDaño(usuario);
+            int ataque = this.modelo.obtenerAtaque(usuario); 
+            int nivel = Integer.parseInt(this.vista.txtNivel.getText());
+            int expMax = this.ExpMax(nivel);
+            int PV = Integer.parseInt(this.vista.txtPV.getText());
+            int PE = Integer.parseInt(this.vista.txtPE.getText());
+            int PVMax =Integer.parseInt(this.vista.txtPVMax.getText());
+            int PEMax =Integer.parseInt(this.vista.txtPEMax.getText());
+            int oroCombate = Integer.parseInt(this.vista.txtOro.getText());
+            int experiencia=Integer.parseInt(this.vista.txtExperiencia.getText());
+
+
+            if(this.vista.txtClase.getText().equals("Picaro")){
+                historialCombateString = historialCombateString + "\nPicaro";
+                vista.historialCombate.setText(historialCombateString);
+                p= new Picaro(PV,PE,PVMax,PEMax, armadura, daño, ataque,oroCombate,experiencia ,expMax,nivel);
+                o = new ObjetoTemp(p.getPV(), p.getPE(),p.getMaxPV(),p.getMaxPV(), p.getArmadura(), p.getDaño(), p.getAtaque(), p.getOro(), p.getExperiencia(),p.getExpMax(),p.getNivel());
+            }else if(this.vista.txtClase.getText().equals("Mago")){
+                historialCombateString = historialCombateString + "\nMago";
+                vista.historialCombate.setText(historialCombateString);
+                m= new Mago(PV,PE,PVMax,PEMax, armadura, daño, ataque,oroCombate,experiencia ,expMax,nivel);
+                o = new ObjetoTemp(m.getPV(), m.getPE(),m.getMaxPV(),m.getMaxPV(), m.getArmadura(), m.getDaño(), m.getAtaque(), m.getOro(), m.getExperiencia(),m.getExpMax(),m.getNivel());
+            } else if(this.vista.txtClase.getText().equals("Guerrero")){
+                historialCombateString = historialCombateString + "\nGuerrero";
+                vista.historialCombate.setText(historialCombateString);
+                g= new Guerrero(PV,PE,PVMax,PEMax, armadura, daño, ataque,oroCombate,experiencia ,expMax,nivel);
+                o = new ObjetoTemp(g.getPV(), g.getPE(),g.getMaxPV(),g.getMaxPE(), g.getArmadura(), g.getDaño(), g.getAtaque(), g.getOro(), g.getExperiencia(),g.getExpMax(),g.getNivel());
+            }
+
+            this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
+            this.vista.txtNombreCombate.setText(usuario);
+            this.vista.txtPVCombate.setText(this.vista.txtPV.getText());
+            this.vista.txtPVCombateMax.setText(this.vista.txtPVMax.getText());
+            this.vista.txtPECombate.setText(this.vista.txtPE.getText());
+            this.vista.txtPECombateMax.setText(this.vista.txtPEMax.getText());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error al cargar ControladorHijas");
+            e.printStackTrace();
         }
-        
-        this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
-        //this.vista.txtNombreEnemigo.setText();
-        this.vista.txtNombreCombate.setText(usuario);
-        this.vista.txtPVCombate.setText(this.vista.txtPV.getText());
-        this.vista.txtPVCombateMax.setText(this.vista.txtPVMax.getText());
-        this.vista.txtPECombate.setText(this.vista.txtPE.getText());
-        this.vista.txtPECombateMax.setText(this.vista.txtPEMax.getText());
-        
-     
     }
    
     
@@ -341,9 +343,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case  btnMochila:
                 this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                 if(vista.txtEquipo.getText().equals("")){
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("tio pajo.jpg")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
                 }else{
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource(vista.txtEquipo.getText()+".png")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/"+vista.txtEquipo.getText()+".png")));
                 }
                 historialString = historialString + "\nMochila abierta.";
                 vista.historial.setText(historialString);
@@ -971,7 +973,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Ligera I.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -986,7 +988,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Ligera II.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1001,7 +1003,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Ligera III.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1016,7 +1018,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Intermedia I.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1031,7 +1033,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Intermedia II.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1046,7 +1048,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Intermedia III.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1061,7 +1063,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Pesada I.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1076,7 +1078,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Pesada II.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1091,7 +1093,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Pesada III.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1240,7 +1242,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
                     vista.txtEquipo.setText("");
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("tio pajo.jpg")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);
@@ -1263,7 +1265,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
                     vista.txtEquipo.setText("");
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("tio pajo.jpg")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);
@@ -1387,13 +1389,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
         vista.txtExperienciaMax.setText(expmax);
         switch (clase){
             case "Picaro":
-                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("picaro.png")));
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/picaro.png")));
                 break;
             case "Mago":
-                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("Mago.jpg")));
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mago.jpg")));
                 break;
             case "Guerrero":
-                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("guerrero.png")));
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guerrero.png")));
                 break;
         }
     }

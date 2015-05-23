@@ -453,7 +453,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Market.jpg"))); // NOI18N
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Market.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -864,7 +864,7 @@ public class VentanaHijas extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Little Thanos.jpg"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Little Thanos.jpg"))); // NOI18N
 
         javax.swing.GroupLayout dialogHuirLayout = new javax.swing.GroupLayout(dialogHuir.getContentPane());
         dialogHuir.getContentPane().setLayout(dialogHuirLayout);
@@ -917,7 +917,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         tablaMochila.setShowVerticalLines(false);
         jScrollPane6.setViewportView(tablaMochila);
 
-        fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tio pajo.jpg"))); // NOI18N
+        fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg"))); // NOI18N
         fotoEquipo.setBorder(new javax.swing.border.MatteBorder(null));
 
         btnMochilaUsar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -1407,7 +1407,7 @@ public class VentanaHijas extends javax.swing.JFrame {
         txtOro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtOro.setOpaque(true);
 
-        fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/picaro.png"))); // NOI18N
+        fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/picaro.png"))); // NOI18N
         fotoClase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         historial.setEditable(false);

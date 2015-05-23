@@ -31,23 +31,29 @@ public class ControladorCarga implements ActionListener{
     }
     
     public void iniciar(){
-        vista2 = new Registro();
-        vista3 = new VentanaHijas();
+        try{
+            vista2 = new Registro();
+            vista3 = new VentanaHijas();
+
+            modelo = new ModeloCarga();
+
+            controlR = new ControladorRegistro(vista2);
+            controlR.iniciar();
+
+            controlH = new ControladorHijas(vista3);
+
+            this.vista1.setVisible(true);
+            this.vista1.setLocation(100,100);
+
+            this.vista1.btnLogin.setActionCommand("btnLogin");
+            this.vista1.btnLogin.addActionListener(this);
+            this.vista1.btnRegistrarse.setActionCommand("btnRegistrarse");
+            this.vista1.btnRegistrarse.addActionListener(this);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error al cargar ControladorCarga");
+            JOptionPane.showMessageDialog(null, e.getStackTrace());
+        }
         
-        modelo = new ModeloCarga();
-        
-        controlR = new ControladorRegistro(vista2);
-        controlR.iniciar();
-        
-        controlH = new ControladorHijas(vista3);
-        
-        this.vista1.setVisible(true);
-        this.vista1.setLocation(100,100);
-        
-        this.vista1.btnLogin.setActionCommand("btnLogin");
-        this.vista1.btnLogin.addActionListener(this);
-        this.vista1.btnRegistrarse.setActionCommand("btnRegistrarse");
-        this.vista1.btnRegistrarse.addActionListener(this);
     }
     
     @Override

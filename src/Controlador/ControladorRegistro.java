@@ -27,17 +27,21 @@ public class ControladorRegistro implements ActionListener{
     }
     
     public void iniciar(){
-        this.vista2.btnRegistrarseComenzar.setActionCommand("btnRegistrarseComenzar");
-        this.vista2.btnRegistrarseComenzar.addActionListener(this);
-        this.vista2.btnRegistrarseSalir.setActionCommand("btnRegistrarseSalir");
-        this.vista2.btnRegistrarseSalir.addActionListener(this);
-        this.vista2.radioPicaro.setActionCommand("Picaro");
-        this.vista2.radioPicaro.addActionListener(this);
-        this.vista2.radioPicaro.setSelected(true);
-        this.vista2.radioMago.setActionCommand("Mago");
-        this.vista2.radioMago.addActionListener(this);
-        this.vista2.radioGuerrero.setActionCommand("Guerrero");
-        this.vista2.radioGuerrero.addActionListener(this);
+        try{
+            this.vista2.btnRegistrarseComenzar.setActionCommand("btnRegistrarseComenzar");
+            this.vista2.btnRegistrarseComenzar.addActionListener(this);
+            this.vista2.btnRegistrarseSalir.setActionCommand("btnRegistrarseSalir");
+            this.vista2.btnRegistrarseSalir.addActionListener(this);
+            this.vista2.radioPicaro.setActionCommand("Picaro");
+            this.vista2.radioPicaro.addActionListener(this);
+            this.vista2.radioPicaro.setSelected(true);
+            this.vista2.radioMago.setActionCommand("Mago");
+            this.vista2.radioMago.addActionListener(this);
+            this.vista2.radioGuerrero.setActionCommand("Guerrero");
+            this.vista2.radioGuerrero.addActionListener(this);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error al cargar ControladorHijas");
+        }
     }
      @Override
     public void actionPerformed(ActionEvent e) {

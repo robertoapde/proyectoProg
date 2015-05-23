@@ -11,7 +11,7 @@ public class Main {
     
     public static void main(String[] args) {
         
-        JOptionPane.showMessageDialog(null, "Espere, por favor.");
+        JOptionPane.showMessageDialog(null, "Espere un minuto, por favor. Literalmente.");
         
         controlC = new ControladorCarga(vista1);
         controlC.iniciar();
