@@ -640,6 +640,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     this.vista.setVisible(true);
                     vista.txtPV.setText(vista.txtPVMax.getText());
                     this.setInfoBD();
+                    String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
+                    this.setInfoInterfaz(nuevosStatPostSubida);
                 }else if(vidaEne <= 0){
                     o.setArmadura(o.getArmadura() - o.getDefensa());
                     o.setDefensa(0);
@@ -649,11 +651,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         int n = Integer.parseInt(vista.txtNivel.getText());
                         vista.txtNivel.setText(String.valueOf(n + 1));
                         int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
-                                vista.txtExperienciaMax.setText(String.valueOf(px));
+                        vista.txtExperiencia.setText(String.valueOf(px));
                         cont++;
                         contNv = contNv * 2;
                         vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
                         this.setInfoBD();
+                        String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
+                        this.setInfoInterfaz(nuevosStatPostSubida);
                     }
                     
                     vista.historial.setText(historialString);
@@ -720,6 +724,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             vista.historial.setText(historialString);
                             vista.txtPV.setText(vista.txtPVMax.getText());
                             this.setInfoBD();
+                            String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevosStatPostSubida);
                             this.vista.dialogCombatir.dispose();
                             this.vista.setVisible(true);
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
@@ -840,6 +846,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.vista.setVisible(true);
                             vista.txtPV.setText(vista.txtPVMax.getText());
                             this.setInfoBD();
+                            String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
+                            this.setInfoInterfaz(nuevosStatPostSubida);
                             JOptionPane.showMessageDialog(null, "Ha termino el combate. Has perdido.");
                             JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText())) +" oro.");
                         }else if(vidaEne <= 0){
@@ -851,11 +859,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 int n = Integer.parseInt(vista.txtNivel.getText());
                                 vista.txtNivel.setText(String.valueOf(n + 1));
                                 int px = Integer.parseInt(vista.txtExperiencia.getText()) - Integer.parseInt(vista.txtExperienciaMax.getText());
-                                vista.txtExperienciaMax.setText(String.valueOf(px));
+                                vista.txtExperiencia.setText(String.valueOf(px));
                                 cont++;
-                                contNv=contNv*2;
+                                contNv = contNv * 2;
                                 vista.txtExperienciaMax.setText(String.valueOf(cont * 25 * contNv));
                                 this.setInfoBD();
+                                String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
+                                this.setInfoInterfaz(nuevosStatPostSubida);
                             }
                             vista.historial.setText(historialString);
                             this.vista.dialogCombatir.dispose();
