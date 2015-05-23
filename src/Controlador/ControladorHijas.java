@@ -298,7 +298,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     armaduraEne = Integer.parseInt(enemigos[huir][5]);
                     oroEne = Integer.parseInt(enemigos[huir][6]);
                     ataqueEne = Integer.parseInt(enemigos[huir][7]);
-                    enemigo = new Enemigo(vidaEne, armaduraEne, dañoEne, ataqueEne);
+                    en = new Enemigo(vidaEne, armaduraEne, dañoEne, ataqueEne);
                 }else{
                     String[][] enemigos = new String[3][8];
                     enemigos = modelo.datosEnemigo(nivelUsuario);
@@ -311,7 +311,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     armaduraEne = Integer.parseInt(enemigos[huir][5]);
                     oroEne = Integer.parseInt(enemigos[huir][6]);
                     ataqueEne = Integer.parseInt(enemigos[huir][7]);
-                    enemigo = new Enemigo(vidaEne, armaduraEne, dañoEne, ataqueEne);
+                    en = new Enemigo(vidaEne, armaduraEne, dañoEne, ataqueEne);
                 }
                
                 historialCombateString="";
