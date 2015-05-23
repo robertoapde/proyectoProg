@@ -655,7 +655,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCombatirDefender:
-                if(o.getTurno() == true){
+                
                     historialCombateString = historialCombateString +"\n---------Tu Turno----------";
                     vista.historialCombate.setText(historialCombateString);
                     historialCombateString = historialCombateString + "\nPOSICION DEFENSIVA";
@@ -671,15 +671,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         o.setTurno(true);
                         System.out.println(vista.txtClase+": "+ o.info());
                     }
-                    
-                }else{ 
-                    
+                  
                         historialCombateString = historialCombateString +"\n---------Turno Enemigo----------";
                         vista.historialCombate.setText(historialCombateString);
                         historialCombateString = historialCombateString +"\nEl enemigo se dispone a atacar";
                         vista.historialCombate.setText(historialCombateString);
                         en.Atacar();
-                        if (en.getGolpe() > o.getArmadura()) {
+                        if (en.getGolpe() > o.getArmadura()){
                             historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
                             vista.historialCombate.setText(historialCombateString);
                             vidaEne=vidaEne - o.getDaño();
@@ -709,7 +707,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             
                             historialString = historialString + "\nHas perdido.";
                             vista.historial.setText(historialString);
-                            this.vista.dialogCombatir.dispose();
                             vista.txtPV.setText(vista.txtPVMax.getText());
                             this.setInfoBD();
                             this.vista.dialogCombatir.dispose();
@@ -723,12 +720,12 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                     vista.historialCombate.setText(historialCombateString);
                                     historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                                     vista.historialCombate.setText(historialCombateString);
-                                    o.setTurno(true);
-
-                        
+                                    o.setTurno(true);                         
                     }
-                }
+                        
+                
                 break;
+                
             case btnCombatirEspecial:
                 int contBAtacarEspecial = 0;
                 do{
