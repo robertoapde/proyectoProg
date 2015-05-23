@@ -341,9 +341,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case  btnMochila:
                 this.vista.tablaMochila.setModel(modelo.getTablaMochila(usuario));
                 if(vista.txtEquipo.getText().equals("")){
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("tio pajo.jpg")));
                 }else{
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/"+vista.txtEquipo.getText()+".png")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource(vista.txtEquipo.getText()+".png")));
                 }
                 historialString = historialString + "\nMochila abierta.";
                 vista.historial.setText(historialString);
@@ -971,7 +971,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera I.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Ligera I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -986,7 +986,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera II.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Ligera II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1001,7 +1001,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Ligera III.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Ligera III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1016,7 +1016,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia I.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Intermedia I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1031,7 +1031,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia II.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Intermedia II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1046,7 +1046,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Intermedia III.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Intermedia III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1061,7 +1061,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada I.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Pesada I.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1076,7 +1076,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada II.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Pesada II.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1091,7 +1091,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 modelo.desequiparEquipo(objeto, usuario);
                                 vista.txtEquipo.setText("");
                             }
-                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Armadura Pesada III.png")));
+                            this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Armadura Pesada III.png")));
                             this.vista.txtEquipo.setText(objetoMochilaSeleccionado);
                             String equipo = vista.txtEquipo.getText();
                             modelo.equiparEquipo(equipo, efectoObjetoMochilaSeleccionado, usuario);
@@ -1240,7 +1240,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
                     vista.txtEquipo.setText("");
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("tio pajo.jpg")));
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);
@@ -1263,7 +1263,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     String equipo = vista.txtEquipo.getText();
                     modelo.desequiparEquipo(equipo, usuario);
                     vista.txtEquipo.setText("");
-                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tio pajo.jpg")));
+                    this.vista.fotoEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("tio pajo.jpg")));
                 }else if(objetoMochilaSeleccionado.equals(vista.txtArma.getText())){
                     String arma = vista.txtArma.getText();
                     modelo.desequiparArma(arma, usuario);
@@ -1387,13 +1387,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
         vista.txtExperienciaMax.setText(expmax);
         switch (clase){
             case "Picaro":
-                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/picaro.png")));
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("picaro.png")));
                 break;
             case "Mago":
-                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mago.jpg")));
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("Mago.jpg")));
                 break;
             case "Guerrero":
-                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guerrero.png")));
+                this.vista.fotoClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("guerrero.png")));
                 break;
         }
     }
