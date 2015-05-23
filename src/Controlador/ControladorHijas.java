@@ -266,7 +266,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 o = new ObjetoTemp(g.getPV(), g.getPE(),g.getMaxPV(),g.getMaxPE(), g.getArmadura(), g.getDaño(), g.getAtaque(), g.getOro(), g.getExperiencia(),g.getExpMax(),g.getNivel());
             }
 
-            this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
+            this.vista.txtPVEnemigo.setText(String.valueOf(vidaEne));
             this.vista.txtNombreCombate.setText(usuario);
             this.vista.txtPVCombate.setText(this.vista.txtPV.getText());
             this.vista.txtPVCombateMax.setText(this.vista.txtPVMax.getText());
@@ -577,9 +577,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         o.setTurno(false);    
                     }else{
                                 
-                        historialCombateString = historialCombateString +"\nTu ATAQUE  ha FALLADO";
-                        vista.historialCombate.setText(historialCombateString);
-                        historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
+                        historialCombateString = historialCombateString +"\nTu ATAQUE ha FALLADO";
                         vista.historialCombate.setText(historialCombateString);
                         o.setTurno(false);    
                     }
@@ -601,8 +599,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
 
                         
                         vista.historialCombate.setText(historialCombateString);
-                        historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
-                        vista.historialCombate.setText(historialCombateString);
                         if(Integer.parseInt(this.vista.txtPVCombate.getText()) <= 0){
                             this.vista.txtExperiencia.setText(String.valueOf(Integer.parseInt(this.vista.txtExperiencia.getText()) - (25 * Integer.parseInt(this.vista.txtNivel.getText()) * 3)));
                             this.vista.txtOro.setText(String.valueOf(Integer.parseInt(this.vista.txtOro.getText()) - (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))));
@@ -623,8 +619,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     }else{
 
                         historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
-                        vista.historialCombate.setText(historialCombateString);
-                        historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                         vista.historialCombate.setText(historialCombateString);
                         o.setTurno(true);
                     }
@@ -692,12 +686,10 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     if(o.getDefensa()<4){
             
                         historialCombateString = historialCombateString + "\nDURO como la PIEDRA";
-                        historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                         o.setTurno(false);
                     }else{
                         historialCombateString = historialCombateString + "\nTu DEFENSA esta al MÁXIMO";
                         o.setTurno(true);
-                        System.out.println(vista.txtClase+": "+ o.info());
                     }
                   
                         historialCombateString = historialCombateString +"\n---------Turno Enemigo----------";
@@ -711,8 +703,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             vidaEne=vidaEne - o.getDaño();
                             this.vista.txtPV.setText(String.valueOf(vidaEne));
                             
-                            vista.historialCombate.setText(historialCombateString);
-                            historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                             vista.historialCombate.setText(historialCombateString);
                             if(Integer.parseInt(vista.txtPVCombate.getText())<=0){
                                 this.vista.txtExperiencia.setText(String.valueOf(Integer.parseInt(vista.txtExperiencia.getText()) - (25 * Integer.parseInt(vista.txtNivel.getText()) * 3)));                                
@@ -749,8 +739,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                    
                         }else{
                             historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
-                            vista.historialCombate.setText(historialCombateString);
-                            historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                             vista.historialCombate.setText(historialCombateString);
                             o.setTurno(true);                         
                         }
@@ -798,9 +786,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             }
                             o.setTurno(false);    
                         }else{
-                            historialCombateString = historialCombateString +"\nTu ATAQUE  ha FALLADO";
-                            vista.historialCombate.setText(historialCombateString);
-                            historialCombateString = historialCombateString +"\nEnemigo: " + en.info();
+                            historialCombateString = historialCombateString +"\nTu ATAQUE ha FALLADO";
                             vista.historialCombate.setText(historialCombateString);
                             o.setTurno(false);    
                         }
@@ -818,8 +804,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.vista.txtPVCombate.setText(String.valueOf(Integer.parseInt(this.vista.txtPVCombate.getText()) - dañoEne));
                             
                             
-                            vista.historialCombate.setText(historialCombateString);
-                            historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                             vista.historialCombate.setText(historialCombateString);
                             if(Integer.parseInt(this.vista.txtPVCombate.getText()) <= 0){
                                 this.vista.txtExperiencia.setText(String.valueOf((Integer.parseInt(this.vista.txtNivel.getText())) - (25 * (Integer.parseInt(this.vista.txtNivel.getText()) * 3))));
@@ -845,8 +829,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             o.setTurno(true);
                         }else{
                                 historialCombateString = historialCombateString +"\nEl enemigo ha fallado el ataque";
-                                vista.historialCombate.setText(historialCombateString);
-                                historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
                                 vista.historialCombate.setText(historialCombateString);
                                 o.setTurno(true);
                         }
