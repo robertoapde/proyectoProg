@@ -336,6 +336,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.txtNombreEnemigo.setText(nombreEne);
                 this.vista.txtNivelEnemigo.setText(String.valueOf(nivelEne));
                 
+                this.vista.setVisible(false);
                 this.vista.dialogCombatir.setVisible(true);
                 this.vista.txtPVEnemigo.setText(String.valueOf(en.getPV()));
                 break;
@@ -349,6 +350,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 }
                 historialString = historialString + "\nMochila abierta.";
                 vista.historial.setText(historialString);
+                vista.setVisible(false);
                 this.vista.dialogMochila.setSize(720, 580);
                 this.vista.dialogMochila.setLocation(100,100);
                 this.vista.dialogMochila.setVisible(true);
@@ -357,6 +359,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnTienda:
                 historialString = historialString + "\nPaseas por el mercado.";
                 vista.historial.setText(historialString);
+                vista.setVisible(false);
                 this.vista.dialogTienda.setSize(630, 658);
                 this.vista.dialogTienda.setLocation(100,100);
                 this.vista.dialogTienda.setVisible(true);
@@ -365,6 +368,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnTaberna:
                 historialString = historialString + "\nHas entrado en la taberna.";
                 vista.historial.setText(historialString);
+                vista.setVisible(false);
                 this.vista.dialogTaberna.setSize(527, 353);
                 this.vista.dialogTaberna.setLocation(150,150);
                 this.vista.dialogTaberna.setVisible(true);
@@ -380,7 +384,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnAlojamientoTaberna:
                 this.vista.dialogTaberna.setVisible(false);
                 this.vista.dialogTabernaAlojamiento.setSize(541, 275);
-                this.vista.dialogTabernaAlojamiento.setLocation(150,150);
+                this.vista.dialogTabernaAlojamiento.setLocation(75,75);
                 this.vista.dialogTabernaAlojamiento.setVisible(true);
                 break;
                 
@@ -388,6 +392,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.dialogTaberna.setVisible(false);
                 historialString = historialString + "\nHas salido de la taberna.";
                 vista.historial.setText(historialString);
+                this.vista.setVisible(true);
                 break;
                 
             case btnAceptarComprarTaberna:
@@ -459,6 +464,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         vista.dialogTabernaAlojamiento.setVisible(false);
                     }
                 }
+                this.vista.dialogTaberna.setVisible(true);
                 break;
                 
             case btnCancelarAlojamiento:
@@ -470,7 +476,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 if(objetoTiendaSeleccionado != ""){
                     this.vista.dialogTienda.setVisible(false);
                     this.vista.dialogTiendaComprar.setSize(470, 320);
-                    this.vista.dialogTiendaComprar.setLocation(100,100);
+                    this.vista.dialogTiendaComprar.setLocation(50,50);
                     this.vista.dialogTiendaComprar.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(null, "Seleccione un objeto del mercado.");
@@ -490,6 +496,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 historialString = historialString + "\nHas vuelto del mercado.";
                 vista.historial.setText(historialString);
                 vista.dialogTiendaComprar.setVisible(false);
+                this.vista.setVisible(true);
                 break;
                 
             case btnAceptarCompraTienda:
@@ -526,7 +533,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 }else{
                     this.vista.dialogTiendaVender.setVisible(false);
                     this.vista.dialogTiendaVenderVender.setSize(410, 270);
-                    this.vista.dialogTiendaVenderVender.setLocation(100,100);
+                    this.vista.dialogTiendaVenderVender.setLocation(50,50);
                     this.vista.dialogTiendaVenderVender.setVisible(true);
                 }
                 break;
@@ -563,6 +570,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             this.vista.txtOro.setText(String.valueOf(Integer.parseInt(vista.txtOro.getText())+ oroEne));
                             this.vista.txtExperiencia.setText(String.valueOf(Integer.parseInt(vista.txtExperiencia.getText())+experienciaEne));
                             this.vista.dialogCombatir.dispose();
+                            this.vista.setVisible(true);
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has ganado.");
                             JOptionPane.showMessageDialog(null, "Has gando : "+oroEne+" oro.");
                                         
@@ -608,6 +616,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             o.setTurno(true);
                         o.setTurno(true);    
                         this.vista.dialogCombatir.dispose();
+                        this.vista.setVisible(true);
                         JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
                         JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText())) +" oro.");
 
@@ -628,6 +637,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     o.setArmadura(o.getArmadura()-o.getDefensa());
                     o.setDefensa(0);
                     this.vista.dialogCombatir.dispose();
+                    this.vista.setVisible(true);
                     vista.txtPV.setText(vista.txtPVMax.getText());
                     this.setInfoBD();
                 }else if(vidaEne <= 0){
@@ -648,6 +658,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     
                     vista.historial.setText(historialString);
                     this.vista.dialogCombatir.dispose();
+                    this.vista.setVisible(true);
                 }
      
             
@@ -700,6 +711,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                     }
                                     o.setTurno(true);
                                     this.vista.dialogCombatir.dispose();
+                                    this.vista.setVisible(true);
                                     JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
                                     JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))+" oro.");
                                 }
@@ -709,6 +721,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             vista.txtPV.setText(vista.txtPVMax.getText());
                             this.setInfoBD();
                             this.vista.dialogCombatir.dispose();
+                            this.vista.setVisible(true);
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
                             o.setTurno(true);
                             }
@@ -759,6 +772,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                 this.vista.txtOro.setText(String.valueOf(Integer.parseInt(vista.txtOro.getText())+ oroEne));
                                 this.vista.txtExperiencia.setText(String.valueOf(Integer.parseInt(vista.txtExperiencia.getText())+experienciaEne));
                                 this.vista.dialogCombatir.dispose();
+                                this.vista.setVisible(true);
                                 JOptionPane.showMessageDialog(null, "Termino el combate. Has ganado.");
                                 JOptionPane.showMessageDialog(null, "Has ganado : "+ oroEne +" oro.");
                                         
@@ -803,6 +817,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                     }
                                     o.setTurno(true);
                                     this.vista.dialogCombatir.dispose();
+                                    this.vista.setVisible(true);
                                     JOptionPane.showMessageDialog(null, "Termino el combate.");
                                     JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))+" oro.");
 
@@ -822,9 +837,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             o.setDefensa(0);
                             vista.historial.setText(historialString);
                             this.vista.dialogCombatir.dispose();
+                            this.vista.setVisible(true);
                             vista.txtPV.setText(vista.txtPVMax.getText());
                             this.setInfoBD();
-                            this.vista.dialogCombatir.dispose();
                             JOptionPane.showMessageDialog(null, "Ha termino el combate. Has perdido.");
                             JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText())) +" oro.");
                         }else if(vidaEne <= 0){
@@ -844,6 +859,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             }
                             vista.historial.setText(historialString);
                             this.vista.dialogCombatir.dispose();
+                            this.vista.setVisible(true);
                             JOptionPane.showMessageDialog(null, "Termino el combate. Has ganado.");
                             JOptionPane.showMessageDialog(null, "Has ganado : "+ en.getOro()+" oro.");
                         }
@@ -879,6 +895,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             case btnHuirPerder:
                     vista.dialogHuir.setVisible(false);
                     vista.dialogCombatir.setVisible(false);
+                    this.vista.setVisible(true);
                 break;
                 
             case btnMochilaUsar:
@@ -931,7 +948,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 }else{
                     vista.dialogMochila.setVisible(false);
                     vista.dialogSoltar.setSize(350, 200);
-                    vista.dialogSoltar.setLocation(100,100);
+                    vista.dialogSoltar.setLocation(50,50);
                     vista.dialogSoltar.setVisible(true);
                 }
                 break;
@@ -1210,6 +1227,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 this.vista.dialogMochila.setVisible(false);
                 historialString = historialString + "\nHas cerrado la mochila.";
                 vista.historial.setText(historialString);
+                this.vista.setVisible(true);
                 break;
                 
             case btnSoltarAceptar:

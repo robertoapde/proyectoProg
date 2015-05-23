@@ -4,7 +4,6 @@
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="dialogTaberna">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
@@ -154,7 +153,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogTabernaCompra">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
@@ -280,7 +278,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogTabernaAlojamiento">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
@@ -599,7 +596,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogTiendaComprar">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
@@ -733,7 +729,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogTiendaVender">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
@@ -862,7 +857,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogCombatir">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
@@ -1279,7 +1273,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogHuir">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
@@ -1336,7 +1329,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogMochila">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
@@ -1624,7 +1616,6 @@
     </Component>
     <Container class="javax.swing.JDialog" name="dialogSoltar">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
@@ -1739,7 +1730,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogTiendaVenderVender">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
@@ -1837,7 +1827,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogCambiarContrase&#xf1;a">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
@@ -2041,7 +2030,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="dialogMochilaCombate">
       <Properties>
-        <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>

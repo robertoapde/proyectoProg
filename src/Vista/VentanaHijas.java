@@ -162,7 +162,6 @@ public class VentanaHijas extends javax.swing.JFrame {
         btnCambiarC = new javax.swing.JRadioButtonMenuItem();
         btnCerrarS = new javax.swing.JRadioButtonMenuItem();
 
-        dialogTaberna.setAlwaysOnTop(true);
         dialogTaberna.setModal(true);
         dialogTaberna.setResizable(false);
         dialogTaberna.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -247,7 +246,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        dialogTabernaCompra.setAlwaysOnTop(true);
         dialogTabernaCompra.setModal(true);
         dialogTabernaCompra.setResizable(false);
 
@@ -327,7 +325,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogTabernaAlojamiento.setAlwaysOnTop(true);
         dialogTabernaAlojamiento.setResizable(false);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -498,7 +495,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogTiendaComprar.setAlwaysOnTop(true);
         dialogTiendaComprar.setResizable(false);
 
         jLabel21.setBackground(new java.awt.Color(204, 204, 204));
@@ -567,7 +563,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogTiendaVender.setAlwaysOnTop(true);
         dialogTiendaVender.setResizable(false);
 
         tablaMochilaVender.setModel(new javax.swing.table.DefaultTableModel(
@@ -634,7 +629,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogCombatir.setAlwaysOnTop(true);
         dialogCombatir.setModal(true);
         dialogCombatir.setResizable(false);
 
@@ -851,7 +845,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogHuir.setAlwaysOnTop(true);
         dialogHuir.setModal(true);
         dialogHuir.setResizable(false);
 
@@ -883,7 +876,6 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addComponent(btnHuirPerder, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        dialogMochila.setAlwaysOnTop(true);
         dialogMochila.setModal(true);
         dialogMochila.setResizable(false);
 
@@ -1026,7 +1018,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        dialogSoltar.setAlwaysOnTop(true);
         dialogSoltar.setModal(true);
         dialogSoltar.setResizable(false);
 
@@ -1082,7 +1073,6 @@ public class VentanaHijas extends javax.swing.JFrame {
             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        dialogTiendaVenderVender.setAlwaysOnTop(true);
         dialogTiendaVenderVender.setModal(true);
         dialogTiendaVenderVender.setResizable(false);
 
@@ -1127,7 +1117,6 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addComponent(btnCancelarVenderVenderTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        dialogCambiarContraseña.setAlwaysOnTop(true);
         dialogCambiarContraseña.setResizable(false);
 
         jLabel44.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -1226,7 +1215,6 @@ public class VentanaHijas extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        dialogMochilaCombate.setAlwaysOnTop(true);
         dialogMochilaCombate.setModal(true);
         dialogMochilaCombate.setResizable(false);
 
