@@ -654,7 +654,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnCombatirDefender:
-                boolean res=false;
                 if(o.getTurno() == true){
                     historialCombateString = historialCombateString +"\n---------Tu Turno----------";
                     vista.historialCombate.setText(historialCombateString);
@@ -665,15 +664,14 @@ public class ControladorHijas implements ActionListener, MouseListener{
             
                         historialCombateString = historialCombateString + "\nDURO como la PIEDRA";
                         historialCombateString = historialCombateString +"\n"+vista.txtClase.getText()+": "+ o.info();
-                        o.setTurno(false); 
-                         res=true;
+                        o.setTurno(false);
                     }else{
                         historialCombateString = historialCombateString + "\nTu DEFENSA esta al MÁXIMO";
                         o.setTurno(true);
                         System.out.println(vista.txtClase+": "+ o.info());
                     }
                     
-                    if(res==true){ 
+                    if(o.getTurno() == false){ 
                         historialCombateString = historialCombateString +"\n---------Turno Enemigo----------";
                         vista.historialCombate.setText(historialCombateString);
                         historialCombateString = historialCombateString +"\nEl enemigo se dispone a atacar";
