@@ -801,7 +801,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                                     }
                                     o.setTurno(true);
                                     this.vista.dialogCombatir.dispose();
-                                    JOptionPane.showMessageDialog(null, "Termino el combate. Has perdido.");
+                                    JOptionPane.showMessageDialog(null, "Termino el combate.");
                                     JOptionPane.showMessageDialog(null, "Has perdido : "+ (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))+" oro.");
 
                                 }
