@@ -39,6 +39,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
     String tipoObjetoMochilaSeleccionado = "";
     int efectoObjetoMochilaSeleccionado = 0;
     int efectoObjetoTabernaSeleccionado = 0;
+    String objetoMochilaCombateSeleccionado = "";
+    int efectoObjetoMochilaCombateSeleccionado = 0;
+    String tipoObjetoMochilaCombateSeleccionado = "";
     
     
     Guerrero g ;
@@ -1305,42 +1308,42 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 break;
                 
             case btnUsarObjetoCombate:
-                if(objetoMochilaSeleccionado.equals("")){
+                if(objetoMochilaCombateSeleccionado.equals("")){
                     JOptionPane.showMessageDialog(null, "Seleccione un objeto.");
                 }else{
-                    if(tipoObjetoMochilaSeleccionado.equals("usable_HP")){
+                    if(tipoObjetoMochilaCombateSeleccionado.equals("usable_HP")){
                         if(vista.txtPVCombate.getText().equals(vista.txtPVCombateMax.getText())){
                             JOptionPane.showMessageDialog(null, "Ya tienes la vida al máximo.");
                         }else{
-                            int nuevoPV = Integer.parseInt(vista.txtPVCombate.getText()) + efectoObjetoMochilaSeleccionado;
+                            int nuevoPV = Integer.parseInt(vista.txtPVCombate.getText()) + efectoObjetoMochilaCombateSeleccionado;
                             if(nuevoPV > Integer.parseInt(vista.txtPVCombateMax.getText())){
                                 nuevoPV = Integer.parseInt(vista.txtPVCombateMax.getText());
                             }
                             vista.txtPVCombate.setText(String.valueOf(nuevoPV));
-                            modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
+                            modelo.soltarObjeto(objetoMochilaCombateSeleccionado, usuario);
                             JOptionPane.showMessageDialog(null, "Poción de vida usada.");
                             this.setInfoBD();
                             String [] nuevaVidaPostPocion = this.modelo.getInfoInterfaz(usuario);
                             this.setInfoInterfaz(nuevaVidaPostPocion);
                             vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
                         }
-                    }else if(tipoObjetoMochilaSeleccionado.equals("usable_EP")){
+                    }else if(tipoObjetoMochilaCombateSeleccionado.equals("usable_EP")){
                         if(vista.txtPECombate.getText().equals(vista.txtPECombateMax.getText())){
                             JOptionPane.showMessageDialog(null, "Ya tienes la energía al máximo.");
                         }else{
-                            int nuevoPE = Integer.parseInt(vista.txtPECombate.getText()) + efectoObjetoMochilaSeleccionado;
+                            int nuevoPE = Integer.parseInt(vista.txtPECombate.getText()) + efectoObjetoMochilaCombateSeleccionado;
                             if(nuevoPE > Integer.parseInt(vista.txtPECombateMax.getText())){
                                 nuevoPE = Integer.parseInt(vista.txtPECombateMax.getText());
                             }
                             vista.txtPECombate.setText(String.valueOf(nuevoPE));
-                            modelo.soltarObjeto(objetoMochilaSeleccionado, usuario);
+                            modelo.soltarObjeto(objetoMochilaCombateSeleccionado, usuario);
                             JOptionPane.showMessageDialog(null, "Poción de energía usada.");
                             this.setInfoBD();
                             String [] nuevaEnergiaPostPocion = this.modelo.getInfoInterfaz(usuario);
                             this.setInfoInterfaz(nuevaEnergiaPostPocion);
                             vista.tablaMochilaCombate.setModel(modelo.getTablaMochilaCombate(usuario));
                         }
-                    }else if(tipoObjetoMochilaSeleccionado.equals("usable_DAÑO")){
+                    }else if(tipoObjetoMochilaCombateSeleccionado.equals("usable_DAÑO")){
                         JOptionPane.showMessageDialog(null, "Este objeto no puede ser usado aquí.");
                     }else{
                         JOptionPane.showMessageDialog(null, "Seleccione un objeto usable.");
@@ -1473,9 +1476,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 precioObjetoMochilaVenderSeleccionado = 0;
             }
             if(filaMochilaCombate > -1){
-                
+                objetoMochilaCombateSeleccionado = String.valueOf(this.vista.tablaMochilaCombate.getValueAt(filaMochilaCombate, 0));
+                tipoObjetoMochilaCombateSeleccionado = String.valueOf(this.vista.tablaMochilaCombate.getValueAt(filaMochilaCombate, 1));
+                efectoObjetoMochilaCombateSeleccionado = Integer.parseInt(String.valueOf(this.vista.tablaMochilaCombate.getValueAt(filaMochilaCombate, 2)));
             }else if(filaMochilaCombate == -1){
-                
+                objetoMochilaCombateSeleccionado = "";
+                efectoObjetoMochilaCombateSeleccionado = 0;
+                tipoObjetoMochilaCombateSeleccionado = "";
             }
         }
     }
