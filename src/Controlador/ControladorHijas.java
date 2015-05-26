@@ -601,6 +601,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         if(Integer.parseInt(this.vista.txtPVCombate.getText()) <= 0){
                             this.vista.txtExperiencia.setText(String.valueOf(Integer.parseInt(this.vista.txtExperiencia.getText()) - (25 * Integer.parseInt(this.vista.txtNivel.getText()) * 3)));
                             this.vista.txtOro.setText(String.valueOf(Integer.parseInt(this.vista.txtOro.getText()) - (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))));
+                            this.vista.txtPV.setText(vista.txtPVMax.getText());
                             if(Integer.parseInt(this.vista.txtExperiencia.getText()) < 0 ){
                                 this.vista.txtExperiencia.setText("0");
                             }
@@ -628,9 +629,9 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     vista.historial.setText(historialString);
                     o.setArmadura(o.getArmadura()-o.getDefensa());
                     o.setDefensa(0);
+                    this.vista.txtPV.setText(vista.txtPVMax.getText());
                     this.vista.dialogCombatir.dispose();
                     this.vista.setVisible(true);
-                    vista.txtPV.setText(vista.txtPVMax.getText());
                     this.setInfoBD();
                     String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
                     this.setInfoInterfaz(nuevosStatPostSubida);
@@ -699,13 +700,13 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         if (en.getGolpe() > o.getArmadura()){
                             historialCombateString = historialCombateString +"\nEl enemigo ha impactado el ataque";
                             vista.historialCombate.setText(historialCombateString);
-                            vidaEne=vidaEne - o.getDaño();
-                            this.vista.txtPV.setText(String.valueOf(vidaEne));
-                            
+                            int vidaH = Integer.parseInt(this.vista.txtPVCombate.getText()) - dañoEne;
+                            this.vista.txtPVCombate.setText(String.valueOf(vidaH));
+                            this.vista.txtPV.setText(String.valueOf(vidaH));
                             vista.historialCombate.setText(historialCombateString);
                             if(Integer.parseInt(vista.txtPVCombate.getText())<=0){
                                 this.vista.txtExperiencia.setText(String.valueOf(Integer.parseInt(vista.txtExperiencia.getText()) - (25 * Integer.parseInt(vista.txtNivel.getText()) * 3)));                                
-                                
+                                this.vista.txtPV.setText(vista.txtPVMax.getText());
                                 if(Integer.parseInt(vista.txtExperiencia.getText()) < 0 ){
                                     vista.txtExperiencia.setText("0");
                                     this.vista.txtExperiencia.setText(String.valueOf(Integer.parseInt(vista.txtExperiencia.getText()) - (25 * Integer.parseInt(vista.txtNivel.getText()) * 3)));
@@ -807,6 +808,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             if(Integer.parseInt(this.vista.txtPVCombate.getText()) <= 0){
                                 this.vista.txtExperiencia.setText(String.valueOf((Integer.parseInt(this.vista.txtNivel.getText())) - (25 * (Integer.parseInt(this.vista.txtNivel.getText()) * 3))));
                                 this.vista.txtOro.setText(String.valueOf(Integer.parseInt(this.vista.txtOro.getText()) - (5 * 4 * Integer.parseInt(this.vista.txtNivel.getText()))));
+                                this.vista.txtPV.setText(vista.txtPVMax.getText());
                                 if(Integer.parseInt(this.vista.txtExperiencia.getText()) < 0 ){
                                     o.setExperiencia(0);
                                     this.vista.txtExperiencia.setText(String.valueOf(0));
@@ -835,6 +837,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             historialString = historialString + "\nHas perdido.";
                             o.setArmadura(o.getArmadura() - o.getDefensa());
                             o.setDefensa(0);
+                            this.vista.txtPV.setText(vista.txtPVMax.getText());
                             vista.historial.setText(historialString);
                             this.vista.dialogCombatir.dispose();
                             this.vista.setVisible(true);
