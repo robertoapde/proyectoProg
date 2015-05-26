@@ -36,7 +36,7 @@ public class ModeloRegistro extends Database{
                 JOptionPane.showMessageDialog(null, "Error al consultar valores");
             }
             if(confi == 1){
-                String q2 = "INSERT INTO Usuario VALUES ('"+u+"','"+c+"',0,'"+e+"','Picaro',0,1,0,"+vi+","+en+","+vi+","+en+","+ar+","+at+","+da+",'','', 125)";
+                String q2 = "INSERT INTO Usuario VALUES ('"+u+"','"+c+"',0,'"+e+"','Picaro',0,1,100,"+vi+","+en+","+vi+","+en+","+ar+","+at+","+da+",'','', 125)";
                 try{
                     PreparedStatement pstm2 = this.getConexion().prepareStatement(q2);
                     pstm2.execute();
@@ -79,7 +79,7 @@ public class ModeloRegistro extends Database{
                 JOptionPane.showMessageDialog(null, "Error al consultar valores");
             }
             if(confi == 1){
-                String q2 = "INSERT INTO Usuario VALUES ('"+u+"','"+c+"',0,'"+e+"','Mago',0,1,0,"+vi+","+en+","+vi+","+en+","+ar+","+at+","+da+",'','', 125)";
+                String q2 = "INSERT INTO Usuario VALUES ('"+u+"','"+c+"',0,'"+e+"','Mago',0,1,100,"+vi+","+en+","+vi+","+en+","+ar+","+at+","+da+",'','', 125)";
                 try{
                     PreparedStatement pstm2 = this.getConexion().prepareStatement(q2);
                     pstm2.execute();
@@ -122,7 +122,7 @@ public class ModeloRegistro extends Database{
                 JOptionPane.showMessageDialog(null, "Error al consultar valores");
             }
             if(confi == 1){
-                String q2 = "INSERT INTO Usuario VALUES ('"+u+"','"+c+"',0,'"+e+"','Guerrero',0,1,0,"+vi+","+en+","+vi+","+en+","+ar+","+at+","+da+",'','', 125)";
+                String q2 = "INSERT INTO Usuario VALUES ('"+u+"','"+c+"',0,'"+e+"','Guerrero',0,1,100,"+vi+","+en+","+vi+","+en+","+ar+","+at+","+da+",'','', 125)";
                 try{
                     PreparedStatement pstm2 = this.getConexion().prepareStatement(q2);
                     pstm2.execute();

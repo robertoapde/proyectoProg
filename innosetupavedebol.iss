@@ -5,15 +5,15 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{7FDB3B85-8D74-4E10-9BED-6491DE22024F}
+AppId={{0E8296CF-7894-449F-9413-4850235B6791}
 AppName=Aventura de Bolsillo
-AppVersion=1.0
-;AppVerName=Aventura de Bolsillo 1.0
+AppVersion=2.1
+;AppVerName=Aventura de Bolsillo 2.1
 DefaultDirName={pf}\Aventura de Bolsillo
 DisableDirPage=yes
 DefaultGroupName=Aventura de Bolsillo
-OutputDir=C:\Users\Nacho\Desktop\Aventura de Bolsillo
-OutputBaseFilename=avedebol
+OutputDir=C:\Users\Nacho\Desktop\Aventura de Bolsillo\Instalable
+OutputBaseFilename=Aventura de Bolsillo
 Compression=lzma
 SolidCompression=yes
 

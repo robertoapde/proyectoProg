@@ -420,8 +420,8 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             }                                
                             
                         }else{
-                            if(vista.txtPV.getText().equals(vista.txtPVMax.getText())){
-                                JOptionPane.showMessageDialog(null, "Ya tienes la vida al máximo.");
+                            if(vista.txtPE.getText().equals(vista.txtPEMax.getText())){
+                                JOptionPane.showMessageDialog(null, "Ya tienes la energía al máximo.");
                             }else{
                                 int nuevoOro = Integer.parseInt(vista.txtOro.getText()) - precioObjetoTabernaSeleccionado;
                                 int nuevoPE = Integer.parseInt(vista.txtPE.getText()) + efectoObjetoTabernaSeleccionado;
@@ -464,6 +464,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                         vista.dialogTabernaAlojamiento.setVisible(false);
                     }
                 }
+                this.vista.dialogTabernaAlojamiento.setVisible(false);
                 this.vista.dialogTaberna.setVisible(true);
                 break;
                 
@@ -520,6 +521,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
                     JOptionPane.showMessageDialog(null, "Objeto demasiado caro.");
                 }
                 this.vista.dialogTiendaComprar.setVisible(false);
+                this.vista.dialogTienda.setVisible(true);
                 break;
                 
             case btnCancelarCompraTienda:
@@ -545,9 +547,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                 
             case btnCombatirAtacar:
                
-           
-                
-      
                     historialCombateString = historialCombateString +"\n---------Tu Turno----------";
                     vista.historialCombate.setText(historialCombateString);
                     if(this.vista.txtArma.getText().equals("")){
@@ -1438,6 +1437,7 @@ public class ControladorHijas implements ActionListener, MouseListener{
             int filaTaberna = this.vista.tablaTaberna.rowAtPoint(e.getPoint());
             int filaMochila = this.vista.tablaMochila.rowAtPoint(e.getPoint());
             int filaMochilaVender = this.vista.tablaMochilaVender.rowAtPoint(e.getPoint());
+            int filaMochilaCombate = this.vista.tablaMochilaCombate.rowAtPoint(e.getPoint());
             
             if (filaTienda > -1){
                 objetoTiendaSeleccionado = String.valueOf(this.vista.tablaTienda.getValueAt(filaTienda, 0));
@@ -1471,6 +1471,11 @@ public class ControladorHijas implements ActionListener, MouseListener{
             }else if(filaMochilaVender == -1){
                 objetoMochilaVenderSeleccionado = "";
                 precioObjetoMochilaVenderSeleccionado = 0;
+            }
+            if(filaMochilaCombate > -1){
+                
+            }else if(filaMochilaCombate == -1){
+                
             }
         }
     }
