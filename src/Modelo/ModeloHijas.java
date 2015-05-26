@@ -325,16 +325,17 @@ public class ModeloHijas extends Database{
             System.err.println( e.getMessage() );
         }
         
-        Object[][] data = new String[registros][5];
+        Object[][] data = new String[registros][3];
         
         try{
           
-        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT Nombre, Efecto FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"') AND Tipo LIKE 'usable%'");
+        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT Nombre, Tipo, Efecto FROM Objeto WHERE IdMochila = (SELECT IdMochila FROM Mochila WHERE NombreUsuario = '"+u+"') AND Tipo LIKE 'usable%'");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
             data[i][0] = res.getString("Nombre");
             data[i][1] = res.getString("Efecto");
+            data[i][2] = res.getString("Tipo");
             i++;
         }
         res.close();
