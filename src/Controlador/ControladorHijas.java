@@ -844,7 +844,6 @@ public class ControladorHijas implements ActionListener, MouseListener{
                             vista.historial.setText(historialString);
                             this.vista.dialogCombatir.dispose();
                             this.vista.setVisible(true);
-                            vista.txtPV.setText(vista.txtPVMax.getText());
                             this.setInfoBD();
                             String [] nuevosStatPostSubida = this.modelo.getInfoInterfaz(usuario);
                             this.setInfoInterfaz(nuevosStatPostSubida);
